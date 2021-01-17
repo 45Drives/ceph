@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../../lib/libjournal_test_mock.a  CMakeFiles/journal_test_mock.dir/mock/MockJournaler.cc.o
+ccache /bin/ranlib ../../../lib/libjournal_test_mock.a

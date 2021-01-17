@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/ceph/src/tracing/objectstore.c
+tracing/objectstore.h
+/root/ceph/src/tracing/tracing/objectstore.h
+
+include/tracing/objectstore.h
+

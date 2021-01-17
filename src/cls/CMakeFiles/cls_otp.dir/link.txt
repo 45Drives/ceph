@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libcls_otp.so.1 -o ../../lib/libcls_otp.so.1.0.0 CMakeFiles/cls_otp.dir/otp/cls_otp.cc.o /usr/lib64/liboath.so 

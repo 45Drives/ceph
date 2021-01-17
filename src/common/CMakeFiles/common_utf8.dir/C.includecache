@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/ceph/src/common/utf8.c
+common/utf8.h
+/root/ceph/src/common/common/utf8.h
+string.h
+-
+
+src/common/utf8.h
+

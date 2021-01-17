@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/cc -fPIC -g  -shared -Wl,-soname,librgw_op_tp.so.1 -o ../../lib/librgw_op_tp.so.1.0.0 CMakeFiles/rgw_op_tp.dir/rgw_op.c.o /usr/lib64/liblttng-ust.so -ldl -ldl 

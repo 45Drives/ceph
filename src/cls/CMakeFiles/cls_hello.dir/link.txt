@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libcls_hello.so.1 -o ../../lib/libcls_hello.so.1.0.0 CMakeFiles/cls_hello.dir/hello/cls_hello.cc.o 

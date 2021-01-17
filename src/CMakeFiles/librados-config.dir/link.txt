@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++  -g   -rdynamic -pie CMakeFiles/librados-config.dir/librados-config.cc.o  -o ../bin/librados-config -Wl,-rpath,/root/ceph/lib::::::: ../lib/librados.so.2.0.0 ../boost/lib/libboost_program_options.a 

@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libceph_example.so -o ../../../lib/libceph_example.so CMakeFiles/ceph_example.dir/compressor_plugin_example.cc.o 

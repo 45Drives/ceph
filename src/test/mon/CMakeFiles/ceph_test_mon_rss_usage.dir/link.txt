@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++  -g   -rdynamic -pie CMakeFiles/ceph_test_mon_rss_usage.dir/test_mon_rss_usage.cc.o  -o ../../../bin/ceph_test_mon_rss_usage 

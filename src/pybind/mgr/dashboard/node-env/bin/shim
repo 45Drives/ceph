@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/root/ceph/src/pybind/mgr/dashboard/node-env/lib/node_modules'
+export NPM_CONFIG_PREFIX='/root/ceph/src/pybind/mgr/dashboard/node-env'
+export npm_config_prefix='/root/ceph/src/pybind/mgr/dashboard/node-env'
+exec '/root/ceph/src/pybind/mgr/dashboard/node-env/bin/node' "$@"

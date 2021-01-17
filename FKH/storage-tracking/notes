@@ -1,0 +1,13 @@
+
+
+where I used logging:
+
+Pool.cc
+IoCtxImpl.cc
+src --> librbd --> librbd.cc
+
+src --> librbd --> io --> ObjectDispatcher.cc
+
+src --> librbd --> api --> Io.cc
+src --> librbd --> api --> Pool.cc
+src --> librbd --> api --> Image.cc

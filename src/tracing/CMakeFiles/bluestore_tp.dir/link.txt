@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/cc -fPIC -g  -shared -Wl,-soname,libbluestore_tp.so.1 -o ../../lib/libbluestore_tp.so.1.0.0 CMakeFiles/bluestore_tp.dir/bluestore.c.o /usr/lib64/liblttng-ust.so -ldl -ldl 

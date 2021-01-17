@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../lib/libcls_cas_client.a  CMakeFiles/cls_cas_client.dir/cas/cls_cas_client.cc.o
+ccache /bin/ranlib ../../lib/libcls_cas_client.a

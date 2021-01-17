@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/cc -g   -rdynamic -pie CMakeFiles/test_c_headers.dir/test_c_headers.c.o  -o ../../bin/test_c_headers -Wl,-rpath,/root/ceph/lib ../../lib/librados.so.2.0.0 ../../lib/libcephfs.so.2.0.0 

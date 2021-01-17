@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libcls_cephfs.so.1 -o ../../lib/libcls_cephfs.so.1.0.0 CMakeFiles/cls_cephfs.dir/cephfs/cls_cephfs.cc.o 

@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libceph_lz4.so.2 -o ../../../lib/libceph_lz4.so.2.0.0 CMakeFiles/ceph_lz4.dir/CompressionPluginLZ4.cc.o /usr/lib64/liblz4.so ../../../lib/libcompressor.a 

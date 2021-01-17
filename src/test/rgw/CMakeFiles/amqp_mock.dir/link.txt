@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../../lib/libamqp_mock.a  CMakeFiles/amqp_mock.dir/amqp_mock.cc.o CMakeFiles/amqp_mock.dir/amqp_url.c.o
+ccache /bin/ranlib ../../../lib/libamqp_mock.a

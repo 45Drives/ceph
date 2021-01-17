@@ -1,0 +1,13 @@
+# Target labels
+ zstd_ext
+# Source files and their labels
+/root/ceph/src/compressor/zstd/CMakeFiles/zstd_ext
+/root/ceph/src/compressor/zstd/CMakeFiles/zstd_ext.rule
+/root/ceph/src/compressor/zstd/CMakeFiles/zstd_ext-complete.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-install.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-mkdir.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-download.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-update.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-patch.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-configure.rule
+/root/ceph/src/compressor/zstd/zstd_ext-prefix/src/zstd_ext-stamp/zstd_ext-build.rule

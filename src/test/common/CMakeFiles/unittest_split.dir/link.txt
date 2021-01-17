@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++  -g   -rdynamic -pie CMakeFiles/unittest_split.dir/test_split.cc.o  -o ../../../bin/unittest_split ../../../lib/libgmock_maind.a ../../../lib/libgmockd.a ../../../lib/libgtestd.a -lpthread /usr/lib64/libldap.so /usr/lib64/liblber.so -ldl ../../../lib/libgmockd.a ../../../lib/libgtestd.a -lpthread 

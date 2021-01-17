@@ -122,7 +122,7 @@ while [ $# -ge 1 ]; do
         --crimson)
             ceph_osd=crimson-osd
             ;;
-        --cephadm)
+        --cephadm.py)
             stop_cephadm=1
             stop_all=0
             ;;

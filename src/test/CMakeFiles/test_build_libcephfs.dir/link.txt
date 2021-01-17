@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++  -g   -rdynamic -pie CMakeFiles/test_build_libcephfs.dir/buildtest_skeleton.cc.o  -o ../../bin/test_build_libcephfs -Wl,-rpath,/root/ceph/lib ../../lib/libcephfs.so.2.0.0 -lpthread /usr/lib64/libcrypto.so -ldl /usr/lib64/librt.so -lresolv 

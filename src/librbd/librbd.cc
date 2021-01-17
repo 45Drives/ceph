@@ -61,6 +61,16 @@
 #undef dout_prefix
 #define dout_prefix *_dout << "librbd: "
 
+
+//#include "../fkhlog/logFKH.cc"
+//LogFKH LFK;
+
+#include <iostream>
+using namespace std;
+
+
+
+
 using std::string;
 using std::vector;
 
@@ -2526,8 +2536,22 @@ namespace librbd {
     return r;
   }
 
+
+
+
+
+
+
+
+
+
+
+//****************************************************** write request ************************************************
   ssize_t Image::write(uint64_t ofs, size_t len, bufferlist& bl)
   {
+   cout << "\033[1;35m (INFO: --------------------- librbd.cc --------> Image::write() -------------------------)\033[0m\n";
+   //LFK.logfkh("---- librbd.cc --------> Image::write()");
+
     ImageCtx *ictx = (ImageCtx *)ctx;
     tracepoint(librbd, write_enter, ictx, ictx->name.c_str(), ictx->snap_name.c_str(), ictx->read_only, ofs, len, bl.length() < len ? NULL : bl.c_str());
     if (bl.length() < len) {
@@ -2540,8 +2564,13 @@ namespace librbd {
     return r;
   }
 
+
+
+
    ssize_t Image::write2(uint64_t ofs, size_t len, bufferlist& bl, int op_flags)
   {
+     cout << "\033[1;35m (INFO: --------------------- librbd.cc --------> Image::write2() -------------------------)\033[0m\n";
+
     ImageCtx *ictx = (ImageCtx *)ctx;
     tracepoint(librbd, write2_enter, ictx, ictx->name.c_str(), ictx->snap_name.c_str(), ictx->read_only,
 		ofs, len, bl.length() < len ? NULL : bl.c_str(), op_flags);
@@ -2554,6 +2583,21 @@ namespace librbd {
     tracepoint(librbd, write_exit, r);
     return r;
   }
+
+//**********************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   int Image::discard(uint64_t ofs, uint64_t len)
   {
@@ -2624,6 +2668,13 @@ namespace librbd {
     return r;
   }
 
+
+
+
+
+
+
+//**********************************************************************************************************************
   int Image::aio_write(uint64_t off, size_t len, bufferlist& bl,
 		       RBD::AioCompletion *c)
   {
@@ -2639,6 +2690,11 @@ namespace librbd {
     tracepoint(librbd, aio_write_exit, 0);
     return 0;
   }
+
+
+
+
+
 
   int Image::aio_write2(uint64_t off, size_t len, bufferlist& bl,
 			  RBD::AioCompletion *c, int op_flags)
@@ -6057,9 +6113,27 @@ extern "C" int rbd_aio_create_completion(void *cb_arg,
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 extern "C" int rbd_aio_write(rbd_image_t image, uint64_t off, size_t len,
 			     const char *buf, rbd_completion_t c)
 {
+
   librbd::ImageCtx *ictx = (librbd::ImageCtx *)image;
   librbd::RBD::AioCompletion *comp = (librbd::RBD::AioCompletion *)c;
   tracepoint(librbd, aio_write_enter, ictx, ictx->name.c_str(), ictx->snap_name.c_str(), ictx->read_only, off, len, buf, comp->pc);

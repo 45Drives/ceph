@@ -266,7 +266,7 @@ class MDSCluster(CephCluster):
             raise RuntimeError("This task requires at least one MDS")
 
         if hasattr(self._ctx, "daemons"):
-            # Presence of 'daemons' attribute implies ceph task rather than ceph_deploy task
+            # Presence of 'daemons' attribute implies ceph task rather than ceph.deploy task
             self.mds_daemons = dict([(mds_id, self._ctx.daemons.get_daemon('mds', mds_id)) for mds_id in self.mds_ids])
 
     def _one_or_all(self, mds_id, cb, in_parallel=True):

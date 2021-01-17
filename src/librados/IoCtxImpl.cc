@@ -28,6 +28,15 @@
 #undef dout_prefix
 #define dout_prefix *_dout << "librados: "
 
+
+#include <string>
+#include <iostream>
+
+//#include "../fkhlog/logFKH.cc"
+//LogFKH LFK;
+
+using namespace std;
+
 namespace bs = boost::system;
 namespace ca = ceph::async;
 namespace cb = ceph::buffer;
@@ -605,8 +614,24 @@ int librados::IoCtxImpl::append(const object_t& oid, bufferlist& bl, size_t len)
   return operate(oid, &op, NULL);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+//**************************************************************************************************
 int librados::IoCtxImpl::write_full(const object_t& oid, bufferlist& bl)
 {
+   cout << "\033[1;35m (INFO: --------------------- IoCtxImpl.cc --------> librados::IoCtxImpl::write_full() -------------------------)\033[0m\n";
+   // LFK.logfkh("\n ----- IoCtxImpl.cc -----> librados::IoCtxImpl::write_full()");
+
   if (bl.length() > UINT_MAX/2)
     return -E2BIG;
   ::ObjectOperation op;
@@ -630,9 +655,19 @@ int librados::IoCtxImpl::writesame(const object_t& oid, bufferlist& bl,
   return operate(oid, &op, NULL);
 }
 
+
+
+
+
+
+
+//********************************************************************************************************************
 int librados::IoCtxImpl::operate(const object_t& oid, ::ObjectOperation *o,
 				 ceph::real_time *pmtime, int flags)
 {
+   cout << "\033[1;35m (INFO, FKH: --------------------- IoCtxImpl.cc --------> librados::IoCtxImpl::operate() -------------------------)\033[0m\n";
+   // LFK.logfkh("\n --- IoCtxImpl.cc ----> librados::IoCtxImpl::operate()");
+
   ceph::real_time ut = (pmtime ? *pmtime :
     ceph::real_clock::now());
 
@@ -990,10 +1025,21 @@ int librados::IoCtxImpl::aio_append(const object_t &oid, AioCompletionImpl *c,
   return 0;
 }
 
+
+
+
+
+
+
+
+
+//******************************************************************************************************
 int librados::IoCtxImpl::aio_write_full(const object_t &oid,
 					AioCompletionImpl *c,
 					const bufferlist& bl)
 {
+   cout << "\033[1;35m (INFO: --------------------- IoCtxImpl.cc --------> librados::IoCtxImpl::aio_write_full() -------------------------)\033[0m\n";
+
   FUNCTRACE(client->cct);
   auto ut = ceph::real_clock::now();
 

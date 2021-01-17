@@ -19,6 +19,9 @@
 
 #define dout_subsys ceph_subsys_rbd
 
+//#include "../fkhlog/logFKH.cc"
+//LogFKH LFK;
+
 namespace librbd {
 namespace api {
 
@@ -45,7 +48,10 @@ public:
   }
 
   void send() {
+
+
     get_head();
+   // LFK.logfkh("---------------- send() function in ImageStatRequest class, Pool.cc script --------------- ");
   }
 
 protected:
@@ -173,6 +179,12 @@ private:
   }
 
 };
+
+
+
+
+
+
 
 template <typename I>
 void get_pool_stat_option_value(typename Pool<I>::StatOptions* stat_options,

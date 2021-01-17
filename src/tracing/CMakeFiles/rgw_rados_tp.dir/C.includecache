@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/ceph/src/tracing/rgw_rados.c
+tracing/rgw_rados.h
+/root/ceph/src/tracing/tracing/rgw_rados.h
+
+include/acconfig.h
+
+include/tracing/rgw_rados.h
+lttng/tracepoint.h
+-
+tracing/tracing-common.h
+include/tracing/tracing/tracing-common.h
+include/int_types.h
+include/tracing/include/int_types.h
+lttng/tracepoint-event.h
+-
+
+src/include/int_types.h
+acconfig.h
+src/include/acconfig.h
+inttypes.h
+-
+linux/types.h
+-
+
+src/tracing/tracing-common.h
+

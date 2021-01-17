@@ -1,0 +1,13 @@
+# Target labels
+ gtest-parallel_ext
+# Source files and their labels
+/root/ceph/src/pybind/mgr/dashboard/CMakeFiles/gtest-parallel_ext
+/root/ceph/src/pybind/mgr/dashboard/CMakeFiles/gtest-parallel_ext.rule
+/root/ceph/src/pybind/mgr/dashboard/CMakeFiles/gtest-parallel_ext-complete.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-install.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-mkdir.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-download.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-update.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-patch.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-configure.rule
+/root/ceph/src/pybind/mgr/dashboard/gtest-parallel_ext-prefix/src/gtest-parallel_ext-stamp/gtest-parallel_ext-build.rule

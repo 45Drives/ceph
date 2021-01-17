@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libcls_numops.so.1 -o ../../lib/libcls_numops.so.1.0.0 CMakeFiles/cls_numops.dir/numops/cls_numops.cc.o 

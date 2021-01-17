@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libcls_lua.so.1 -o ../../lib/libcls_lua.so.1.0.0 CMakeFiles/cls_lua.dir/lua/cls_lua.cc.o CMakeFiles/cls_lua.dir/lua/lua_bufferlist.cc.o ../../lib/liblua.a ../../lib/libjson_spirit.a -lm /usr/lib64/libdl.so ../../lib/libcommon_utf8.a 

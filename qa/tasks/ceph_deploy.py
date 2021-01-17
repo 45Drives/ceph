@@ -222,7 +222,7 @@ def build_ceph_cluster(ctx, config):
     (ceph_admin,) = ctx.cluster.only('mon.a').remotes.keys()
 
     def execute_ceph_deploy(cmd):
-        """Remotely execute a ceph_deploy command"""
+        """Remotely execute a ceph.deploy command"""
         return ceph_admin.run(
             args=[
                 'cd',

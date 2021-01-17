@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../lib/libkrbd.a  CMakeFiles/krbd.dir/krbd.cc.o common/CMakeFiles/parse_secret_objs.dir/secret.c.o
+ccache /bin/ranlib ../lib/libkrbd.a

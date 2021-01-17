@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../lib/libcompressor.a  CMakeFiles/compressor.dir/Compressor.cc.o
+ccache /bin/ranlib ../../lib/libcompressor.a

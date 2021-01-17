@@ -1,0 +1,1 @@
+cmd='./configure;--with-dpdk=/root/ceph/src/dpdk;--without-isal;--without-vhost;--target-arch=core2'

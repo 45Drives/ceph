@@ -1,0 +1,1 @@
+cmd='CC=/usr/lib64/ccache/cc;CXX=/usr/lib64/ccache/c++;./bootstrap.sh;--prefix=<INSTALL_DIR>;--with-libraries=atomic,chrono,thread,system,regex,random,program_options,date_time,iostreams,python,context,coroutine,container'

@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../lib/libblk.a  CMakeFiles/blk.dir/BlockDevice.cc.o CMakeFiles/blk.dir/kernel/KernelDevice.cc.o CMakeFiles/blk.dir/kernel/io_uring.cc.o CMakeFiles/blk.dir/aio/aio.cc.o CMakeFiles/blk.dir/spdk/NVMEDevice.cc.o
+ccache /bin/ranlib ../../lib/libblk.a

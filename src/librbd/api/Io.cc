@@ -14,6 +14,12 @@
 #include "librbd/io/ImageDispatchSpec.h"
 #include "librbd/io/Types.h"
 
+//#include "../fkhlog/logFKH.cc"
+//LogFKH LFK;
+
+
+
+
 #define dout_subsys ceph_subsys_rbd
 #undef dout_prefix
 #define dout_prefix *_dout << "librbd::api::Io " << __func__ << ": "
@@ -58,6 +64,8 @@ ssize_t Io<I>::read(
 template <typename I>
 ssize_t Io<I>::write(
     I &image_ctx, uint64_t off, uint64_t len, bufferlist &&bl, int op_flags) {
+    //LFK.logfkh("\n ------------- write() in Io.cc ---------------- ");
+
   auto cct = image_ctx.cct;
   ldout(cct, 20) << "ictx=" << &image_ctx << ", off=" << off << ", "
                  << "len = " << len << dendl;
@@ -80,6 +88,10 @@ ssize_t Io<I>::write(
   }
   return len;
 }
+
+
+
+
 
 template <typename I>
 ssize_t Io<I>::discard(
@@ -108,9 +120,15 @@ ssize_t Io<I>::discard(
   return len;
 }
 
+
+
+
+
 template <typename I>
 ssize_t Io<I>::write_same(
     I &image_ctx, uint64_t off, uint64_t len, bufferlist &&bl, int op_flags) {
+    //LFK.logfkh("\n ------------ write_same() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   ldout(cct, 20) << "ictx=" << &image_ctx << ", off=" << off << ", "
                  << "len = " << len << ", data_len " << bl.length() << dendl;
@@ -134,9 +152,15 @@ ssize_t Io<I>::write_same(
   return len;
 }
 
+
+
+
+
 template <typename I>
 ssize_t Io<I>::write_zeroes(I& image_ctx, uint64_t off, uint64_t len,
                             int zero_flags, int op_flags) {
+// LFK.logfkh("\n ------------ write_zeross() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   ldout(cct, 20) << "ictx=" << &image_ctx << ", off=" << off << ", "
                  << "len = " << len << dendl;
@@ -160,10 +184,17 @@ ssize_t Io<I>::write_zeroes(I& image_ctx, uint64_t off, uint64_t len,
   return len;
 }
 
+
+
+
+
+
 template <typename I>
 ssize_t Io<I>::compare_and_write(
     I &image_ctx, uint64_t off, uint64_t len, bufferlist &&cmp_bl,
     bufferlist &&bl, uint64_t *mismatch_off, int op_flags) {
+   // LFK.logfkh("\n ------------ compare_and_write() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   ldout(cct, 20) << "compare_and_write ictx=" << &image_ctx << ", off="
                  << off << ", " << "len = " << len << dendl;
@@ -188,6 +219,10 @@ ssize_t Io<I>::compare_and_write(
   return len;
 }
 
+
+
+
+
 template <typename I>
 int Io<I>::flush(I &image_ctx) {
   auto cct = image_ctx.cct;
@@ -205,10 +240,15 @@ int Io<I>::flush(I &image_ctx) {
   return 0;
 }
 
+
+
+
 template <typename I>
 void Io<I>::aio_read(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
                      uint64_t len, io::ReadResult &&read_result, int op_flags,
                      bool native_async) {
+//LFK.logfkh("\n ------------ read() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   FUNCTRACE(cct);
   ZTracer::Trace trace;
@@ -237,10 +277,19 @@ void Io<I>::aio_read(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
   req->send();
 }
 
+
+
+
+
+
+
+
 template <typename I>
 void Io<I>::aio_write(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
                       uint64_t len, bufferlist &&bl, int op_flags,
                       bool native_async) {
+             //         LFK.logfkh("\n ------------ aio_write() in Io.cc   -------------");
+
   auto cct = image_ctx.cct;
   FUNCTRACE(cct);
   ZTracer::Trace trace;
@@ -267,6 +316,9 @@ void Io<I>::aio_write(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
     std::move(bl), image_ctx.get_data_io_context(), op_flags, trace);
   req->send();
 }
+
+
+
 
 template <typename I>
 void Io<I>::aio_discard(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
@@ -299,10 +351,16 @@ void Io<I>::aio_discard(I &image_ctx, io::AioCompletion *aio_comp, uint64_t off,
   req->send();
 }
 
+
+
+
+
 template <typename I>
 void Io<I>::aio_write_same(I &image_ctx, io::AioCompletion *aio_comp,
                            uint64_t off, uint64_t len, bufferlist &&bl,
                            int op_flags, bool native_async) {
+//LFK.logfkh("\n ------------ aio_write_same() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   FUNCTRACE(cct);
   ZTracer::Trace trace;
@@ -331,10 +389,17 @@ void Io<I>::aio_write_same(I &image_ctx, io::AioCompletion *aio_comp,
   req->send();
 }
 
+
+
+
+
+
 template <typename I>
 void Io<I>::aio_write_zeroes(I& image_ctx, io::AioCompletion *aio_comp,
                              uint64_t off, uint64_t len, int zero_flags,
                              int op_flags, bool native_async) {
+//LFK.logfkh("\n ------------ aio_write_zeroes() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   FUNCTRACE(cct);
   ZTracer::Trace trace;
@@ -480,12 +545,22 @@ void Io<I>::aio_write_zeroes(I& image_ctx, io::AioCompletion *aio_comp,
   req->send();
 }
 
+
+
+
+
+
+
+
+
 template <typename I>
 void Io<I>::aio_compare_and_write(I &image_ctx, io::AioCompletion *aio_comp,
                                   uint64_t off, uint64_t len,
                                   bufferlist &&cmp_bl,
                                   bufferlist &&bl, uint64_t *mismatch_off,
                                   int op_flags, bool native_async) {
+//LFK.logfkh("\n ------------ aio_compare_and_write() in Io.cc  -------------");
+
   auto cct = image_ctx.cct;
   FUNCTRACE(cct);
   ZTracer::Trace trace;
@@ -514,6 +589,14 @@ void Io<I>::aio_compare_and_write(I &image_ctx, io::AioCompletion *aio_comp,
     image_ctx.get_data_io_context(), op_flags, trace);
   req->send();
 }
+
+
+
+
+
+
+
+
 
 template <typename I>
 void Io<I>::aio_flush(I &image_ctx, io::AioCompletion *aio_comp,

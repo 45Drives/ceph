@@ -291,7 +291,7 @@ case $1 in
     --msgr21 )
         msgr="21"
         ;;
-    --cephadm )
+    --cephadm.py )
         cephadm=1
         ;;
     --no-parallel )

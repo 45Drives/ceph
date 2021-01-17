@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/cc -fPIC -g  -shared -Wl,-soname,libos_tp.so.1 -o ../../lib/libos_tp.so.1.0.0 CMakeFiles/os_tp.dir/objectstore.c.o /usr/lib64/liblttng-ust.so -ldl -ldl 

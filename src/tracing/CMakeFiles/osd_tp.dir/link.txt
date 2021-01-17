@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/cc -fPIC -g  -shared -Wl,-soname,libosd_tp.so.1 -o ../../lib/libosd_tp.so.1.0.0 CMakeFiles/osd_tp.dir/oprequest.c.o CMakeFiles/osd_tp.dir/osd.c.o CMakeFiles/osd_tp.dir/pg.c.o /usr/lib64/liblttng-ust.so -ldl -ldl 

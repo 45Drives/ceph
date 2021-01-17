@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libec_missing_entry_point.so -o ../../../lib/libec_missing_entry_point.so CMakeFiles/ec_missing_entry_point.dir/ErasureCodePluginMissingEntryPoint.cc.o -lpthread -ldl /usr/lib64/librt.so -lresolv 

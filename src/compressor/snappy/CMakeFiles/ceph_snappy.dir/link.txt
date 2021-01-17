@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libceph_snappy.so.2 -o ../../../lib/libceph_snappy.so.2.0.0 CMakeFiles/ceph_snappy.dir/CompressionPluginSnappy.cc.o /lib64/libsnappy.so ../../../lib/libcompressor.a 

@@ -1,0 +1,1195 @@
+2020-10-14T20:32:28,992 Using pip 20.2.3 from /root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pip (python 3.6)
+2020-10-14T20:32:28,994 Non-user install because user site-packages disabled
+2020-10-14T20:32:29,065 Created temporary directory: /tmp/pip-ephem-wheel-cache-jdqh7s_s
+2020-10-14T20:32:29,066 Created temporary directory: /tmp/pip-req-tracker-ubxk2sjb
+2020-10-14T20:32:29,066 Initialized build tracking at /tmp/pip-req-tracker-ubxk2sjb
+2020-10-14T20:32:29,067 Created build tracker: /tmp/pip-req-tracker-ubxk2sjb
+2020-10-14T20:32:29,067 Entered build tracker: /tmp/pip-req-tracker-ubxk2sjb
+2020-10-14T20:32:29,067 Created temporary directory: /tmp/pip-install-wv238f5d
+2020-10-14T20:32:29,073 1 location(s) to search for versions of pip:
+2020-10-14T20:32:29,073 * https://pypi.org/simple/pip/
+2020-10-14T20:32:29,073 Fetching project page and analyzing links: https://pypi.org/simple/pip/
+2020-10-14T20:32:29,074 Getting page https://pypi.org/simple/pip/
+2020-10-14T20:32:29,075 Found index url https://pypi.org/simple
+2020-10-14T20:32:29,339   Found link https://files.pythonhosted.org/packages/3d/9d/1e313763bdfb6a48977b65829c6ce2a43eaae29ea2f907c8bbef024a7219/pip-0.2.tar.gz#sha256=88bb8d029e1bf4acd0e04d300104b7440086f94cc1ce1c5c3c31e3293aee1f81 (from https://pypi.org/simple/pip/), version: 0.2
+2020-10-14T20:32:29,340   Found link https://files.pythonhosted.org/packages/18/ad/c0fe6cdfe1643a19ef027c7168572dac6283b80a384ddf21b75b921877da/pip-0.2.1.tar.gz#sha256=83522005c1266cc2de97e65072ff7554ac0f30ad369c3b02ff3a764b962048da (from https://pypi.org/simple/pip/), version: 0.2.1
+2020-10-14T20:32:29,340   Found link https://files.pythonhosted.org/packages/17/05/f66144ef69b436d07f8eeeb28b7f77137f80de4bf60349ec6f0f9509e801/pip-0.3.tar.gz#sha256=183c72455cb7f8860ac1376f8c4f14d7f545aeab8ee7c22cd4caf79f35a2ed47 (from https://pypi.org/simple/pip/), version: 0.3
+2020-10-14T20:32:29,340   Found link https://files.pythonhosted.org/packages/0a/bb/d087c9a1415f8726e683791c0b2943c53f2b76e69f527f2e2b2e9f9e7b5c/pip-0.3.1.tar.gz#sha256=34ce534f17065c78f980702928e988a6b6b2d8a9851aae5f1571a1feb9bb58d8 (from https://pypi.org/simple/pip/), version: 0.3.1
+2020-10-14T20:32:29,341   Found link https://files.pythonhosted.org/packages/cf/c3/153571aaac6cf999f4bb09c019b1ff379b7b599ea833813a41c784eec995/pip-0.4.tar.gz#sha256=28fc67558874f71fddda7168f73595f1650523dce3bc5bf189713ecdfc1e456e (from https://pypi.org/simple/pip/), version: 0.4
+2020-10-14T20:32:29,341   Found link https://files.pythonhosted.org/packages/8d/c7/f05c87812fa5d9562ecbc5f4f1fc1570444f53c81c834a7f662af406e3c1/pip-0.5.tar.gz#sha256=328d8412782f22568508a0d0c78a49c9920a82e44c8dfca49954fe525c152b2a (from https://pypi.org/simple/pip/), version: 0.5
+2020-10-14T20:32:29,341   Found link https://files.pythonhosted.org/packages/9a/aa/f536b6d14fe03343367da2ff44eee28f340ae650cd017ca088b6be13084a/pip-0.5.1.tar.gz#sha256=e27650538c41fe1007a41abd4cfd0f905b822622cbe1f8e7e09d1215af207694 (from https://pypi.org/simple/pip/), version: 0.5.1
+2020-10-14T20:32:29,341   Found link https://files.pythonhosted.org/packages/db/e6/fdf7be8a17b032c533d3f91e91e2c63dd81d3627cbe4113248a00c2d39d8/pip-0.6.tar.gz#sha256=4cf47db6815b2f435d1f44e1f35ff04823043f6161f7df9aec71a123b0c47f0d (from https://pypi.org/simple/pip/), version: 0.6
+2020-10-14T20:32:29,342   Found link https://files.pythonhosted.org/packages/91/cd/105f4d3c75d0ae18e12623acc96f42168aaba408dd6e43c4505aa21f8e37/pip-0.6.1.tar.gz#sha256=efe47e84ffeb0ea4804f9858b8a94bebd07f5452f907ebed36d03aed06a9f9ec (from https://pypi.org/simple/pip/), version: 0.6.1
+2020-10-14T20:32:29,342   Found link https://files.pythonhosted.org/packages/1c/c7/c0e1a9413c37828faf290f29a85a4d6034c145cc04bf1622ba8beb662ad8/pip-0.6.2.tar.gz#sha256=1c1a504d7e70d2c24246f95bd16e3d5fcec740fd144df69a407bf65a2ee67586 (from https://pypi.org/simple/pip/), version: 0.6.2
+2020-10-14T20:32:29,342   Found link https://files.pythonhosted.org/packages/3f/af/c4b9d49fb0f286996b28dbc0955c3ad359794697eb98e0e69863908070b0/pip-0.6.3.tar.gz#sha256=1a6df71eb29b98cba11bde6d6a0d8c6dd8b0518e74ceb71fb31ea4fbb42fd313 (from https://pypi.org/simple/pip/), version: 0.6.3
+2020-10-14T20:32:29,343   Found link https://files.pythonhosted.org/packages/ec/7a/6fe91ff0079ad0437830957c459d52f3923e516f5b453218f2a93d09a427/pip-0.7.tar.gz#sha256=ceaea0b9e494d893c8a191895301b79c1db33e41f14d3ad93e3d28a8b4e9bf27 (from https://pypi.org/simple/pip/), version: 0.7
+2020-10-14T20:32:29,343   Found link https://files.pythonhosted.org/packages/a5/63/11303863c2f5e9d9a15d89fcf7513a4b60987007d418862e0fb65c09fff7/pip-0.7.1.tar.gz#sha256=f54f05aa17edd0036de433c44892c8fedb1fd2871c97829838feb995818d24c3 (from https://pypi.org/simple/pip/), version: 0.7.1
+2020-10-14T20:32:29,343   Found link https://files.pythonhosted.org/packages/cd/a9/1debaa96bbc1005c1c8ad3b79fec58c198d35121546ea2e858ce0894268a/pip-0.7.2.tar.gz#sha256=98df2eb779358412bbbae75980171ae85deebc846d87e244d086520b1212da09 (from https://pypi.org/simple/pip/), version: 0.7.2
+2020-10-14T20:32:29,344   Found link https://files.pythonhosted.org/packages/74/54/f785c327fb3d163560a879b36edae5c78ee07806be282c9d4807f6be7dd1/pip-0.8.tar.gz#sha256=9017e4484a212dd4e1a43dd9f039dd7fc8338d4eea1c339d5ae1c80726de5b0f (from https://pypi.org/simple/pip/), version: 0.8
+2020-10-14T20:32:29,344   Found link https://files.pythonhosted.org/packages/5c/79/5e8381cc3078bae92166f2ba96de8355e8c181926505ba8882f7b099a500/pip-0.8.1.tar.gz#sha256=7176a87f35675f6468341212f3b959bb51d23ea66eb1c3692bf746c45c716fa2 (from https://pypi.org/simple/pip/), version: 0.8.1
+2020-10-14T20:32:29,344   Found link https://files.pythonhosted.org/packages/17/3e/0a98ab032991518741e7e712a719633e6ae160f51b3d3e855194530fd308/pip-0.8.2.tar.gz#sha256=f80a3549c048bc3bbcb47844826e9c7c6fcd87e77b92bef0d9e66d1b397c4962 (from https://pypi.org/simple/pip/), version: 0.8.2
+2020-10-14T20:32:29,344   Found link https://files.pythonhosted.org/packages/f7/9a/943fc6d879ed7220bac2e7e53096bfe78abec88d77f2f516400e0129679e/pip-0.8.3.tar.gz#sha256=1be2e18edd38aa75b5e4ef38a99ec33ba9247177cfcb4a6d2d2b3e73430e3001 (from https://pypi.org/simple/pip/), version: 0.8.3
+2020-10-14T20:32:29,345   Found link https://files.pythonhosted.org/packages/24/33/6eb675fb6db7b71d69d6928b33dea61b8bf5cfe1e5649be70ec84ce2fc09/pip-1.0.tar.gz#sha256=34ba07e2d14ba86d5088ba896ac80bed845a9b276ab8acb279b8d99bc77fec8e (from https://pypi.org/simple/pip/), version: 1.0
+2020-10-14T20:32:29,345   Found link https://files.pythonhosted.org/packages/10/d9/f584e6107ef98ad7eaaaa5d0f756bfee12561fa6a4712ffdb7209e0e1fd4/pip-1.0.1.tar.gz#sha256=37d2f18213d3845d2038dd3686bc71fc12bb41ad66c945a8b0dfec2879f3497b (from https://pypi.org/simple/pip/), version: 1.0.1
+2020-10-14T20:32:29,345   Found link https://files.pythonhosted.org/packages/16/90/5e6f80364d8a656f60681dfb7330298edef292d43e1499bcb3a4c71ff0b9/pip-1.0.2.tar.gz#sha256=a6ed9b36aac2f121c01a2c9e0307a9e4d9438d100a407db701ac65479a3335d2 (from https://pypi.org/simple/pip/), version: 1.0.2
+2020-10-14T20:32:29,345   Found link https://files.pythonhosted.org/packages/25/57/0d42cf5307d79913a082c5c4397d46f3793bc35e1138a694136d6e31be99/pip-1.1.tar.gz#sha256=993804bb947d18508acee02141281c77d27677f8c14eaa64d6287a1c53ef01c8 (from https://pypi.org/simple/pip/), version: 1.1
+2020-10-14T20:32:29,346   Found link https://files.pythonhosted.org/packages/ba/c3/4e1f892f41aaa217fe0d1f827fa05928783349c69f3cc06fdd68e112678a/pip-1.2.tar.gz#sha256=2b168f1987403f1dc6996a1f22a6f6637b751b7ab6ff27e78380b8d6e70aa314 (from https://pypi.org/simple/pip/), version: 1.2
+2020-10-14T20:32:29,346   Found link https://files.pythonhosted.org/packages/c3/a2/a63244da32afd9ce9a8ca1bd86e71610039adea8b8314046ebe5047527a6/pip-1.2.1.tar.gz#sha256=12a9302acfca62cdc7bc5d83386cac3e0581db61ac39acdb3a4e766a16b88eb1 (from https://pypi.org/simple/pip/), version: 1.2.1
+2020-10-14T20:32:29,346   Found link https://files.pythonhosted.org/packages/00/45/69d4f2602b80550bfb26cfd2f62c2f05b3b5c7352705d3766cd1e5b27648/pip-1.3.tar.gz#sha256=d6a13c5be316cb21a0243047c7f163f47e88973ebccff8d32e63ca1bf4d9321c (from https://pypi.org/simple/pip/), version: 1.3
+2020-10-14T20:32:29,346   Found link https://files.pythonhosted.org/packages/5b/ce/f5b98104f1c10d868936c25f7c597f492d4371aa9ad5fb61a94954ee7208/pip-1.3.1.tar.gz#sha256=145eaa5d1ea1b062663da1f3a97780d7edea4c63c68a37c463b1deedf7bb4957 (from https://pypi.org/simple/pip/), version: 1.3.1
+2020-10-14T20:32:29,347   Found link https://files.pythonhosted.org/packages/5f/d0/3b3958f6a58783bae44158b2c4c7827ae89abaecdd4bed12cff402620b9a/pip-1.4.tar.gz#sha256=1fd43cbf07d95ddcecbb795c97a1674b3ddb711bb4a67661284a5aa765aa1b97 (from https://pypi.org/simple/pip/), version: 1.4
+2020-10-14T20:32:29,347   Found link https://files.pythonhosted.org/packages/3f/f8/da390e0df72fb61d176b25a4b95262e3dcc14bda0ad25ac64d56db38b667/pip-1.4.1.tar.gz#sha256=4e7a06554711a624c35d0c646f63674b7f6bfc7f80221bf1eb1f631bd890d04e (from https://pypi.org/simple/pip/), version: 1.4.1
+2020-10-14T20:32:29,347   Found link https://files.pythonhosted.org/packages/4f/7d/e53bc80667378125a9e07d4929a61b0bd7128a1129dbe6f07bb3228652a3/pip-1.5.tar.gz#sha256=25f81d1a0e55d3b1709818dd57fdfb954b028f229f09bd69cb0bc80a8e03e048 (from https://pypi.org/simple/pip/), version: 1.5
+2020-10-14T20:32:29,350   Found link https://files.pythonhosted.org/packages/44/5d/1dca53b5de6d287e7eb99bd174bb022eb6cb0d6ca6e19ca6b16655dde8c2/pip-1.5.1-py2.py3-none-any.whl#sha256=00960db3b0b8724dd37fe37cfb9c72ecb8f59fab9db7d17c5c1e89a1adab49ce (from https://pypi.org/simple/pip/), version: 1.5.1
+2020-10-14T20:32:29,350   Found link https://files.pythonhosted.org/packages/21/3f/d86a600c9b2f41a75caacf768a24130f343def97652de2345da15ef7911f/pip-1.5.1.tar.gz#sha256=e60e936fbc101d56668c6134c1f2b5b40fcbec8b4fc4ca7fc34842b6b4c5c130 (from https://pypi.org/simple/pip/), version: 1.5.1
+2020-10-14T20:32:29,350   Found link https://files.pythonhosted.org/packages/3d/1f/227d77d5e9ed2df5162de4ba3616799a351eccb1ecd668ae824dd26153a1/pip-1.5.2-py2.py3-none-any.whl#sha256=6903909ccdcdbc3297b74118590e71344d6d262827acd1f5c0e2fcfce9807499 (from https://pypi.org/simple/pip/), version: 1.5.2
+2020-10-14T20:32:29,351   Found link https://files.pythonhosted.org/packages/ed/94/391a003107f6ec997c314199d03bff1c105af758ee490e3255353574487b/pip-1.5.2.tar.gz#sha256=2a8a3e08e652d3a40edbb39264bf01f8ff3c32520a79113357cca1f30533f738 (from https://pypi.org/simple/pip/), version: 1.5.2
+2020-10-14T20:32:29,351   Found link https://files.pythonhosted.org/packages/df/e9/bdb53d44fad1465b43edaf6bc7dd3027ed5af81405cc97603fdff0721ebb/pip-1.5.3-py2.py3-none-any.whl#sha256=f0037aed3ce6cf96b9e9117d42e967a74bea9ebe19088a2fdea5de93d5762fee (from https://pypi.org/simple/pip/), version: 1.5.3
+2020-10-14T20:32:29,351   Found link https://files.pythonhosted.org/packages/55/de/671a48ad313c808623041fc475f7c8f7610401d9f573f06b40eeb84e74e3/pip-1.5.3.tar.gz#sha256=dc53b4d28b88556a37cd73052b6d1d08cc644c6724e37c4d38a2e3c03c5440b2 (from https://pypi.org/simple/pip/), version: 1.5.3
+2020-10-14T20:32:29,352   Found link https://files.pythonhosted.org/packages/a9/9a/9aa19fe00de4c025562e5fb3796ff8520165a7dd1a5662c6ec9816e1ae99/pip-1.5.4-py2.py3-none-any.whl#sha256=fb7282556a42e84464f2e963a859ac4012d8134ba6218b70c1d82d145fcfa82f (from https://pypi.org/simple/pip/), version: 1.5.4
+2020-10-14T20:32:29,352   Found link https://files.pythonhosted.org/packages/78/d8/6e58a7130d457edadb753a0ea5708e411c100c7e94e72ad4802feeef735c/pip-1.5.4.tar.gz#sha256=70208a250bb4afdbbdd74c3ac35d4ab9ba1eb6852d02567a6a87f2f5104e30b9 (from https://pypi.org/simple/pip/), version: 1.5.4
+2020-10-14T20:32:29,352   Found link https://files.pythonhosted.org/packages/ce/c2/10d996b9c51b126a9f0bb9e14a9edcdd5c88888323c0685bb9b392b6c47c/pip-1.5.5-py2.py3-none-any.whl#sha256=fe7a5808190067b2598d85def9b83db46e5d64a00848ad843e107c36e1db4ae6 (from https://pypi.org/simple/pip/), version: 1.5.5
+2020-10-14T20:32:29,353   Found link https://files.pythonhosted.org/packages/88/01/a442fde40bd9aaf837612536f16ab751fac628807fd718690795b8ade77d/pip-1.5.5.tar.gz#sha256=4b7f5124364ae9b5ba833dcd8813a84c1c06fba1d7c8543323c7af4b33188eca (from https://pypi.org/simple/pip/), version: 1.5.5
+2020-10-14T20:32:29,353   Found link https://files.pythonhosted.org/packages/3f/08/7347ca4021e7fe0f1ab8f93cbc7d2a7a7350012300ad0e0227d55625e2b8/pip-1.5.6-py2.py3-none-any.whl#sha256=fbc1351ffedf09ca7560428758845a88d648b9730b63ce9e5df53a7c89f039a4 (from https://pypi.org/simple/pip/), version: 1.5.6
+2020-10-14T20:32:29,353   Found link https://files.pythonhosted.org/packages/45/db/4fb9a456b4ec4d3b701456ef562b9d72d76b6358e0c1463d17db18c5b772/pip-1.5.6.tar.gz#sha256=b1a4ae66baf21b7eb05a5e4f37c50c2706fa28ea1f8780ce8efe14dcd9f1726c (from https://pypi.org/simple/pip/), version: 1.5.6
+2020-10-14T20:32:29,354   Found link https://files.pythonhosted.org/packages/dc/7c/21191b5944b917b66e4e4e06d74f668d814b6e8a3ff7acd874479b6f6b3d/pip-6.0-py2.py3-none-any.whl#sha256=5ec6732505bd8be49fe1f8ad557b88253ffb085736396df4d6bea753fc2a8f2c (from https://pypi.org/simple/pip/), version: 6.0
+2020-10-14T20:32:29,354   Found link https://files.pythonhosted.org/packages/38/fd/065c66a88398f240e344fdf496b9707f92d75f88eedc3d10ff847b28a657/pip-6.0.tar.gz#sha256=6103897f1bb68d3f933edd60f3e3830c4ea6b8abf7a4b500db148921b11f6c9b (from https://pypi.org/simple/pip/), version: 6.0
+2020-10-14T20:32:29,354   Found link https://files.pythonhosted.org/packages/e9/7a/cdbc1a12ed52410d557e48d4646f4543e9e991ff32d2374dc6db849aa617/pip-6.0.1-py2.py3-none-any.whl#sha256=322aea7d1f7b9ee68ad87ac4704cad5df97f77e70668c0bd18f964c5daa78173 (from https://pypi.org/simple/pip/), version: 6.0.1
+2020-10-14T20:32:29,355   Found link https://files.pythonhosted.org/packages/4d/c3/8675b90cd89b9b222062f4f6c7e9d48b0387f5b35cbf747a74403a883e56/pip-6.0.1.tar.gz#sha256=fa2f7c68da4a405d673aa38542f9df009d60026db4f532429ac9cbfbda1f959d (from https://pypi.org/simple/pip/), version: 6.0.1
+2020-10-14T20:32:29,355   Found link https://files.pythonhosted.org/packages/71/3c/b5a521e5e99cfff091e282231591f21193fd80de079ec5fb8ed9c6614044/pip-6.0.2-py2.py3-none-any.whl#sha256=7d17b0f267f7c9cd17cd2924bbbe2b4a3d407322c0e09084ca3f1295c1fed50d (from https://pypi.org/simple/pip/), version: 6.0.2
+2020-10-14T20:32:29,355   Found link https://files.pythonhosted.org/packages/4c/5a/f9e8e3de0153282c7cb54a9b991af225536ac914bac858ca664cf883bb3e/pip-6.0.2.tar.gz#sha256=6fa90667706a679e3dc75b27a51fddafa64401c45e96f8ae6c20978183290077 (from https://pypi.org/simple/pip/), version: 6.0.2
+2020-10-14T20:32:29,356   Found link https://files.pythonhosted.org/packages/73/cb/3eebf42003791df29219a3dfa1874572aa16114b44c9b1b0ac66bf96e8c0/pip-6.0.3-py2.py3-none-any.whl#sha256=b72655b6ac6aef1c86dd07f51e8ace8d7aabd6a1c4ff88db87155276fa32a073 (from https://pypi.org/simple/pip/), version: 6.0.3
+2020-10-14T20:32:29,356   Found link https://files.pythonhosted.org/packages/ce/63/8d99ae60d11ae1a65f5d4fc39a529a598bd3b8e067132210cb0c4d9e9f74/pip-6.0.3.tar.gz#sha256=b091a35f5fa0faffac0b27b97e1e1e93ffe63b463c2ea8dbde0c1fb987933614 (from https://pypi.org/simple/pip/), version: 6.0.3
+2020-10-14T20:32:29,356   Found link https://files.pythonhosted.org/packages/c5/0e/c974206726542bc495fc7443dd97834a6d14c2f0cba183fcfcd01075225a/pip-6.0.4-py2.py3-none-any.whl#sha256=8dfd95de29a7a3bb1e7d368cc83d566938eb210b04d553ebfe5e3a422f4aec65 (from https://pypi.org/simple/pip/), version: 6.0.4
+2020-10-14T20:32:29,357   Found link https://files.pythonhosted.org/packages/02/a1/c90f19910ee153d7a0efca7216758121118d7e93084276541383fe9ca82e/pip-6.0.4.tar.gz#sha256=1dbbff9c369e510c7468ab68ba52c003f68f83c99c2f8259acd51099e8799f1e (from https://pypi.org/simple/pip/), version: 6.0.4
+2020-10-14T20:32:29,357   Found link https://files.pythonhosted.org/packages/e9/1b/c6a375a337fb576784cdea3700f6c3eaf1420f0a01458e6e034cc178a84a/pip-6.0.5-py2.py3-none-any.whl#sha256=b2c20e3a2a43b2bbb1d19ad98be27eccc7b0f0ece016da602ccaa757a862b0e2 (from https://pypi.org/simple/pip/), version: 6.0.5
+2020-10-14T20:32:29,357   Found link https://files.pythonhosted.org/packages/19/f2/58628768f618c8c9fea878e0fb97730c0b8a838d3ab3f325768bf12dac94/pip-6.0.5.tar.gz#sha256=3bf42d28be9085ab2e9aecfd69a6da2d31563fe833304bf71a620a30c38ab8a2 (from https://pypi.org/simple/pip/), version: 6.0.5
+2020-10-14T20:32:29,358   Found link https://files.pythonhosted.org/packages/64/fc/4a49ccb18f55a0ceeb76e8d554bd4563217117492997825d194ed0017cc1/pip-6.0.6-py2.py3-none-any.whl#sha256=fb04f8afe1ba57626783f0c8e2f3d46bbaebaa446fcf124f434e968a2fee595e (from https://pypi.org/simple/pip/), version: 6.0.6
+2020-10-14T20:32:29,358   Found link https://files.pythonhosted.org/packages/f6/ce/d9e4e178b66c766c117f62ddf4fece019ef9d50127a8926d2f60300d615e/pip-6.0.6.tar.gz#sha256=3a14091299dcdb9bab9e9004ae67ac401f2b1b14a7c98de074ca74fdddf4bfa0 (from https://pypi.org/simple/pip/), version: 6.0.6
+2020-10-14T20:32:29,358   Found link https://files.pythonhosted.org/packages/7a/8e/2bbd4fcf3ee06ee90ded5f39ec12f53165dfdb9ef25a981717ad38a16670/pip-6.0.7-py2.py3-none-any.whl#sha256=93a326304c7db749896bcef822bbbac1ab29dad5651c6d732e245975239890e6 (from https://pypi.org/simple/pip/), version: 6.0.7
+2020-10-14T20:32:29,358   Found link https://files.pythonhosted.org/packages/52/85/b160ebdaa84378df6bb0176d4eed9f57edca662446174eead7a9e2e566d6/pip-6.0.7.tar.gz#sha256=35a5a43ac6b7af83ed47ea5731a365f43d350a3a7267e039e5f06b61d42ab3c2 (from https://pypi.org/simple/pip/), version: 6.0.7
+2020-10-14T20:32:29,359   Found link https://files.pythonhosted.org/packages/63/65/55b71647adec1ad595bf0e5d76d028506dfc002df30c256f022ff7a660a5/pip-6.0.8-py2.py3-none-any.whl#sha256=3c22b0a8ff92727bd737a82f72700790591f177541df08c07bc1f90d6b72ac19 (from https://pypi.org/simple/pip/), version: 6.0.8
+2020-10-14T20:32:29,359   Found link https://files.pythonhosted.org/packages/ef/8a/e3a980bc0a7f791d72c1302f65763ed300f2e14c907ac033e01b44c79e5e/pip-6.0.8.tar.gz#sha256=0d58487a1b7f5be2e5e965c11afbea1dc44ecec8069de03491a4d0d6c85f4551 (from https://pypi.org/simple/pip/), version: 6.0.8
+2020-10-14T20:32:29,359   Found link https://files.pythonhosted.org/packages/24/fb/8a56a46243514681e569bbafd8146fa383476c4b7c725c8598c452366f31/pip-6.1.0-py2.py3-none-any.whl#sha256=435a018f6d29e34d4f901bf4e6860d8a5fa1816b68d62008c18ca062a306db31 (from https://pypi.org/simple/pip/), version: 6.1.0
+2020-10-14T20:32:29,360   Found link https://files.pythonhosted.org/packages/6c/84/432eb60bbcb414b9cdfcb135d5f4925e253c74e7d6916ada79990d6cc1a0/pip-6.1.0.tar.gz#sha256=89f120e2ab3d25ab70c36eb28ad4f280fc9ba71736e74d3055f609c1f9173768 (from https://pypi.org/simple/pip/), version: 6.1.0
+2020-10-14T20:32:29,360   Found link https://files.pythonhosted.org/packages/67/f0/ba0fb41dbdbfc4aa3e0c16b40269aca6b9e3d59cacdb646218aa2e9b1d2c/pip-6.1.1-py2.py3-none-any.whl#sha256=a67e54aa0f26b6d62ccec5cc6735eff205dd0fed075f56ac3d3111e91e4467fc (from https://pypi.org/simple/pip/), version: 6.1.1
+2020-10-14T20:32:29,360   Found link https://files.pythonhosted.org/packages/bf/85/871c126b50b8ee0b9819e8a63b614aedd264577e73478caedcd447e8f28c/pip-6.1.1.tar.gz#sha256=89f3b626d225e08e7f20d85044afa40f612eb3284484169813dc2d0631f2a556 (from https://pypi.org/simple/pip/), version: 6.1.1
+2020-10-14T20:32:29,361   Found link https://files.pythonhosted.org/packages/5a/9b/56d3c18d0784d5f2bbd446ea2dc7ffa7476c35e3dc223741d20cfee3b185/pip-7.0.0-py2.py3-none-any.whl#sha256=309c48399c7d68501a10ef206abd6e5c541fedbf84b95435d9063bd454b39df7 (from https://pypi.org/simple/pip/), version: 7.0.0
+2020-10-14T20:32:29,361   Found link https://files.pythonhosted.org/packages/c6/16/6475b142927ca5d03e3b7968efa5b0edd103e4684ecfde181a25f6fa2505/pip-7.0.0.tar.gz#sha256=7b46bfc1b95494731de306a688e2a7bc056d7fa7ad27e026908fb2ae67fed23d (from https://pypi.org/simple/pip/), version: 7.0.0
+2020-10-14T20:32:29,361   Found link https://files.pythonhosted.org/packages/5a/10/bb7a32c335bceba636aa673a4c977effa1e73a79f88856459486d8d670cf/pip-7.0.1-py2.py3-none-any.whl#sha256=d26b8573ba1ac1ec99a9bdbdffee2ff2b06c7790815211d0eb4dc1462a089705 (from https://pypi.org/simple/pip/), version: 7.0.1
+2020-10-14T20:32:29,362   Found link https://files.pythonhosted.org/packages/4a/83/9ae4362a80739657e0c8bb628ea3fa0214a9aba7c8590dacc301ea293f73/pip-7.0.1.tar.gz#sha256=cfec177552fdd0b2d12b72651c8e874f955b4c62c1c2c9f2588cbdc1c0d0d416 (from https://pypi.org/simple/pip/), version: 7.0.1
+2020-10-14T20:32:29,362   Found link https://files.pythonhosted.org/packages/64/7f/7107800ae0919a80afbf1ecba21b90890431c3ee79d700adac3c79cb6497/pip-7.0.2-py2.py3-none-any.whl#sha256=83c869c5ab7113866e2d69641ec470d47f0faae68ca4550a289a4d3db515ad65 (from https://pypi.org/simple/pip/), version: 7.0.2
+2020-10-14T20:32:29,362   Found link https://files.pythonhosted.org/packages/75/b1/66532c273bca0133e42c3b4540a1609289f16e3046f1830f18c60794d661/pip-7.0.2.tar.gz#sha256=ba28fa60b573a9444e7b78ccb3b0f261d1f66f46d20403f9dce37b18a6aed405 (from https://pypi.org/simple/pip/), version: 7.0.2
+2020-10-14T20:32:29,362   Found link https://files.pythonhosted.org/packages/96/76/33a598ae42dd0554207d83c7acc60e3b166dbde723cbf282f1f73b7a127c/pip-7.0.3-py2.py3-none-any.whl#sha256=7b1cb03e827d58d2d05e68ea96a9e27487ed4b0afcd951ac6e40847ce94f0738 (from https://pypi.org/simple/pip/), version: 7.0.3
+2020-10-14T20:32:29,363   Found link https://files.pythonhosted.org/packages/35/59/5b23115758ba0f2fc465c459611865173ef006202ba83f662d1f58ed2fb8/pip-7.0.3.tar.gz#sha256=b4c598825a6f6dc2cac65968feb28e6be6c1f7f1408493c60a07eaa731a0affd (from https://pypi.org/simple/pip/), version: 7.0.3
+2020-10-14T20:32:29,363   Found link https://files.pythonhosted.org/packages/f7/c0/9f8dac88326609b4b12b304e8382f64f7d5af7735a00d2fac36cf135fc30/pip-7.1.0-py2.py3-none-any.whl#sha256=80c29f899d3a00a448d65f8158544d22935baec7159af8da1a4fa1490ced481d (from https://pypi.org/simple/pip/), version: 7.1.0
+2020-10-14T20:32:29,363   Found link https://files.pythonhosted.org/packages/7e/71/3c6ece07a9a885650aa6607b0ebfdf6fc9a3ef8691c44b5e724e4eee7bf2/pip-7.1.0.tar.gz#sha256=d5275ba3221182a5dd1b6bcfbfc5ec277fb399dd23226d6fa018048f7e0f10f2 (from https://pypi.org/simple/pip/), version: 7.1.0
+2020-10-14T20:32:29,364   Found link https://files.pythonhosted.org/packages/1c/56/094d563c508917081bccff365e4f621ba33073c1c13aca9267a43cfcaf13/pip-7.1.1-py2.py3-none-any.whl#sha256=ce13000878d34c1178af76cb8cf269e232c00508c78ed46c165dd5b0881615f4 (from https://pypi.org/simple/pip/), version: 7.1.1
+2020-10-14T20:32:29,364   Found link https://files.pythonhosted.org/packages/3b/bb/b3f2a95494fd3f01d3b3ae530e7c0e910dc25e88e30787b0a5e10cbc0640/pip-7.1.1.tar.gz#sha256=b22fe3c93a13fc7c04f145a42fd2ad50a9e3e1b8a7eed2e2b1c66e540a0951da (from https://pypi.org/simple/pip/), version: 7.1.1
+2020-10-14T20:32:29,364   Found link https://files.pythonhosted.org/packages/b2/d0/cd115fe345dd6f07ec1c780020a7dfe74966fceeb171e0f20d1d4905b0b7/pip-7.1.2-py2.py3-none-any.whl#sha256=b9d3983b5cce04f842175e30169d2f869ef12c3546fd274083a65eada4e9708c (from https://pypi.org/simple/pip/), version: 7.1.2
+2020-10-14T20:32:29,365   Found link https://files.pythonhosted.org/packages/d0/92/1e8406c15d9372084a5bf79d96da3a0acc4e7fcf0b80020a4820897d2a5c/pip-7.1.2.tar.gz#sha256=ca047986f0528cfa975a14fb9f7f106271d4e0c3fe1ddced6c1db2e7ae57a477 (from https://pypi.org/simple/pip/), version: 7.1.2
+2020-10-14T20:32:29,365   Found link https://files.pythonhosted.org/packages/00/ae/bddef02881ee09c6a01a0d6541aa6c75a226a4e68b041be93142befa0cd6/pip-8.0.0-py2.py3-none-any.whl#sha256=262ed1823eb7fbe3f18a9bedb4800e59c4ab9a6682aff8c37b5ee83ea840910b (from https://pypi.org/simple/pip/), version: 8.0.0
+2020-10-14T20:32:29,365   Found link https://files.pythonhosted.org/packages/e3/2d/03c014d11e66628abf2fda5ca00f779cbe7b5292c5cd13d42a95b94aa9b8/pip-8.0.0.tar.gz#sha256=90112b296152f270cb8dddcd19b7b87488d9e002e8cf622e14c4da9c2f6319b1 (from https://pypi.org/simple/pip/), version: 8.0.0
+2020-10-14T20:32:29,366   Found link https://files.pythonhosted.org/packages/45/9c/6f9a24917c860873e2ce7bd95b8f79897524353df51d5d920cd6b6c1ec33/pip-8.0.1-py2.py3-none-any.whl#sha256=dedaac846bc74e38a3253671f51a056331ffca1da70e3f48d8128f2aa0635bba (from https://pypi.org/simple/pip/), version: 8.0.1
+2020-10-14T20:32:29,366   Found link https://files.pythonhosted.org/packages/ea/66/a3d6187bd307159fedf8575c0d9ee2294d13b1cdd11673ca812e6a2dda8f/pip-8.0.1.tar.gz#sha256=477c50b3e538a7ac0fa611fb8b877b04b33fb70d325b12a81b9dbf3eb1158a4d (from https://pypi.org/simple/pip/), version: 8.0.1
+2020-10-14T20:32:29,366   Found link https://files.pythonhosted.org/packages/e7/a0/bd35f5f978a5e925953ce02fa0f078a232f0f10fcbe543d8cfc043f74fda/pip-8.0.2-py2.py3-none-any.whl#sha256=249a6f3194be8c2e8cb4d4be3f6fd16a9f1e3336218caffa8e7419e3816f9988 (from https://pypi.org/simple/pip/), version: 8.0.2
+2020-10-14T20:32:29,367   Found link https://files.pythonhosted.org/packages/ce/15/ee1f9a84365423e9ef03d0f9ed0eba2fb00ac1fffdd33e7b52aea914d0f8/pip-8.0.2.tar.gz#sha256=46f4bd0d8dfd51125a554568d646fe4200a3c2c6c36b9f2d06d2212148439521 (from https://pypi.org/simple/pip/), version: 8.0.2
+2020-10-14T20:32:29,367   Found link https://files.pythonhosted.org/packages/ae/d4/2b127310f5364610b74c28e2e6a40bc19e2d3c9a9a4e012d3e333e767c99/pip-8.0.3-py2.py3-none-any.whl#sha256=b0335bc837f9edb5aad03bd43d0973b084a1cbe616f8188dc23ba13234dbd552 (from https://pypi.org/simple/pip/), version: 8.0.3
+2020-10-14T20:32:29,367   Found link https://files.pythonhosted.org/packages/22/f3/14bc87a4f6b5ec70b682765978a6f3105bf05b6781fa97e04d30138bd264/pip-8.0.3.tar.gz#sha256=30f98b66f3fe1069c529a491597d34a1c224a68640c82caf2ade5f88aa1405e8 (from https://pypi.org/simple/pip/), version: 8.0.3
+2020-10-14T20:32:29,368   Found link https://files.pythonhosted.org/packages/1e/c7/78440b3fb882ed001e6e12d8770bd45e73d6eced4e57f7c072b829ce8a3d/pip-8.1.0-py2.py3-none-any.whl#sha256=a542b99e08002ead83200198e19a3983270357e1cb4fe704247990b5b35471dc (from https://pypi.org/simple/pip/), version: 8.1.0
+2020-10-14T20:32:29,368   Found link https://files.pythonhosted.org/packages/3c/72/6981d5adf880adecb066a1a1a4c312a17f8d787a3b85446967964ac66d55/pip-8.1.0.tar.gz#sha256=d8faa75dd7d0737b16d50cd0a56dc91a631c79ecfd8d38b80f6ee929ec82043e (from https://pypi.org/simple/pip/), version: 8.1.0
+2020-10-14T20:32:29,368   Found link https://files.pythonhosted.org/packages/31/6a/0f19a7edef6c8e5065f4346137cc2a08e22e141942d66af2e1e72d851462/pip-8.1.1-py2.py3-none-any.whl#sha256=44b9c342782ab905c042c207d995aa069edc02621ddbdc2b9f25954a0fdac25c (from https://pypi.org/simple/pip/), version: 8.1.1
+2020-10-14T20:32:29,369   Found link https://files.pythonhosted.org/packages/41/27/9a8d24e1b55bd8c85e4d022da2922cb206f183e2d18fee4e320c9547e751/pip-8.1.1.tar.gz#sha256=3e78d3066aaeb633d185a57afdccf700aa2e660436b4af618bcb6ff0fa511798 (from https://pypi.org/simple/pip/), version: 8.1.1
+2020-10-14T20:32:29,369   Found link https://files.pythonhosted.org/packages/9c/32/004ce0852e0a127f07f358b715015763273799bd798956fa930814b60f39/pip-8.1.2-py2.py3-none-any.whl#sha256=6464dd9809fb34fc8df2bf49553bb11dac4c13d2ffa7a4f8038ad86a4ccb92a1 (from https://pypi.org/simple/pip/), version: 8.1.2
+2020-10-14T20:32:29,369   Found link https://files.pythonhosted.org/packages/e7/a8/7556133689add8d1a54c0b14aeff0acb03c64707ce100ecd53934da1aa13/pip-8.1.2.tar.gz#sha256=4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732 (from https://pypi.org/simple/pip/), version: 8.1.2
+2020-10-14T20:32:29,370   Found link https://files.pythonhosted.org/packages/3f/ef/935d9296acc4f48d1791ee56a73781271dce9712b059b475d3f5fa78487b/pip-9.0.0-py2.py3-none-any.whl#sha256=c856ac18ca01e7127456f831926dc67cc7d3ab663f4c13b1ec156e36db4de574 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.0
+2020-10-14T20:32:29,371   Found link https://files.pythonhosted.org/packages/5e/53/eaef47e5e2f75677c9de0737acc84b659b78a71c4086f424f55346a341b5/pip-9.0.0.tar.gz#sha256=f62fb70e7e000e46fce12aaeca752e5281a5446977fe5a75ab4189a43b3f8793 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.0
+2020-10-14T20:32:29,372   Found link https://files.pythonhosted.org/packages/b6/ac/7015eb97dc749283ffdec1c3a88ddb8ae03b8fad0f0e611408f196358da3/pip-9.0.1-py2.py3-none-any.whl#sha256=690b762c0a8460c303c089d5d0be034fb15a5ea2b75bdf565f40421f542fefb0 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.1
+2020-10-14T20:32:29,373   Found link https://files.pythonhosted.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz#sha256=09f243e1a7b461f654c26a725fa373211bb7ff17a9300058b205c61658ca940d (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.1
+2020-10-14T20:32:29,374   Found link https://files.pythonhosted.org/packages/e7/f9/e801dcea22886cd513f6bd2e8f7e581bd6f67bb8e8f1cd8e7b92d8539280/pip-9.0.2-py2.py3-none-any.whl#sha256=b135491ddb061f39719b8472d8abb59c613816a2b86069c332db74d1cd208ab2 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.2
+2020-10-14T20:32:29,375   Found link https://files.pythonhosted.org/packages/e5/8f/3fc66461992dc9e9fcf5e005687d5f676729172dda640df2fd8b597a6da7/pip-9.0.2.tar.gz#sha256=88110a224e9d30e5d76592a0b2130ef10e7e67a6426e8617bb918fffbfe91fe5 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.2
+2020-10-14T20:32:29,376   Found link https://files.pythonhosted.org/packages/ac/95/a05b56bb975efa78d3557efa36acaf9cf5d2fd0ee0062060493687432e03/pip-9.0.3-py2.py3-none-any.whl#sha256=c3ede34530e0e0b2381e7363aded78e0c33291654937e7373032fda04e8803e5 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.3
+2020-10-14T20:32:29,377   Found link https://files.pythonhosted.org/packages/c4/44/e6b8056b6c8f2bfd1445cc9990f478930d8e3459e9dbf5b8e2d2922d64d3/pip-9.0.3.tar.gz#sha256=7bf48f9a693be1d58f49f7af7e0ae9fe29fd671cde8a55e6edca3581c4ef5796 (from https://pypi.org/simple/pip/) (requires-python:>=2.6,!=3.0.*,!=3.1.*,!=3.2.*), version: 9.0.3
+2020-10-14T20:32:29,378   Found link https://files.pythonhosted.org/packages/4b/5a/8544ae02a5bd28464e03af045e8aabde20a7b02db1911a9159328e1eb25a/pip-10.0.0b1-py2.py3-none-any.whl#sha256=dbd5d24cd461be23429625085a36cc8732cbcac4d2aaf673031f80f6ac07d844 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0b1
+2020-10-14T20:32:29,379   Found link https://files.pythonhosted.org/packages/aa/6d/ffbb86abf18b750fb26f27eda7c7732df2aacaa669c420d2eb2ad6df3458/pip-10.0.0b1.tar.gz#sha256=8d6e63d8b99752e4b53f272b66f9cd7b59e2b288e9a863a61c48d167203a2656 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0b1
+2020-10-14T20:32:29,381   Found link https://files.pythonhosted.org/packages/97/72/1d514201e7d7fc7fff5aac3de9c7b892cd72fb4bf23fd983630df96f7412/pip-10.0.0b2-py2.py3-none-any.whl#sha256=79f55588912f1b2b4f86f96f11e329bb01b25a484e2204f245128b927b1038a7 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0b2
+2020-10-14T20:32:29,381   Found link https://files.pythonhosted.org/packages/32/67/572f642e6e42c580d3154964cfbab7d9322c23b0f417c6c01fdd206a2777/pip-10.0.0b2.tar.gz#sha256=ad6adec2150ce4aed8f6134d9b77d928fc848dbcb887fb1a455988cf99da5cae (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0b2
+2020-10-14T20:32:29,383   Found link https://files.pythonhosted.org/packages/62/a1/0d452b6901b0157a0134fd27ba89bf95a857fbda64ba52e1ca2cf61d8412/pip-10.0.0-py2.py3-none-any.whl#sha256=86a60a96d85e329962a9e6f6af612cbc11106293dbc83f119802b5bee9874cf3 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0
+2020-10-14T20:32:29,383   Found link https://files.pythonhosted.org/packages/e0/69/983a8e47d3dfb51e1463c1e962b2ccd1d74ec4e236e232625e353d830ed2/pip-10.0.0.tar.gz#sha256=f05a3eeea64bce94e85cc6671d679473d66288a4d37c3fcf983584954096b34f (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.0
+2020-10-14T20:32:29,385   Found link https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl#sha256=717cdffb2833be8409433a93746744b59505f42146e8d37de6c62b430e25d6d7 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.1
+2020-10-14T20:32:29,385   Found link https://files.pythonhosted.org/packages/ae/e8/2340d46ecadb1692a1e455f13f75e596d4eab3d11a57446f08259dee8f02/pip-10.0.1.tar.gz#sha256=f2bd08e0cd1b06e10218feaf6fef299f473ba706582eb3bd9d52203fdbd7ee68 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*), version: 10.0.1
+2020-10-14T20:32:29,387   Found link https://files.pythonhosted.org/packages/5f/25/e52d3f31441505a5f3af41213346e5b6c221c9e086a166f3703d2ddaf940/pip-18.0-py2.py3-none-any.whl#sha256=070e4bf493c7c2c9f6a08dd797dd3c066d64074c38e9e8a0fb4e6541f266d96c (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 18.0
+2020-10-14T20:32:29,388   Found link https://files.pythonhosted.org/packages/69/81/52b68d0a4de760a2f1979b0931ba7889202f302072cc7a0d614211bc7579/pip-18.0.tar.gz#sha256=a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 18.0
+2020-10-14T20:32:29,389   Found link https://files.pythonhosted.org/packages/c2/d7/90f34cb0d83a6c5631cf71dfe64cc1054598c843a92b400e55675cc2ac37/pip-18.1-py2.py3-none-any.whl#sha256=7909d0a0932e88ea53a7014dfd14522ffef91a464daaaf5c573343852ef98550 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 18.1
+2020-10-14T20:32:29,390   Found link https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz#sha256=c0a292bd977ef590379a3f05d7b7f65135487b67470f6281289a94e015650ea1 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 18.1
+2020-10-14T20:32:29,391   Found link https://files.pythonhosted.org/packages/60/64/73b729587b6b0d13e690a7c3acd2231ee561e8dd28a58ae1b0409a5a2b20/pip-19.0-py2.py3-none-any.whl#sha256=249ab0de4c1cef3dba4cf3f8cca722a07fc447b1692acd9f84e19c646db04c9a (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0
+2020-10-14T20:32:29,392   Found link https://files.pythonhosted.org/packages/11/31/c483614095176ddfa06ac99c2af4171375053b270842c7865ca0b4438dc1/pip-19.0.tar.gz#sha256=c82bf8bc00c5732f0dd49ac1dea79b6242a1bd42a5012e308ed4f04369b17e54 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0
+2020-10-14T20:32:29,393   Found link https://files.pythonhosted.org/packages/46/dc/7fd5df840efb3e56c8b4f768793a237ec4ee59891959d6a215d63f727023/pip-19.0.1-py2.py3-none-any.whl#sha256=aae79c7afe895fb986ec751564f24d97df1331bb99cdfec6f70dada2f40c0044 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.1
+2020-10-14T20:32:29,394   Found link https://files.pythonhosted.org/packages/c8/89/ad7f27938e59db1f0f55ce214087460f65048626e2226531ba6cb6da15f0/pip-19.0.1.tar.gz#sha256=e81ddd35e361b630e94abeda4a1eddd36d47a90e71eb00f38f46b57f787cd1a5 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.1
+2020-10-14T20:32:29,396   Found link https://files.pythonhosted.org/packages/d7/41/34dd96bd33958e52cb4da2f1bf0818e396514fd4f4725a79199564cd0c20/pip-19.0.2-py2.py3-none-any.whl#sha256=6a59f1083a63851aeef60c7d68b119b46af11d9d803ddc1cf927b58edcd0b312 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.2
+2020-10-14T20:32:29,397   Found link https://files.pythonhosted.org/packages/4c/4d/88bc9413da11702cbbace3ccc51350ae099bb351febae8acc85fec34f9af/pip-19.0.2.tar.gz#sha256=f851133f8b58283fa50d8c78675eb88d4ff4cde29b6c41205cd938b06338e0e5 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.2
+2020-10-14T20:32:29,398   Found link https://files.pythonhosted.org/packages/d8/f3/413bab4ff08e1fc4828dfc59996d721917df8e8583ea85385d51125dceff/pip-19.0.3-py2.py3-none-any.whl#sha256=bd812612bbd8ba84159d9ddc0266b7fbce712fc9bc98c82dee5750546ec8ec64 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.3
+2020-10-14T20:32:29,399   Found link https://files.pythonhosted.org/packages/36/fa/51ca4d57392e2f69397cd6e5af23da2a8d37884a605f9e3f2d3bfdc48397/pip-19.0.3.tar.gz#sha256=6e6f197a1abfb45118dbb878b5c859a0edbdd33fd250100bc015b67fded4b9f2 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.0.3
+2020-10-14T20:32:29,400   Found link https://files.pythonhosted.org/packages/f9/fb/863012b13912709c13cf5cfdbfb304fa6c727659d6290438e1a88df9d848/pip-19.1-py2.py3-none-any.whl#sha256=8f59b6cf84584d7962d79fd1be7a8ec0eb198aa52ea864896551736b3614eee9 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.1
+2020-10-14T20:32:29,401   Found link https://files.pythonhosted.org/packages/51/5f/802a04274843f634469ef299fcd273de4438386deb7b8681dd059f0ee3b7/pip-19.1.tar.gz#sha256=d9137cb543d8a4d73140a3282f6d777b2e786bb6abb8add3ac5b6539c82cd624 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.1
+2020-10-14T20:32:29,402   Found link https://files.pythonhosted.org/packages/5c/e0/be401c003291b56efc55aeba6a80ab790d3d4cece2778288d65323009420/pip-19.1.1-py2.py3-none-any.whl#sha256=993134f0475471b91452ca029d4390dc8f298ac63a712814f101cd1b6db46676 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.1.1
+2020-10-14T20:32:29,403   Found link https://files.pythonhosted.org/packages/93/ab/f86b61bef7ab14909bd7ec3cd2178feb0a1c86d451bc9bccd5a1aedcde5f/pip-19.1.1.tar.gz#sha256=44d3d7d3d30a1eb65c7e5ff1173cdf8f7467850605ac7cc3707b6064bddd0958 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*), version: 19.1.1
+2020-10-14T20:32:29,405   Found link https://files.pythonhosted.org/packages/3a/6f/35de4f49ae5c7fdb2b64097ab195020fb48faa8ad3a85386ece6953c11b1/pip-19.2-py2.py3-none-any.whl#sha256=468c67b0b1120cd0329dc72972cf0651310783a922e7609f3102bd5fb4acbf17 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2
+2020-10-14T20:32:29,406   Found link https://files.pythonhosted.org/packages/41/13/b6e68eae78405af6e4e9a93319ae5bb371057786f1590b157341f7542d7d/pip-19.2.tar.gz#sha256=aa6fdd80d13caac75d92b5eced06778712859b1606ba92d62389c11be12b2dad (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2
+2020-10-14T20:32:29,407   Found link https://files.pythonhosted.org/packages/62/ca/94d32a6516ed197a491d17d46595ce58a83cbb2fca280414e57cd86b84dc/pip-19.2.1-py2.py3-none-any.whl#sha256=80d7452630a67c1e7763b5f0a515690f2c1e9ad06dda48e0ae85b7fdf2f59d97 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.1
+2020-10-14T20:32:29,408   Found link https://files.pythonhosted.org/packages/8b/8a/1b2aadd922db1afe6bc107b03de41d6d37a28a5923383e60695fba24ae81/pip-19.2.1.tar.gz#sha256=258d702483dd749400aec59c23d638a5b2249ae28a0f478b6cab12ad45681a80 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.1
+2020-10-14T20:32:29,410   Found link https://files.pythonhosted.org/packages/8d/07/f7d7ced2f97ca3098c16565efbe6b15fafcba53e8d9bdb431e09140514b0/pip-19.2.2-py2.py3-none-any.whl#sha256=4b956bd8b7b481fc5fa222637ff6d0823a327e5118178f1ec47618a480e61997 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.2
+2020-10-14T20:32:29,411   Found link https://files.pythonhosted.org/packages/aa/1a/62fb0b95b1572c76dbc3cc31124a8b6866cbe9139eb7659ac7349457cf7c/pip-19.2.2.tar.gz#sha256=e05103825871e210d50a44c7e448587b0ed99dd775d3ef586304c58f40224a53 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.2
+2020-10-14T20:32:29,412   Found link https://files.pythonhosted.org/packages/30/db/9e38760b32e3e7f40cce46dd5fb107b8c73840df38f0046d8e6514e675a1/pip-19.2.3-py2.py3-none-any.whl#sha256=340a0ba40fdeb16413914c0fcd8e0b4ebb0bf39a900ec80e11c05d836c05103f (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.3
+2020-10-14T20:32:29,413   Found link https://files.pythonhosted.org/packages/00/9e/4c83a0950d8bdec0b4ca72afd2f9cea92d08eb7c1a768363f2ea458d08b4/pip-19.2.3.tar.gz#sha256=e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.2.3
+2020-10-14T20:32:29,415   Found link https://files.pythonhosted.org/packages/4a/08/6ca123073af4ebc4c5488a5bc8a010ac57aa39ce4d3c8a931ad504de4185/pip-19.3-py2.py3-none-any.whl#sha256=e100a7eccf085f0720b4478d3bb838e1c179b1e128ec01c0403f84e86e0e2dfb (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.3
+2020-10-14T20:32:29,416   Found link https://files.pythonhosted.org/packages/af/7a/5dd1e6efc894613c432ce86f1011fcc3bbd8ac07dfeae6393b7b97f1de8b/pip-19.3.tar.gz#sha256=324d234b8f6124846b4e390df255cacbe09ce22791c3b714aa1ea6e44a4f2861 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.3
+2020-10-14T20:32:29,417   Found link https://files.pythonhosted.org/packages/00/b6/9cfa56b4081ad13874b0c6f96af8ce16cfbc1cb06bedf8e9164ce5551ec1/pip-19.3.1-py2.py3-none-any.whl#sha256=6917c65fc3769ecdc61405d3dfd97afdedd75808d200b2838d7d961cebc0c2c7 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.3.1
+2020-10-14T20:32:29,418   Found link https://files.pythonhosted.org/packages/ce/ea/9b445176a65ae4ba22dce1d93e4b5fe182f953df71a145f557cffaffc1bf/pip-19.3.1.tar.gz#sha256=21207d76c1031e517668898a6b46a9fb1501c7a4710ef5dfd6a40ad9e6757ea7 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 19.3.1
+2020-10-14T20:32:29,419   Found link https://files.pythonhosted.org/packages/60/65/16487a7c4e0f95bb3fc89c2e377be331fd496b7a9b08fd3077de7f3ae2cf/pip-20.0-py2.py3-none-any.whl#sha256=eea07b449d969dbc8c062c157852cf8ed2ad1b8b5ac965a6b819e62929e41703 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0
+2020-10-14T20:32:29,421   Found link https://files.pythonhosted.org/packages/8c/5c/c18d58ab5c1a702bf670e0bd6a77cd4645e4aeca021c6118ef850895cc96/pip-20.0.tar.gz#sha256=5128e9a9401f1d16c1d15b2ed766a79d7813db1538428d0b0ce74838249e3a41 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0
+2020-10-14T20:32:29,422   Found link https://files.pythonhosted.org/packages/57/36/67f809c135c17ec9b8276466cc57f35b98c240f55c780689ea29fa32f512/pip-20.0.1-py2.py3-none-any.whl#sha256=b7110a319790ae17e8105ecd6fe07dbcc098a280c6d27b6dd7a20174927c24d7 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0.1
+2020-10-14T20:32:29,423   Found link https://files.pythonhosted.org/packages/28/af/2c76c8aa46ccdf7578b83d97a11a2d1858794d4be4a1610ade0d30182e8b/pip-20.0.1.tar.gz#sha256=3cebbac2a1502e09265f94e5717408339de846b3c0f0ed086d7b817df9cab822 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0.1
+2020-10-14T20:32:29,424   Found link https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl#sha256=4ae14a42d8adba3205ebeb38aa68cfc0b6c346e1ae2e699a0b3bad4da19cef5c (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0.2
+2020-10-14T20:32:29,426   Found link https://files.pythonhosted.org/packages/8e/76/66066b7bc71817238924c7e4b448abdb17eb0c92d645769c223f9ace478f/pip-20.0.2.tar.gz#sha256=7db0c8ea4c7ea51c8049640e8e6e7fde949de672bfa4949920675563a5a6967f (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.0.2
+2020-10-14T20:32:29,427   Found link https://files.pythonhosted.org/packages/ec/05/82d3fababbf462d876883ebc36f030f4fa057a563a80f5a26ee63679d9ea/pip-20.1b1-py2.py3-none-any.whl#sha256=4cf0348b683937da883ccaae8c8bcfc9b4c7ba4c48b38cc2d89cd7b8d0b220d9 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1b1
+2020-10-14T20:32:29,428   Found link https://files.pythonhosted.org/packages/cd/81/c1184456fe506bd50992571c9f8581907976ce71502e36741f033e2da1f1/pip-20.1b1.tar.gz#sha256=699880a47f6d306f4f9a87ca151ef33d41d2223b81ff343b786d38c297923a19 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1b1
+2020-10-14T20:32:29,429   Found link https://files.pythonhosted.org/packages/54/2e/df11ea7e23e7e761d484ed3740285a34e38548cf2bad2bed3dd5768ec8b9/pip-20.1-py2.py3-none-any.whl#sha256=4fdc7fd2db7636777d28d2e1432e2876e30c2b790d461f135716577f73104369 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1
+2020-10-14T20:32:29,431   Found link https://files.pythonhosted.org/packages/d1/05/059c78cd5d740d2299266ffa15514dad6692d4694df571bf168e2cdd98fb/pip-20.1.tar.gz#sha256=572c0f25eca7c87217b21f6945b7192744103b18f4e4b16b8a83b227a811e192 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1
+2020-10-14T20:32:29,432   Found link https://files.pythonhosted.org/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl#sha256=b27c4dedae8c41aa59108f2fa38bf78e0890e590545bc8ece7cdceb4ba60f6e4 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1.1
+2020-10-14T20:32:29,433   Found link https://files.pythonhosted.org/packages/08/25/f204a6138dade2f6757b4ae99bc3994aac28a5602c97ddb2a35e0e22fbc4/pip-20.1.1.tar.gz#sha256=27f8dc29387dd83249e06e681ce087e6061826582198a425085e0bf4c1cf3a55 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.1.1
+2020-10-14T20:32:29,434   Found link https://files.pythonhosted.org/packages/fe/3b/0fc5e63eb277d5a50a95ce5c896f742ef243be27382303a4a44dd0197e29/pip-20.2b1-py2.py3-none-any.whl#sha256=b4e230e2b8ece18c5a19b818f3c20a8d4eeac8172962779fd9898d7c4ceb1636 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2b1
+2020-10-14T20:32:29,435   Found link https://files.pythonhosted.org/packages/77/3e/6a1fd8e08a06e3e0f54182c7c937bba3f4e9cf1b26f54946d3915021ea2e/pip-20.2b1.tar.gz#sha256=dbf65ecb1c30d35d72f5fda052fcd2f1ea9aca8eaf03d930846d990f51d3f6f6 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2b1
+2020-10-14T20:32:29,437   Found link https://files.pythonhosted.org/packages/36/74/38c2410d688ac7b48afa07d413674afc1f903c1c1f854de51dc8eb2367a5/pip-20.2-py2.py3-none-any.whl#sha256=d75f1fc98262dabf74656245c509213a5d0f52137e40e8f8ed5cc256ddd02923 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2
+2020-10-14T20:32:29,438   Found link https://files.pythonhosted.org/packages/b9/27/a9007a575c8a8e80c22144fec5df3943fd304dfa791bed44a0130e984803/pip-20.2.tar.gz#sha256=912935eb20ea6a3b5ed5810dde9754fde5563f5ca9be44a8a6e5da806ade970b (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2
+2020-10-14T20:32:29,439   Found link https://files.pythonhosted.org/packages/bd/b1/56a834acdbe23b486dea16aaf4c27ed28eb292695b90d01dff96c96597de/pip-20.2.1-py2.py3-none-any.whl#sha256=7792c1a4f60fca3a9d674e7dee62c24e21a32df1f47d308524d3507455784f29 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.1
+2020-10-14T20:32:29,440   Found link https://files.pythonhosted.org/packages/68/1a/8cfcf3a8cba0dd0f125927c986b1502f2eed284c63fdfd6797ea74300ae4/pip-20.2.1.tar.gz#sha256=c87c2b2620f2942dfd5f3cf1bb2a18a99ae70de07384e847c8e3afd1d1604cf2 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.1
+2020-10-14T20:32:29,442   Found link https://files.pythonhosted.org/packages/5a/4a/39400ff9b36e719bdf8f31c99fe1fa7842a42fa77432e584f707a5080063/pip-20.2.2-py2.py3-none-any.whl#sha256=5244e51494f5d1dfbb89da492d4250cb07f9246644736d10ed6c45deb1a48500 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.2
+2020-10-14T20:32:29,443   Found link https://files.pythonhosted.org/packages/73/8e/7774190ac616c69194688ffce7c1b2a097749792fea42e390e7ddfdef8bc/pip-20.2.2.tar.gz#sha256=58a3b0b55ee2278104165c7ee7bc8e2db6f635067f3c66cf637113ec5aa71584 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.2
+2020-10-14T20:32:29,444   Found link https://files.pythonhosted.org/packages/4e/5f/528232275f6509b1fff703c9280e58951a81abe24640905de621c9f81839/pip-20.2.3-py2.py3-none-any.whl#sha256=0f35d63b7245205f4060efe1982f5ea2196aa6e5b26c07669adcf800e2542026 (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.3
+2020-10-14T20:32:29,445   Found link https://files.pythonhosted.org/packages/59/64/4718738ffbc22d98b5223dbd6c5bb87c476d83a4c71719402935170064c7/pip-20.2.3.tar.gz#sha256=30c70b6179711a7c4cf76da89e8a0f5282279dfb0278bec7b94134be92543b6d (from https://pypi.org/simple/pip/) (requires-python:>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*), version: 20.2.3
+2020-10-14T20:32:29,466 Given no hashes to check 90 links for project 'pip': discarding no candidates
+2020-10-14T20:32:29,519 Installed version (20.2.3) is most up-to-date (past versions: 6.1.0, 6.1.1, 7.0.0, 7.0.1, 7.0.2, 7.0.3, 7.1.0, 7.1.1, 7.1.2, 8.0.0, 8.0.1, 8.0.2, 8.0.3, 8.1.0, 8.1.1, 8.1.2, 9.0.0, 9.0.1, 9.0.2, 9.0.3, 10.0.0, 10.0.1, 18.0, 18.1, 19.0, 19.0.1, 19.0.2, 19.0.3, 19.1, 19.1.1, 19.2, 19.2.1, 19.2.2, 19.2.3, 19.3, 19.3.1, 20.0, 20.0.1, 20.0.2, 20.1, 20.1.1, 20.2, 20.2.1, 20.2.2, 20.2.3)
+2020-10-14T20:32:29,519 Requirement already up-to-date: pip>=6.1 in ./node-env/lib/python3.6/site-packages (20.2.3)
+2020-10-14T20:32:29,596 Removed build tracker: '/tmp/pip-req-tracker-ubxk2sjb'
+2020-10-14T20:32:30,761 Using pip 20.2.3 from /root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pip (python 3.6)
+2020-10-14T20:32:30,762 Non-user install because user site-packages disabled
+2020-10-14T20:32:30,843 Ignoring indexes: https://pypi.org/simple
+2020-10-14T20:32:30,844 Created temporary directory: /tmp/pip-ephem-wheel-cache-v3gb4909
+2020-10-14T20:32:30,845 Created temporary directory: /tmp/pip-req-tracker-bg25v50j
+2020-10-14T20:32:30,845 Initialized build tracking at /tmp/pip-req-tracker-bg25v50j
+2020-10-14T20:32:30,845 Created build tracker: /tmp/pip-req-tracker-bg25v50j
+2020-10-14T20:32:30,845 Entered build tracker: /tmp/pip-req-tracker-bg25v50j
+2020-10-14T20:32:30,846 Created temporary directory: /tmp/pip-install-qrhqfscj
+2020-10-14T20:32:30,850 Looking in links: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse
+2020-10-14T20:32:30,874 0 location(s) to search for versions of tox:
+2020-10-14T20:32:30,875 Skipping link: not a file: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse (from -f)
+2020-10-14T20:32:30,875 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/setuptools-50.3.0-py3-none-any.whl
+2020-10-14T20:32:30,875 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pip-20.2.3-py2.py3-none-any.whl
+2020-10-14T20:32:30,876 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wheel-0.35.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,878 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl, version: 3.20.0
+2020-10-14T20:32:30,878 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,878 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,878 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,879 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl
+2020-10-14T20:32:30,879 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl
+2020-10-14T20:32:30,879 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,879 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,880 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,880 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl
+2020-10-14T20:32:30,880 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,880 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,881 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,881 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl
+2020-10-14T20:32:30,881 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,881 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl
+2020-10-14T20:32:30,881 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,882 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,882 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,882 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl
+2020-10-14T20:32:30,882 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,883 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,883 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl
+2020-10-14T20:32:30,883 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl
+2020-10-14T20:32:30,883 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl
+2020-10-14T20:32:30,884 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,884 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,884 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl
+2020-10-14T20:32:30,884 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl
+2020-10-14T20:32:30,884 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl
+2020-10-14T20:32:30,885 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl
+2020-10-14T20:32:30,885 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,885 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,885 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,886 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl
+2020-10-14T20:32:30,886 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,886 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl
+2020-10-14T20:32:30,886 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl
+2020-10-14T20:32:30,887 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl
+2020-10-14T20:32:30,887 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl
+2020-10-14T20:32:30,887 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl
+2020-10-14T20:32:30,887 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,888 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,888 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,888 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl
+2020-10-14T20:32:30,888 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl
+2020-10-14T20:32:30,888 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,889 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,889 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,889 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl
+2020-10-14T20:32:30,889 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl
+2020-10-14T20:32:30,889 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl
+2020-10-14T20:32:30,890 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,890 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,890 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:30,890 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-2.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,891 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl
+2020-10-14T20:32:30,891 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl
+2020-10-14T20:32:30,891 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl
+2020-10-14T20:32:30,891 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,892 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl
+2020-10-14T20:32:30,892 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:30,892 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/ceph-1.0.0-py3-none-any.whl
+2020-10-14T20:32:30,892 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:30,892 Skipping link: wrong project name (not tox): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:30,893 Skipping link: not a file: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/md5
+2020-10-14T20:32:30,893 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,893 Given no hashes to check 1 links for project 'tox': discarding no candidates
+2020-10-14T20:32:30,894 Using version 3.20.0 (newest of versions: 3.20.0)
+2020-10-14T20:32:30,896 Processing ./wheelhouse/tox-3.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,897   Added tox>=2.9.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:30,898   Removed tox>=2.9.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:30,985 0 location(s) to search for versions of packaging:
+2020-10-14T20:32:30,986 Skipping link: wrong project name (not packaging): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:30,986 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl, version: 20.4
+2020-10-14T20:32:30,990 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,991 Given no hashes to check 1 links for project 'packaging': discarding no candidates
+2020-10-14T20:32:30,992 Using version 20.4 (newest of versions: 20.4)
+2020-10-14T20:32:30,994 Processing ./wheelhouse/packaging-20.4-py2.py3-none-any.whl
+2020-10-14T20:32:30,995   Added packaging>=14 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:30,995   Removed packaging>=14 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,022 0 location(s) to search for versions of importlib-metadata:
+2020-10-14T20:32:31,024 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl, version: 1.7.0
+2020-10-14T20:32:31,027 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-2.0.0-py2.py3-none-any.whl, version: 2.0.0
+2020-10-14T20:32:31,028 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-2.0.0-py2.py3-none-any.whl, /root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,029 Given no hashes to check 1 links for project 'importlib-metadata': discarding no candidates
+2020-10-14T20:32:31,030 Using version 1.7.0 (newest of versions: 1.7.0)
+2020-10-14T20:32:31,032 Processing ./wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,033   Added importlib-metadata<2,>=0.12; python_version < "3.8" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,033   Removed importlib-metadata<2,>=0.12; python_version < "3.8" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,079 0 location(s) to search for versions of virtualenv:
+2020-10-14T20:32:31,080 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl, version: 20.0.31
+2020-10-14T20:32:31,084 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl
+2020-10-14T20:32:31,086 Given no hashes to check 1 links for project 'virtualenv': discarding no candidates
+2020-10-14T20:32:31,087 Using version 20.0.31 (newest of versions: 20.0.31)
+2020-10-14T20:32:31,089 Processing ./wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl
+2020-10-14T20:32:31,090   Added virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,090   Removed virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,214 0 location(s) to search for versions of toml:
+2020-10-14T20:32:31,216 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl, version: 0.10.1
+2020-10-14T20:32:31,220 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,220 Given no hashes to check 1 links for project 'toml': discarding no candidates
+2020-10-14T20:32:31,221 Using version 0.10.1 (newest of versions: 0.10.1)
+2020-10-14T20:32:31,223 Processing ./wheelhouse/toml-0.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,224   Added toml>=0.9.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,224   Removed toml>=0.9.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,246 0 location(s) to search for versions of pluggy:
+2020-10-14T20:32:31,247 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl, version: 0.13.1
+2020-10-14T20:32:31,251 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,251 Given no hashes to check 1 links for project 'pluggy': discarding no candidates
+2020-10-14T20:32:31,252 Using version 0.13.1 (newest of versions: 0.13.1)
+2020-10-14T20:32:31,254 Processing ./wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,255   Added pluggy>=0.12.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,256   Removed pluggy>=0.12.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,289 0 location(s) to search for versions of filelock:
+2020-10-14T20:32:31,290 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl, version: 3.0.12
+2020-10-14T20:32:31,294 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl
+2020-10-14T20:32:31,295 Given no hashes to check 1 links for project 'filelock': discarding no candidates
+2020-10-14T20:32:31,296 Using version 3.0.12 (newest of versions: 3.0.12)
+2020-10-14T20:32:31,298 Processing ./wheelhouse/filelock-3.0.12-py3-none-any.whl
+2020-10-14T20:32:31,299   Added filelock>=3.0.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,299   Removed filelock>=3.0.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,319 0 location(s) to search for versions of py:
+2020-10-14T20:32:31,320 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl, version: 1.9.0
+2020-10-14T20:32:31,324 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,325 Given no hashes to check 1 links for project 'py': discarding no candidates
+2020-10-14T20:32:31,326 Using version 1.9.0 (newest of versions: 1.9.0)
+2020-10-14T20:32:31,328 Processing ./wheelhouse/py-1.9.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,329   Added py>=1.4.17 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,329   Removed py>=1.4.17 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,351 0 location(s) to search for versions of six:
+2020-10-14T20:32:31,353 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl, version: 1.15.0
+2020-10-14T20:32:31,356 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,357 Given no hashes to check 1 links for project 'six': discarding no candidates
+2020-10-14T20:32:31,358 Using version 1.15.0 (newest of versions: 1.15.0)
+2020-10-14T20:32:31,360 Processing ./wheelhouse/six-1.15.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,361   Added six>=1.14.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl (from tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,361   Removed six>=1.14.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl (from tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,381 0 location(s) to search for versions of pyparsing:
+2020-10-14T20:32:31,383 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl, version: 2.4.7
+2020-10-14T20:32:31,386 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl
+2020-10-14T20:32:31,387 Given no hashes to check 1 links for project 'pyparsing': discarding no candidates
+2020-10-14T20:32:31,388 Using version 2.4.7 (newest of versions: 2.4.7)
+2020-10-14T20:32:31,390 Processing ./wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl
+2020-10-14T20:32:31,391   Added pyparsing>=2.0.2 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl (from packaging>=14->tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,391   Removed pyparsing>=2.0.2 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl (from packaging>=14->tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,412 0 location(s) to search for versions of zipp:
+2020-10-14T20:32:31,414 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl, version: 3.2.0
+2020-10-14T20:32:31,417 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl
+2020-10-14T20:32:31,418 Given no hashes to check 1 links for project 'zipp': discarding no candidates
+2020-10-14T20:32:31,419 Using version 3.2.0 (newest of versions: 3.2.0)
+2020-10-14T20:32:31,421 Processing ./wheelhouse/zipp-3.2.0-py3-none-any.whl
+2020-10-14T20:32:31,422   Added zipp>=0.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl (from importlib-metadata<2,>=0.12; python_version < "3.8"->tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,422   Removed zipp>=0.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl (from importlib-metadata<2,>=0.12; python_version < "3.8"->tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,478 0 location(s) to search for versions of importlib-resources:
+2020-10-14T20:32:31,480 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl, version: 3.0.0
+2020-10-14T20:32:31,483 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,484 Given no hashes to check 1 links for project 'importlib-resources': discarding no candidates
+2020-10-14T20:32:31,485 Using version 3.0.0 (newest of versions: 3.0.0)
+2020-10-14T20:32:31,487 Processing ./wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:31,488   Added importlib-resources>=1.0; python_version < "3.7" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,488   Removed importlib-resources>=1.0; python_version < "3.7" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,532 0 location(s) to search for versions of appdirs:
+2020-10-14T20:32:31,534 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl, version: 1.4.4
+2020-10-14T20:32:31,537 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl
+2020-10-14T20:32:31,538 Given no hashes to check 1 links for project 'appdirs': discarding no candidates
+2020-10-14T20:32:31,539 Using version 1.4.4 (newest of versions: 1.4.4)
+2020-10-14T20:32:31,541 Processing ./wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl
+2020-10-14T20:32:31,542   Added appdirs<2,>=1.4.3 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,542   Removed appdirs<2,>=1.4.3 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,563 0 location(s) to search for versions of distlib:
+2020-10-14T20:32:31,565 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl, version: 0.3.1
+2020-10-14T20:32:31,568 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,569 Given no hashes to check 1 links for project 'distlib': discarding no candidates
+2020-10-14T20:32:31,570 Using version 0.3.1 (newest of versions: 0.3.1)
+2020-10-14T20:32:31,572 Processing ./wheelhouse/distlib-0.3.1-py2.py3-none-any.whl
+2020-10-14T20:32:31,573   Added distlib<1,>=0.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) to build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,574   Removed distlib<1,>=0.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl (from virtualenv!=20.0.0,!=20.0.1,!=20.0.2,!=20.0.3,!=20.0.4,!=20.0.5,!=20.0.6,!=20.0.7,>=16.0.0->tox>=2.9.1) from build tracker '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:31,897 Installing collected packages: pyparsing, six, packaging, zipp, importlib-metadata, importlib-resources, filelock, appdirs, distlib, virtualenv, toml, pluggy, py, tox
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2020-10-14T20:32:33,215 Successfully installed appdirs-1.4.4 distlib-0.3.1 filelock-3.0.12 importlib-metadata-1.7.0 importlib-resources-3.0.0 packaging-20.4 pluggy-0.13.1 py-1.9.0 pyparsing-2.4.7 six-1.15.0 toml-0.10.1 tox-3.20.0 virtualenv-20.0.31 zipp-3.2.0
+2020-10-14T20:32:33,216 Removed build tracker: '/tmp/pip-req-tracker-bg25v50j'
+2020-10-14T20:32:34,023 Using pip 20.2.3 from /root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pip (python 3.6)
+2020-10-14T20:32:34,024 Non-user install because user site-packages disabled
+2020-10-14T20:32:34,099 Ignoring indexes: https://pypi.org/simple
+2020-10-14T20:32:34,101 Created temporary directory: /tmp/pip-ephem-wheel-cache-c4ag_gim
+2020-10-14T20:32:34,101 Created temporary directory: /tmp/pip-req-tracker-7v170y7h
+2020-10-14T20:32:34,102 Initialized build tracking at /tmp/pip-req-tracker-7v170y7h
+2020-10-14T20:32:34,102 Created build tracker: /tmp/pip-req-tracker-7v170y7h
+2020-10-14T20:32:34,102 Entered build tracker: /tmp/pip-req-tracker-7v170y7h
+2020-10-14T20:32:34,102 Created temporary directory: /tmp/pip-install-mjcaledl
+2020-10-14T20:32:34,170 Looking in links: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse
+2020-10-14T20:32:34,173 Setting bcrypt==3.1.4 (from -c constraints.txt (line 6)) extras to: ()
+2020-10-14T20:32:34,173 Setting CherryPy==13.1.0 (from -c constraints.txt (line 1)) extras to: ()
+2020-10-14T20:32:34,173 Ignoring enum34: markers 'python_version < "3.4"' don't match your environment
+2020-10-14T20:32:34,174 Setting more-itertools==4.1.0 (from -c constraints.txt (line 3)) extras to: ()
+2020-10-14T20:32:34,174 Setting PyJWT==1.6.4 (from -c constraints.txt (line 4)) extras to: ()
+2020-10-14T20:32:34,174 Setting pyopenssl==17.5.0 (from -c constraints.txt (line 5)) extras to: ()
+2020-10-14T20:32:34,174 Setting python3-saml==1.4.1 (from -c constraints.txt (line 7)) extras to: ()
+2020-10-14T20:32:34,174 Setting requests==2.20.0 (from -c constraints.txt (line 8)) extras to: ()
+2020-10-14T20:32:34,175 Setting Routes==2.4.1 (from -c constraints.txt (line 9)) extras to: ()
+2020-10-14T20:32:34,175 Obtaining file:///root/ceph/src/python-common (from -r requirements.txt (line 10))
+2020-10-14T20:32:34,176   Added file:///root/ceph/src/python-common (from -r requirements.txt (line 10)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,177     Running setup.py (path:/root/ceph/src/python-common/setup.py) egg_info for package from file:///root/ceph/src/python-common
+2020-10-14T20:32:34,177     Created temporary directory: /tmp/pip-pip-egg-info-y68vtq5_
+2020-10-14T20:32:34,177     Running command python setup.py egg_info
+2020-10-14T20:32:34,625     running egg_info
+2020-10-14T20:32:34,626     creating /tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info
+2020-10-14T20:32:34,626     writing /tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/PKG-INFO
+2020-10-14T20:32:34,626     writing dependency_links to /tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/dependency_links.txt
+2020-10-14T20:32:34,626     writing requirements to /tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/requires.txt
+2020-10-14T20:32:34,626     writing top-level names to /tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/top_level.txt
+2020-10-14T20:32:34,626     writing manifest file '/tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/SOURCES.txt'
+2020-10-14T20:32:34,663     reading manifest file '/tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/SOURCES.txt'
+2020-10-14T20:32:34,672     writing manifest file '/tmp/pip-pip-egg-info-y68vtq5_/ceph.egg-info/SOURCES.txt'
+2020-10-14T20:32:34,706   Source in /root/ceph/src/python-common has version 1.0.0, which satisfies requirement ceph==1.0.0 from file:///root/ceph/src/python-common (from -r requirements.txt (line 10))
+2020-10-14T20:32:34,706   Removed ceph==1.0.0 from file:///root/ceph/src/python-common (from -r requirements.txt (line 10)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,746 0 location(s) to search for versions of CherryPy:
+2020-10-14T20:32:34,746 Skipping link: not a file: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse (from -f)
+2020-10-14T20:32:34,747 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/setuptools-50.3.0-py3-none-any.whl
+2020-10-14T20:32:34,747 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pip-20.2.3-py2.py3-none-any.whl
+2020-10-14T20:32:34,747 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wheel-0.35.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,747 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tox-3.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,748 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pluggy-0.13.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,748 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/packaging-20.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,748 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/py-1.9.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,749 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/virtualenv-20.0.31-py2.py3-none-any.whl
+2020-10-14T20:32:34,749 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/filelock-3.0.12-py3-none-any.whl
+2020-10-14T20:32:34,749 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-1.7.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,749 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/toml-0.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,749 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/six-1.15.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,750 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyparsing-2.4.7-py2.py3-none-any.whl
+2020-10-14T20:32:34,750 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,750 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_resources-3.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,750 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/distlib-0.3.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,751 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/zipp-3.2.0-py3-none-any.whl
+2020-10-14T20:32:34,753 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl, version: 13.1.0
+2020-10-14T20:32:34,753 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl
+2020-10-14T20:32:34,754 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,754 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,754 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,754 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl
+2020-10-14T20:32:34,755 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,755 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,755 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl
+2020-10-14T20:32:34,755 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl
+2020-10-14T20:32:34,756 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl
+2020-10-14T20:32:34,756 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,756 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,756 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl
+2020-10-14T20:32:34,757 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl
+2020-10-14T20:32:34,757 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl
+2020-10-14T20:32:34,757 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl
+2020-10-14T20:32:34,757 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,758 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,758 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,758 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl
+2020-10-14T20:32:34,758 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,759 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl
+2020-10-14T20:32:34,759 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl
+2020-10-14T20:32:34,759 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl
+2020-10-14T20:32:34,759 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl
+2020-10-14T20:32:34,760 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl
+2020-10-14T20:32:34,760 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,760 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,760 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,760 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl
+2020-10-14T20:32:34,761 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl
+2020-10-14T20:32:34,761 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,761 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,761 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,762 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl
+2020-10-14T20:32:34,762 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl
+2020-10-14T20:32:34,762 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl
+2020-10-14T20:32:34,762 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,763 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,763 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:34,763 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/importlib_metadata-2.0.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,763 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl
+2020-10-14T20:32:34,764 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl
+2020-10-14T20:32:34,764 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl
+2020-10-14T20:32:34,764 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,764 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl
+2020-10-14T20:32:34,765 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:34,765 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/ceph-1.0.0-py3-none-any.whl
+2020-10-14T20:32:34,765 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:34,765 Skipping link: wrong project name (not CherryPy): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:34,766 Skipping link: not a file: file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/md5
+2020-10-14T20:32:34,766 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,766 Given no hashes to check 1 links for project 'CherryPy': discarding no candidates
+2020-10-14T20:32:34,767 Using version 13.1.0 (newest of versions: 13.1.0)
+2020-10-14T20:32:34,770 Processing ./wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,771   Added CherryPy==13.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl (from -c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,771   Removed CherryPy==13.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl (from -c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,861 0 location(s) to search for versions of more-itertools:
+2020-10-14T20:32:34,863 Skipping link: wrong project name (not more-itertools): file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/CherryPy-13.1.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,863 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl, version: 4.1.0
+2020-10-14T20:32:34,866 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl
+2020-10-14T20:32:34,867 Given no hashes to check 1 links for project 'more-itertools': discarding no candidates
+2020-10-14T20:32:34,868 Using version 4.1.0 (newest of versions: 4.1.0)
+2020-10-14T20:32:34,870 Processing ./wheelhouse/more_itertools-4.1.0-py3-none-any.whl
+2020-10-14T20:32:34,871   Added more-itertools==4.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl (from -c constraints.txt (line 3)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,871   Removed more-itertools==4.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/more_itertools-4.1.0-py3-none-any.whl (from -c constraints.txt (line 3)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,906 0 location(s) to search for versions of PyJWT:
+2020-10-14T20:32:34,907 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl, version: 1.6.4
+2020-10-14T20:32:34,911 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,911 Given no hashes to check 1 links for project 'PyJWT': discarding no candidates
+2020-10-14T20:32:34,912 Using version 1.6.4 (newest of versions: 1.6.4)
+2020-10-14T20:32:34,914 Processing ./wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl
+2020-10-14T20:32:34,915   Added PyJWT==1.6.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl (from -c constraints.txt (line 4)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,916   Removed PyJWT==1.6.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyJWT-1.6.4-py2.py3-none-any.whl (from -c constraints.txt (line 4)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,963 0 location(s) to search for versions of pyopenssl:
+2020-10-14T20:32:34,965 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl, version: 17.5.0
+2020-10-14T20:32:34,968 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,968 Given no hashes to check 1 links for project 'pyopenssl': discarding no candidates
+2020-10-14T20:32:34,969 Using version 17.5.0 (newest of versions: 17.5.0)
+2020-10-14T20:32:34,971 Processing ./wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:34,972   Added pyopenssl==17.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl (from -c constraints.txt (line 5)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:34,973   Removed pyopenssl==17.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyOpenSSL-17.5.0-py2.py3-none-any.whl (from -c constraints.txt (line 5)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,040 0 location(s) to search for versions of bcrypt:
+2020-10-14T20:32:35,042 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl, version: 3.1.4
+2020-10-14T20:32:35,045 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:35,046 Given no hashes to check 1 links for project 'bcrypt': discarding no candidates
+2020-10-14T20:32:35,046 Using version 3.1.4 (newest of versions: 3.1.4)
+2020-10-14T20:32:35,048 Processing ./wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:35,049   Added bcrypt==3.1.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl (from -c constraints.txt (line 6)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,049   Removed bcrypt==3.1.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/bcrypt-3.1.4-cp36-cp36m-manylinux1_x86_64.whl (from -c constraints.txt (line 6)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,085 0 location(s) to search for versions of python3-saml:
+2020-10-14T20:32:35,087 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl, version: 1.4.1
+2020-10-14T20:32:35,090 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl
+2020-10-14T20:32:35,090 Given no hashes to check 1 links for project 'python3-saml': discarding no candidates
+2020-10-14T20:32:35,091 Using version 1.4.1 (newest of versions: 1.4.1)
+2020-10-14T20:32:35,093 Processing ./wheelhouse/python3_saml-1.4.1-py3-none-any.whl
+2020-10-14T20:32:35,094   Added python3-saml==1.4.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl (from -c constraints.txt (line 7)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,095   Removed python3-saml==1.4.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/python3_saml-1.4.1-py3-none-any.whl (from -c constraints.txt (line 7)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,146 0 location(s) to search for versions of requests:
+2020-10-14T20:32:35,148 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl, version: 2.20.0
+2020-10-14T20:32:35,151 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:35,151 Given no hashes to check 1 links for project 'requests': discarding no candidates
+2020-10-14T20:32:35,152 Using version 2.20.0 (newest of versions: 2.20.0)
+2020-10-14T20:32:35,154 Processing ./wheelhouse/requests-2.20.0-py2.py3-none-any.whl
+2020-10-14T20:32:35,155   Added requests==2.20.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl (from -c constraints.txt (line 8)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,155   Removed requests==2.20.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/requests-2.20.0-py2.py3-none-any.whl (from -c constraints.txt (line 8)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,214 0 location(s) to search for versions of Routes:
+2020-10-14T20:32:35,217 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl, version: 2.4.1
+2020-10-14T20:32:35,219 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,220 Given no hashes to check 1 links for project 'Routes': discarding no candidates
+2020-10-14T20:32:35,221 Using version 2.4.1 (newest of versions: 2.4.1)
+2020-10-14T20:32:35,223 Processing ./wheelhouse/Routes-2.4.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,224   Added Routes==2.4.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl (from -c constraints.txt (line 9)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,224   Removed Routes==2.4.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/Routes-2.4.1-py2.py3-none-any.whl (from -c constraints.txt (line 9)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,263 0 location(s) to search for versions of pylint:
+2020-10-14T20:32:35,266 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl, version: 2.3.1
+2020-10-14T20:32:35,268 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl
+2020-10-14T20:32:35,269 Given no hashes to check 1 links for project 'pylint': discarding no candidates
+2020-10-14T20:32:35,270 Using version 2.3.1 (newest of versions: 2.3.1)
+2020-10-14T20:32:35,272 Processing ./wheelhouse/pylint-2.3.1-py3-none-any.whl
+2020-10-14T20:32:35,273   Added pylint==2.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl (from -r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,273   Removed pylint==2.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pylint-2.3.1-py3-none-any.whl (from -r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,338 0 location(s) to search for versions of flake8:
+2020-10-14T20:32:35,340 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl, version: 3.7.8
+2020-10-14T20:32:35,343 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl
+2020-10-14T20:32:35,344 Given no hashes to check 1 links for project 'flake8': discarding no candidates
+2020-10-14T20:32:35,345 Using version 3.7.8 (newest of versions: 3.7.8)
+2020-10-14T20:32:35,347 Processing ./wheelhouse/flake8-3.7.8-py2.py3-none-any.whl
+2020-10-14T20:32:35,348   Added flake8==3.7.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl (from -r requirements-lint.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,348   Removed flake8==3.7.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8-3.7.8-py2.py3-none-any.whl (from -r requirements-lint.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,399 0 location(s) to search for versions of flake8-colors:
+2020-10-14T20:32:35,403 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl, version: 0.1.6
+2020-10-14T20:32:35,404 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl
+2020-10-14T20:32:35,405 Given no hashes to check 1 links for project 'flake8-colors': discarding no candidates
+2020-10-14T20:32:35,406 Using version 0.1.6 (newest of versions: 0.1.6)
+2020-10-14T20:32:35,407 Processing ./wheelhouse/flake8_colors-0.1.6-py3-none-any.whl
+2020-10-14T20:32:35,409   Added flake8-colors==0.1.6 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl (from -r requirements-lint.txt (line 3)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,409   Removed flake8-colors==0.1.6 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/flake8_colors-0.1.6-py3-none-any.whl (from -r requirements-lint.txt (line 3)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,441 0 location(s) to search for versions of rstcheck:
+2020-10-14T20:32:35,445 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl, version: 3.3.1
+2020-10-14T20:32:35,446 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl
+2020-10-14T20:32:35,446 Given no hashes to check 1 links for project 'rstcheck': discarding no candidates
+2020-10-14T20:32:35,447 Using version 3.3.1 (newest of versions: 3.3.1)
+2020-10-14T20:32:35,449 Processing ./wheelhouse/rstcheck-3.3.1-py3-none-any.whl
+2020-10-14T20:32:35,450   Added rstcheck==3.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl (from -r requirements-lint.txt (line 9)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,450   Removed rstcheck==3.3.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/rstcheck-3.3.1-py3-none-any.whl (from -r requirements-lint.txt (line 9)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,484 0 location(s) to search for versions of autopep8:
+2020-10-14T20:32:35,488 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl, version: 1.5.4
+2020-10-14T20:32:35,489 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl
+2020-10-14T20:32:35,489 Given no hashes to check 1 links for project 'autopep8': discarding no candidates
+2020-10-14T20:32:35,491 Using version 1.5.4 (newest of versions: 1.5.4)
+2020-10-14T20:32:35,493 Processing ./wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl
+2020-10-14T20:32:35,494   Added autopep8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl (from -r requirements-lint.txt (line 10)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,494   Removed autopep8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/autopep8-1.5.4-py2.py3-none-any.whl (from -r requirements-lint.txt (line 10)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,530 0 location(s) to search for versions of pyfakefs:
+2020-10-14T20:32:35,532 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl, version: 4.1.0
+2020-10-14T20:32:35,535 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl
+2020-10-14T20:32:35,535 Given no hashes to check 1 links for project 'pyfakefs': discarding no candidates
+2020-10-14T20:32:35,536 Using version 4.1.0 (newest of versions: 4.1.0)
+2020-10-14T20:32:35,538 Processing ./wheelhouse/pyfakefs-4.1.0-py3-none-any.whl
+2020-10-14T20:32:35,539   Added pyfakefs from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl (from -r requirements-lint.txt (line 11)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,540   Removed pyfakefs from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyfakefs-4.1.0-py3-none-any.whl (from -r requirements-lint.txt (line 11)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,569 0 location(s) to search for versions of pytest:
+2020-10-14T20:32:35,571 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl, version: 3.10.1
+2020-10-14T20:32:35,574 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,574 Given no hashes to check 1 links for project 'pytest': discarding no candidates
+2020-10-14T20:32:35,575 Using version 3.10.1 (newest of versions: 3.10.1)
+2020-10-14T20:32:35,577 Processing ./wheelhouse/pytest-3.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,578   Added pytest<4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl (from -r requirements-test.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,579   Removed pytest<4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest-3.10.1-py2.py3-none-any.whl (from -r requirements-test.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,633 0 location(s) to search for versions of pytest-cov:
+2020-10-14T20:32:35,635 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl, version: 2.10.1
+2020-10-14T20:32:35,638 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,638 Given no hashes to check 1 links for project 'pytest-cov': discarding no candidates
+2020-10-14T20:32:35,639 Using version 2.10.1 (newest of versions: 2.10.1)
+2020-10-14T20:32:35,641 Processing ./wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl
+2020-10-14T20:32:35,642   Added pytest-cov from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl (from -r requirements-test.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,643   Removed pytest-cov from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_cov-2.10.1-py2.py3-none-any.whl (from -r requirements-test.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,694 0 location(s) to search for versions of pytest-instafail:
+2020-10-14T20:32:35,697 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl, version: 0.4.2
+2020-10-14T20:32:35,699 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl
+2020-10-14T20:32:35,700 Given no hashes to check 1 links for project 'pytest-instafail': discarding no candidates
+2020-10-14T20:32:35,701 Using version 0.4.2 (newest of versions: 0.4.2)
+2020-10-14T20:32:35,703 Processing ./wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl
+2020-10-14T20:32:35,704   Added pytest-instafail from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl (from -r requirements-test.txt (line 3)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,704   Removed pytest-instafail from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytest_instafail-0.4.2-py2.py3-none-any.whl (from -r requirements-test.txt (line 3)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,736 0 location(s) to search for versions of prettytable:
+2020-10-14T20:32:35,740 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl, version: 0.7.2
+2020-10-14T20:32:35,741 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl
+2020-10-14T20:32:35,741 Given no hashes to check 1 links for project 'prettytable': discarding no candidates
+2020-10-14T20:32:35,742 Using version 0.7.2 (newest of versions: 0.7.2)
+2020-10-14T20:32:35,744 Processing ./wheelhouse/prettytable-0.7.2-py3-none-any.whl
+2020-10-14T20:32:35,745   Added prettytable from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl (from -r requirements.txt (line 11)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,746   Removed prettytable from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/prettytable-0.7.2-py3-none-any.whl (from -r requirements.txt (line 11)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,774 0 location(s) to search for versions of pyyaml:
+2020-10-14T20:32:35,779 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl, version: 5.3.1
+2020-10-14T20:32:35,779 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:35,780 Given no hashes to check 1 links for project 'pyyaml': discarding no candidates
+2020-10-14T20:32:35,780 Using version 5.3.1 (newest of versions: 5.3.1)
+2020-10-14T20:32:35,782 Processing ./wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:35,783   Added pyyaml from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl (from -r requirements.txt (line 12)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,784   Removed pyyaml from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/PyYAML-5.3.1-cp36-cp36m-linux_x86_64.whl (from -r requirements.txt (line 12)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,797 Requirement already satisfied: six>=1.11.0 in ./node-env/lib/python3.6/site-packages (from CherryPy==13.1.0->-c constraints.txt (line 1)) (1.15.0)
+2020-10-14T20:32:35,817 0 location(s) to search for versions of cheroot:
+2020-10-14T20:32:35,820 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl, version: 8.4.5
+2020-10-14T20:32:35,822 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl
+2020-10-14T20:32:35,823 Given no hashes to check 1 links for project 'cheroot': discarding no candidates
+2020-10-14T20:32:35,824 Using version 8.4.5 (newest of versions: 8.4.5)
+2020-10-14T20:32:35,826 Processing ./wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl
+2020-10-14T20:32:35,827   Added cheroot>=5.9.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl (from CherryPy==13.1.0->-c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,827   Removed cheroot>=5.9.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cheroot-8.4.5-py2.py3-none-any.whl (from CherryPy==13.1.0->-c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,981 0 location(s) to search for versions of portend:
+2020-10-14T20:32:35,984 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl, version: 2.6
+2020-10-14T20:32:35,986 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl
+2020-10-14T20:32:35,987 Given no hashes to check 1 links for project 'portend': discarding no candidates
+2020-10-14T20:32:35,988 Using version 2.6 (newest of versions: 2.6)
+2020-10-14T20:32:35,990 Processing ./wheelhouse/portend-2.6-py2.py3-none-any.whl
+2020-10-14T20:32:35,991   Added portend>=2.1.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl (from CherryPy==13.1.0->-c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:35,991   Removed portend>=2.1.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/portend-2.6-py2.py3-none-any.whl (from CherryPy==13.1.0->-c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,044 0 location(s) to search for versions of cryptography:
+2020-10-14T20:32:36,047 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl, version: 3.1.1
+2020-10-14T20:32:36,049 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl
+2020-10-14T20:32:36,050 Given no hashes to check 1 links for project 'cryptography': discarding no candidates
+2020-10-14T20:32:36,050 Using version 3.1.1 (newest of versions: 3.1.1)
+2020-10-14T20:32:36,052 Processing ./wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl
+2020-10-14T20:32:36,053   Added cryptography>=2.1.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl (from pyopenssl==17.5.0->-c constraints.txt (line 5)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,054   Removed cryptography>=2.1.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl (from pyopenssl==17.5.0->-c constraints.txt (line 5)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,144 0 location(s) to search for versions of cffi:
+2020-10-14T20:32:36,147 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl, version: 1.14.3
+2020-10-14T20:32:36,149 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:36,150 Given no hashes to check 1 links for project 'cffi': discarding no candidates
+2020-10-14T20:32:36,150 Using version 1.14.3 (newest of versions: 1.14.3)
+2020-10-14T20:32:36,152 Processing ./wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:36,153   Added cffi>=1.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl (from bcrypt==3.1.4->-c constraints.txt (line 6)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,154   Removed cffi>=1.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/cffi-1.14.3-cp36-cp36m-manylinux1_x86_64.whl (from bcrypt==3.1.4->-c constraints.txt (line 6)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,185 0 location(s) to search for versions of xmlsec:
+2020-10-14T20:32:36,190 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl, version: 1.3.8
+2020-10-14T20:32:36,190 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:36,191 Given no hashes to check 1 links for project 'xmlsec': discarding no candidates
+2020-10-14T20:32:36,191 Using version 1.3.8 (newest of versions: 1.3.8)
+2020-10-14T20:32:36,193 Processing ./wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:36,194   Added xmlsec>=0.6.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,195   Removed xmlsec>=0.6.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/xmlsec-1.3.8-cp36-cp36m-linux_x86_64.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,229 0 location(s) to search for versions of isodate:
+2020-10-14T20:32:36,232 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl, version: 0.6.0
+2020-10-14T20:32:36,235 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,235 Given no hashes to check 1 links for project 'isodate': discarding no candidates
+2020-10-14T20:32:36,236 Using version 0.6.0 (newest of versions: 0.6.0)
+2020-10-14T20:32:36,238 Processing ./wheelhouse/isodate-0.6.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,239   Added isodate>=0.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,240   Removed isodate>=0.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isodate-0.6.0-py2.py3-none-any.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,273 0 location(s) to search for versions of defusedxml:
+2020-10-14T20:32:36,275 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl, version: 0.5.0
+2020-10-14T20:32:36,278 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,278 Given no hashes to check 1 links for project 'defusedxml': discarding no candidates
+2020-10-14T20:32:36,279 Using version 0.5.0 (newest of versions: 0.5.0)
+2020-10-14T20:32:36,281 Processing ./wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,282   Added defusedxml==0.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,282   Removed defusedxml==0.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/defusedxml-0.5.0-py2.py3-none-any.whl (from python3-saml==1.4.1->-c constraints.txt (line 7)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,317 0 location(s) to search for versions of idna:
+2020-10-14T20:32:36,320 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl, version: 2.7
+2020-10-14T20:32:36,322 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl
+2020-10-14T20:32:36,323 Given no hashes to check 1 links for project 'idna': discarding no candidates
+2020-10-14T20:32:36,324 Using version 2.7 (newest of versions: 2.7)
+2020-10-14T20:32:36,326 Processing ./wheelhouse/idna-2.7-py2.py3-none-any.whl
+2020-10-14T20:32:36,327   Added idna<2.8,>=2.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,327   Removed idna<2.8,>=2.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/idna-2.7-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,358 0 location(s) to search for versions of urllib3:
+2020-10-14T20:32:36,361 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl, version: 1.24.3
+2020-10-14T20:32:36,363 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl
+2020-10-14T20:32:36,364 Given no hashes to check 1 links for project 'urllib3': discarding no candidates
+2020-10-14T20:32:36,365 Using version 1.24.3 (newest of versions: 1.24.3)
+2020-10-14T20:32:36,367 Processing ./wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl
+2020-10-14T20:32:36,368   Added urllib3<1.25,>=1.21.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,368   Removed urllib3<1.25,>=1.21.1 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/urllib3-1.24.3-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,422 0 location(s) to search for versions of chardet:
+2020-10-14T20:32:36,425 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl, version: 3.0.4
+2020-10-14T20:32:36,427 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl
+2020-10-14T20:32:36,428 Given no hashes to check 1 links for project 'chardet': discarding no candidates
+2020-10-14T20:32:36,429 Using version 3.0.4 (newest of versions: 3.0.4)
+2020-10-14T20:32:36,431 Processing ./wheelhouse/chardet-3.0.4-py2.py3-none-any.whl
+2020-10-14T20:32:36,432   Added chardet<3.1.0,>=3.0.2 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,432   Removed chardet<3.1.0,>=3.0.2 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/chardet-3.0.4-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,463 0 location(s) to search for versions of certifi:
+2020-10-14T20:32:36,466 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl, version: 2020.6.20
+2020-10-14T20:32:36,468 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl
+2020-10-14T20:32:36,469 Given no hashes to check 1 links for project 'certifi': discarding no candidates
+2020-10-14T20:32:36,470 Using version 2020.6.20 (newest of versions: 2020.6.20)
+2020-10-14T20:32:36,472 Processing ./wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl
+2020-10-14T20:32:36,473   Added certifi>=2017.4.17 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,473   Removed certifi>=2017.4.17 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/certifi-2020.6.20-py2.py3-none-any.whl (from requests==2.20.0->-c constraints.txt (line 8)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,503 0 location(s) to search for versions of repoze.lru:
+2020-10-14T20:32:36,506 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl, version: 0.7
+2020-10-14T20:32:36,508 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl
+2020-10-14T20:32:36,508 Given no hashes to check 1 links for project 'repoze.lru': discarding no candidates
+2020-10-14T20:32:36,509 Using version 0.7 (newest of versions: 0.7)
+2020-10-14T20:32:36,511 Processing ./wheelhouse/repoze.lru-0.7-py3-none-any.whl
+2020-10-14T20:32:36,512   Added repoze.lru>=0.3 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl (from Routes==2.4.1->-c constraints.txt (line 9)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,513   Removed repoze.lru>=0.3 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/repoze.lru-0.7-py3-none-any.whl (from Routes==2.4.1->-c constraints.txt (line 9)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,546 0 location(s) to search for versions of astroid:
+2020-10-14T20:32:36,550 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl, version: 2.4.2
+2020-10-14T20:32:36,551 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl
+2020-10-14T20:32:36,552 Given no hashes to check 1 links for project 'astroid': discarding no candidates
+2020-10-14T20:32:36,553 Using version 2.4.2 (newest of versions: 2.4.2)
+2020-10-14T20:32:36,554 Processing ./wheelhouse/astroid-2.4.2-py3-none-any.whl
+2020-10-14T20:32:36,555   Added astroid<3,>=2.2.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,556   Removed astroid<3,>=2.2.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/astroid-2.4.2-py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,605 0 location(s) to search for versions of isort:
+2020-10-14T20:32:36,608 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl, version: 4.3.21
+2020-10-14T20:32:36,610 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl
+2020-10-14T20:32:36,610 Given no hashes to check 1 links for project 'isort': discarding no candidates
+2020-10-14T20:32:36,611 Using version 4.3.21 (newest of versions: 4.3.21)
+2020-10-14T20:32:36,613 Processing ./wheelhouse/isort-4.3.21-py2.py3-none-any.whl
+2020-10-14T20:32:36,614   Added isort<5,>=4.2.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,615   Removed isort<5,>=4.2.5 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/isort-4.3.21-py2.py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,668 0 location(s) to search for versions of mccabe:
+2020-10-14T20:32:36,672 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl, version: 0.6.1
+2020-10-14T20:32:36,673 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl
+2020-10-14T20:32:36,674 Given no hashes to check 1 links for project 'mccabe': discarding no candidates
+2020-10-14T20:32:36,675 Using version 0.6.1 (newest of versions: 0.6.1)
+2020-10-14T20:32:36,677 Processing ./wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl
+2020-10-14T20:32:36,678   Added mccabe<0.7,>=0.6 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,678   Removed mccabe<0.7,>=0.6 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/mccabe-0.6.1-py2.py3-none-any.whl (from pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,708 0 location(s) to search for versions of pyflakes:
+2020-10-14T20:32:36,712 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl, version: 2.1.1
+2020-10-14T20:32:36,713 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl
+2020-10-14T20:32:36,714 Given no hashes to check 1 links for project 'pyflakes': discarding no candidates
+2020-10-14T20:32:36,715 Using version 2.1.1 (newest of versions: 2.1.1)
+2020-10-14T20:32:36,717 Processing ./wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl
+2020-10-14T20:32:36,718   Added pyflakes<2.2.0,>=2.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,718   Removed pyflakes<2.2.0,>=2.1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pyflakes-2.1.1-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,749 0 location(s) to search for versions of pycodestyle:
+2020-10-14T20:32:36,752 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl, version: 2.5.0
+2020-10-14T20:32:36,754 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,754 Given no hashes to check 1 links for project 'pycodestyle': discarding no candidates
+2020-10-14T20:32:36,755 Using version 2.5.0 (newest of versions: 2.5.0)
+2020-10-14T20:32:36,757 Processing ./wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,758   Added pycodestyle<2.6.0,>=2.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,759   Removed pycodestyle<2.6.0,>=2.5.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycodestyle-2.5.0-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,794 0 location(s) to search for versions of entrypoints:
+2020-10-14T20:32:36,798 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl, version: 0.3
+2020-10-14T20:32:36,799 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl
+2020-10-14T20:32:36,800 Given no hashes to check 1 links for project 'entrypoints': discarding no candidates
+2020-10-14T20:32:36,801 Using version 0.3 (newest of versions: 0.3)
+2020-10-14T20:32:36,803 Processing ./wheelhouse/entrypoints-0.3-py2.py3-none-any.whl
+2020-10-14T20:32:36,804   Added entrypoints<0.4.0,>=0.3.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,804   Removed entrypoints<0.4.0,>=0.3.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/entrypoints-0.3-py2.py3-none-any.whl (from flake8==3.7.8->-r requirements-lint.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,838 0 location(s) to search for versions of docutils:
+2020-10-14T20:32:36,842 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl, version: 0.16
+2020-10-14T20:32:36,843 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl
+2020-10-14T20:32:36,844 Given no hashes to check 1 links for project 'docutils': discarding no candidates
+2020-10-14T20:32:36,845 Using version 0.16 (newest of versions: 0.16)
+2020-10-14T20:32:36,847 Processing ./wheelhouse/docutils-0.16-py2.py3-none-any.whl
+2020-10-14T20:32:36,848   Added docutils>=0.7 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl (from rstcheck==3.3.1->-r requirements-lint.txt (line 9)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,849   Removed docutils>=0.7 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/docutils-0.16-py2.py3-none-any.whl (from rstcheck==3.3.1->-r requirements-lint.txt (line 9)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,868 Requirement already satisfied: toml in ./node-env/lib/python3.6/site-packages (from autopep8->-r requirements-lint.txt (line 10)) (0.10.1)
+2020-10-14T20:32:36,871 Requirement already satisfied: py>=1.5.0 in ./node-env/lib/python3.6/site-packages (from pytest<4->-r requirements-test.txt (line 1)) (1.9.0)
+2020-10-14T20:32:36,875 Requirement already satisfied: pluggy>=0.7 in ./node-env/lib/python3.6/site-packages (from pytest<4->-r requirements-test.txt (line 1)) (0.13.1)
+2020-10-14T20:32:36,906 0 location(s) to search for versions of attrs:
+2020-10-14T20:32:36,910 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl, version: 20.2.0
+2020-10-14T20:32:36,911 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,912 Given no hashes to check 1 links for project 'attrs': discarding no candidates
+2020-10-14T20:32:36,913 Using version 20.2.0 (newest of versions: 20.2.0)
+2020-10-14T20:32:36,915 Processing ./wheelhouse/attrs-20.2.0-py2.py3-none-any.whl
+2020-10-14T20:32:36,916   Added attrs>=17.4.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl (from pytest<4->-r requirements-test.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:36,916   Removed attrs>=17.4.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/attrs-20.2.0-py2.py3-none-any.whl (from pytest<4->-r requirements-test.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,009 Requirement already satisfied: setuptools in ./node-env/lib/python3.6/site-packages (from pytest<4->-r requirements-test.txt (line 1)) (50.3.1)
+2020-10-14T20:32:37,088 0 location(s) to search for versions of atomicwrites:
+2020-10-14T20:32:37,092 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl, version: 1.4.0
+2020-10-14T20:32:37,093 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl
+2020-10-14T20:32:37,094 Given no hashes to check 1 links for project 'atomicwrites': discarding no candidates
+2020-10-14T20:32:37,095 Using version 1.4.0 (newest of versions: 1.4.0)
+2020-10-14T20:32:37,098 Processing ./wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl
+2020-10-14T20:32:37,100   Added atomicwrites>=1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl (from pytest<4->-r requirements-test.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,100   Removed atomicwrites>=1.0 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/atomicwrites-1.4.0-py2.py3-none-any.whl (from pytest<4->-r requirements-test.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,128 0 location(s) to search for versions of coverage:
+2020-10-14T20:32:37,131 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl, version: 5.3
+2020-10-14T20:32:37,132 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,133 Given no hashes to check 1 links for project 'coverage': discarding no candidates
+2020-10-14T20:32:37,133 Using version 5.3 (newest of versions: 5.3)
+2020-10-14T20:32:37,135 Processing ./wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,136   Added coverage>=4.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl (from pytest-cov->-r requirements-test.txt (line 2)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,136   Removed coverage>=4.4 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/coverage-5.3-cp36-cp36m-manylinux1_x86_64.whl (from pytest-cov->-r requirements-test.txt (line 2)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,167 0 location(s) to search for versions of jaraco.functools:
+2020-10-14T20:32:37,171 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl, version: 3.0.1
+2020-10-14T20:32:37,172 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl
+2020-10-14T20:32:37,172 Given no hashes to check 1 links for project 'jaraco.functools': discarding no candidates
+2020-10-14T20:32:37,173 Using version 3.0.1 (newest of versions: 3.0.1)
+2020-10-14T20:32:37,175 Processing ./wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl
+2020-10-14T20:32:37,176   Added jaraco.functools from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl (from cheroot>=5.9.1->CherryPy==13.1.0->-c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,176   Removed jaraco.functools from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/jaraco.functools-3.0.1-py3-none-any.whl (from cheroot>=5.9.1->CherryPy==13.1.0->-c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,229 0 location(s) to search for versions of tempora:
+2020-10-14T20:32:37,233 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl, version: 4.0.0
+2020-10-14T20:32:37,234 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl
+2020-10-14T20:32:37,235 Given no hashes to check 1 links for project 'tempora': discarding no candidates
+2020-10-14T20:32:37,236 Using version 4.0.0 (newest of versions: 4.0.0)
+2020-10-14T20:32:37,238 Processing ./wheelhouse/tempora-4.0.0-py3-none-any.whl
+2020-10-14T20:32:37,239   Added tempora>=1.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl (from portend>=2.1.1->CherryPy==13.1.0->-c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,239   Removed tempora>=1.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/tempora-4.0.0-py3-none-any.whl (from portend>=2.1.1->CherryPy==13.1.0->-c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,299 0 location(s) to search for versions of pycparser:
+2020-10-14T20:32:37,303 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl, version: 2.20
+2020-10-14T20:32:37,304 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl
+2020-10-14T20:32:37,304 Given no hashes to check 1 links for project 'pycparser': discarding no candidates
+2020-10-14T20:32:37,305 Using version 2.20 (newest of versions: 2.20)
+2020-10-14T20:32:37,307 Processing ./wheelhouse/pycparser-2.20-py2.py3-none-any.whl
+2020-10-14T20:32:37,308   Added pycparser from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl (from cffi>=1.1->bcrypt==3.1.4->-c constraints.txt (line 6)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,308   Removed pycparser from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pycparser-2.20-py2.py3-none-any.whl (from cffi>=1.1->bcrypt==3.1.4->-c constraints.txt (line 6)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,336 0 location(s) to search for versions of lxml:
+2020-10-14T20:32:37,339 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl, version: 4.5.2
+2020-10-14T20:32:37,340 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,341 Given no hashes to check 1 links for project 'lxml': discarding no candidates
+2020-10-14T20:32:37,341 Using version 4.5.2 (newest of versions: 4.5.2)
+2020-10-14T20:32:37,343 Processing ./wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,344   Added lxml>=3.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl (from xmlsec>=0.6.0->python3-saml==1.4.1->-c constraints.txt (line 7)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,344   Removed lxml>=3.8 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lxml-4.5.2-cp36-cp36m-manylinux1_x86_64.whl (from xmlsec>=0.6.0->python3-saml==1.4.1->-c constraints.txt (line 7)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,385 0 location(s) to search for versions of wrapt:
+2020-10-14T20:32:37,390 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl, version: 1.12.1
+2020-10-14T20:32:37,390 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:37,390 Given no hashes to check 1 links for project 'wrapt': discarding no candidates
+2020-10-14T20:32:37,391 Using version 1.12.1 (newest of versions: 1.12.1)
+2020-10-14T20:32:37,393 Processing ./wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
+2020-10-14T20:32:37,394   Added wrapt~=1.11 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,394   Removed wrapt~=1.11 from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,421 0 location(s) to search for versions of lazy-object-proxy:
+2020-10-14T20:32:37,425 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl, version: 1.4.3
+2020-10-14T20:32:37,426 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,426 Given no hashes to check 1 links for project 'lazy-object-proxy': discarding no candidates
+2020-10-14T20:32:37,427 Using version 1.4.3 (newest of versions: 1.4.3)
+2020-10-14T20:32:37,429 Processing ./wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,430   Added lazy-object-proxy==1.4.* from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,430   Removed lazy-object-proxy==1.4.* from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/lazy_object_proxy-1.4.3-cp36-cp36m-manylinux1_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,458 0 location(s) to search for versions of typed-ast:
+2020-10-14T20:32:37,462 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl, version: 1.4.1
+2020-10-14T20:32:37,463 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,464 Given no hashes to check 1 links for project 'typed-ast': discarding no candidates
+2020-10-14T20:32:37,464 Using version 1.4.1 (newest of versions: 1.4.1)
+2020-10-14T20:32:37,466 Processing ./wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+2020-10-14T20:32:37,467   Added typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,467   Removed typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8" from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl (from astroid<3,>=2.2.0->pylint==2.3.1->-r requirements-lint.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,478 Requirement already satisfied: importlib-metadata>=0.12; python_version < "3.8" in ./node-env/lib/python3.6/site-packages (from pluggy>=0.7->pytest<4->-r requirements-test.txt (line 1)) (1.7.0)
+2020-10-14T20:32:37,518 0 location(s) to search for versions of pytz:
+2020-10-14T20:32:37,522 Found link file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl, version: 2020.1
+2020-10-14T20:32:37,522 Local files found: /root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl
+2020-10-14T20:32:37,523 Given no hashes to check 1 links for project 'pytz': discarding no candidates
+2020-10-14T20:32:37,524 Using version 2020.1 (newest of versions: 2020.1)
+2020-10-14T20:32:37,526 Processing ./wheelhouse/pytz-2020.1-py2.py3-none-any.whl
+2020-10-14T20:32:37,527   Added pytz from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl (from tempora>=1.8->portend>=2.1.1->CherryPy==13.1.0->-c constraints.txt (line 1)) to build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,527   Removed pytz from file:///root/ceph/src/pybind/mgr/dashboard/wheelhouse/pytz-2020.1-py2.py3-none-any.whl (from tempora>=1.8->portend>=2.1.1->CherryPy==13.1.0->-c constraints.txt (line 1)) from build tracker '/tmp/pip-req-tracker-7v170y7h'
+2020-10-14T20:32:37,556 Requirement already satisfied: zipp>=0.5 in ./node-env/lib/python3.6/site-packages (from importlib-metadata>=0.12; python_version < "3.8"->pluggy>=0.7->pytest<4->-r requirements-test.txt (line 1)) (3.2.0)
+2020-10-14T20:32:38,523 Installing collected packages: more-itertools, jaraco.functools, cheroot, pytz, tempora, portend, CherryPy, PyJWT, pycparser, cffi, cryptography, pyopenssl, bcrypt, lxml, xmlsec, isodate, defusedxml, python3-saml, idna, urllib3, chardet, certifi, requests, repoze.lru, Routes, wrapt, lazy-object-proxy, typed-ast, astroid, isort, mccabe, pylint, pyflakes, pycodestyle, entrypoints, flake8, flake8-colors, docutils, rstcheck, autopep8, pyfakefs, attrs, atomicwrites, pytest, coverage, pytest-cov, pytest-instafail, prettytable, pyyaml, ceph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/anomalous_unicode_escape_py2.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/anomalous_unicode_escape_py2.py", line 17
+2020-10-14T20:32:44,289       RAW_UNICODE = ur"\u0062\n"
+2020-10-14T20:32:44,289                                ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/async_functions.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/async_functions.py", line 57
+2020-10-14T20:32:44,289       async def func(a, a, b=[]):
+2020-10-14T20:32:44,289            ^
+2020-10-14T20:32:44,289   SyntaxError: duplicate argument 'a' in function definition
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/bad_except_order.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/bad_except_order.py", line 27
+2020-10-14T20:32:44,289       __revision__ += 1
+2020-10-14T20:32:44,289                      ^
+2020-10-14T20:32:44,289   SyntaxError: default 'except:' must be last
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/class_members_py27.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/class_members_py27.py", line 24
+2020-10-14T20:32:44,289       print self.nonexistent
+2020-10-14T20:32:44,289                ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(self.nonexistent)?
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/continue_in_finally.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/continue_in_finally.py", line 9
+2020-10-14T20:32:44,289       continue # [continue-in-finally]
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: 'continue' not supported inside 'finally' clause
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/duplicate_argument_name.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/duplicate_argument_name.py", line 4
+2020-10-14T20:32:44,289       def foo1(_, _): # [duplicate-argument-name, duplicate-argument-name]
+2020-10-14T20:32:44,289                                                                          ^
+2020-10-14T20:32:44,289   SyntaxError: duplicate argument '_' in function definition
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/duplicate_argument_name_py3.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/duplicate_argument_name_py3.py", line 4
+2020-10-14T20:32:44,289       def foo1(_, *_, _=3): # [duplicate-argument-name, duplicate-argument-name]
+2020-10-14T20:32:44,289                                                                                ^
+2020-10-14T20:32:44,289   SyntaxError: duplicate argument '_' in function definition
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/exec_used_py2.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/exec_used_py2.py", line 3
+2020-10-14T20:32:44,289       exec 'a = __revision__' # [exec-used]
+2020-10-14T20:32:44,289                             ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'exec'
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/invalid_star_assignment_target.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/invalid_star_assignment_target.py", line 3
+2020-10-14T20:32:44,289       *FIRST = [1, 2, 3] # [invalid-star-assignment-target]
+2020-10-14T20:32:44,289                                                           ^
+2020-10-14T20:32:44,289   SyntaxError: starred assignment target must be in a list or tuple
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/iterable_context_py2.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/iterable_context_py2.py", line 16
+2020-10-14T20:32:44,289       print i
+2020-10-14T20:32:44,289             ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(i)?
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/misplaced_future.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/misplaced_future.py", line 3
+2020-10-14T20:32:44,289       from __future__ import print_function # [misplaced-future]
+2020-10-14T20:32:44,289                                                                ^
+2020-10-14T20:32:44,289   SyntaxError: from __future__ imports must occur at the beginning of the file
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/nonlocal_and_global.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/nonlocal_and_global.py", line 5
+2020-10-14T20:32:44,289       nonlocal missing
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: name 'missing' is nonlocal and global
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/nonlocal_without_binding.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/nonlocal_without_binding.py", line 22
+2020-10-14T20:32:44,289       nonlocal b  # [nonlocal-without-binding]
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: no binding for nonlocal 'b' found
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/not_async_context_manager_py37.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/not_async_context_manager_py37.py", line 11
+2020-10-14T20:32:44,289       async with context_manager(42) as ans:
+2020-10-14T20:32:44,289                ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/not_in_loop.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/not_in_loop.py", line 7
+2020-10-14T20:32:44,289       continue # [not-in-loop]
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: 'continue' not properly in loop
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/old_division_manually.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/old_division_manually.py", line 2
+2020-10-14T20:32:44,289       print 1 / 3
+2020-10-14T20:32:44,289             ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(1 / 3)?
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/postponed_evaluation_activated.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/postponed_evaluation_activated.py", line 3
+2020-10-14T20:32:44,289       from __future__ import annotations
+2020-10-14T20:32:44,289                                        ^
+2020-10-14T20:32:44,289   SyntaxError: future feature annotations is not defined
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/print_always_warns.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/print_always_warns.py", line 8
+2020-10-14T20:32:44,289       print "Python 3 fails to parse print statements." # [print-statement]
+2020-10-14T20:32:44,289                                                       ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Python 3 fails to parse print statements." # [print-statement])?
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/redefine_in_handler.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/redefine_in_handler.py", line 19
+2020-10-14T20:32:44,289       except KeyError, exceptions.RuntimeError: # [redefine-in-handler]
+2020-10-14T20:32:44,289                      ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/return_outside_function.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/return_outside_function.py", line 2
+2020-10-14T20:32:44,289       return # [return-outside-function]
+2020-10-14T20:32:44,289                                        ^
+2020-10-14T20:32:44,289   SyntaxError: 'return' outside function
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/star_needs_assignment_target.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/star_needs_assignment_target.py", line 3
+2020-10-14T20:32:44,289       FIRST = *[1, 2]  # [star-needs-assignment-target]
+2020-10-14T20:32:44,289              ^
+2020-10-14T20:32:44,289   SyntaxError: can't use starred expression here
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/star_needs_assignment_target_py35.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/star_needs_assignment_target_py35.py", line 15
+2020-10-14T20:32:44,289       UNPACK_IN_COMP = {elem for elem in (*range(10))} # [star-needs-assignment-target]
+2020-10-14T20:32:44,289                                          ^
+2020-10-14T20:32:44,289   SyntaxError: can't use starred expression here
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/syntax_error.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/syntax_error.py", line 1
+2020-10-14T20:32:44,289       def toto # [syntax-error]
+2020-10-14T20:32:44,289                               ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/syntax_error_jython.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/syntax_error_jython.py", line 1
+2020-10-14T20:32:44,289       def toto # [syntax-error]
+2020-10-14T20:32:44,289                               ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/too_many_star_expressions.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/too_many_star_expressions.py", line 3
+2020-10-14T20:32:44,289       *FIRST, *SECOND = [1, 2, 3] # [too-many-star-expressions]
+2020-10-14T20:32:44,289                                                               ^
+2020-10-14T20:32:44,289   SyntaxError: two starred expressions in assignment
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/try_except_raise.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/try_except_raise.py", line 64
+2020-10-14T20:32:44,289       pass
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: default 'except:' must be last
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/unpacked_exceptions.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/unpacked_exceptions.py", line 7
+2020-10-14T20:32:44,289       except IOError, (errno, message):  # [unpacking-in-except]
+2020-10-14T20:32:44,289                     ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/used_prior_global_declaration.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/used_prior_global_declaration.py", line 10
+2020-10-14T20:32:44,289       global CONST
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: name 'CONST' is used prior to global declaration
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_from_outside_func.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_from_outside_func.py", line 2
+2020-10-14T20:32:44,289       yield from [1, 2]  # [yield-outside-function]
+2020-10-14T20:32:44,289                                                   ^
+2020-10-14T20:32:44,289   SyntaxError: 'yield' outside function
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_inside_async_function.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_inside_async_function.py", line 12
+2020-10-14T20:32:44,289       yield from [1, 2, 3] # [yield-inside-async-function]
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: 'yield from' inside async function
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_inside_async_function_py36.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_inside_async_function_py36.py", line 12
+2020-10-14T20:32:44,289       yield from [1, 2, 3] # [yield-inside-async-function]
+2020-10-14T20:32:44,289       ^
+2020-10-14T20:32:44,289   SyntaxError: 'yield from' inside async function
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_outside_func.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/functional/yield_outside_func.py", line 2
+2020-10-14T20:32:44,289       yield 1  # [yield-outside-function]
+2020-10-14T20:32:44,289                                         ^
+2020-10-14T20:32:44,289   SyntaxError: 'yield' outside function
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/input/func_w0122_py_30.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/input/func_w0122_py_30.py", line 5
+2020-10-14T20:32:44,289       exec 'a = __revision__'
+2020-10-14T20:32:44,289                             ^
+2020-10-14T20:32:44,289   SyntaxError: Missing parentheses in call to 'exec'
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/input/func_w0332_py_30.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/input/func_w0332_py_30.py", line 4
+2020-10-14T20:32:44,289       __revision__ = 1l
+2020-10-14T20:32:44,289                       ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/bad_package/__init__.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/bad_package/__init__.py", line 2
+2020-10-14T20:32:44,289       raise missing.Missing..
+2020-10-14T20:32:44,289                             ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/descriptor_crash.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/descriptor_crash.py", line 20
+2020-10-14T20:32:44,289       print p.getPage(sys.argv[1])
+2020-10-14T20:32:44,289             ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/py3k_error_flag.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/py3k_error_flag.py", line 4
+2020-10-14T20:32:44,289       raise Exception, 1  # Error emitted here with the Python 3 checker.
+2020-10-14T20:32:44,289                      ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/py3k_errors_and_warnings.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/py3k_errors_and_warnings.py", line 8
+2020-10-14T20:32:44,289       raise Exception, 1
+2020-10-14T20:32:44,289                      ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+2020-10-14T20:32:44,289   *** Error compiling '/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/syntax_error.py'...
+2020-10-14T20:32:44,289     File "/root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/pylint/test/regrtest_data/syntax_error.py", line 1
+2020-10-14T20:32:44,289       class A extends B {}
+2020-10-14T20:32:44,289                     ^
+2020-10-14T20:32:44,289   SyntaxError: invalid syntax
+2020-10-14T20:32:44,289   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2020-10-14T20:32:46,666   Running setup.py develop for ceph
+2020-10-14T20:32:46,666     Running command /root/ceph/src/pybind/mgr/dashboard/node-env/bin/python3.6 -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/root/ceph/src/python-common/setup.py'"'"'; __file__='"'"'/root/ceph/src/python-common/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' develop --no-deps
+2020-10-14T20:32:47,240     running develop
+2020-10-14T20:32:47,428     running egg_info
+2020-10-14T20:32:47,428     writing ceph.egg-info/PKG-INFO
+2020-10-14T20:32:47,431     writing dependency_links to ceph.egg-info/dependency_links.txt
+2020-10-14T20:32:47,431     writing requirements to ceph.egg-info/requires.txt
+2020-10-14T20:32:47,432     writing top-level names to ceph.egg-info/top_level.txt
+2020-10-14T20:32:47,466     reading manifest file 'ceph.egg-info/SOURCES.txt'
+2020-10-14T20:32:47,477     writing manifest file 'ceph.egg-info/SOURCES.txt'
+2020-10-14T20:32:47,477     running build_ext
+2020-10-14T20:32:47,477     Creating /root/ceph/src/pybind/mgr/dashboard/node-env/lib/python3.6/site-packages/ceph.egg-link (link to .)
+2020-10-14T20:32:47,478     Adding ceph 1.0.0 to easy-install.pth file
+
+2020-10-14T20:32:47,478     Installed /root/ceph/src/python-common
+2020-10-14T20:32:47,609 ERROR: After October 2020 you may experience errors when installing or updating packages. This is because pip will change the way that it resolves dependency conflicts.
+2020-10-14T20:32:47,609 
+2020-10-14T20:32:47,609 We recommend you use --use-feature=2020-resolver to test your packages with the new resolver before it becomes the default.
+2020-10-14T20:32:47,609 
+2020-10-14T20:32:47,609 autopep8 1.5.4 requires pycodestyle>=2.6.0, but you'll have pycodestyle 2.5.0 which is incompatible.
+2020-10-14T20:32:47,609 pytest-cov 2.10.1 requires pytest>=4.6, but you'll have pytest 3.10.1 which is incompatible.
+2020-10-14T20:32:47,610 Successfully installed CherryPy-13.1.0 PyJWT-1.6.4 Routes-2.4.1 astroid-2.4.2 atomicwrites-1.4.0 attrs-20.2.0 autopep8-1.5.4 bcrypt-3.1.4 ceph certifi-2020.6.20 cffi-1.14.3 chardet-3.0.4 cheroot-8.4.5 coverage-5.3 cryptography-3.1.1 defusedxml-0.5.0 docutils-0.16 entrypoints-0.3 flake8-3.7.8 flake8-colors-0.1.6 idna-2.7 isodate-0.6.0 isort-4.3.21 jaraco.functools-3.0.1 lazy-object-proxy-1.4.3 lxml-4.5.2 mccabe-0.6.1 more-itertools-4.1.0 portend-2.6 prettytable-0.7.2 pycodestyle-2.5.0 pycparser-2.20 pyfakefs-4.1.0 pyflakes-2.1.1 pylint-2.3.1 pyopenssl-17.5.0 pytest-3.10.1 pytest-cov-2.10.1 pytest-instafail-0.4.2 python3-saml-1.4.1 pytz-2020.1 pyyaml-5.3.1 repoze.lru-0.7 requests-2.20.0 rstcheck-3.3.1 tempora-4.0.0 typed-ast-1.4.1 urllib3-1.24.3 wrapt-1.12.1 xmlsec-1.3.8
+2020-10-14T20:32:47,611 Removed build tracker: '/tmp/pip-req-tracker-7v170y7h'

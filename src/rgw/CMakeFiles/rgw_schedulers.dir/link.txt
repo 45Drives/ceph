@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../lib/librgw_schedulers.a  CMakeFiles/rgw_schedulers.dir/rgw_dmclock_scheduler_ctx.cc.o CMakeFiles/rgw_schedulers.dir/rgw_dmclock_sync_scheduler.cc.o CMakeFiles/rgw_schedulers.dir/rgw_dmclock_async_scheduler.cc.o
+ccache /bin/ranlib ../../lib/librgw_schedulers.a

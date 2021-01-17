@@ -1,0 +1,32 @@
+Metadata-Version: 2.0
+Name: python3-saml
+Version: 1.4.1
+Summary: Onelogin Python Toolkit. Add SAML support to your Python software using this library
+Home-page: https://github.com/onelogin/python3-saml
+Author: OneLogin
+Author-email: support@onelogin.com
+License: MIT
+Keywords: saml saml2 xmlsec django flask pyramid python3
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: isodate (>=0.5.0)
+Requires-Dist: xmlsec (>=0.6.0)
+Requires-Dist: defusedxml (==0.5.0)
+Provides-Extra: test
+Requires-Dist: coverage (>=3.6); extra == 'test'
+Requires-Dist: freezegun (==0.3.5); extra == 'test'
+Requires-Dist: pylint (==1.3.1); extra == 'test'
+Requires-Dist: pep8 (==1.5.7); extra == 'test'
+Requires-Dist: pyflakes (==0.8.1); extra == 'test'
+Requires-Dist: coveralls (==1.1); extra == 'test'
+
+UNKNOWN
+
+

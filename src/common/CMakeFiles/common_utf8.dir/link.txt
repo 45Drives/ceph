@@ -1,0 +1,2 @@
+ccache /bin/ar qc ../../lib/libcommon_utf8.a  CMakeFiles/common_utf8.dir/utf8.c.o
+ccache /bin/ranlib ../../lib/libcommon_utf8.a

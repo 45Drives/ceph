@@ -1,0 +1,1 @@
+ccache /usr/lib64/ccache/c++ -fPIC -g  -shared -Wl,-soname,libec_fail_to_initialize.so -o ../../../lib/libec_fail_to_initialize.so CMakeFiles/ec_fail_to_initialize.dir/ErasureCodePluginFailToInitialize.cc.o -lpthread -ldl /usr/lib64/librt.so -lresolv 
