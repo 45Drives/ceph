@@ -62,6 +62,7 @@ using namespace libradosstriper;
 
 // FKH
 #include "../FKHencrypt/encrypt.h"
+#include <fstream>
 //FKH
 
 using namespace librados;
@@ -660,21 +661,37 @@ static int do_put_encrypted(IoCtx &io_ctx,
                             uint64_t obj_offset, bool create_object,
                             const bool use_striper)
 {
-    // FKH ENC
+    // FKH ENC START
 
     AES_CBC_256 aes;
     std::cout << " CHUNK_SIZE rados.cc: " << aes.CHUNK_SIZE << std::endl;
     
-    const unsigned char* input_raw = reinterpret_cast<const char*>(infile.c_str());
+    unsigned char*  plaintext=( unsigned char*) infile;
+    // unsigned char ciphertext[128];
+    unsigned char *ciphertext= new unsigned char[128];
+    /* A 256 bit key */
+    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+
+    /* A 128 bit IV */
+    unsigned char *iv = (unsigned char *)"0123456789012345";
 
 
-    // FKH ENC
+    int result = aes.encrypt(plaintext, strlen((char *)plaintext), key, iv, ciphertext);
+
+    std::cout << "enc status rados.cc:  " << result  << std::endl;
+    std::cout << "ciphertext rados.cc: " << ciphertext << std::endl;
+
+    
+
+    const char *ciphertext_cons_char = (const char *)ciphertext;
+
+    // FKH ENC END
 
     bool stdio = (strcmp(infile, "-") == 0);
     int ret = 0;
     int fd = STDIN_FILENO;
     if (!stdio)
-        fd = open(infile, O_RDONLY | O_BINARY);
+        fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
     if (fd < 0)
     {
         cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
@@ -735,7 +752,7 @@ out:
     return ret;
 }
 
-// FKH
+// FKH END OF do_put_encrypted()
 
 static int do_append(IoCtx &io_ctx,
                      const std::string &oid, const char *infile, int op_size,

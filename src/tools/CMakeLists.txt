@@ -8,7 +8,7 @@ set(rados_srcs
   ${PROJECT_SOURCE_DIR}/src/common/util.cc
   ${PROJECT_SOURCE_DIR}/src/common/obj_bencher.cc
   ${PROJECT_SOURCE_DIR}/src/osd/ECUtil.cc
-  ${PROJECT_SOURCE_DIR}/src/)
+  ${PROJECT_SOURCE_DIR}/src/tools/FKHencrypt/encrypt.cc)
 
 
 add_executable(rados ${rados_srcs})

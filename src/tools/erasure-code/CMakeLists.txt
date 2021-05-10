@@ -5,7 +5,8 @@ add_executable(ceph-erasure-code-tool
 
 #   find_library(LIBBOX2D Box2D DIRECTORY)
   find_library(libcrypto crypto /libs/)
+  find_library(libssl ssl /libs/)
 
 
-target_link_libraries(ceph-erasure-code-tool global ceph-common libcrypto)
+target_link_libraries(ceph-erasure-code-tool global ceph-common libcrypto libssl)
 install(TARGETS ceph-erasure-code-tool DESTINATION bin)
