@@ -1,0 +1,3 @@
+/home/fatemeh/Desktop/gitProject/vsceph/ceph/src/client/build/CMakeFiles/rebuild_cache.dir
+/home/fatemeh/Desktop/gitProject/vsceph/ceph/src/client/build/CMakeFiles/edit_cache.dir
+/home/fatemeh/Desktop/gitProject/vsceph/ceph/src/client/build/CMakeFiles/client.dir

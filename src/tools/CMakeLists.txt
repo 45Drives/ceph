@@ -1,3 +1,5 @@
+add_subdirectory(FKHencrypt)
+
 set(rados_srcs
   rados/rados.cc
   RadosDump.cc
@@ -5,13 +7,14 @@ set(rados_srcs
   rados/PoolDump.cc
   ${PROJECT_SOURCE_DIR}/src/common/util.cc
   ${PROJECT_SOURCE_DIR}/src/common/obj_bencher.cc
-  ${PROJECT_SOURCE_DIR}/src/osd/ECUtil.cc)
+  ${PROJECT_SOURCE_DIR}/src/osd/ECUtil.cc
+  ${PROJECT_SOURCE_DIR}/src/)
+
+
 add_executable(rados ${rados_srcs})
 
 
-
-
-target_link_libraries(rados librados global ${BLKID_LIBRARIES} ${CMAKE_DL_LIBS})
+target_link_libraries(rados  librados global ${BLKID_LIBRARIES} ${CMAKE_DL_LIBS})
 if(WITH_LIBRADOSSTRIPER)
   target_link_libraries(rados radosstriper)
 else()
