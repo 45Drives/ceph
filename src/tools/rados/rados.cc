@@ -687,22 +687,22 @@ static int do_put_encrypted(IoCtx &io_ctx,
 
     // FKH ENC END
 
-    bool stdio = (strcmp(infile, "-") == 0);
-    int ret = 0;
-    int fd = STDIN_FILENO;
-    if (!stdio)
+    // bool stdio = (strcmp(infile, "-") == 0);
+    // int ret = 0;
+    // int fd = STDIN_FILENO;
+    // if (!stdio)
         fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
-    if (fd < 0)
-    {
-        cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
-        return 1;
-    }
+    // if (fd < 0)
+    // {
+    //     cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
+    //     return 1;
+    // }
     int count = op_size;
     uint64_t offset = obj_offset;
     while (count != 0)
     {
         bufferlist indata;
-        count = indata.read_fd(fd, op_size);
+        // count = indata.read_fd(fd, op_size);
         if (count < 0)
         {
             ret = -errno;
