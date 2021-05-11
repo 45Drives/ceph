@@ -5,12 +5,18 @@
 # find_library(libcrypto crypto ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
 # find_library(libssl ssl ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
 
-find_library(OpenSSL_LIB  libcrypto.a libssl.a)
-find_package(OpenSSL)
+# find_library(OpenSSL_LIB  libcrypto.a libssl.a)
+# find_package(OpenSSL)
+# 
+
+set(OPENSSL_USE_STATIC_LIBS TRUE)
+find_package(OpenSSL REQUIRED)
+
 
 add_executable(FKHENC test_enc.cc encrypt.cc)
 install(TARGETS FKHENC DESTINATION bin)
-target_link_libraries(FKHENC  global ceph-common ${OpenSSL_LIB}  )
+target_link_libraries(FKHENC  global ceph-common OpenSSL::Crypto OpenSSL::SSL #${OpenSSL_LIB} 
+ )
 
 
 
