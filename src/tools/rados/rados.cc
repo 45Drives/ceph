@@ -3069,7 +3069,7 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
             return 1;
         }
     }
-    else if (strcmp(nargs[0], "put_enc") == 0)
+    else if (strcmp(nargs[0], "put-enc") == 0)
     {
         if (!pool_name || nargs.size() < (obj_name ? 2 : 3))
         {
