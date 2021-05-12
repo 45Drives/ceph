@@ -688,7 +688,7 @@ static int do_put_encrypted(IoCtx &io_ctx,
     // FKH ENC END
 
     // bool stdio = (strcmp(infile, "-") == 0);
-    // int ret = 0;
+    int ret = 0;
     // int fd = STDIN_FILENO;
     // if (!stdio)
         // fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
@@ -746,7 +746,7 @@ static int do_put_encrypted(IoCtx &io_ctx,
         offset += count;
     }
     ret = 0;
-// out:
+out:
     // if (fd != STDOUT_FILENO)
     //     VOID_TEMP_FAILURE_RETRY(close(fd));
     return ret;
