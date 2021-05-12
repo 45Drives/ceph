@@ -691,7 +691,7 @@ static int do_put_encrypted(IoCtx &io_ctx,
     // int ret = 0;
     // int fd = STDIN_FILENO;
     // if (!stdio)
-        fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
+        // fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
     // if (fd < 0)
     // {
     //     cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
@@ -703,12 +703,12 @@ static int do_put_encrypted(IoCtx &io_ctx,
     {
         bufferlist indata;
         // count = indata.read_fd(fd, op_size);
-        if (count < 0)
-        {
-            ret = -errno;
-            cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
-            goto out;
-        }
+        // if (count < 0)
+        // {
+        //     ret = -errno;
+        //     cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
+        //     goto out;
+        // }
 
         if (count == 0)
         {
@@ -746,9 +746,9 @@ static int do_put_encrypted(IoCtx &io_ctx,
         offset += count;
     }
     ret = 0;
-out:
-    if (fd != STDOUT_FILENO)
-        VOID_TEMP_FAILURE_RETRY(close(fd));
+// out:
+    // if (fd != STDOUT_FILENO)
+    //     VOID_TEMP_FAILURE_RETRY(close(fd));
     return ret;
 }
 
