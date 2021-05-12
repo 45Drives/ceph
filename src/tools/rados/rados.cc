@@ -703,12 +703,12 @@ static int do_put_encrypted(IoCtx &io_ctx,
     {
         bufferlist indata;
         // count = indata.read_fd(fd, op_size);
-        // if (count < 0)
-        // {
-        //     ret = -errno;
-        //     cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
-        //     goto out;
-        // }
+        if (count < 0)
+        {
+            ret = -errno;
+            cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
+            goto out;
+        }
 
         if (count == 0)
         {
