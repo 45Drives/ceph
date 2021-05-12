@@ -663,12 +663,25 @@ static int do_put_encrypted(IoCtx &io_ctx,
 {
     // FKH ENC START
 
+    /*Read infile*/
+    std::ifstream in(infile);
+    std::string strFile((std::istreambuf_iterator<char>(in)),
+                        std::istreambuf_iterator<char>());
+    auto contents = strFile.c_str();
+    auto plaintext = reinterpret_cast<unsigned char *>(const_cast<char *>(contents));
+
+
+
+
     AES_CBC_256 aes;
-    std::cout << " CHUNK_SIZE rados.cc: " << aes.CHUNK_SIZE << std::endl;
-    
-    unsigned char*  plaintext=( unsigned char*) infile;
-    // unsigned char ciphertext[128];
+
+    /* Buffer for the decrypted text */
+    unsigned char *decryptedtext= new unsigned char[128];
     unsigned char *ciphertext= new unsigned char[128];
+
+    int decryptedtext_len, ciphertext_len;
+
+    // unsigned char ciphertext[128];
     /* A 256 bit key */
     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
 
@@ -676,33 +689,41 @@ static int do_put_encrypted(IoCtx &io_ctx,
     unsigned char *iv = (unsigned char *)"0123456789012345";
 
 
-    int result = aes.encrypt(plaintext, strlen((char *)plaintext), key, iv, ciphertext);
+ /* Encrypt the plaintext */
+    ciphertext_len = aes.encrypt(plaintext, strlen((char *)plaintext), key, iv,ciphertext);
 
-    std::cout << "enc status rados.cc:  " << result  << std::endl;
+
+    std::cout << "ciphertext_len rados.cc:  " << ciphertext_len  << std::endl;
     std::cout << "ciphertext rados.cc: " << ciphertext << std::endl;
+
+    printf("Ciphertext is:\n");
+    BIO_dump_fp(stdout, (const char *)ciphertext, ciphertext_len);
+
+        std::cout << "###################### END OF ENCRYPTION #############################" << std::endl;
+
 
     
 
-    const char *ciphertext_cons_char = (const char *)ciphertext;
+    // const char *ciphertext_cons_char = (const char *)ciphertext;
 
     // FKH ENC END
 
-    // bool stdio = (strcmp(infile, "-") == 0);
+    bool stdio = (strcmp(infile, "-") == 0);
     int ret = 0;
-    // int fd = STDIN_FILENO;
-    // if (!stdio)
-        // fd = open(ciphertext_cons_char, O_RDONLY | O_BINARY);
-    // if (fd < 0)
-    // {
-    //     cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
-    //     return 1;
-    // }
+    int fd = STDIN_FILENO;
+    if (!stdio)
+        fd = open(infile, O_RDONLY | O_BINARY);
+    if (fd < 0)
+    {
+        cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
+        return 1;
+    }
     int count = op_size;
     uint64_t offset = obj_offset;
     while (count != 0)
     {
         bufferlist indata;
-        // count = indata.read_fd(fd, op_size);
+        count = indata.read_fd(fd, op_size);
         if (count < 0)
         {
             ret = -errno;
@@ -747,8 +768,8 @@ static int do_put_encrypted(IoCtx &io_ctx,
     }
     ret = 0;
 out:
-    // if (fd != STDOUT_FILENO)
-    //     VOID_TEMP_FAILURE_RETRY(close(fd));
+    if (fd != STDOUT_FILENO)
+        VOID_TEMP_FAILURE_RETRY(close(fd));
     return ret;
 }
 
