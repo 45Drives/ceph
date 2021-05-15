@@ -13,3 +13,5 @@ rados put-enc object1 file.txt -p testpool
 
 
 
+[IMPORTANT WARNING] The library is still in the development stage and errors are not handled comprehensively! 
+It also requires testing to validate the functionality, security, and performance.
