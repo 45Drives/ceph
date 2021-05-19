@@ -699,31 +699,40 @@ static int do_put_encrypted(IoCtx &io_ctx,
     printf("Ciphertext is:\n");
     BIO_dump_fp(stdout, (const char *)ciphertext, ciphertext_len);
 
-        std::cout << "###################### END OF ENCRYPTION #############################" << std::endl;
+    std::ofstream encfile("enc.txt", std::ios::out | std::ios::binary);
+    ciphertext[ciphertext_len]  = '\0';
+    encfile << ciphertext;
+    encfile.close();
+
+// [TO DO] apppend the "enc_str" to the infile
+ std::string enc_str(reinterpret_cast<char *>(ciphertext), ciphertext_len);
+
+ std::cout << "###################### END OF ENCRYPTION #############################" << std::endl;
 
 
-    
 
-    // const char *ciphertext_cons_char = (const char *)ciphertext;
-
-    // FKH ENC END
-
-    bool stdio = (strcmp(infile, "-") == 0);
-    int ret = 0;
-    int fd = STDIN_FILENO;
-    if (!stdio)
-        fd = open(infile, O_RDONLY | O_BINARY);
-    if (fd < 0)
-    {
-        cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
-        return 1;
+ // FKH ENC END
+infile = "enc.txt";
+ bool stdio = (strcmp(infile, "-") == 0);
+ int ret = 0;
+ int fd = STDIN_FILENO;
+ if (!stdio)
+     fd = open(infile, O_RDONLY | O_BINARY);
+ if (fd < 0)
+ {
+     cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
+     return 1;
     }
     int count = op_size;
+    // buffer::ptr enc_buf(ciphertext_len);
+    // int count = ciphertext_len;
     uint64_t offset = obj_offset;
     while (count != 0)
     {
         bufferlist indata;
+       
         count = indata.read_fd(fd, op_size);
+        //  indata.append(enc_str);
         if (count < 0)
         {
             ret = -errno;
@@ -735,7 +744,7 @@ static int do_put_encrypted(IoCtx &io_ctx,
         {
             if (offset == obj_offset)
             {                                                               // in case we have to create an empty object & if obj_offset > 0 do a hole
-                ret = detail::write_full(io_ctx, oid, indata, use_striper); // indata is empty
+                ret = detail::write_full(io_ctx, oid, indata, use_striper); // indata is empty 
 
                 if (ret < 0)
                 {

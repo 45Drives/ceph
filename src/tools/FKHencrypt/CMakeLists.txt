@@ -1,14 +1,4 @@
 
-# FKH start (FKHENC)
-
-#   find_library(LIBBOX2D Box2D DIRECTORY)
-# find_library(libcrypto crypto ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
-# find_library(libssl ssl ${CMAKE_CURRENT_SOURCE_DIR}/libs/)
-
-# find_library(OpenSSL_LIB  libcrypto.a libssl.a)
-# find_package(OpenSSL)
-# 
-
 set(OPENSSL_USE_STATIC_LIBS TRUE)
 find_package(OpenSSL REQUIRED)
 
@@ -23,4 +13,3 @@ target_link_libraries(FKHENC  global ceph-common OpenSSL::Crypto OpenSSL::SSL #$
 message(STATUS "@@@@@@@@@@@@@@@@@@@ ${FKHENC} @@@@@@@@@@@@@@@@@@@")
 
 
-# FKH end (FKHENC)

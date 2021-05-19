@@ -7,7 +7,7 @@ Instruction:
 
 Clone "fkhpacific" git repository, install and deploy Ceph cluster. The "put-enc" keyword stores file encrypted in the cluster. 
 
-Example: the following command stores the "file.txt" encrypted into testpool through object1
+Example: the following command stores the "file.txt" encrypted into the "testpool" pool through "object1"
 
 rados put-enc object1 file.txt -p testpool
 
