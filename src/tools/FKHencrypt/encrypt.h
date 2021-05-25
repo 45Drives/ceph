@@ -1,3 +1,6 @@
+#ifndef ENCRYPT_H   
+#define ENCRYPT_H
+#endif
 
 
 #include <iostream>
@@ -62,4 +65,9 @@ bool decrypt(bufferlist& input, off_t in_ofs,
                        long unsigned int size, bufferlist& output,
                        off_t stream_offset);
 
+
+int decrypt(unsigned char *ciphertext, int ciphertext_len, unsigned char *key,
+            unsigned char *iv, unsigned char *plaintext);
+
 };
+

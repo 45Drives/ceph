@@ -1,4 +1,4 @@
-add_subdirectory(FKHencrypt)
+add_subdirectory(FKHencrypt) #FKH
 
 set(rados_srcs
   rados/rados.cc
