@@ -4951,6 +4951,35 @@ int main(int argc, const char **argv)
         }
     }
 
+
+     for (auto j = args.begin(); j != args.end(); ++j)
+    {
+        if (strcmp(*j, "--") == 0)
+        {
+            break;
+        }
+        else if ((j + 1) == args.end())
+        {
+            // This can't be a formatting call (no format arg)
+            break;
+        }
+        else if (strcmp(*j, "-f") == 0)
+        {
+            val = *(j + 1);
+            unique_ptr<Formatter> formatter(Formatter::create(val.c_str()));
+
+            if (formatter)
+            {
+                j = args.erase(j);
+                opts["format"] = val;
+
+                j = args.erase(j);
+                break;
+            }
+        }
+    }
+
+
     auto cct = global_init(NULL, args, CEPH_ENTITY_TYPE_CLIENT,
                            CODE_ENVIRONMENT_UTILITY, 0);
     common_init_finish(g_ceph_context);

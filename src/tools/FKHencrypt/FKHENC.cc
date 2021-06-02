@@ -163,7 +163,8 @@ infile = "enc.txt";
      fd = open(infile, O_RDONLY | O_BINARY);
  if (fd < 0)
  {
-     cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
+     cerr << "error reading input file " << infile << std::endl;
+    //  cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
      return 1;
     }
     int count = op_size;
