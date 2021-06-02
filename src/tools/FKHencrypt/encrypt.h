@@ -1,6 +1,6 @@
-#ifndef ENCRYPT_H   
-#define ENCRYPT_H
-#endif
+// #ifndef ENCRYPT_H   
+// #define ENCRYPT_H
+// #endif
 
 
 #include <iostream>

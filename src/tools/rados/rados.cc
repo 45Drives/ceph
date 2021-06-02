@@ -666,7 +666,7 @@ out:
 }
 
 // FKH store encrypted object
-namespace FKH {
+// namespace FKH {
 
 static int do_put_encrypted(IoCtx &io_ctx,
                             const std::string &oid, const char *infile, int op_size,
@@ -796,7 +796,7 @@ out:
 
 // FKH END OF do_put_encrypted()
     
-}
+// }
 // END of namespace FKH
 
 
@@ -3134,7 +3134,7 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
             in_filename = nargs[2];
         }
         bool create_object = !obj_offset_specified;
-        ret = FKH::do_put_encrypted(io_ctx, *obj_name, in_filename, op_size, obj_offset, create_object, use_striper);
+        ret = do_put_encrypted(io_ctx, *obj_name, in_filename, op_size, obj_offset, create_object, use_striper);
         if (ret < 0)
         {
             cerr << "error putting " << pool_name << "/" << prettify(*obj_name) << ": " << cpp_strerror(ret) << std::endl;
@@ -4900,6 +4900,7 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
         cerr << "error " << (-ret) << ": " << cpp_strerror(ret) << std::endl;
 
     return (ret < 0) ? 1 : 0;
+    
 }
 
 int main(int argc, const char **argv)

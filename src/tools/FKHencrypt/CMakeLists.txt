@@ -3,13 +3,21 @@ set(OPENSSL_USE_STATIC_LIBS TRUE)
 find_package(OpenSSL REQUIRED)
 
 
-add_executable(FKHENC test_enc.cc encrypt.cc )
-install(TARGETS FKHENC DESTINATION bin)
-target_link_libraries(FKHENC  global ceph-common OpenSSL::Crypto OpenSSL::SSL #${OpenSSL_LIB} 
+add_executable(FKHENC FKHENC.cc encrypt.cc )
+
+target_link_libraries(FKHENC  global librados ceph-common OpenSSL::Crypto OpenSSL::SSL #${OpenSSL_LIB} 
  )
 
+if(WITH_LIBRADOSSTRIPER)
+  target_link_libraries(FKHENC radosstriper)
+else()
+  target_link_libraries(FKHENC cls_lock_client)
+endif()
+install(TARGETS FKHENC DESTINATION bin)
 
 
-message(STATUS "@@@@@@@@@@@@@@@@@@@ ${FKHENC} @@@@@@@@@@@@@@@@@@@")
+
+
+message(STATUS " -----------------------[ FKHENC API ]------------------------ ")
 
 

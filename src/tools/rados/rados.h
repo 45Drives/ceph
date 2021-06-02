@@ -56,10 +56,4 @@ using namespace librados;
 using ceph::util::generate_random_number;
 
 
-namespace FKH {
-static int do_put_encrypted(IoCtx &io_ctx,
-                            const std::string &oid, const char *infile, int op_size,
-                            uint64_t obj_offset, bool create_object,
-                            const bool use_striper);
-}
 
