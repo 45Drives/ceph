@@ -14,8 +14,6 @@
 using namespace libradosstriper;
 #endif
 //
-// using namespace librados;
-
 
 unsigned default_op_size = 1 << 22;
 static const unsigned MAX_OMAP_BYTES_PER_REQUEST = 1 << 10;
@@ -28,7 +26,7 @@ void usage(ostream &out)
            "                                 fetch object\n"
            "   put <obj-name> <infile>  <pool-name>\n"
            "                                    write encrypted object with start offset (default:0)\n";
-    // generic_client_usage();
+    generic_client_usage();
 }
 
 
@@ -38,19 +36,17 @@ void usage(ostream &out)
     exit(1);
 }
 
-
-bool argparse_need_usage(const std::vector<const char*>& args)
+static std::string prettify(const std::string &s)
 {
-  if (args.empty()) {
-    return true;
-  }
-  for (auto a : args) {
-    if (strcmp(a, "-h") == 0 ||
-	strcmp(a, "--help") == 0) {
-      return true;
+    if (std::find_if_not(s.begin(), s.end(),
+                         (int (*)(int))isprint) != s.end())
+    {
+        return "(binary key)";
     }
-  }
-  return false;
+    else
+    {
+        return s;
+    }
 }
 
 namespace fkhdetail
@@ -237,33 +233,16 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
 {
 
     int ret;
-    bool create_pool = false;
     const char *pool_name = NULL;
-    const char *target_pool_name = NULL;
     unsigned op_size = default_op_size;
-    unsigned object_size = 0;
-    unsigned max_objects = 0;
     uint64_t obj_offset = 0;
     bool obj_offset_specified = false;
-    bool block_size_specified = false;
     bool use_striper = false;
     std::map<std::string, std::string>::const_iterator i;
 
 
-    uint64_t offset_align = 0;
-    uint64_t min_obj_len = 0;
-    uint64_t max_obj_len = 0;
-    uint64_t min_op_len = 0;
-    uint64_t max_op_len = 0;
-    uint64_t max_ops = 0;
-    uint64_t max_backlog = 0;
-    uint64_t target_throughput = 0;
-    int64_t read_percent = -1;
-    uint64_t num_objs = 0;
-    int run_length = 0;
-
-
-    // std::string input_file;
+ 
+   // std::string input_file;
     std::optional<std::string> obj_name;
 
     Rados rados;
@@ -275,11 +254,8 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
     {
         pool_name = i->second.c_str();
     }
-    // i = opts.find("input_file");
-    // if (i != opts.end())
-    // {
-    //     input_file = i->second;
-    // }
+    
+
 
     // open rados
     ret = rados.init_with_context(g_ceph_context);
@@ -297,7 +273,65 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
     }
 
 
-    ceph_assert(!nargs.empty());
+
+i = opts.find("pgid");
+    boost::optional<pg_t> pgid(i != opts.end(), pg_t());
+    if (pgid && (!pgid->parse(i->second.c_str()) || (pool_name && rados.pool_lookup(pool_name) != pgid->pool())))
+    {
+        cerr << "invalid pgid" << std::endl;
+        return 1;
+    }
+
+
+ // open io context.
+    if (pool_name || pgid)
+    {
+        ret = pool_name ? rados.ioctx_create(pool_name, io_ctx) : rados.ioctx_create2(pgid->pool(), io_ctx);
+        if (ret < 0)
+        {
+            cerr << "error opening pool "
+                 << (pool_name ? pool_name : std::string("with id ") + std::to_string(pgid->pool())) << ": "
+                 << cpp_strerror(ret) << std::endl;
+            return 1;
+        }
+
+        // align op_size
+        {
+            bool requires;
+            ret = io_ctx.pool_requires_alignment2(&requires);
+            if (ret < 0)
+            {
+                cerr << "error checking pool alignment requirement"
+                     << cpp_strerror(ret) << std::endl;
+                return 1;
+            }
+
+            if (requires)
+            {
+                uint64_t align = 0;
+                ret = io_ctx.pool_required_alignment2(&align);
+                if (ret < 0)
+                {
+                    cerr << "error getting pool alignment"
+                         << cpp_strerror(ret) << std::endl;
+                    return 1;
+                }
+
+                const uint64_t prev_op_size = op_size;
+                op_size = uint64_t((op_size + align - 1) / align) * align;
+                // Warn: if user specified and it was rounded
+                if (prev_op_size != default_op_size && prev_op_size != op_size)
+                    cerr << "INFO: op_size has been rounded to " << op_size << std::endl;
+            }
+        }
+
+    }
+
+
+
+
+
+         ceph_assert(!nargs.empty());
 
      if (strcmp(nargs[0], "put") == 0)
         {
@@ -320,12 +354,21 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
             ret = put_encrypted(io_ctx, *obj_name, in_filename, op_size, obj_offset, create_object, use_striper);
             if (ret < 0)
             {
-                cerr << "error putting " << pool_name << "/" << *obj_name << ": " << cpp_strerror(ret) << std::endl;
+                cerr << "error putting " << pool_name << "/" << prettify(*obj_name)<< ": " << cpp_strerror(ret) << std::endl;
                 return 1;
             }
         }
-    
-    }
+        else
+        {
+            cerr << "unrecognized command FKHENC API" << nargs[0] << "; -h or --help for usage" << std::endl;
+            ret = -EINVAL;
+        }
+
+        if (ret < 0)
+            cerr << "error " << (-ret) << ": " << cpp_strerror(ret) << std::endl;
+
+        return (ret < 0) ? 1 : 0;
+}
 
 
 
@@ -347,10 +390,47 @@ int main(int argc, const char **argv)
         exit(0);
     }
 
-
-    // FKH adds input parameters such as poolname into the vector i
     std::map<std::string, std::string> opts;
     std::string val;
+
+    for (auto j = args.begin(); j != args.end(); ++j)
+    {
+        if (strcmp(*j, "--") == 0)
+        {
+            break;
+        }
+        else if ((j + 1) == args.end())
+        {
+            // This can't be a formatting call (no format arg)
+            break;
+        }
+        else if (strcmp(*j, "-f") == 0)
+        {
+            val = *(j + 1);
+            unique_ptr<Formatter> formatter(Formatter::create(val.c_str()));
+
+            if (formatter)
+            {
+                j = args.erase(j);
+                opts["format"] = val;
+
+                j = args.erase(j);
+                break;
+            }
+        }
+    }
+
+
+
+
+
+      // FKH initializing Ceph required environment values
+    auto cct = global_init(NULL, args, CEPH_ENTITY_TYPE_CLIENT,
+                           CODE_ENVIRONMENT_UTILITY, 0);
+    common_init_finish(g_ceph_context);
+
+
+    // FKH adds input parameters such as poolname into the vector i
     std::vector<const char *>::iterator i;
     for (i = args.begin(); i != args.end();)
     {
@@ -372,15 +452,11 @@ int main(int argc, const char **argv)
     }
 
     
-
-      // FKH initializing Ceph required environment values
-    auto cct = global_init(NULL, args, CEPH_ENTITY_TYPE_CLIENT,
-                           CODE_ENVIRONMENT_UTILITY, 0);
-    common_init_finish(g_ceph_context);
-
-
-
-
+ if (args.empty())
+    {
+        cerr << "FKHENC: you must give an action. Try --help" << std::endl;
+        return 1;
+    }
 
     return FKHENC_tool_common(opts, args);
 }

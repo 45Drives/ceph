@@ -49,7 +49,6 @@ using namespace libradosstriper;
 
 // FKH
 // #include "../FKHencrypt/encrypt.h"
-#include <fstream>
 //FKH
 
 using namespace librados;

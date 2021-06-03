@@ -2832,7 +2832,6 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
             formatter->flush(cout);
         }
     }
-
     else if (strcmp(nargs[0], "ls") == 0)
     {
         if (!pool_name && !pgid)
@@ -3851,7 +3850,6 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
         }
         cout << snaps.size() << " snaps" << std::endl;
     }
-
     else if (strcmp(nargs[0], "mksnap") == 0)
     {
         if (!pool_name || nargs.size() < 2)
@@ -3876,7 +3874,6 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
         }
         cout << "created pool " << pool_name << " snap " << nargs[1] << std::endl;
     }
-
     else if (strcmp(nargs[0], "rmsnap") == 0)
     {
         if (!pool_name || nargs.size() < 2)
@@ -3894,7 +3891,6 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
         }
         cout << "removed pool " << pool_name << " snap " << nargs[1] << std::endl;
     }
-
     else if (strcmp(nargs[0], "rollback") == 0)
     {
         if (!pool_name || nargs.size() < 3)
@@ -4904,7 +4900,9 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
 }
 
 int main(int argc, const char **argv)
-{
+{   std::cout << "---------------- [ rados API ] ---------------- " << std::endl;
+
+
     vector<const char *> args;
     argv_to_vec(argc, argv, args);
     if (args.empty())
@@ -4917,6 +4915,8 @@ int main(int argc, const char **argv)
         usage(cout);
         exit(0);
     }
+
+
 
     std::map<std::string, std::string> opts;
     std::string val;
@@ -4952,32 +4952,6 @@ int main(int argc, const char **argv)
     }
 
 
-     for (auto j = args.begin(); j != args.end(); ++j)
-    {
-        if (strcmp(*j, "--") == 0)
-        {
-            break;
-        }
-        else if ((j + 1) == args.end())
-        {
-            // This can't be a formatting call (no format arg)
-            break;
-        }
-        else if (strcmp(*j, "-f") == 0)
-        {
-            val = *(j + 1);
-            unique_ptr<Formatter> formatter(Formatter::create(val.c_str()));
-
-            if (formatter)
-            {
-                j = args.erase(j);
-                opts["format"] = val;
-
-                j = args.erase(j);
-                break;
-            }
-        }
-    }
 
 
     auto cct = global_init(NULL, args, CEPH_ENTITY_TYPE_CLIENT,
