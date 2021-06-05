@@ -2474,7 +2474,8 @@ namespace librbd {
   ssize_t Image::read(uint64_t ofs, size_t len, bufferlist& bl)
   {
     ImageCtx *ictx = (ImageCtx *)ctx;
-    tracepoint(librbd, read_enter, ictx, ictx->name.c_str(), ictx->snap_name.c_str(), ictx->read_only, ofs, len);
+    tracepoint(librbd, read_enter, ictx, ictx->name.c_str(), ictx->snap_name.c_str(), 
+    ictx->read_only, ofs, len);
     bufferptr ptr(len);
     bl.push_back(std::move(ptr));
 
