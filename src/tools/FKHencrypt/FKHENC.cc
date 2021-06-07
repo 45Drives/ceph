@@ -358,8 +358,8 @@ static int put_encrypted(IoCtx &io_ctx,
     ciphertext_len = aes.encrypt(plaintext, strlen((char *)plaintext), key, iv, ciphertext);
 
 
-    std::cout << "ciphertext_len rados.cc:  " << ciphertext_len  << std::endl;
-    std::cout << "ciphertext rados.cc: " << ciphertext << std::endl;
+    std::cout << "ciphertext_len FKHENC.cc:  " << ciphertext_len  << std::endl;
+    std::cout << "ciphertext FKHENC.cc: " << ciphertext << std::endl;
 
     printf("Ciphertext is:\n");
     BIO_dump_fp(stdout, (const char *)ciphertext, ciphertext_len);
@@ -453,14 +453,14 @@ out:
 // FKH END OF put_encrypted()
 
 
-// FKH get_encrypted()
+// FKH get_decrypted()
 
 
 
-static int get_encrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile, 
+static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile, 
                             unsigned op_size, [[maybe_unused]] const bool use_striper)
 {
-    std::cout<< "--------------[ FKH get_encrypted function started ]--------------  " << std::endl;
+    std::cout<< "--------------[ FKH get_decrypted function started ]--------------  " << std::endl;
     int fd;
     if (strcmp(outfile, "-") == 0)
     {
@@ -485,17 +485,13 @@ static int get_encrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     while (true)
     {
         bufferlist outdata;
-        
-
         ret = fkhdetail::read(io_ctx, oid_enc, outdata, op_size, offset, use_striper);
 
 
         // FKH START of Decryption Process
         AES_CBC_256 aes;
 
-        unsigned char *ciphertext; 
-        int ciphertext_len;
-        unsigned char *plaintext= new unsigned char[128];
+        
         
         //Set up Key and IV
         unsigned char *key;
@@ -505,10 +501,32 @@ static int get_encrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
         iv = values["iv"];
 
      
-        // decryptedtext_len = aes.decrypt(ciphertext, ciphertext_len, unsigned key, iv, plaintext);
 
-        std::string bf_to_str=outdata.c_str();
+
+        // convert bufferlist to string
+        std::string bf_to_str = outdata.c_str();
         std::cout<< " --------------[ bf_to_str ]-------------- : "<<bf_to_str << std::endl;
+
+        int ciphertext_len = bf_to_str.size();
+        unsigned char *plaintext= new unsigned char[128];
+        unsigned char* ciphertext = (unsigned char*) bf_to_str.c_str();
+        // unsigned char *ciphertext = reinterpret_cast<unsigned char *>(const_cast<char *>(bf_to_str));
+
+        int decryptedtext_len = aes.decrypt(ciphertext, ciphertext_len, key, iv, plaintext);
+
+
+
+        std::ofstream encfile("enc.txt", std::ios::out | std::ios::binary);
+        plaintext[decryptedtext_len] = '\0';
+        std::cout << " --------------[ plaintext ]-------------- : " << plaintext << std::endl;
+        encfile.close();
+
+
+        // convert plaintext to bufferlist so that pass it to the 
+        std::string plain_str(reinterpret_cast<char *>(plaintext), decryptedtext_len);
+        bufferlist str_to_bf= buffer::list::static_from_string(plain_str);
+        std::cout << " --------------[ plain_str conversion to bufferlist outdata   ]--------------  " <<  std::endl;
+
         // FKH END of Decryption Process
 
 
@@ -516,15 +534,16 @@ static int get_encrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
         {
             goto out;
         }
-        ret = outdata.write_fd(fd);
+        // ret = outdata.write_fd(fd);
+        ret = str_to_bf.write_fd(fd);
         if (ret < 0)
         {
             cerr << "error writing to file: " << cpp_strerror(ret) << std::endl;
             goto out;
         }
-        if (outdata.length() < op_size)
+        if (str_to_bf.length() < op_size)
             break;
-        offset += outdata.length();
+        offset += str_to_bf.length();
     }
     ret = 0;
 
@@ -536,7 +555,7 @@ out:
 
 
 
-// FKH END of get_encrypted()
+// FKH END of get_decrypted()
 
 
 
@@ -719,29 +738,29 @@ i = opts.find("pgid");
             }
         }
         else if (strcmp(nargs[0], "get") == 0)
-    {
-        if (!pool_name || nargs.size() < (obj_name ? 2 : 3))
         {
-            usage(cerr);
-            return 1;
+            if (!pool_name || nargs.size() < (obj_name ? 2 : 3))
+            {
+                usage(cerr);
+                return 1;
+            }
+            const char *out_filename;
+            if (obj_name)
+            {
+                out_filename = nargs[1];
+            }
+            else
+            {
+                obj_name = nargs[1];
+                out_filename = nargs[2];
+            }
+            ret = get_decrypted(io_ctx, *obj_name, out_filename, op_size, use_striper);
+            if (ret < 0)
+            {
+                cerr << "error getting " << pool_name << "/" << prettify(*obj_name) << ": " << cpp_strerror(ret) << std::endl;
+                return 1;
+            }
         }
-        const char *out_filename;
-        if (obj_name)
-        {
-            out_filename = nargs[1];
-        }
-        else
-        {
-            obj_name = nargs[1];
-            out_filename = nargs[2];
-        }
-        ret = get_encrypted(io_ctx, *obj_name, out_filename, op_size, use_striper);
-        if (ret < 0)
-        {
-            cerr << "error getting " << pool_name << "/" << prettify(*obj_name) << ": " << cpp_strerror(ret) << std::endl;
-            return 1;
-        }
-    }
         else
         {
             cerr << "unrecognized command FKHENC API" << nargs[0] << "; -h or --help for usage" << std::endl;

@@ -1,5 +1,7 @@
 
 set(OPENSSL_USE_STATIC_LIBS TRUE)
+set(CMAKE_CXX_FLAGS "-std=gnu++11 -ggdb")
+
 find_package(OpenSSL REQUIRED)
 
 

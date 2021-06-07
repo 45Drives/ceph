@@ -1,15 +1,16 @@
 
 
 
-This API adds cryptography functionality to the Ceph cluser through "rados" API. 
+This API adds cryptography functionality to the Ceph cluser through "FKHENC" API. 
 
 Instruction:
 
-Clone "fkhpacific" git repository, following the repository instruction, install and deploy Ceph cluster. 
+Clone "fkhpacific" branch, follow the repository install instruction, afterward deploy a Ceph cluster. 
+For storig a file encrypted, try following command:
 
-Example: FKHENC put object1 file1 -p pool01
+ "FKHENC put object1 file1 -p pool01"
 
-This command, stores the "file1" encrypted into the "object1/pool01"  through "FKHENC" API.
+This command, stores the "file1" encrypted into the "object1" of "pool01"  through "FKHENC" API.
 
 
 
