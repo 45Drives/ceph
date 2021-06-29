@@ -6,6 +6,7 @@
 #include <stdint.h>
 
 #include "encrypt.h"
+#include "Crypto.h"
 #include "../rados/rados.h"
 
 // 
@@ -50,21 +51,7 @@ static std::string prettify(const std::string &s)
 }
 
 
-template <typename I, typename T>
-static int rados_sistrtoll(I &i, T *val)
-{
-    std::string err;
-    *val = strict_iecstrtoll(i->second.c_str(), &err);
-    if (err != "")
-    {
-        cerr << "Invalid value for " << i->first << ": " << err << std::endl;
-        return -EINVAL;
-    }
-    else
-    {
-        return 0;
-    }
-}
+
 
 
 namespace fkhdetail
@@ -122,189 +109,6 @@ int write([[maybe_unused]] IoCtx &io_ctx, const std::string &oid, buffer::list &
 } // END of name space fkhdetail
 
 
-// static int do_lock_cmd(std::vector<const char *> &nargs,
-//                        const std::map<std::string, std::string> &opts,
-//                        IoCtx *ioctx,
-//                        Formatter *formatter)
-// {
-//     if (nargs.size() < 3)
-//         usage_exit();
-
-//     string cmd(nargs[1]);
-//     string oid(nargs[2]);
-
-//     string lock_tag;
-//     string lock_cookie;
-//     string lock_description;
-//     int lock_duration = 0;
-//     ClsLockType lock_type = ClsLockType::EXCLUSIVE;
-
-//     map<string, string>::const_iterator i;
-//     i = opts.find("lock-tag");
-//     if (i != opts.end())
-//     {
-//         lock_tag = i->second;
-//     }
-//     i = opts.find("lock-cookie");
-//     if (i != opts.end())
-//     {
-//         lock_cookie = i->second;
-//     }
-//     i = opts.find("lock-description");
-//     if (i != opts.end())
-//     {
-//         lock_description = i->second;
-//     }
-//     i = opts.find("lock-duration");
-//     if (i != opts.end())
-//     {
-//         if (rados_sistrtoll(i, &lock_duration))
-//         {
-//             return -EINVAL;
-//         }
-//     }
-//     i = opts.find("lock-type");
-//     if (i != opts.end())
-//     {
-//         const string &type_str = i->second;
-//         if (type_str.compare("exclusive") == 0)
-//         {
-//             lock_type = ClsLockType::EXCLUSIVE;
-//         }
-//         else if (type_str.compare("shared") == 0)
-//         {
-//             lock_type = ClsLockType::SHARED;
-//         }
-//         else
-//         {
-//             cerr << "unknown lock type was specified, aborting" << std::endl;
-//             return -EINVAL;
-//         }
-//     }
-
-//     if (cmd.compare("list") == 0)
-//     {
-//         list<string> locks;
-//         int ret = rados::cls::lock::list_locks(ioctx, oid, &locks);
-//         if (ret < 0)
-//         {
-//             cerr << "ERROR: rados_list_locks(): " << cpp_strerror(ret) << std::endl;
-//             return ret;
-//         }
-
-//         formatter->open_object_section("object");
-//         formatter->dump_string("objname", oid);
-//         formatter->open_array_section("locks");
-//         list<string>::iterator iter;
-//         for (iter = locks.begin(); iter != locks.end(); ++iter)
-//         {
-//             formatter->open_object_section("lock");
-//             formatter->dump_string("name", *iter);
-//             formatter->close_section();
-//         }
-//         formatter->close_section();
-//         formatter->close_section();
-//         formatter->flush(cout);
-//         return 0;
-//     }
-
-//     if (nargs.size() < 4)
-//         usage_exit();
-
-//     string lock_name(nargs[3]);
-
-//     if (cmd.compare("info") == 0)
-//     {
-//         map<rados::cls::lock::locker_id_t, rados::cls::lock::locker_info_t> lockers;
-//         ClsLockType type = ClsLockType::NONE;
-//         string tag;
-//         int ret = rados::cls::lock::get_lock_info(ioctx, oid, lock_name, &lockers, &type, &tag);
-//         if (ret < 0)
-//         {
-//             cerr << "ERROR: rados_lock_get_lock_info(): " << cpp_strerror(ret) << std::endl;
-//             return ret;
-//         }
-
-//         formatter->open_object_section("lock");
-//         formatter->dump_string("name", lock_name);
-//         formatter->dump_string("type", cls_lock_type_str(type));
-//         formatter->dump_string("tag", tag);
-//         formatter->open_array_section("lockers");
-//         map<rados::cls::lock::locker_id_t, rados::cls::lock::locker_info_t>::iterator iter;
-//         for (iter = lockers.begin(); iter != lockers.end(); ++iter)
-//         {
-//             const rados::cls::lock::locker_id_t &id = iter->first;
-//             const rados::cls::lock::locker_info_t &info = iter->second;
-//             formatter->open_object_section("locker");
-//             formatter->dump_stream("name") << id.locker;
-//             formatter->dump_string("cookie", id.cookie);
-//             formatter->dump_string("description", info.description);
-//             formatter->dump_stream("expiration") << info.expiration;
-//             formatter->dump_stream("addr") << info.addr.get_legacy_str();
-//             formatter->close_section();
-//         }
-//         formatter->close_section();
-//         formatter->close_section();
-//         formatter->flush(cout);
-
-//         return ret;
-//     }
-//     else if (cmd.compare("get") == 0)
-//     {
-//         rados::cls::lock::Lock l(lock_name);
-//         l.set_cookie(lock_cookie);
-//         l.set_tag(lock_tag);
-//         l.set_duration(utime_t(lock_duration, 0));
-//         l.set_description(lock_description);
-//         int ret;
-//         switch (lock_type)
-//         {
-//         case ClsLockType::SHARED:
-//             ret = l.lock_shared(ioctx, oid);
-//             break;
-//         default:
-//             ret = l.lock_exclusive(ioctx, oid);
-//         }
-//         if (ret < 0)
-//         {
-//             cerr << "ERROR: failed locking: " << cpp_strerror(ret) << std::endl;
-//             return ret;
-//         }
-
-//         return ret;
-//     }
-
-//     if (nargs.size() < 5)
-//         usage_exit();
-
-//     if (cmd.compare("break") == 0)
-//     {
-//         string locker(nargs[4]);
-//         rados::cls::lock::Lock l(lock_name);
-//         l.set_cookie(lock_cookie);
-//         l.set_tag(lock_tag);
-//         entity_name_t name;
-//         if (!name.parse(locker))
-//         {
-//             cerr << "ERROR: failed to parse locker name (" << locker << ")" << std::endl;
-//             return -EINVAL;
-//         }
-//         int ret = l.break_lock(ioctx, oid, name);
-//         if (ret < 0)
-//         {
-//             cerr << "ERROR: failed breaking lock: " << cpp_strerror(ret) << std::endl;
-//             return ret;
-//         }
-//     }
-//     else
-//     {
-//         usage_exit();
-//     }
-
-//     return 0;
-// }
-
-
 std::map<std::string, unsigned char*> setupEnc(void){
 
 std::map<std::string, unsigned char*> setup;
@@ -326,127 +130,115 @@ static int put_encrypted(IoCtx &io_ctx,
 {
     // FKH ENC START
 
+    
+    Crypto cryptObj;
+
+    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+    unsigned char *iv = (unsigned char *)"0123456789012345";
+   
+
+
     /*Read infile*/
     std::ifstream in(infile);
     std::string strFile((std::istreambuf_iterator<char>(in)),
                         std::istreambuf_iterator<char>());
     auto contents = strFile.c_str();
-    auto plaintext = reinterpret_cast<unsigned char *>(const_cast<char *>(contents));
-
-    
+    auto message = reinterpret_cast<unsigned char *>(const_cast<char *>(contents));
 
 
-    AES_CBC_256 aes;
+    // encrypt plaintext
+    size_t messageSize = strFile.size();
+    unsigned char *encMsgOut;
+    int encLen = cryptObj.aesEncrypt(message, messageSize, &encMsgOut, key, iv);
+    encMsgOut[encLen]  = '\0';
 
-    /* Buffer for the decrypted text */
-    
-    unsigned char *ciphertext= new unsigned char[128];
+    // printf("Ciphertext is:\n");
+    // BIO_dump_fp(stdout, (const char *)encMsgOut, encLen);
 
-    int ciphertext_len;
+     // write encrypted message into a file (enc.txt)
+    // std::ofstream myEncFile("enc.txt", std::ios::out | std::ios::binary);
+    // myEncFile.write((char *)&encMsgOut[0], encLen);
+    // myEncFile.close();
 
-
-    //Set up Key and IV
-    unsigned char *key;
-    unsigned char *iv;
-    std::map<std::string, unsigned char *> values = setupEnc();
-    key = values["key"];
-    iv = values["iv"];
-
-
-
- /* Encrypt the plaintext */
-    ciphertext_len = aes.encrypt(plaintext, strlen((char *)plaintext), key, iv, ciphertext);
-
-
-    std::cout << "ciphertext_len FKHENC.cc:  " << ciphertext_len  << std::endl;
-    std::cout << "ciphertext FKHENC.cc: " << ciphertext << std::endl;
-
-    printf("Ciphertext is:\n");
-    BIO_dump_fp(stdout, (const char *)ciphertext, ciphertext_len);
-
-    std::ofstream encfile("enc.txt", std::ios::out | std::ios::binary);
-    ciphertext[ciphertext_len]  = '\0';
-    encfile << ciphertext;
-    encfile.close();
-
-// [TO DO] apppend the "enc_str" to the infile
- std::string enc_str(reinterpret_cast<char *>(ciphertext), ciphertext_len);
+// 
+    std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen); // (unsigned char* --> string)
+    bufferlist indata = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
 
  std::cout << "###################### END OF ENCRYPTION #############################" << std::endl;
 
 
 
  // FKH ENC END
-infile = "enc.txt";
- bool stdio = (strcmp(infile, "-") == 0);
+// infile = "enc.txt";
+//  bool stdio = (strcmp(infile, "-") == 0);
  int ret = 0;
  int fd = STDIN_FILENO;
- if (!stdio)
-     fd = open(infile, O_RDONLY | O_BINARY);
- if (fd < 0)
- {
-     cerr << "error reading input file " << infile << std::endl;
+//  if (!stdio)
+    //  fd = open(infile, O_RDONLY | O_BINARY);
+//  if (fd < 0)
+//  {
+    //  cerr << "error reading input file " << infile << std::endl;
     //  cerr << "error reading input file " << infile << ": " << cpp_strerror(errno) << std::endl;
-     return 1;
-    }
+    //  return 1;
+    // }
     int count = op_size;
     // buffer::ptr enc_buf(ciphertext_len);
     // int count = ciphertext_len;
     uint64_t offset = obj_offset;
     const std::string oid_enc=oid+".enc";
     // oid = oid+".enc";
-    while (count != 0)
-    {
-        bufferlist indata;
+    // while (count != 0)
+    // {
+        // bufferlist indata;
         
-        count = indata.read_fd(fd, op_size);
+        // count = indata.read_fd(fd, op_size);
         //  indata.append(enc_str);
-        if (count < 0)
-        {
-            ret = -errno;
-            cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
-            goto out;
-        }
+        // if (count < 0)
+        // {
+        //     ret = -errno;
+        //     cerr << "error reading input file " << infile << ": " << cpp_strerror(ret) << std::endl;
+        //     goto out;
+        // }
 
-        if (count == 0)
-        {
-            if (offset == obj_offset)
-            {                                                               // in case we have to create an empty object & if obj_offset > 0 do a hole
-                ret = fkhdetail::write_full(io_ctx, oid_enc, indata, use_striper); // indata is empty 
+        // if (count == 0)
+        // {
+            // if (offset == obj_offset)
+            // {                                                               // in case we have to create an empty object & if obj_offset > 0 do a hole
+            //     ret = fkhdetail::write_full(io_ctx, oid_enc, indata, use_striper); // indata is empty 
 
-                if (ret < 0)
-                {
-                    goto out;
-                }
+            //     if (ret < 0)
+            //     {
+            //         goto out;
+            //     }
 
-                if (offset)
-                {
-                    ret = fkhdetail::trunc(io_ctx, oid_enc, offset, use_striper); // before truncate, object must be existed.
+            //     if (offset)
+            //     {
+            //         ret = fkhdetail::trunc(io_ctx, oid_enc, offset, use_striper); // before truncate, object must be existed.
 
-                    if (ret < 0)
-                    {
-                        goto out;
-                    }
-                }
-            }
-            continue;
-        }
+            //         if (ret < 0)
+            //         {
+            //             goto out;
+            //         }
+            //     }
+            // }
+            // continue;
+        // }
 
         if (0 == offset && create_object)
             ret = fkhdetail::write_full(io_ctx, oid_enc, indata, use_striper);
         else
             ret = fkhdetail::write(io_ctx, oid_enc, indata, count, offset, use_striper);
 
-        if (ret < 0)
-        {
-            goto out;
-        }
-        offset += count;
-    }
-    ret = 0;
-out:
-    if (fd != STDOUT_FILENO)
-        VOID_TEMP_FAILURE_RETRY(close(fd));
+        // if (ret < 0)
+        // {
+        //     goto out;
+        // }
+        // offset += count;
+    // }
+//     ret = 0;
+// out:
+//     if (fd != STDOUT_FILENO)
+//         VOID_TEMP_FAILURE_RETRY(close(fd));
     return ret;
 }
 
@@ -461,10 +253,31 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
                             unsigned op_size, [[maybe_unused]] const bool use_striper)
 {
     std::cout<< "--------------[ FKH get_decrypted function started ]--------------  " << std::endl;
-    int fd;
-    if (strcmp(outfile, "-") == 0)
-    {
-        fd = STDOUT_FILENO;
+     // FKH START of Decryption Process
+        Crypto cryptoObj;
+
+        unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+        unsigned char *iv = (unsigned char *)"0123456789012345";
+       
+
+        // std::ifstream in2("enc.txt");
+        // std::string encFile((std::istreambuf_iterator<char>(in2)),
+        //                     std::istreambuf_iterator<char>());
+
+
+        // unsigned char *ciphertext = (unsigned char *)encFile.c_str(); // string --> unsigned char*
+        // char *decMsg2;
+        //  cryptoObj.aesDecrypt(ciphertext, encFile.size(), &decMsg2, key, iv);
+
+        // std::ofstream myDecFile2("dec2.txt", std::ios::out | std::ios::binary);
+        // myDecFile2 << decMsg2;
+        // myDecFile2.close();
+
+
+        int fd;
+        if (strcmp(outfile, "-") == 0)
+        {
+            fd = STDOUT_FILENO;
     }
     else
     {
@@ -488,43 +301,23 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
         ret = fkhdetail::read(io_ctx, oid_enc, outdata, op_size, offset, use_striper);
 
 
-        // FKH START of Decryption Process
-        AES_CBC_256 aes;
-
-        
-        
-        //Set up Key and IV
-        unsigned char *key;
-        unsigned char *iv;
-        std::map<std::string, unsigned char *> values = setupEnc();
-        key = values["key"];
-        iv = values["iv"];
-
-     
-
-
         // convert bufferlist to string
-        std::string bf_to_str = outdata.c_str();
-        std::cout<< " --------------[ bf_to_str ]-------------- : "<<bf_to_str << std::endl;
-
+        std::string bf_to_str = outdata.to_str();
         int ciphertext_len = bf_to_str.size();
-        unsigned char *plaintext= new unsigned char[128];
-        unsigned char* ciphertext = (unsigned char*) bf_to_str.c_str();
-        // unsigned char *ciphertext = reinterpret_cast<unsigned char *>(const_cast<char *>(bf_to_str));
 
-        int decryptedtext_len = aes.decrypt(ciphertext, ciphertext_len, key, iv, plaintext);
+       
+        char *plaintext;
+        unsigned char *ciphertext = (unsigned char*) bf_to_str.c_str();
 
-
-
-        std::ofstream encfile("enc.txt", std::ios::out | std::ios::binary);
-        plaintext[decryptedtext_len] = '\0';
-        std::cout << " --------------[ plaintext ]-------------- : " << plaintext << std::endl;
-        encfile.close();
-
+        int decryptedtext_len = cryptoObj.aesDecrypt(ciphertext, ciphertext_len, &plaintext, key, iv);
+        
 
         // convert plaintext to bufferlist so that pass it to the 
         std::string plain_str(reinterpret_cast<char *>(plaintext), decryptedtext_len);
         bufferlist str_to_bf= buffer::list::static_from_string(plain_str);
+
+
+        
         std::cout << " --------------[ plain_str conversion to bufferlist outdata   ]--------------  " <<  std::endl;
 
         // FKH END of Decryption Process
@@ -560,50 +353,6 @@ out:
 
 
 
-static int decrypt(unsigned char *ciphertext, int ciphertext_len, unsigned char *key,
-            unsigned char *iv, unsigned char *plaintext)
-{
-    EVP_CIPHER_CTX *ctx;
-
-    int len;
-
-    int plaintext_len;
-
-    /* Create and initialise the context */
-    if (!(ctx = EVP_CIPHER_CTX_new()))
-        handleErrors();
-
-    /*
-     * Initialise the decryption operation. IMPORTANT - ensure you use a key
-     * and IV size appropriate for your cipher
-     * In this example we are using 256 bit AES (i.e. a 256 bit key). The
-     * IV size for *most* modes is the same as the block size. For AES this
-     * is 128 bits
-     */
-    if (1 != EVP_DecryptInit_ex(ctx, EVP_aes_256_cbc(), NULL, key, iv))
-        handleErrors();
-
-    /*
-     * Provide the message to be decrypted, and obtain the plaintext output.
-     * EVP_DecryptUpdate can be called multiple times if necessary.
-     */
-    if (1 != EVP_DecryptUpdate(ctx, plaintext, &len, ciphertext, ciphertext_len))
-        handleErrors();
-    plaintext_len = len;
-
-    /*
-     * Finalise the decryption. Further plaintext bytes may be written at
-     * this stage.
-     */
-    if (1 != EVP_DecryptFinal_ex(ctx, plaintext + len, &len))
-        handleErrors();
-    plaintext_len += len;
-
-    /* Clean up */
-    EVP_CIPHER_CTX_free(ctx);
-
-    return plaintext_len;
-}
 
 
 static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
