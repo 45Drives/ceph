@@ -1,20 +1,29 @@
 
 
 
-This API adds cryptography functionality to the Ceph cluser through "FKHENC" API. 
+This API adds cryptography functionality to the Ceph cluster through the "FKHENC" API. 
 
 Instruction:
 
-Clone "fkhpacific" branch, follow the repository install instruction, afterward deploy a Ceph cluster. 
-For storig a file encrypted, try following command:
-
- "FKHENC put object1 file1 -p pool01"
-
-This command, stores the "file1" encrypted into the "object1" of "pool01"  through "FKHENC" API.
+Clone "fkhpacific" branch, follow the repository install instruction and deploy a Ceph cluster. 
 
 
 
+For storing an encrypted file, try the following command:
+
+ "FKHENC put object_name file_name -p pool_name"
+
+This command, stores a file encrypted into an object of the specified pool through the "FKHENC" API.
 
 
-[IMPORTANT WARNING] The library is still in the development stage and errors are not  comprehensively handled! 
-It also requires testing to validate the functionality, security, and performance.
+
+
+File retreival:
+
+"FKHENC get object_name file_name -p pool_name"
+
+This command retrieves a file, decrypts, and store into the specified file_name.
+
+
+
+WARNING! At this point, 4MB is the maximum size of the file for encryption. Please check your file size before applying the API. 
