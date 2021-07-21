@@ -397,6 +397,8 @@ inline namespace v14_2_0 {
 		const std::string& category); ///< NOTE: category is unused
 
     void write(uint64_t off, const bufferlist& bl);
+    void write(uint64_t off, const bufferlist& bl, uint64_t obj_size); // Added by FKH for benchmarking reason
+
     void write_full(const bufferlist& bl);
     void writesame(uint64_t off, uint64_t write_len,
 		   const bufferlist& bl);

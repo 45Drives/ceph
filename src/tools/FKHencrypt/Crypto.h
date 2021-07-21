@@ -28,13 +28,14 @@ public:
         std::cout<< " Crypto started! " <<std::endl;
     }
 
-    ~Crypto(){
-        std::cout<< " Crypto finished! " <<std::endl;
+    // ~Crypto(){
+    //     std::cout<< " Crypto finished! " <<std::endl;
 
                
-    }
+    // }
 
-    int aesEncrypt(const unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
+    // int aesEncrypt(const unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
+    int aesEncrypt(unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
 
     int aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv);
 

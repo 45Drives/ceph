@@ -5,7 +5,7 @@ set(CMAKE_CXX_FLAGS "-std=gnu++11 -ggdb")
 find_package(OpenSSL REQUIRED)
 
 
-add_executable(FKHENC FKHENC.cc encrypt.cc Crypto.cc)
+add_executable(FKHENC FKHENC.cc encrypt.cc Crypto.cc ${PROJECT_SOURCE_DIR}/src/common/obj_bencher.cc)
 
 target_link_libraries(FKHENC  global librados ceph-common OpenSSL::Crypto OpenSSL::SSL #${OpenSSL_LIB} 
  )

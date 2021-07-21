@@ -61,6 +61,14 @@ const int OP_RAND_READ = 3;
 // Object is composed of <oid,namespace>
 typedef std::pair<std::string, std::string> Object;
 
+
+
+
+
+
+
+
+
 class ObjBencher {
   bool show_time;
   Formatter *formatter = NULL;
@@ -78,6 +86,9 @@ protected:
 			   uint64_t* object_size, int* num_ops, int* num_objects, int* prev_pid);
 
   int write_bench(int secondsToRun, int concurrentios, const string& run_name_meta, unsigned max_objects, int prev_pid);
+  int write_bench_enc(int secondsToRun, int concurrentios, const string& run_name_meta, unsigned max_objects, int prev_pid, bool encryptionFlag);
+
+  
   int seq_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, bool no_verify=false);
   int rand_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, bool no_verify=false);
 
@@ -96,6 +107,8 @@ protected:
 
   virtual int aio_read(const std::string& oid, int slot, bufferlist *pbl, size_t len, size_t offset) = 0;
   virtual int aio_write(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset) = 0;
+  virtual int aio_write_enc(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset, bool encryptionFlag) = 0;// FKH
+
   virtual int aio_remove(const std::string& oid, int slot) = 0;
   virtual int sync_read(const std::string& oid, bufferlist& bl, size_t len) = 0;
   virtual int sync_write(const std::string& oid, bufferlist& bl, size_t len) = 0;
@@ -109,10 +122,13 @@ protected:
 public:
   explicit ObjBencher(CephContext *cct_) : show_time(false), cct(cct_), data() {}
   virtual ~ObjBencher() {}
-  int aio_bench(
-    int operation, int secondsToRun,
-    int concurrentios, uint64_t op_size, uint64_t object_size, unsigned max_objects,
+
+  int aio_bench(int operation, int secondsToRun,int concurrentios, uint64_t op_size, uint64_t object_size, unsigned max_objects,
     bool cleanup, bool hints, const std::string& run_name, bool reuse_bench, bool no_verify=false);
+
+    int aio_bench_enc(int operation, int secondsToRun,int concurrentios, uint64_t op_size, uint64_t object_size, unsigned max_objects,
+    bool cleanup, bool hints, const std::string& run_name, bool reuse_bench, bool encryptionFlag, bool no_verify=false);
+
   int clean_up(const std::string& prefix, int concurrentios, const std::string& run_name);
 
   void set_show_time(bool dt) {

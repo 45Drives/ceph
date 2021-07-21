@@ -62,6 +62,7 @@
 
 // // FKH
 #include "../FKHencrypt/encrypt.h"
+#include "../FKHencrypt/Crypto.h"
 // #include <fstream>
 // //FKH
 
@@ -1252,12 +1253,41 @@ void LoadGen::cleanup()
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 enum OpWriteDest
 {
     OP_WRITE_DEST_OBJ = 2 << 0,
     OP_WRITE_DEST_OMAP = 2 << 1,
     OP_WRITE_DEST_XATTR = 2 << 2,
 };
+
+
+
 
 class RadosBencher : public ObjBencher
 {
@@ -1299,10 +1329,9 @@ protected:
     {
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
-
     int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len,
                   size_t offset) override
-    {
+    { //(1)
         librados::ObjectWriteOperation op;
 
         if (write_destination & OP_WRITE_DEST_OBJ)
@@ -1313,7 +1342,29 @@ protected:
                                        ALLOC_HINT_FLAG_SEQUENTIAL_READ |
                                        ALLOC_HINT_FLAG_APPEND_ONLY |
                                        ALLOC_HINT_FLAG_IMMUTABLE);
-            op.write(offset, bl);
+
+            // FKH  BENCHMARK START
+            //    encryption
+            // Crypto cryptObj;
+            // unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+            // unsigned char *iv = (unsigned char *)"0123456789012345";
+
+            // std::string message = bl.to_str();
+            // unsigned char *plaintext4 = (unsigned char *)message.c_str();
+            // unsigned char *encMsgOut4;
+            // int encLen4 = cryptObj.aesEncrypt(plaintext4, message.size(), &encMsgOut4, key, iv);
+            // encMsgOut4[encLen4]='\0';
+
+            // std::string plain_str(reinterpret_cast<char *>(encMsgOut4, encLen4));
+            // bufferlist str_to_bf = buffer::list::static_from_string(plain_str);
+
+            // op.write(offset, str_to_bf);
+
+           // FKH  BENCHMARK end
+
+
+            op.write(offset, bl); // "I'm the", ' ' <repeats 16 times>, "3th op!\000", 'z' <repeats 169 times>...
+    
         }
 
         if (write_destination & OP_WRITE_DEST_OMAP)
@@ -1332,6 +1383,11 @@ protected:
 
         return io_ctx.aio_operate(oid, completions[slot], &op);
     }
+
+   int aio_write_enc(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset, bool encryptionFlag) override
+   {
+        std::cout<< "" << std::endl;
+   }
 
     int aio_remove(const std::string &oid, int slot) override
     {
@@ -1401,8 +1457,8 @@ protected:
     }
 
 public:
-    RadosBencher(CephContext *cct_, librados::Rados &_r, librados::IoCtx &_i)
-        : ObjBencher(cct_), completions(NULL), rados(_r), io_ctx(_i), iterator_valid(false), write_destination(OP_WRITE_DEST_OBJ) {}
+    RadosBencher(CephContext *cct_, librados::Rados &_r, librados::IoCtx &_i) // (2)
+        : ObjBencher(cct_), completions(NULL), rados(_r), io_ctx(_i), iterator_valid(false), write_destination(OP_WRITE_DEST_OBJ) {} 
     ~RadosBencher() override {}
 
     void set_write_destination(OpWriteDest dest)
@@ -1410,6 +1466,9 @@ public:
         write_destination = dest;
     }
 };
+
+
+// FKH End of  RadosBencher
 
 static int do_lock_cmd(std::vector<const char *> &nargs,
                        const std::map<std::string, std::string> &opts,
@@ -3909,7 +3968,7 @@ static int rados_tool_common(const std::map<std::string, std::string> &opts,
         cout << "rolled back pool " << pool_name
              << " to snapshot " << nargs[2] << std::endl;
     }
-    else if (strcmp(nargs[0], "bench") == 0)
+    else if (strcmp(nargs[0], "bench") == 0) // (1)
     {
         if (!pool_name || nargs.size() < 3)
         {
@@ -5052,6 +5111,10 @@ int main(int argc, const char **argv)
         {
             opts["object-size"] = val;
         }
+        else if (ceph_argparse_witharg(args, i, &val, "-O", (char *)NULL))
+        {
+            opts["object-size"] = val;
+        }
         else if (ceph_argparse_witharg(args, i, &val, "--max-objects", (char *)NULL))
         {
             opts["max-objects"] = val;
@@ -5059,10 +5122,6 @@ int main(int argc, const char **argv)
         else if (ceph_argparse_witharg(args, i, &val, "--offset", (char *)NULL))
         {
             opts["offset"] = val;
-        }
-        else if (ceph_argparse_witharg(args, i, &val, "-O", (char *)NULL))
-        {
-            opts["object-size"] = val;
         }
         else if (ceph_argparse_witharg(args, i, &val, "-s", "--snap", (char *)NULL))
         {
