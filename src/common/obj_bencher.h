@@ -89,7 +89,10 @@ protected:
   int write_bench_enc(int secondsToRun, int concurrentios, const string& run_name_meta, unsigned max_objects, int prev_pid, bool encryptionFlag);
 
   
-  int seq_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, bool no_verify=false);
+  int seq_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, unsigned char *encMsgOut, bool no_verify=false);
+//   int seq_read_bench_enc(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, unsigned char *encMsgOut, bool no_verify=false);
+
+
   int rand_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, bool no_verify=false);
 
   int clean_up(int num_objects, int prevPid, int concurrentios);
@@ -106,6 +109,8 @@ protected:
   virtual int completion_ret(int slot) = 0;
 
   virtual int aio_read(const std::string& oid, int slot, bufferlist *pbl, size_t len, size_t offset) = 0;
+  virtual int aio_read_enc(const std::string& oid, int slot, bufferlist *pbl, size_t len, size_t offset,  unsigned char *encMsgOut) = 0; // FKH added unsigned chanr chipertext for read benchmark
+
   virtual int aio_write(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset) = 0;
   virtual int aio_write_enc(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset, bool encryptionFlag) = 0;// FKH
 
@@ -127,7 +132,7 @@ public:
     bool cleanup, bool hints, const std::string& run_name, bool reuse_bench, bool no_verify=false);
 
     int aio_bench_enc(int operation, int secondsToRun,int concurrentios, uint64_t op_size, uint64_t object_size, unsigned max_objects,
-    bool cleanup, bool hints, const std::string& run_name, bool reuse_bench, bool encryptionFlag, bool no_verify=false);
+    bool cleanup, bool hints, const std::string& run_name, bool reuse_bench, bool encryptionFlag, bool read_flag, bool no_verify=false);
 
   int clean_up(const std::string& prefix, int concurrentios, const std::string& run_name);
 

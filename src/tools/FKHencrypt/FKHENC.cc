@@ -61,12 +61,79 @@ static std::string prettify(const std::string &s)
 
 // FKH START of  RadosBencher / benchmarking
 
+static void sanitize_object_contents(bench_data *data, size_t length)
+{
+    // FIPS zeroization audit 20191115: this memset is not security related.
+    memset(data->object_contents, 'z', length);
+}
+
+//  void read_bench_enc(bench_data data){ 
+//      /*
+//      * This function initialize data structure and encrypt it.
+//      * Application of the function is in read benchmark
+//      * 
+//      * FKH
+//      */
+
+//      Crypto cryptObj;
+//      unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+//      unsigned char *iv = (unsigned char *)"0123456789012345";
+
+//     //  struct bench_data *data = new bench_data;
+//     //  data->op_size = op_size_val;
+//      char *contentsChars = new char[data.op_size];
+//      data.object_contents = contentsChars;
+//       memset(data.object_contents, 'z', data.op_size);
+
+//     //  sanitize_object_contents(data, data.op_size);
+
+//      // encrypt plaintext
+//     unsigned char *plaintext5 = (unsigned char *)data.object_contents;
+//     unsigned char *encMsgOut5;
+//     int encLen5 = cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
+//     // std::cout << "encLen5 :  " << encLen5 << std::endl;
+//     // std::cout << "----------------------------------------" << std::endl;
+//     // std::cout << "plaintext5 :  " << plaintext5 << std::endl;
+//     // std::cout << "----------------------------------------" << std::endl;
+//     // std::cout << "encMsgOut5 :  " << encMsgOut5 << std::endl;
+//     std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
+
+//     // derypt
+//     char *decMsg5;
+//     cryptObj.aesDecrypt(encMsgOut5, encLen5, &decMsg5, key, iv);
+//     std::cout << "---------------- decrypt ------------------------" << std::endl;
+//     // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
+   
+// }
+
+ void read_bench_dec( unsigned char *encMsgOut){ 
+     /*
+     * This function initialize data structure and encrypt it.
+     * Application of the function is in read benchmark
+     * 
+     * FKH
+     */
+
+     Crypto cryptObj;
+     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+     unsigned char *iv = (unsigned char *)"0123456789012345";
+
+   
+    // derypt
+    char *decMsg;
+    cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, key, iv);
+    std::cout << "---------------- decrypt ------------------------" << std::endl;
+    // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
+   
+}
+
 enum OpWriteDest
 {
     OP_WRITE_DEST_OBJ = 2 << 0,
     OP_WRITE_DEST_OMAP = 2 << 1,
     OP_WRITE_DEST_XATTR = 2 << 2,
 };
+
 
 class RadosBencher : public ObjBencher
 {
@@ -107,6 +174,17 @@ protected:
         completions[slot] = 0;
     }
 
+
+    int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len,
+                 size_t offset,  unsigned char *encMsgOut) override
+    {
+        /**
+         * do a decryption for bench before read!
+        */
+        read_bench_dec(encMsgOut); 
+        return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
+    }
+
     int aio_read(const std::string &oid, int slot, bufferlist *pbl, size_t len,
                  size_t offset) override
     {
@@ -126,6 +204,8 @@ protected:
                                        ALLOC_HINT_FLAG_SEQUENTIAL_READ |
                                        ALLOC_HINT_FLAG_APPEND_ONLY |
                                        ALLOC_HINT_FLAG_IMMUTABLE);
+            
+           
 
            
             op.write(offset, bl); 
@@ -150,11 +230,9 @@ protected:
 
 
 
-static void sanitize_object_contents(bench_data *data, size_t length)
-{
-    // FIPS zeroization audit 20191115: this memset is not security related.
-    memset(data->object_contents, 'z', length);
-}
+
+
+
 
 // aio_write FKH
     int aio_write_enc(const std::string &oid, int slot, bufferlist &bl, size_t len,
@@ -174,16 +252,12 @@ static void sanitize_object_contents(bench_data *data, size_t length)
             if (encryptionFlag)
             {
                 
-                //  struct bench_data *data=new bench_data;
-                // data->op_size =  1024;
-                // char* contentsChars = new char[data->op_size];
-                // data->object_contents=contentsChars;
-
-                //  memset(data.object_contents, 'z', data->op_size);
+                
+                // std::ofstream myEncFile4("objContent4.txt", std::ios::out | std::ios::app);
 
                 sanitize_object_contents(&data, data.op_size);
-                std::cout << "data->object_contents " <<data.object_contents << std::endl;
-
+                // myEncFile4 << "\n bl \n";
+                // myEncFile4 << bl.c_str();
 
                  // encrypt plaintext
                   Crypto cryptObj;
@@ -197,18 +271,18 @@ static void sanitize_object_contents(bench_data *data, size_t length)
                   unsigned char *plaintext4 = (unsigned char *)data.object_contents;
                   unsigned char *encMsgOut4;
                   int encLen4 = cryptObj.aesEncrypt(plaintext4, data.op_size, &encMsgOut4, key, iv);
-                  std::cout << "encrypted data:  " << encMsgOut4 << std::endl;
+                //   std::cout << "encrypted data:  " << encMsgOut4 << std::endl;
 
                   std::string enc_str(reinterpret_cast<char *>(encMsgOut4), encLen4);         // (unsigned char* --> string)
                   bufferlist encryptedBufferlist = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
 
                   // derypt
-                  char *decMsg4;
-                  cryptObj.aesDecrypt(encMsgOut4, encLen4, &decMsg4, key, iv);
-                  std::cout << "decrypted data:       "<< decMsg4 << std::endl;
+                //   char *decMsg4;
+                //   cryptObj.aesDecrypt(encMsgOut4, encLen4, &decMsg4, key, iv);
+                //   std::cout << "decrypted data:       "<< decMsg4 << std::endl;
 
 
-                  op.write(offset, encryptedBufferlist);
+                  op.write(offset, bl);
             }
             else
             {
@@ -311,8 +385,8 @@ public:
     {
         write_destination = dest;
     }
-    void set_enc_flag(bool encFl){
-        encFlag = encFl;
+    void set_enc_flag(){
+        encFlag = true;
     }
 };
 
@@ -400,6 +474,8 @@ std::map<std::string, unsigned char *> setupEnc(void)
 
     return setup;
 }
+
+
 
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
@@ -632,7 +708,10 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
     unsigned object_size = 0;
     unsigned max_objects = 0;
     bool no_verify = false;
-    bool encF = false;
+
+    bool enc_bench = false;
+    bool write_flag = false;
+    bool read_flag = false;
 
 
     std::string run_name;
@@ -701,7 +780,7 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
     i = opts.find("enc-bench");
     if (i != opts.end())
     {
-        encF = true;
+        enc_bench = true;
     }
      i = opts.find("show-time");
     if (i != opts.end())
@@ -846,13 +925,39 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
             cerr << "Invalid value for seconds: '" << nargs[1] << "'" << std::endl;
             return 1;
         }
+       
         int operation = 0;
         if (strcmp(nargs[2], "write") == 0)
-            operation = OP_WRITE;
+        {
+            if (enc_bench)
+            {
+                operation = OP_WRITE;
+                write_flag = true;
+            }
+            else
+            {
+                operation = OP_WRITE;
+            }
+        }
         else if (strcmp(nargs[2], "seq") == 0)
-            operation = OP_SEQ_READ;
-        else if (strcmp(nargs[2], "rand") == 0)
+        {
+            if (enc_bench)
+            {
+                operation = OP_SEQ_READ;
+                read_flag = true;
+            }
+            else
+            {
+
+                operation = OP_SEQ_READ;
+            }
+            // read_flag = true;
+        }
+        else if (strcmp(nargs[2], "rand") == 0){
             operation = OP_RAND_READ;
+            // read_flag = true;
+
+        }
         else
         {
             usage(cerr);
@@ -888,8 +993,9 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
         RadosBencher bencher(g_ceph_context, rados, io_ctx);
         bencher.set_show_time(show_time);
         bencher.set_write_destination(static_cast<OpWriteDest>(bench_write_dest));
-        if (encF){
-        bencher.set_enc_flag(true);// FKH enc benchmarking
+
+        if (enc_bench){
+        bencher.set_enc_flag();// FKH enc benchmarking
         }
         ostream *outstream = NULL;
         if (formatter)
@@ -906,11 +1012,13 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
         else if (object_size < op_size)
             op_size = object_size;
         cout << "hints = " << (int)hints << std::endl;
-        if (encF){
-            ret = bencher.aio_bench_enc(operation, seconds,
-                                    concurrent_ios, op_size, object_size,
-                                    max_objects, cleanup, hints, run_name, reuse_bench, encF, no_verify);
-        }else{
+        if (write_flag || read_flag)
+        {
+             ret = bencher.aio_bench_enc(operation, seconds,
+                                            concurrent_ios, op_size, object_size,
+                                            max_objects, cleanup, hints, run_name, reuse_bench, write_flag, read_flag, no_verify);
+        }else
+        {
             ret = bencher.aio_bench(operation, seconds,
                                     concurrent_ios, op_size, object_size,
                                     max_objects, cleanup, hints, run_name, reuse_bench, no_verify);

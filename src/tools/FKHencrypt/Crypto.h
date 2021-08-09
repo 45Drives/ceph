@@ -20,6 +20,7 @@
 #define SUCCESS 0
 #define FAILURE -1
 
+int benchEncrypt(const char *infile, unsigned char &ciphertext );
 
 class Crypto {
 

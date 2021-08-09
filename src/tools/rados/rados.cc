@@ -1324,11 +1324,20 @@ protected:
         completions[slot] = 0;
     }
 
+
+
     int aio_read(const std::string &oid, int slot, bufferlist *pbl, size_t len,
                  size_t offset) override
     {
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
+
+    int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len,
+                 size_t offset,  unsigned char *encMsgOut) override
+    {
+       std::cout << " aio_read_enc in rados " << std::endl; 
+    }
+
     int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len,
                   size_t offset) override
     { //(1)
@@ -1386,7 +1395,7 @@ protected:
 
    int aio_write_enc(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset, bool encryptionFlag) override
    {
-        std::cout<< "" << std::endl;
+        std::cout<< "aio_write_enc in rados.cc" << std::endl;
    }
 
     int aio_remove(const std::string &oid, int slot) override

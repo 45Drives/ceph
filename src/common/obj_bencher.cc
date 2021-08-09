@@ -29,6 +29,9 @@ const std::string BENCH_OBJ_NAME = BENCH_PREFIX + "_%s_%d_object%d";
 static char cached_hostname[30] = {0};
 int cached_pid = 0;
 
+
+
+
 static std::string generate_object_prefix_nopid()
 {
     if (cached_hostname[0] == 0)
@@ -253,6 +256,13 @@ void *ObjBencher::status_printer(void *_bencher)
     return NULL;
 }
 
+
+
+
+
+
+
+
 int ObjBencher::aio_bench(
     int operation, int secondsToRun,
     int concurrentios,
@@ -295,6 +305,8 @@ int ObjBencher::aio_bench(
         op_size = prev_op_size;
     }
 
+    unsigned char *encMsgOut = NULL;
+
     char *contentsChars = new char[op_size];
     lock.lock();
     data.done = false;
@@ -319,13 +331,13 @@ int ObjBencher::aio_bench(
 
     if (OP_WRITE == operation)
     {
-        r = write_bench(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid); //FKH write
+        r = write_bench(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid); 
         if (r != 0)
             goto out;
     }
     else if (OP_SEQ_READ == operation)
     {
-        r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, no_verify);
+        r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
         if (r != 0)
             goto out;
     }
@@ -385,7 +397,36 @@ out:
 
 
 
+ unsigned char * read_bench_enc(bench_data data){ 
+     /*
+     * This function initialize data structure and encrypt it.
+     * Application of the function is in read benchmark
+     * 
+     * FKH
+     */
 
+     Crypto cryptObj;
+     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+     unsigned char *iv = (unsigned char *)"0123456789012345";
+
+    //  struct bench_data *data = new bench_data;
+    //  data->op_size = op_size_val;
+     char *contentsChars = new char[data.op_size];
+     data.object_contents = contentsChars;
+     memset(data.object_contents, 'z', data.op_size);
+
+     //  sanitize_object_contents(data, data.op_size);
+
+     // encrypt plaintext
+    unsigned char *plaintext5 = (unsigned char *)data.object_contents;
+    unsigned char *encMsgOut5;
+    cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
+    
+    std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
+
+    return encMsgOut5;
+   
+}
 
 
 
@@ -400,7 +441,7 @@ int ObjBencher::aio_bench_enc(
     uint64_t op_size, uint64_t object_size,
     unsigned max_objects,
     bool cleanup, bool hints,
-    const std::string &run_name, bool reuse_bench, bool encryptionFlag, bool no_verify)
+    const std::string &run_name, bool reuse_bench, bool write_flag, bool read_flag, bool no_verify)
 { 
 
     if (concurrentios <= 0)
@@ -452,26 +493,35 @@ int ObjBencher::aio_bench_enc(
     data.object_contents = contentsChars;
     lock.unlock();
 
+     unsigned char *encMsgOut = NULL;
+
     //fill in contentsChars deterministically so we can check returns
     // sanitize_object_contents(&data, data.op_size);
 
     if (formatter)
         formatter->open_object_section("bench");
 
-    if (OP_WRITE == operation)
+    if (OP_WRITE == operation && write_flag)
     {
         
-        r = write_bench_enc(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid, encryptionFlag); //FKH write
-
-
-
+        r = write_bench_enc(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid, write_flag); //FKH write
 
         if (r != 0)
             goto out;
     }
-    else if (OP_SEQ_READ == operation)
+    else if (OP_SEQ_READ == operation )
     {
-        r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, no_verify);
+        if (read_flag)
+        {
+            encMsgOut = read_bench_enc(data);
+            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+        }
+        else
+        {
+
+            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+        }
+
         if (r != 0)
             goto out;
     }
@@ -590,9 +640,24 @@ int ObjBencher::fetch_bench_metadata(const std::string &metadata_file,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int ObjBencher::write_bench_enc(int secondsToRun,
                                 int concurrentios, const string &run_name_meta,
-                                unsigned max_objects, int prev_pid, bool encryptionFlag)
+                                unsigned max_objects, int prev_pid, bool write_flag)
 {
 
     if (concurrentios <= 0)
@@ -636,9 +701,11 @@ int ObjBencher::write_bench_enc(int secondsToRun,
 
     unsigned writes_per_object = 1;
     if (data.op_size)
-        writes_per_object = data.object_size / data.op_size;
+        writes_per_object = data.object_size    / data.op_size;
 
     r = completions_init(concurrentios);
+
+    std::ofstream myEncFile1("objContent1.txt", std::ios::out | std::ios::app);
 
     //set up writes so I can start them together
     for (int i = 0; i < concurrentios; ++i)
@@ -647,6 +714,7 @@ int ObjBencher::write_bench_enc(int secondsToRun,
         contents[i] = std::make_unique<bufferlist>();
         snprintf(data.object_contents, data.op_size, "I'm the %16dth op!", i);
         contents[i]->append(data.object_contents, data.op_size);
+        myEncFile1<< data.object_contents;
     }
 
     pthread_t print_thread;
@@ -657,14 +725,18 @@ int ObjBencher::write_bench_enc(int secondsToRun,
     data.finished = 0;
     data.start_time = mono_clock::now();
     locker.unlock();
+    std::ofstream myEncFile2("objContent2.txt", std::ios::out | std::ios::app);
+
     for (int i = 0; i < concurrentios; ++i)
     {
+        myEncFile2 << "Object content: (2) \n";
+        myEncFile2 << contents[i]->c_str();
         start_times[i] = mono_clock::now();
         r = create_completion(i, _aio_cb, (void *)&lc);
         if (r < 0)
             goto ERR;
-        r = aio_write_enc(name[i], i, *contents[i], data.op_size, data.op_size * (i % writes_per_object), encryptionFlag); //FKH write (3)
-        std::cout << "data.object_contents" << data.object_contents << std::endl;
+        r = aio_write_enc(name[i], i, *contents[i], data.op_size, data.op_size * (i % writes_per_object), write_flag); //FKH write (3)
+        // std::cout << "data.object_contents" << data.object_contents << std::endl;
 
         if (r < 0)
         {
@@ -761,7 +833,7 @@ int ObjBencher::write_bench_enc(int secondsToRun,
         if (r < 0)
             goto ERR;
         r = aio_write_enc(newName, slot, *newContents, data.op_size,
-                      data.op_size * (data.started % writes_per_object), encryptionFlag);
+                      data.op_size * (data.started % writes_per_object), write_flag);
 
         if (r < 0)
         {
@@ -874,6 +946,25 @@ ERR:
 }
 
 // END of write bench FKH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1178,9 +1269,16 @@ ERR:
     return r;
 }
 
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 int ObjBencher::seq_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
-    int concurrentios, int pid, bool no_verify)
+    int concurrentios, int pid, unsigned char *encMsgOut, bool no_verify)
 {
 
     lock_cond lc(&lock);
@@ -1232,8 +1330,13 @@ int ObjBencher::seq_read_bench(
         index[i] = i;
         start_times[i] = mono_clock::now();
         create_completion(i, _aio_cb, (void *)&lc);
-        r = aio_read(name[i], i, contents[i].get(), data.op_size,
-                     data.op_size * (i % reads_per_object));
+        if (encMsgOut != NULL)
+            r = aio_read_enc(name[i], i, contents[i].get(), data.op_size,
+                             data.op_size * (i % reads_per_object), encMsgOut);
+        else
+            r = aio_read(name[i], i, contents[i].get(), data.op_size,
+                             data.op_size * (i % reads_per_object));
+
         if (r < 0)
         {
             cerr << "r = " << r << std::endl;
@@ -1332,8 +1435,16 @@ int ObjBencher::seq_read_bench(
         //start new read and check data if requested
         start_times[slot] = mono_clock::now();
         create_completion(slot, _aio_cb, (void *)&lc);
-        r = aio_read(newName, slot, contents[slot].get(), data.op_size,
-                     data.op_size * (data.started % reads_per_object));
+
+        if (encMsgOut != NULL)
+        {
+            r = aio_read_enc(newName, slot, contents[slot].get(), data.op_size,
+                             data.op_size * (data.started % reads_per_object), encMsgOut);
+        }
+        else
+            r = aio_read(newName, slot, contents[slot].get(), data.op_size,
+                         data.op_size * (data.started % reads_per_object));
+
         if (r < 0)
         {
             goto ERR;
@@ -1408,6 +1519,23 @@ ERR:
     pthread_join(print_thread, NULL);
     return r;
 }
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int ObjBencher::rand_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
