@@ -48,7 +48,7 @@ using namespace libradosstriper;
 #include "osd/ECUtil.h"
 
 // FKH
-// #include "../FKHencrypt/encrypt.h"
+// #include "../CephArmor/encrypt.h"
 //FKH
 
 using namespace librados;

@@ -61,8 +61,8 @@
 // #include "osd/ECUtil.h"
 
 // // FKH
-#include "../FKHencrypt/encrypt.h"
-#include "../FKHencrypt/Crypto.h"
+#include "../CephArmor/encrypt.h"
+#include "../CephArmor/Crypto.h"
 // #include <fstream>
 // //FKH
 

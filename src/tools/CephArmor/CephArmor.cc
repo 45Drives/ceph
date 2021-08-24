@@ -676,7 +676,7 @@ out:
 
 // FKH END of get_decrypted()
 
-static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
+static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
                               std::vector<const char *> &nargs)
 {
 
@@ -1035,7 +1035,7 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
     }
     else
     {
-        cerr << "unrecognized command FKHENC API" << nargs[0] << "; -h or --help for usage" << std::endl;
+        cerr << "unrecognized command CephArmor API" << nargs[0] << "; -h or --help for usage" << std::endl;
         ret = -EINVAL;
     }
 
@@ -1047,7 +1047,7 @@ static int FKHENC_tool_common(const std::map<std::string, std::string> &opts,
 
 int main(int argc, const char **argv)
 {
-    std::cout << "---------------- [ FKHENC API ] ---------------- " << std::endl;
+    std::cout << "---------------- [ CephArmor API ] ---------------- " << std::endl;
 
     // parse input arguments
     vector<const char *> args;
@@ -1156,9 +1156,9 @@ int main(int argc, const char **argv)
 
     if (args.empty())
     {
-        cerr << "FKHENC: you must give an action. Try --help" << std::endl;
+        cerr << "CephArmor: you must give an action. Try --help" << std::endl;
         return 1;
     }
 
-    return FKHENC_tool_common(opts, args);
+    return CephArmor_tool_common(opts, args);
 }
