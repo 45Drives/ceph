@@ -1339,7 +1339,7 @@ protected:
     }
 
     int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len,
-                  size_t offset) override
+                  size_t offset, bool encryptionFlag) override
     { //(1)
         librados::ObjectWriteOperation op;
 
@@ -1393,10 +1393,7 @@ protected:
         return io_ctx.aio_operate(oid, completions[slot], &op);
     }
 
-   int aio_write_enc(const std::string& oid, int slot, bufferlist& bl, size_t len, size_t offset, bool encryptionFlag) override
-   {
-        std::cout<< "aio_write_enc in rados.cc" << std::endl;
-   }
+   
 
     int aio_remove(const std::string &oid, int slot) override
     {

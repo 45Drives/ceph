@@ -83,10 +83,10 @@ static void sanitize_object_contents(bench_data *data, size_t length)
 //     //  data->op_size = op_size_val;
 //      char *contentsChars = new char[data.op_size];
 //      data.object_contents = contentsChars;
-//       memset(data.object_contents, 'z', data.op_size);
 
 //     //  sanitize_object_contents(data, data.op_size);
 
+//       memset(data.object_contents, 'z', data.op_size);
 //      // encrypt plaintext
 //     unsigned char *plaintext5 = (unsigned char *)data.object_contents;
 //     unsigned char *encMsgOut5;
@@ -124,6 +124,41 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, key, iv);
     std::cout << "---------------- decrypt ------------------------" << std::endl;
     // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
+   
+}
+
+bufferlist write_bench_enc(bench_data data){ 
+     /*
+     * This function initialize data structure and encrypt it.
+     * Application of the function is in read benchmark
+     * 
+     * FKH
+     */
+
+     Crypto cryptObj;
+     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+     unsigned char *iv = (unsigned char *)"0123456789012345";
+
+     sanitize_object_contents(&data, data.op_size);
+     // encrypt plaintext
+     unsigned char *plaintext = (unsigned char *)data.object_contents;
+     unsigned char *encMsgOut;
+     int encLen = cryptObj.aesEncrypt(plaintext, data.op_size, &encMsgOut, key, iv);
+
+
+
+
+     std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen);           // (unsigned char* --> string)
+     bufferlist encryptedBufferlist = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
+
+     // derypt
+    //  char *decMsg;
+    //  cryptObj.aesDecrypt(encMsgOut, encLen, &decMsg, key, iv);
+    //  std::cout << ">>> decrypted data:       " << decMsg << std::endl;
+    //  std::cout << "--------------------------------------------------------------------\n"
+    //            << std::endl;
+
+    return encryptedBufferlist;
    
 }
 
@@ -182,6 +217,26 @@ protected:
          * do a decryption for bench before read!
         */
         read_bench_dec(encMsgOut); 
+    /**
+     * the following part of code work properly on the encrypted objects resulted from write bench operation. 
+     * if we don't write encrypted object on the storage, we keep the above line that reflect the 
+     * decryption performance on the ceph read operation
+    */
+
+     // derypt
+    //   Crypto cryptObj;
+    //  unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
+    //  unsigned char *iv = (unsigned char *)"0123456789012345";
+
+    //  std::string encMsg = pbl->to_str();
+    //  unsigned char *encMsgCh = (unsigned char *)encMsg.c_str();
+    //  char *decMsg;
+
+    //  cryptObj.aesDecrypt(encMsgCh, encMsg.size(), &decMsg, key, iv);
+    //  std::cout << ">>> decrypted data:       " << decMsg << std::endl;        
+
+
+
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
 
@@ -191,8 +246,11 @@ protected:
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
 
+
+
+
     int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len,
-                  size_t offset) override
+                  size_t offset, bool encryptionFlag) override
     { 
         librados::ObjectWriteOperation op;
 
@@ -204,89 +262,19 @@ protected:
                                        ALLOC_HINT_FLAG_SEQUENTIAL_READ |
                                        ALLOC_HINT_FLAG_APPEND_ONLY |
                                        ALLOC_HINT_FLAG_IMMUTABLE);
-            
-           
+            if (encryptionFlag){
 
-           
+                // do encryption
+               bufferlist encryptedBufferlist = write_bench_enc(data);
+
+
+                op.write(offset, bl); 
+
+            }
+            else{
+
             op.write(offset, bl); 
-        }
 
-        if (write_destination & OP_WRITE_DEST_OMAP)
-        {
-            std::map<std::string, librados::bufferlist> omap;
-            omap[string("bench-omap-key-") + stringify(offset)] = bl;
-            op.omap_set(omap);
-        }
-
-        if (write_destination & OP_WRITE_DEST_XATTR)
-        {
-            char key[80];
-            snprintf(key, sizeof(key), "bench-xattr-key-%d", (int)offset);
-            op.setxattr(key, bl);
-        }
-
-        return io_ctx.aio_operate(oid, completions[slot], &op);
-    }
-
-
-
-
-
-
-
-// aio_write FKH
-    int aio_write_enc(const std::string &oid, int slot, bufferlist &bl, size_t len,
-                  size_t offset, bool encryptionFlag) override
-    { //(1)
-        librados::ObjectWriteOperation op;
-
-        if (write_destination & OP_WRITE_DEST_OBJ)
-        {
-            if (data.hints)
-                op.set_alloc_hint2(data.object_size, data.op_size,
-                                   ALLOC_HINT_FLAG_SEQUENTIAL_WRITE |
-                                       ALLOC_HINT_FLAG_SEQUENTIAL_READ |
-                                       ALLOC_HINT_FLAG_APPEND_ONLY |
-                                       ALLOC_HINT_FLAG_IMMUTABLE);
-
-            if (encryptionFlag)
-            {
-                
-                
-                // std::ofstream myEncFile4("objContent4.txt", std::ios::out | std::ios::app);
-
-                sanitize_object_contents(&data, data.op_size);
-                // myEncFile4 << "\n bl \n";
-                // myEncFile4 << bl.c_str();
-
-                 // encrypt plaintext
-                  Crypto cryptObj;
-
-                  /* A 256 bit key */
-                  unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-
-                  /* A 128 bit IV */
-                  unsigned char *iv = (unsigned char *)"0123456789012345";
-
-                  unsigned char *plaintext4 = (unsigned char *)data.object_contents;
-                  unsigned char *encMsgOut4;
-                  int encLen4 = cryptObj.aesEncrypt(plaintext4, data.op_size, &encMsgOut4, key, iv);
-                //   std::cout << "encrypted data:  " << encMsgOut4 << std::endl;
-
-                  std::string enc_str(reinterpret_cast<char *>(encMsgOut4), encLen4);         // (unsigned char* --> string)
-                  bufferlist encryptedBufferlist = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
-
-                  // derypt
-                //   char *decMsg4;
-                //   cryptObj.aesDecrypt(encMsgOut4, encLen4, &decMsg4, key, iv);
-                //   std::cout << "decrypted data:       "<< decMsg4 << std::endl;
-
-
-                  op.write(offset, bl);
-            }
-            else
-            {
-                op.write(offset, bl); // "I'm the", ' ' <repeats 16 times>, "3th op!\000", 'z' <repeats 169 times>...
             }
         }
 
@@ -306,6 +294,9 @@ protected:
 
         return io_ctx.aio_operate(oid, completions[slot], &op);
     }
+
+
+
 
     int aio_remove(const std::string &oid, int slot) override
     {

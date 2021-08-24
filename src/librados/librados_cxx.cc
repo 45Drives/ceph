@@ -480,15 +480,10 @@ void librados::ObjectWriteOperation::create(bool exclusive,
 
 void librados::ObjectWriteOperation::write(uint64_t off, const bufferlist& bl) // don't touch this file! do encryption for benchmarking where this file is called!
 { 
-    std::ofstream myEncFile5("objContent5.txt", std::ios::out | std::ios::app);
-    
 
   ceph_assert(impl);
   ::ObjectOperation *o = &impl->o;
   bufferlist c = bl;
-
-  myEncFile5 << c.c_str();
-
 
   o->write(off, c); // "I'm the", ' ' <repeats 16 times>, "3th op!\000", 'z' <repeats 169 times>...
 
@@ -1263,6 +1258,7 @@ int librados::IoCtx::create(const std::string& oid, bool exclusive,
 
 int librados::IoCtx::write(const std::string& oid, bufferlist& bl, size_t len, uint64_t off)
 {
+    std::cout << "----------------------------------> write operation in librados_cxx <-------------------------------------" <<std::endl; 
   object_t obj(oid);
   return io_ctx_impl->write(obj, bl, len, off);
 }

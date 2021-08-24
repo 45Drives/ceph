@@ -267,13 +267,10 @@ int ObjBencher::aio_bench(
     int operation, int secondsToRun,
     int concurrentios,
     uint64_t op_size, uint64_t object_size,
-    unsigned max_objects,
+    unsigned max_objects, 
     bool cleanup, bool hints,
     const std::string &run_name, bool reuse_bench, bool no_verify)
 {
-
-    if (concurrentios <= 0)
-        return -EINVAL;
 
     int num_ops = 0;
     int num_objects = 0;
@@ -306,10 +303,13 @@ int ObjBencher::aio_bench(
     }
 
     unsigned char *encMsgOut = NULL;
+    bool encryptionflag = false;
+
+
 
     char *contentsChars = new char[op_size];
     lock.lock();
-    data.done = false;
+    data.done = false; 
     data.hints = hints;
     data.object_size = object_size;
     data.op_size = op_size;
@@ -331,7 +331,7 @@ int ObjBencher::aio_bench(
 
     if (OP_WRITE == operation)
     {
-        r = write_bench(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid); 
+        r = write_bench(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid, encryptionflag); 
         if (r != 0)
             goto out;
     }
@@ -494,6 +494,7 @@ int ObjBencher::aio_bench_enc(
     lock.unlock();
 
      unsigned char *encMsgOut = NULL;
+     bool encryptionflag = false;
 
     //fill in contentsChars deterministically so we can check returns
     // sanitize_object_contents(&data, data.op_size);
@@ -503,8 +504,8 @@ int ObjBencher::aio_bench_enc(
 
     if (OP_WRITE == operation && write_flag)
     {
-        
-        r = write_bench_enc(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid, write_flag); //FKH write
+        encryptionflag = true;
+        r = write_bench(secondsToRun, concurrentios, run_name_meta, max_objects, prev_pid, encryptionflag); //FKH write
 
         if (r != 0)
             goto out;
@@ -632,363 +633,15 @@ int ObjBencher::fetch_bench_metadata(const std::string &metadata_file,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int ObjBencher::write_bench_enc(int secondsToRun,
-                                int concurrentios, const string &run_name_meta,
-                                unsigned max_objects, int prev_pid, bool write_flag)
-{
-
-    if (concurrentios <= 0)
-        return -EINVAL;
-
-    if (!formatter)
-    {
-        out(cout) << "Maintaining " << concurrentios << " concurrent writes of "
-                  << data.op_size << " bytes to objects of size "
-                  << data.object_size << " for up to "
-                  << secondsToRun << " seconds or "
-                  << max_objects << " objects"
-                  << std::endl;
-    }
-    else
-    {
-        formatter->dump_format("concurrent_ios", "%d", concurrentios);
-        formatter->dump_format("object_size", "%d", data.object_size);
-        formatter->dump_format("op_size", "%d", data.op_size);
-        formatter->dump_format("seconds_to_run", "%d", secondsToRun);
-        formatter->dump_format("max_objects", "%d", max_objects);
-    }
-    bufferlist *newContents = 0;
-
-    std::string prefix = prev_pid ? generate_object_prefix(prev_pid) : generate_object_prefix();
-    if (!formatter)
-        out(cout) << "Object prefix: " << prefix << std::endl;
-    else
-        formatter->dump_string("object_prefix", prefix);
-
-    std::vector<string> name(concurrentios);
-    std::string newName;
-    unique_ptr<bufferlist> contents[concurrentios];
-    int r = 0;
-    bufferlist b_write;
-    lock_cond lc(&lock);
-    double total_latency = 0;
-    std::vector<mono_time> start_times(concurrentios);
-    mono_time stopTime;
-    std::chrono::duration<double> timePassed;
-
-    unsigned writes_per_object = 1;
-    if (data.op_size)
-        writes_per_object = data.object_size    / data.op_size;
-
-    r = completions_init(concurrentios);
-
-    std::ofstream myEncFile1("objContent1.txt", std::ios::out | std::ios::app);
-
-    //set up writes so I can start them together
-    for (int i = 0; i < concurrentios; ++i)
-    {
-        name[i] = generate_object_name_fast(i / writes_per_object);
-        contents[i] = std::make_unique<bufferlist>();
-        snprintf(data.object_contents, data.op_size, "I'm the %16dth op!", i);
-        contents[i]->append(data.object_contents, data.op_size);
-        myEncFile1<< data.object_contents;
-    }
-
-    pthread_t print_thread;
-
-    pthread_create(&print_thread, NULL, ObjBencher::status_printer, (void *)this);
-    ceph_pthread_setname(print_thread, "write_stat");
-    std::unique_lock locker{lock};
-    data.finished = 0;
-    data.start_time = mono_clock::now();
-    locker.unlock();
-    std::ofstream myEncFile2("objContent2.txt", std::ios::out | std::ios::app);
-
-    for (int i = 0; i < concurrentios; ++i)
-    {
-        myEncFile2 << "Object content: (2) \n";
-        myEncFile2 << contents[i]->c_str();
-        start_times[i] = mono_clock::now();
-        r = create_completion(i, _aio_cb, (void *)&lc);
-        if (r < 0)
-            goto ERR;
-        r = aio_write_enc(name[i], i, *contents[i], data.op_size, data.op_size * (i % writes_per_object), write_flag); //FKH write (3)
-        // std::cout << "data.object_contents" << data.object_contents << std::endl;
-
-        if (r < 0)
-        {
-            goto ERR;
-        }
-        locker.lock();
-        ++data.started;
-        ++data.in_flight;
-        locker.unlock();
-    }
-
-    //keep on adding new writes as old ones complete until we've passed minimum time
-    int slot;
-
-    //don't need locking for reads because other thread doesn't write
-
-    stopTime = data.start_time + std::chrono::seconds(secondsToRun);
-    slot = 0;
-    locker.lock();
-    while (data.finished < data.started)
-    {
-        bool found = false;
-        while (1)
-        {
-            int old_slot = slot;
-            do
-            {
-                if (completion_is_done(slot))
-                {
-                    found = true;
-                    break;
-                }
-                slot++;
-                if (slot == concurrentios)
-                {
-                    slot = 0;
-                }
-            } while (slot != old_slot);
-            if (found)
-                break;
-            lc.cond.wait(locker);
-        }
-        locker.unlock();
-
-        completion_wait(slot);
-        locker.lock();
-        r = completion_ret(slot);
-        if (r != 0)
-        {
-            locker.unlock();
-            goto ERR;
-        }
-        data.cur_latency = mono_clock::now() - start_times[slot];
-        total_latency += data.cur_latency.count();
-        if (data.cur_latency.count() > data.max_latency)
-            data.max_latency = data.cur_latency.count();
-        if (data.cur_latency.count() < data.min_latency)
-            data.min_latency = data.cur_latency.count();
-        ++data.finished;
-        double delta = data.cur_latency.count() - data.avg_latency;
-        data.avg_latency = total_latency / data.finished;
-        data.latency_diff_sum += delta * (data.cur_latency.count() - data.avg_latency);
-        --data.in_flight;
-        locker.unlock();
-        release_completion(slot);
-
-        if (!secondsToRun || mono_clock::now() >= stopTime)
-        {
-            locker.lock();
-            continue;
-        }
-
-        if (data.op_size && max_objects &&
-            data.started >=
-                (int)((data.object_size * max_objects + data.op_size - 1) /
-                      data.op_size))
-        {
-            locker.lock();
-            continue;
-        }
-
-        //write new stuff to backend
-
-        //create new contents and name on the heap, and fill them
-        newName = generate_object_name_fast(data.started / writes_per_object);
-        newContents = contents[slot].get();
-
-        snprintf(newContents->c_str(), data.op_size, "I'm the %16dth op!", data.started);
-        // we wrote to buffer, going around internal crc cache, so invalidate it now.
-        newContents->invalidate_crc();
-
-        start_times[slot] = mono_clock::now();
-        r = create_completion(slot, _aio_cb, &lc);
-        if (r < 0)
-            goto ERR;
-        r = aio_write_enc(newName, slot, *newContents, data.op_size,
-                      data.op_size * (data.started % writes_per_object), write_flag);
-
-        if (r < 0)
-        {
-            goto ERR;
-        }
-        name[slot] = newName;
-        locker.lock();
-        ++data.started;
-        ++data.in_flight;
-    }
-    locker.unlock();
-
-    timePassed = mono_clock::now() - data.start_time;
-    locker.lock();
-    data.done = true;
-    locker.unlock();
-
-    pthread_join(print_thread, NULL);
-
-    double bandwidth;
-    bandwidth = ((double)data.finished) * ((double)data.op_size) /
-                timePassed.count();
-    bandwidth = bandwidth / (1024 * 1024); // we want it in MB/sec
-
-    double bandwidth_stddev;
-    double iops_stddev;
-    double latency_stddev;
-    if (data.idata.bandwidth_cycles > 1)
-    {
-        bandwidth_stddev = std::sqrt(data.idata.bandwidth_diff_sum / (data.idata.bandwidth_cycles - 1));
-    }
-    else
-    {
-        bandwidth_stddev = 0;
-    }
-    if (data.idata.iops_cycles > 1)
-    {
-        iops_stddev = std::sqrt(data.idata.iops_diff_sum / (data.idata.iops_cycles - 1));
-    }
-    else
-    {
-        iops_stddev = 0;
-    }
-    if (data.finished > 1)
-    {
-        latency_stddev = std::sqrt(data.latency_diff_sum / (data.finished - 1));
-    }
-    else
-    {
-        latency_stddev = 0;
-    }
-
-    if (!formatter)
-    {
-        out(cout) << "Total time run:         " << timePassed.count() << std::endl
-                  << "Total writes made:      " << data.finished << std::endl
-                  << "Write size:             " << data.op_size << std::endl
-                  << "Object size:            " << data.object_size << std::endl
-                  << "Bandwidth (MB/sec):     " << setprecision(6) << bandwidth << std::endl
-                  << "Stddev Bandwidth:       " << bandwidth_stddev << std::endl
-                  << "Max bandwidth (MB/sec): " << data.idata.max_bandwidth << std::endl
-                  << "Min bandwidth (MB/sec): " << data.idata.min_bandwidth << std::endl
-                  << "Average IOPS:           " << (int)(data.finished / timePassed.count()) << std::endl
-                  << "Stddev IOPS:            " << iops_stddev << std::endl
-                  << "Max IOPS:               " << data.idata.max_iops << std::endl
-                  << "Min IOPS:               " << data.idata.min_iops << std::endl
-                  << "Average Latency(s):     " << data.avg_latency << std::endl
-                  << "Stddev Latency(s):      " << latency_stddev << std::endl
-                  << "Max latency(s):         " << data.max_latency << std::endl
-                  << "Min latency(s):         " << data.min_latency << std::endl;
-    }
-    else
-    {
-        formatter->dump_format("total_time_run", "%f", timePassed.count());
-        formatter->dump_format("total_writes_made", "%d", data.finished);
-        formatter->dump_format("write_size", "%d", data.op_size);
-        formatter->dump_format("object_size", "%d", data.object_size);
-        formatter->dump_format("bandwidth", "%f", bandwidth);
-        formatter->dump_format("stddev_bandwidth", "%f", bandwidth_stddev);
-        formatter->dump_format("max_bandwidth", "%f", data.idata.max_bandwidth);
-        formatter->dump_format("min_bandwidth", "%f", data.idata.min_bandwidth);
-        formatter->dump_format("average_iops", "%d", (int)(data.finished / timePassed.count()));
-        formatter->dump_format("stddev_iops", "%d", iops_stddev);
-        formatter->dump_format("max_iops", "%d", data.idata.max_iops);
-        formatter->dump_format("min_iops", "%d", data.idata.min_iops);
-        formatter->dump_format("average_latency", "%f", data.avg_latency);
-        formatter->dump_format("stddev_latency", "%f", latency_stddev);
-        formatter->dump_format("max_latency", "%f", data.max_latency);
-        formatter->dump_format("min_latency", "%f", data.min_latency);
-    }
-    //write object size/number data for read benchmarks
-    encode(data.object_size, b_write);
-    encode(data.finished, b_write);
-    encode(prev_pid ? prev_pid : getpid(), b_write);
-    encode(data.op_size, b_write);
-
-    // persist meta-data for further cleanup or read
-    sync_write(run_name_meta, b_write, sizeof(int) * 3);
-
-    completions_done();
-
-    return 0;
-
-ERR:
-    locker.lock();
-    data.done = 1;
-    locker.unlock();
-    pthread_join(print_thread, NULL);
-    return r;
-}
-
-// END of write bench FKH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int ObjBencher::write_bench(int secondsToRun,
                             int concurrentios, const string &run_name_meta,
-                            unsigned max_objects, int prev_pid)
+                            unsigned max_objects, int prev_pid, bool encryptionFlag)
 {
+
+     std::ofstream bench_result("bench_result.txt", std::ios::out | std::ios::app);
+   
+
+
     if (concurrentios <= 0)
         return -EINVAL;
 
@@ -1059,8 +712,7 @@ int ObjBencher::write_bench(int secondsToRun,
         r = create_completion(i, _aio_cb, (void *)&lc);
         if (r < 0)
             goto ERR;
-        r = aio_write(name[i], i, *contents[i], data.op_size, data.op_size * (i % writes_per_object)); //FKH write (3)
-        std::cout << "data.object_contents" << data.object_contents << std::endl;
+        r = aio_write(name[i], i, *contents[i], data.op_size, data.op_size * (i % writes_per_object), encryptionFlag); //FKH write (3)
 
         if (r < 0)
         {
@@ -1085,9 +737,11 @@ int ObjBencher::write_bench(int secondsToRun,
         bool found = false;
         while (1)
         {
+
             int old_slot = slot;
             do
             {
+
                 if (completion_is_done(slot))
                 {
                     found = true;
@@ -1157,7 +811,7 @@ int ObjBencher::write_bench(int secondsToRun,
         if (r < 0)
             goto ERR;
         r = aio_write(newName, slot, *newContents, data.op_size,
-                      data.op_size * (data.started % writes_per_object));
+                      data.op_size * (data.started % writes_per_object), encryptionFlag);
 
         if (r < 0)
         {
@@ -1167,6 +821,7 @@ int ObjBencher::write_bench(int secondsToRun,
         locker.lock();
         ++data.started;
         ++data.in_flight;
+        std::cout << " loop (3) end" << std::endl;
     }
     locker.unlock();
 
@@ -1248,6 +903,9 @@ int ObjBencher::write_bench(int secondsToRun,
         formatter->dump_format("max_latency", "%f", data.max_latency);
         formatter->dump_format("min_latency", "%f", data.min_latency);
     }
+
+    bench_result << "total_time_run: " << timePassed.count() << ", " << "total_writes_made: "<< data.finished << ", " << "write_size: " << data.op_size<<", "<<"bandwidth: " <<bandwidth;
+    bench_result.close();
     //write object size/number data for read benchmarks
     encode(data.object_size, b_write);
     encode(data.finished, b_write);
@@ -1389,16 +1047,16 @@ int ObjBencher::seq_read_bench(
         // invalidate internal crc cache
         cur_contents->invalidate_crc();
 
-        if (!no_verify)
-        {
-            snprintf(data.object_contents, data.op_size, "I'm the %16dth op!", current_index);
-            if ((cur_contents->length() != data.op_size) ||
-                (memcmp(data.object_contents, cur_contents->c_str(), data.op_size) != 0))
-            {
-                cerr << name[slot] << " is not correct!" << std::endl;
-                ++errors;
-            }
-        }
+        // if (!no_verify)
+        // {
+        //     snprintf(data.object_contents, data.op_size, "I'm the %16dth op!", current_index);
+        //     if ((cur_contents->length() != data.op_size) ||
+        //         (memcmp(data.object_contents, cur_contents->c_str(), data.op_size) != 0))
+        //     {
+        //         cerr << name[slot] << " is not correct!" << std::endl;
+        //         ++errors;
+        //     }
+        // }
 
         bool start_new_read = (seconds_to_run && mono_clock::now() < finish_time) &&
                               num_ops > data.started;
