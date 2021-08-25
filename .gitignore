@@ -1,4 +1,8 @@
 *~
+src/dmclock/*
+src/rocksdb/*
+src/spawn/*
+
 *.co
 *.diff
 *.deb
