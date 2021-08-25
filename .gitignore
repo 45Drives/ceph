@@ -2,6 +2,8 @@
 src/dmclock/*
 src/rocksdb/*
 src/spawn/*
+src/dmclock
+src/spawn
 
 *.co
 *.diff
