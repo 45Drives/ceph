@@ -7,7 +7,7 @@ using namespace std;
 
 int Crypto::aesEncrypt( unsigned char *msg, size_t msgLen, unsigned char **encMsg,  unsigned char *key, unsigned char *iv)
 {
-    std::cout << "aesEncrypt() in Crypt.cc" <<std::endl;
+    // std::cout << "aesEncrypt() in Crypt.cc" <<std::endl;
 
     EVP_CIPHER_CTX *aesEncryptCtx;
     aesEncryptCtx = EVP_CIPHER_CTX_new();

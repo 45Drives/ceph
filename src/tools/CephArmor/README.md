@@ -5,7 +5,7 @@ This API adds cryptography functionality to the Ceph cluster through the "CephAr
 
 Instruction:
 
-Clone "fkhpacific" branch, follow the repository install instruction and deploy a Ceph cluster. 
+Clone "CephArmor" branch, follow the repository install instruction and deploy a Ceph cluster. 
 
 
 

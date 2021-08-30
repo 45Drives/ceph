@@ -67,44 +67,7 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     memset(data->object_contents, 'z', length);
 }
 
-//  void read_bench_enc(bench_data data){ 
-//      /*
-//      * This function initialize data structure and encrypt it.
-//      * Application of the function is in read benchmark
-//      * 
-//      * FKH
-//      */
 
-//      Crypto cryptObj;
-//      unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-//      unsigned char *iv = (unsigned char *)"0123456789012345";
-
-//     //  struct bench_data *data = new bench_data;
-//     //  data->op_size = op_size_val;
-//      char *contentsChars = new char[data.op_size];
-//      data.object_contents = contentsChars;
-
-//     //  sanitize_object_contents(data, data.op_size);
-
-//       memset(data.object_contents, 'z', data.op_size);
-//      // encrypt plaintext
-//     unsigned char *plaintext5 = (unsigned char *)data.object_contents;
-//     unsigned char *encMsgOut5;
-//     int encLen5 = cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
-//     // std::cout << "encLen5 :  " << encLen5 << std::endl;
-//     // std::cout << "----------------------------------------" << std::endl;
-//     // std::cout << "plaintext5 :  " << plaintext5 << std::endl;
-//     // std::cout << "----------------------------------------" << std::endl;
-//     // std::cout << "encMsgOut5 :  " << encMsgOut5 << std::endl;
-//     std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
-
-//     // derypt
-//     char *decMsg5;
-//     cryptObj.aesDecrypt(encMsgOut5, encLen5, &decMsg5, key, iv);
-//     std::cout << "---------------- decrypt ------------------------" << std::endl;
-//     // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
-   
-// }
 
  void read_bench_dec( unsigned char *encMsgOut){ 
      /*
@@ -122,8 +85,7 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     // derypt
     char *decMsg;
     cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, key, iv);
-    std::cout << "---------------- decrypt ------------------------" << std::endl;
-    // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
+    // std::cout << "---------------- decrypt ------------------------" << std::endl;
    
 }
 
@@ -945,7 +907,17 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
             // read_flag = true;
         }
         else if (strcmp(nargs[2], "rand") == 0){
-            operation = OP_RAND_READ;
+             if (enc_bench){
+
+             operation = OP_RAND_READ;
+             read_flag = true;
+
+             }
+             else{
+
+                  operation = OP_RAND_READ;
+             }
+            
             // read_flag = true;
 
         }

@@ -1,4 +1,7 @@
 *~
+
+src/tools/CephArmor/bench-script/one-server/*
+
 *.co
 *.diff
 *.deb

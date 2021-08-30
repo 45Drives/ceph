@@ -22,6 +22,7 @@
 #include "obj_bencher.h"
 #include "../tools/CephArmor/Crypto.h"
 
+
 const std::string BENCH_LASTRUN_METADATA = "benchmark_last_metadata";
 const std::string BENCH_PREFIX = "benchmark_data";
 const std::string BENCH_OBJ_NAME = BENCH_PREFIX + "_%s_%d_object%d";
@@ -343,7 +344,7 @@ int ObjBencher::aio_bench(
     }
     else if (OP_RAND_READ == operation)
     {
-        r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, no_verify);
+        r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
         if (r != 0)
             goto out;
     }
@@ -422,7 +423,7 @@ out:
     unsigned char *encMsgOut5;
     cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
     
-    std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
+    // std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
 
     return encMsgOut5;
    
@@ -528,7 +529,16 @@ int ObjBencher::aio_bench_enc(
     }
     else if (OP_RAND_READ == operation)
     {
-        r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, no_verify);
+        if (read_flag){
+
+            encMsgOut = read_bench_enc(data);
+            r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+
+        }else{
+
+             r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+
+        }
         if (r != 0)
             goto out;
     }
@@ -638,8 +648,9 @@ int ObjBencher::write_bench(int secondsToRun,
                             unsigned max_objects, int prev_pid, bool encryptionFlag)
 {
 
-     std::ofstream bench_result("bench_result.txt", std::ios::out | std::ios::app);
-   
+   std::ofstream bench_result("write_bench.txt", std::ios::out | std::ios::app);
+    // bench_result << "Total time run, Total writes made, Write size, Object size, Bandwidth (MB/sec), Stddev Bandwidth, Max bandwidth (MB/sec), Min bandwidth (MB/sec), Average IOPS, Stddev IOPS, Max IOPS, Min IOPS, Average Latency(s), Stddev Latency(s), Max latency(s), Min latency(s) \n";
+
 
 
     if (concurrentios <= 0)
@@ -821,7 +832,6 @@ int ObjBencher::write_bench(int secondsToRun,
         locker.lock();
         ++data.started;
         ++data.in_flight;
-        std::cout << " loop (3) end" << std::endl;
     }
     locker.unlock();
 
@@ -883,6 +893,8 @@ int ObjBencher::write_bench(int secondsToRun,
                   << "Stddev Latency(s):      " << latency_stddev << std::endl
                   << "Max latency(s):         " << data.max_latency << std::endl
                   << "Min latency(s):         " << data.min_latency << std::endl;
+
+                  bench_result << timePassed.count()<< ", "<< data.finished <<", "<< data.op_size <<", "<< data.object_size <<", "<< setprecision(6) << bandwidth<< ", "<< bandwidth_stddev << ", " << data.idata.max_bandwidth <<", "<< data.idata.min_bandwidth <<", "<<(int)(data.finished / timePassed.count()) <<", "<< iops_stddev << ", "<< data.idata.max_iops <<", "<<data.idata.min_iops <<", "<< data.avg_latency <<", "<< latency_stddev <<", "<< data.max_latency << ", "<< data.min_latency <<"\n";
     }
     else
     {
@@ -904,8 +916,7 @@ int ObjBencher::write_bench(int secondsToRun,
         formatter->dump_format("min_latency", "%f", data.min_latency);
     }
 
-    bench_result << "total_time_run: " << timePassed.count() << ", " << "total_writes_made: "<< data.finished << ", " << "write_size: " << data.op_size<<", "<<"bandwidth: " <<bandwidth;
-    bench_result.close();
+  
     //write object size/number data for read benchmarks
     encode(data.object_size, b_write);
     encode(data.finished, b_write);
@@ -938,6 +949,8 @@ int ObjBencher::seq_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
     int concurrentios, int pid, unsigned char *encMsgOut, bool no_verify)
 {
+    // this file stream records the result of benchmark
+    std::ofstream bench_result("seq_read_bench.txt", std::ios::out | std::ios::app);
 
     lock_cond lc(&lock);
 
@@ -1149,6 +1162,12 @@ int ObjBencher::seq_read_bench(
                   << "Average Latency(s):   " << data.avg_latency << std::endl
                   << "Max latency(s):       " << data.max_latency << std::endl
                   << "Min latency(s):       " << data.min_latency << std::endl;
+
+                //   Total time run, Total reads made, Read size, Object size, Bandwidth (MB/sec), Average IOPS, Stddev IOPS, Max IOPS, Min IOPS, Average Latency(s), Max latency(s), Min latency(s)
+
+        bench_result << timePassed.count()<< ", "<< data.finished <<", "<< data.op_size <<", "<< data.object_size <<", "<< setprecision(6) << bandwidth<< ", "<< (int)(data.finished / timePassed.count())<< ", " << iops_stddev << ", "<< data.idata.max_iops <<", "<<data.idata.min_iops <<", "<< data.avg_latency <<", "<< data.max_latency << ", "<< data.min_latency <<"\n";
+
+
     }
     else
     {
@@ -1197,8 +1216,13 @@ ERR:
 
 int ObjBencher::rand_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
-    int concurrentios, int pid, bool no_verify)
+    int concurrentios, int pid, unsigned char *encMsgOut, bool no_verify)
 {
+
+
+    // this file stream records the result of benchmark
+    std::ofstream bench_result("rand_read_bench.txt", std::ios::out | std::ios::app);
+
 
     lock_cond lc(&lock);
 
@@ -1251,8 +1275,17 @@ int ObjBencher::rand_read_bench(
         index[i] = i;
         start_times[i] = mono_clock::now();
         create_completion(i, _aio_cb, (void *)&lc);
-        r = aio_read(name[i], i, contents[i].get(), data.op_size,
+
+         if (encMsgOut != NULL)
+        {
+        r = aio_read_enc(name[i], i, contents[i].get(), data.op_size,
+                     data.op_size * (i % reads_per_object), encMsgOut);
+        }
+        else{
+            r = aio_read(name[i], i, contents[i].get(), data.op_size,
                      data.op_size * (i % reads_per_object));
+        }
+
         if (r < 0)
         {
             cerr << "r = " << r << std::endl;
@@ -1351,8 +1384,19 @@ int ObjBencher::rand_read_bench(
 
         start_times[slot] = mono_clock::now();
         create_completion(slot, _aio_cb, (void *)&lc);
-        r = aio_read(newName, slot, contents[slot].get(), data.op_size,
+
+
+        if (encMsgOut != NULL)
+        {
+            r = aio_read_enc(newName, slot, contents[slot].get(), data.op_size,
+                     data.op_size * (rand_id % reads_per_object), encMsgOut);
+        }
+        else{
+
+            r = aio_read(newName, slot, contents[slot].get(), data.op_size,
                      data.op_size * (rand_id % reads_per_object));
+        }
+
         if (r < 0)
         {
             goto ERR;
@@ -1399,6 +1443,11 @@ int ObjBencher::rand_read_bench(
                   << "Average Latency(s):   " << data.avg_latency << std::endl
                   << "Max latency(s):       " << data.max_latency << std::endl
                   << "Min latency(s):       " << data.min_latency << std::endl;
+
+            // Total time run, Total reads made, Read size, Object size, Bandwidth (MB/sec), Average IOPS, Stddev IOPS, Max IOPS, Min IOPS, Average Latency(s), Max latency(s), Min latency(s) 
+        bench_result << timePassed.count()<< ", "<< data.finished <<", "<< data.op_size <<", "<< data.object_size <<", "<< setprecision(6) << bandwidth<< ", "<< (int)(data.finished / timePassed.count())<< ", " << iops_stddev << ", "<< data.idata.max_iops <<", "<<data.idata.min_iops <<", "<< data.avg_latency <<", "<< data.max_latency << ", "<< data.min_latency <<"\n";
+
+
     }
     else
     {

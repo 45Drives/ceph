@@ -84,7 +84,7 @@ protected:
 
     int write_bench(int secondsToRun, int concurrentios, const string &run_name_meta, unsigned max_objects, int prev_pid, bool encryptionFlag);
     int seq_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, unsigned char *encMsgOut, bool no_verify = false);
-    int rand_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, bool no_verify = false);
+    int rand_read_bench(int secondsToRun, int num_ops, int num_objects, int concurrentios, int writePid, unsigned char *encMsgOut, bool no_verify = false);
 
     int clean_up(int num_objects, int prevPid, int concurrentios);
     bool more_objects_matching_prefix(const std::string &prefix, std::list<Object> *name);
