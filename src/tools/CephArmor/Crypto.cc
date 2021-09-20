@@ -43,6 +43,8 @@ int Crypto::aesEncrypt( unsigned char *msg, size_t msgLen, unsigned char **encMs
 
 int Crypto::aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv)
 {
+        // std::cout << "aesDecrypt() in Crypt.cc" <<std::endl;
+
     EVP_CIPHER_CTX *aesDecryptCtx;
     aesDecryptCtx = EVP_CIPHER_CTX_new();
 

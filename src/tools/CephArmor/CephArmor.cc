@@ -725,6 +725,14 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
         }
         block_size_specified = true;
     }
+     i = opts.find("max-objects");
+    if (i != opts.end())
+    {
+        if (rados_sistrtoll(i, &max_objects))
+        {
+            return -EINVAL;
+        }
+    }
     i = opts.find("no-cleanup");
     if (i != opts.end())
     {
@@ -1109,6 +1117,10 @@ int main(int argc, const char **argv)
         else if (ceph_argparse_witharg(args, i, &val, "-O", (char *)NULL))
         {
             opts["object-size"] = val;
+        }
+         else if (ceph_argparse_witharg(args, i, &val, "--max-objects", (char *)NULL))
+        {
+            opts["max-objects"] = val;
         }
         else if (ceph_argparse_flag(args, i, "--pretty-format", (char *)NULL))
         {

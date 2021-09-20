@@ -1,0 +1,724 @@
+------------------------- Thread 2 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 60 write -b 1M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_927214
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2         3         1  0.999888         1    0.977891    0.977891
+data is not still done!!!!!
+    2       2         6         4   1.99971         3   0.0649467      0.7919
+data is not still done!!!!!
+    3       2         8         6   1.99972         2    0.953598     0.84486
+data is not still done!!!!!
+    4       2        12        10   2.49965         4    0.943241    0.707571
+data is not still done!!!!!
+    5       1        14        13   2.59961         3    0.932767    0.759404
+data is not still done!!!!!
+    6       2        19        17    2.8329         4      0.9532    0.699162
+data is not still done!!!!!
+    7       2        22        20   2.85669         3   0.0844155    0.692461
+data is not still done!!!!!
+    8       2        25        23   2.87455         3    0.922957    0.685677
+data is not still done!!!!!
+    9       2        32        30   3.33279         7   0.0574666    0.570306
+data is not still done!!!!!
+   10       2        43        41   4.09935        11   0.0651907    0.478413
+Total time run:         10.6137
+Total writes made:      43
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     4.05137
+Stddev Bandwidth:       2.88483
+Max bandwidth (MB/sec): 11
+Min bandwidth (MB/sec): 1
+Average IOPS:           4
+Stddev IOPS:            2.88483
+Max IOPS:               11
+Min IOPS:               1
+Average Latency(s):     0.480055
+Stddev Latency(s):      0.451378
+Max latency(s):         1.17826
+Min latency(s):         0.0498787
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 60 write -b 2M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_927518
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2         3         1   1.99982         2    0.973027    0.973027
+data is not still done!!!!!
+    2       2        13        11   10.9988        20    0.128757    0.270557
+data is not still done!!!!!
+    3       1        29        28   18.6644        34    0.137132    0.209358
+data is not still done!!!!!
+    4       2        48        46    22.997        36    0.114552    0.170642
+data is not still done!!!!!
+    5       2        66        64   25.5966        36     0.11626     0.15407
+data is not still done!!!!!
+    6       2        82        80    26.663        32    0.117057    0.148057
+data is not still done!!!!!
+    7       2        98        96   27.4245        32    0.120943    0.143814
+data is not still done!!!!!
+    8       2       114       112   27.9957        32    0.132652     0.14104
+data is not still done!!!!!
+    9       2       131       129   28.6621        34    0.120555    0.138973
+data is not still done!!!!!
+   10       2       149       147   29.3953        36   0.0893533     0.13525
+Total time run:         10.0717
+Total writes made:      149
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     29.5879
+Stddev Bandwidth:       10.7103
+Max bandwidth (MB/sec): 36
+Min bandwidth (MB/sec): 2
+Average IOPS:           14
+Stddev IOPS:            5.35516
+Max IOPS:               18
+Min IOPS:               1
+Average Latency(s):     0.134866
+Stddev Latency(s):      0.126744
+Max latency(s):         1.02111
+Min latency(s):         0.0854053
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 60 write -b 3M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_927791
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       1        12        11   32.9958        33    0.125041     0.16412
+data is not still done!!!!!
+    2       1        24        23   34.4955        36    0.154725    0.166256
+data is not still done!!!!!
+    3       2        38        36   35.9947        39    0.139909    0.163206
+data is not still done!!!!!
+    4       2        50        48   35.9949        36    0.158231    0.162374
+data is not still done!!!!!
+    5       2        63        61   36.5949        39    0.127596    0.158952
+data is not still done!!!!!
+    6       1        76        75   37.4945        42    0.123154    0.158723
+data is not still done!!!!!
+    7       2        88        86   36.8515        33    0.159272    0.160347
+data is not still done!!!!!
+    8       2       101        99   37.1194        39    0.134696     0.16026
+data is not still done!!!!!
+    9       2       114       112   37.3276        39    0.130604    0.158925
+data is not still done!!!!!
+   10       2       127       125   37.4941        39    0.170301    0.158627
+Total time run:         10.0986
+Total writes made:      127
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     37.728
+Stddev Bandwidth:       2.91548
+Max bandwidth (MB/sec): 42
+Min bandwidth (MB/sec): 33
+Average IOPS:           12
+Stddev IOPS:            0.971825
+Max IOPS:               14
+Min IOPS:               11
+Average Latency(s):     0.158548
+Stddev Latency(s):      0.0315367
+Max latency(s):         0.290682
+Min latency(s):         0.122336
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 60 write -b 4M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_928065
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2        11         9   35.9966        36    0.165732    0.193037
+data is not still done!!!!!
+    2       1        21        20   39.9951        44    0.154821    0.194951
+data is not still done!!!!!
+    3       2        31        29   38.6619        36    0.211194    0.199932
+data is not still done!!!!!
+    4       1        41        40   39.9944        44    0.203845    0.196681
+data is not still done!!!!!
+    5       2        50        48   38.3946        32    0.285607    0.204051
+data is not still done!!!!!
+    6       2        60        58   38.6612        40    0.213952     0.20244
+data is not still done!!!!!
+    7       2        70        68   38.8515        40    0.197697    0.202934
+data is not still done!!!!!
+    8       1        79        78   38.9943        40    0.226109    0.204038
+data is not still done!!!!!
+    9       2        87        85   37.7722        28    0.224995     0.20809
+data is not still done!!!!!
+   10       1        95        94   37.5942        36    0.229354    0.209086
+Total time run:         10.1353
+Total writes made:      96
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     37.8874
+Stddev Bandwidth:       5.05964
+Max bandwidth (MB/sec): 44
+Min bandwidth (MB/sec): 28
+Average IOPS:           9
+Stddev IOPS:            1.26491
+Max IOPS:               11
+Min IOPS:               7
+Average Latency(s):     0.209743
+Stddev Latency(s):      0.0439739
+Max latency(s):         0.402354
+Min latency(s):         0.145771
+------------------------- Thread 4 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 60 write -b 1M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_928338
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       3        48        45    44.996        45    0.110135   0.0872222
+data is not still done!!!!!
+    2       4        99        95   47.4943        50    0.060505   0.0822716
+data is not still done!!!!!
+    3       4       147       143   47.6605        48   0.0695245   0.0813945
+data is not still done!!!!!
+    4       4       195       191   47.7438        48   0.0659284    0.082297
+data is not still done!!!!!
+    5       4       238       234   46.7934        43   0.0764433   0.0832956
+data is not still done!!!!!
+    6       4       276       272   45.3269        38    0.108336   0.0875803
+data is not still done!!!!!
+    7       4       321       317   45.2789        45    0.232595   0.0877831
+data is not still done!!!!!
+    8       4       369       365   45.6179        48   0.0756134   0.0863969
+data is not still done!!!!!
+    9       4       409       405    44.993        40   0.0624461   0.0883582
+data is not still done!!!!!
+   10       4       456       452   45.1929        47   0.0494373   0.0881308
+Total time run:         10.0726
+Total writes made:      456
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     45.2712
+Stddev Bandwidth:       3.85285
+Max bandwidth (MB/sec): 50
+Min bandwidth (MB/sec): 38
+Average IOPS:           45
+Stddev IOPS:            3.85285
+Max IOPS:               50
+Min IOPS:               38
+Average Latency(s):     0.088132
+Stddev Latency(s):      0.0494378
+Max latency(s):         0.469971
+Min latency(s):         0.0488007
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 60 write -b 2M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_928613
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        29        25   49.9947        50    0.108496    0.143894
+data is not still done!!!!!
+    2       4        56        52   51.9927        54    0.122952    0.146086
+data is not still done!!!!!
+    3       4        85        81   53.9926        58    0.135302     0.14512
+data is not still done!!!!!
+    4       4       114       110   54.9916        58    0.191528    0.142814
+data is not still done!!!!!
+    5       4       142       138   55.1914        56    0.138021    0.142134
+data is not still done!!!!!
+    6       4       168       164   54.6581        52    0.101303    0.142432
+data is not still done!!!!!
+    7       3       196       193   55.1342        58    0.181405    0.143976
+data is not still done!!!!!
+    8       4       224       220   54.9913        54     0.14308    0.144053
+data is not still done!!!!!
+    9       3       250       247     54.88        54    0.121038    0.144364
+data is not still done!!!!!
+   10       4       276       272   54.3911        50    0.257387    0.145746
+Total time run:         10.0862
+Total writes made:      276
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     54.7282
+Stddev Bandwidth:       3.09839
+Max bandwidth (MB/sec): 58
+Min bandwidth (MB/sec): 50
+Average IOPS:           27
+Stddev IOPS:            1.54919
+Max IOPS:               29
+Min IOPS:               25
+Average Latency(s):     0.145427
+Stddev Latency(s):      0.0431718
+Max latency(s):         0.402794
+Min latency(s):         0.0876625
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 60 write -b 3M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_928901
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        19        15   44.9948        45    0.235708    0.222272
+data is not still done!!!!!
+    2       4        39        35   52.4931        60    0.189648    0.214031
+data is not still done!!!!!
+    3       4        58        54   53.9919        57    0.246471    0.214131
+data is not still done!!!!!
+    4       3        77        74   55.4914        60    0.131281    0.212975
+data is not still done!!!!!
+    5       3        95        92   55.1914        54    0.154502    0.212265
+data is not still done!!!!!
+    6       4       114       110   54.9915        54    0.448824    0.213891
+data is not still done!!!!!
+    7       4       133       129   55.2771        57    0.443173    0.213715
+data is not still done!!!!!
+    8       4       150       146   54.7414        51    0.227976    0.214798
+data is not still done!!!!!
+    9       4       170       166   55.3246        60    0.185353    0.214984
+data is not still done!!!!!
+   10       3       188       185   55.4912        57    0.276107      0.2137
+Total time run:         10.2496
+Total writes made:      189
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     55.3193
+Stddev Bandwidth:       4.74342
+Max bandwidth (MB/sec): 60
+Min bandwidth (MB/sec): 45
+Average IOPS:           18
+Stddev IOPS:            1.58114
+Max IOPS:               20
+Min IOPS:               15
+Average Latency(s):     0.214858
+Stddev Latency(s):      0.0636407
+Max latency(s):         0.448824
+Min latency(s):         0.119033
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 60 write -b 4M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_929173
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        16        12   47.9932        48    0.217825     0.27674
+data is not still done!!!!!
+    2       4        32        28   55.9922        64    0.232203    0.253908
+data is not still done!!!!!
+    3       4        45        41   54.6592        52     0.23337    0.266139
+data is not still done!!!!!
+    4       4        61        57   56.9921        64    0.160675    0.269164
+data is not still done!!!!!
+    5       3        76        73   58.3915        64    0.255877    0.265727
+data is not still done!!!!!
+    6       4        91        87   57.9916        56    0.276167    0.267995
+data is not still done!!!!!
+    7       4       106       102   58.2773        60    0.213225     0.26667
+data is not still done!!!!!
+    8       4       121       117   58.4914        60    0.194583    0.268433
+data is not still done!!!!!
+    9       3       136       133   59.1024        64    0.215461    0.267157
+data is not still done!!!!!
+   10       4       150       146   58.3908        52    0.195984    0.267994
+Total time run:         10.1097
+Total writes made:      150
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     59.349
+Stddev Bandwidth:       6.02218
+Max bandwidth (MB/sec): 64
+Min bandwidth (MB/sec): 48
+Average IOPS:           14
+Stddev IOPS:            1.50555
+Max IOPS:               16
+Min IOPS:               12
+Average Latency(s):     0.268666
+Stddev Latency(s):      0.0675347
+Max latency(s):         0.51546
+Min latency(s):         0.150769
+------------------------- Thread 8 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 60 write -b 1M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_929568
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        76        68   67.9876        68   0.0705847    0.109382
+data is not still done!!!!!
+    2       7       145       138   68.9874        70   0.0497556    0.112339
+data is not still done!!!!!
+    3       8       203       195   64.9887        57   0.0906059    0.120138
+data is not still done!!!!!
+    4       8       276       268   66.9886        73   0.0889641     0.11759
+data is not still done!!!!!
+    5       7       340       333    66.589        65    0.126748    0.118245
+data is not still done!!!!!
+    6       8       393       385   64.1561        52    0.085664    0.120606
+data is not still done!!!!!
+    7       8       460       452   64.5607        67    0.225156    0.122757
+data is not still done!!!!!
+    8       8       528       520   64.9896        68    0.101172    0.121907
+data is not still done!!!!!
+    9       8       584       576   63.9898        56    0.308227    0.123149
+data is not still done!!!!!
+   10       8       650       642     64.19        66    0.126298    0.123289
+Total time run:         10.0662
+Total writes made:      650
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     64.5725
+Stddev Bandwidth:       6.82805
+Max bandwidth (MB/sec): 73
+Min bandwidth (MB/sec): 52
+Average IOPS:           64
+Stddev IOPS:            6.82805
+Max IOPS:               73
+Min IOPS:               52
+Average Latency(s):     0.123318
+Stddev Latency(s):      0.064957
+Max latency(s):         0.58053
+Min latency(s):         0.0497556
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 60 write -b 2M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_929839
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        37        29   57.9917        58    0.200008    0.237517
+data is not still done!!!!!
+    2       8        71        63   62.9889        68    0.149897    0.231791
+data is not still done!!!!!
+    3       7       110       103   68.6537        80     0.30187    0.224211
+data is not still done!!!!!
+    4       8       143       135   67.4868        64    0.182099    0.226135
+data is not still done!!!!!
+    5       8       177       169   67.5868        68    0.139306    0.224874
+data is not still done!!!!!
+    6       8       213       205   68.3199        72    0.115808    0.228056
+data is not still done!!!!!
+    7       8       247       239   68.2719        68    0.205888    0.228018
+data is not still done!!!!!
+    8       8       282       274   68.4863        70    0.280089    0.229129
+data is not still done!!!!!
+    9       8       318       310   68.8751        72    0.149681    0.228269
+data is not still done!!!!!
+   10       8       350       342   68.3864        64    0.383752    0.229467
+Total time run:         10.3809
+Total writes made:      350
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     67.4313
+Stddev Bandwidth:       5.87272
+Max bandwidth (MB/sec): 80
+Min bandwidth (MB/sec): 58
+Average IOPS:           33
+Stddev IOPS:            2.93636
+Max IOPS:               40
+Min IOPS:               29
+Average Latency(s):     0.233238
+Stddev Latency(s):      0.0844781
+Max latency(s):         0.685483
+Min latency(s):         0.0996846
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 60 write -b 3M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_930111
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        24        16   47.9953        48    0.493446    0.369972
+data is not still done!!!!!
+    2       8        47        39    58.493        69    0.231949    0.357243
+data is not still done!!!!!
+    3       8        73        65   64.9919        78    0.260937    0.338496
+data is not still done!!!!!
+    4       8        98        90   67.4908        75    0.588065    0.331422
+data is not still done!!!!!
+    5       8       122       114   68.3905        72    0.340626    0.336048
+data is not still done!!!!!
+    6       8       147       139   69.4901        75    0.464954     0.33155
+data is not still done!!!!!
+    7       8       171       163   69.8472        72    0.323476    0.331272
+data is not still done!!!!!
+    8       8       195       187   70.1149        72    0.215624    0.332377
+data is not still done!!!!!
+    9       7       221       214   71.3226        81    0.482918    0.330648
+data is not still done!!!!!
+   10       7       244       237   71.0894        69    0.358222    0.332665
+Total time run:         10.5487
+Total writes made:      245
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     69.6768
+Stddev Bandwidth:       8.94986
+Max bandwidth (MB/sec): 81
+Min bandwidth (MB/sec): 48
+Average IOPS:           23
+Stddev IOPS:            2.98329
+Max IOPS:               27
+Min IOPS:               16
+Average Latency(s):     0.331857
+Stddev Latency(s):      0.0973438
+Max latency(s):         0.642712
+Min latency(s):         0.134474
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 60 write -b 4M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_930403
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        20        12   47.9922        48    0.448322    0.420421
+data is not still done!!!!!
+    2       7        40        33   65.9884        84    0.406115    0.443671
+data is not still done!!!!!
+    3       8        56        48   63.9891        60    0.391778    0.434684
+data is not still done!!!!!
+    4       8        74        66   65.9885        72    0.310082    0.446709
+data is not still done!!!!!
+    5       8        92        84   67.1882        72    0.533129    0.449695
+data is not still done!!!!!
+    6       8       109       101   67.3215        68    0.254467    0.440777
+data is not still done!!!!!
+    7       8       128       120   68.5589        76    0.389716    0.450555
+data is not still done!!!!!
+    8       8       145       137   68.4874        68    0.362461    0.447505
+data is not still done!!!!!
+    9       8       164       156   69.3204        76    0.303227    0.447735
+data is not still done!!!!!
+   10       7       183       176   70.3872        80    0.810443    0.445325
+Total time run:         10.4315
+Total writes made:      184
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     70.5553
+Stddev Bandwidth:       10.3623
+Max bandwidth (MB/sec): 84
+Min bandwidth (MB/sec): 48
+Average IOPS:           17
+Stddev IOPS:            2.59058
+Max IOPS:               21
+Min IOPS:               12
+Average Latency(s):     0.442983
+Stddev Latency(s):      0.156413
+Max latency(s):         1.13507
+Min latency(s):         0.194755
+------------------------- Thread 16 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 60 write -b 1M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_930688
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      15        80        65   64.9936        65    0.119957    0.203588
+data is not still done!!!!!
+    2      16       162       146   72.9904        81    0.166515    0.205184
+data is not still done!!!!!
+    3      16       236       220   73.3226        74     0.15512    0.206237
+data is not still done!!!!!
+    4      15       309       294    73.489        74    0.140453    0.209349
+data is not still done!!!!!
+    5      15       378       363   72.5893        69    0.354784    0.214348
+data is not still done!!!!!
+    6      16       450       434   72.3222        71     0.31712    0.215053
+data is not still done!!!!!
+    7      16       527       511   72.9884        77    0.114992    0.213758
+data is not still done!!!!!
+    8      16       605       589   73.6131        78     0.15626    0.213442
+data is not still done!!!!!
+    9      16       680       664   73.7661        75    0.130051    0.211918
+data is not still done!!!!!
+   10      16       759       743   74.2883        79   0.0893014    0.211707
+Total time run:         10.3568
+Total writes made:      759
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     73.2851
+Stddev Bandwidth:       4.87739
+Max bandwidth (MB/sec): 81
+Min bandwidth (MB/sec): 65
+Average IOPS:           73
+Stddev IOPS:            4.87739
+Max IOPS:               81
+Min IOPS:               65
+Average Latency(s):     0.212909
+Stddev Latency(s):      0.100665
+Max latency(s):         0.620589
+Min latency(s):         0.0607677
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 60 write -b 2M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_930980
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        42        26   51.9925        52    0.261094    0.379762
+data is not still done!!!!!
+    2      16        79        63   62.9894        74    0.268969    0.391029
+data is not still done!!!!!
+    3      15       117       102   67.9872        78    0.486125    0.426659
+data is not still done!!!!!
+    4      16       153       137   68.4867        70    0.544073    0.433791
+data is not still done!!!!!
+    5      16       190       174   69.5868        74    0.499885    0.432475
+data is not still done!!!!!
+    6      15       228       213   70.9861        78    0.505563    0.431616
+data is not still done!!!!!
+    7      16       267       251   71.7001        76    0.132506    0.425488
+data is not still done!!!!!
+    8      16       304       288   71.9859        74    0.312863    0.425211
+data is not still done!!!!!
+    9      15       347       332    73.763        88    0.261486    0.423668
+data is not still done!!!!!
+   10      16       385       369   73.7852        74    0.303362    0.417215
+Total time run:         10.4896
+Total writes made:      385
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     73.4062
+Stddev Bandwidth:       9.01604
+Max bandwidth (MB/sec): 88
+Min bandwidth (MB/sec): 52
+Average IOPS:           36
+Stddev IOPS:            4.50802
+Max IOPS:               44
+Min IOPS:               26
+Average Latency(s):     0.423495
+Stddev Latency(s):      0.21611
+Max latency(s):         1.74026
+Min latency(s):         0.124304
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 60 write -b 3M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_931269
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        35        19   56.9942        57    0.855603    0.479407
+data is not still done!!!!!
+    2      15        61        46   68.9907        81    0.511701    0.520248
+data is not still done!!!!!
+    3      15        84        69   68.9896        69    0.613498    0.553613
+data is not still done!!!!!
+    4      15       108        93   69.7395        72    0.907197    0.591186
+data is not still done!!!!!
+    5      16       133       117   70.1895        72    0.407206    0.608952
+data is not still done!!!!!
+    6      16       161       145   72.4889        84    0.294973    0.610502
+data is not still done!!!!!
+    7      15       180       165   70.7034        60    0.314149    0.617266
+data is not still done!!!!!
+    8      16       206       190   71.2387        75    0.311521      0.6245
+data is not still done!!!!!
+    9      16       232       216   71.9883        78    0.694458     0.62423
+data is not still done!!!!!
+   10      16       258       242   72.5885        78    0.600499    0.625958
+Total time run:         10.5595
+Total writes made:      258
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     73.2992
+Stddev Bandwidth:       8.69483
+Max bandwidth (MB/sec): 84
+Min bandwidth (MB/sec): 57
+Average IOPS:           24
+Stddev IOPS:            2.89828
+Max IOPS:               28
+Min IOPS:               19
+Average Latency(s):     0.631123
+Stddev Latency(s):      0.335393
+Max latency(s):         1.93369
+Min latency(s):         0.1782
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 60 write -b 4M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 10 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_931560
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        24         8    31.993        32    0.808676    0.599886
+data is not still done!!!!!
+    2      16        47        31   61.9873        92    0.375143    0.743091
+data is not still done!!!!!
+    3      16        66        50   66.6534        76    0.444417    0.750053
+data is not still done!!!!!
+    4      16        85        69   68.9865        76    0.420918    0.754486
+data is not still done!!!!!
+    5      16       104        88   70.3864        76    0.547283    0.786186
+data is not still done!!!!!
+    6      16       123       107   71.3201        76    0.788982    0.808775
+data is not still done!!!!!
+    7      16       140       124   70.8443        68    0.708377    0.812484
+data is not still done!!!!!
+    8      15       161       146   72.9869        88    0.781836    0.816622
+data is not still done!!!!!
+    9      16       180       164   72.8761        72     1.68749    0.831517
+data is not still done!!!!!
+   10      16       197       181   72.3876        68     1.04382    0.830091
+Total time run:         10.5022
+Total writes made:      197
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     75.0318
+Stddev Bandwidth:       16.1603
+Max bandwidth (MB/sec): 92
+Min bandwidth (MB/sec): 32
+Average IOPS:           18
+Stddev IOPS:            4.04008
+Max IOPS:               23
+Min IOPS:               8
+Average Latency(s):     0.829483
+Stddev Latency(s):      0.356915
+Max latency(s):         2.21142
+Min latency(s):         0.23377

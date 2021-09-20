@@ -1,0 +1,1394 @@
+------------------------- Thread 2 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 30 write -b 1M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_165191
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2        13        11   10.9986        11    0.107897   0.0869632
+data is not still done!!!!!
+    2       2        26        24    11.998        13   0.0697516   0.0882081
+data is not still done!!!!!
+    3       1        43        42   13.9977        18    0.343698    0.141357
+data is not still done!!!!!
+    4       2        66        64   15.9972        22   0.0726544    0.121136
+data is not still done!!!!!
+    5       2        93        91    18.197        27   0.0631039    0.108646
+data is not still done!!!!!
+    6       2       115       113   18.8303        22   0.0656116    0.105149
+data is not still done!!!!!
+    7       2       135       133   18.9969        20   0.0807075    0.104681
+data is not still done!!!!!
+    8       2       156       154    19.247        21    0.142586    0.103563
+data is not still done!!!!!
+    9       2       181       179   19.8859        25   0.0731063    0.100258
+data is not still done!!!!!
+   10       2       203       201    20.097        22   0.0642014   0.0981208
+data is not still done!!!!!
+   11       2       226       224   20.3606        23   0.0830526   0.0980978
+data is not still done!!!!!
+   12       2       250       248   20.6635        24   0.0893015   0.0958633
+data is not still done!!!!!
+   13       2       276       274   21.0737        26   0.0803602   0.0947291
+data is not still done!!!!!
+   14       2       302       300   21.4252        26   0.0886608   0.0929162
+data is not still done!!!!!
+   15       2       327       325   21.6633        25    0.076313   0.0918911
+data is not still done!!!!!
+   16       2       353       351   21.9341        26   0.0558104   0.0909244
+data is not still done!!!!!
+   17       2       375       373   21.9377        22   0.0741913   0.0906237
+data is not still done!!!!!
+   18       2       402       400   22.2187        27   0.0748364   0.0897463
+data is not still done!!!!!
+   19       2       425       423   22.2596        23    0.145685   0.0895571
+data is not still done!!!!!
+2021-09-09T18:29:31.619229-0300 min lat: 0.0475595 max lat: 2.29298 avg lat: 0.088314
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       2       453       451   22.5464        28   0.0711888    0.088314
+data is not still done!!!!!
+   21       2       476       474   22.5677        23   0.0617436   0.0884889
+data is not still done!!!!!
+   22       2       498       496   22.5418        22   0.0754289   0.0881536
+data is not still done!!!!!
+   23       2       523       521   22.6485        25   0.0882205   0.0881128
+data is not still done!!!!!
+   24       1       547       546   22.7463        25   0.0644716   0.0877182
+data is not still done!!!!!
+   25       2       568       566   22.6364        20   0.0721243   0.0875609
+data is not still done!!!!!
+   26       2       579       577   22.1888        11   0.0582954   0.0876302
+data is not still done!!!!!
+   27       2       593       591   21.8854        14   0.0553745   0.0872484
+data is not still done!!!!!
+   28       2       608       606   21.6395        15   0.0633398   0.0867693
+data is not still done!!!!!
+   29       2       629       627   21.6173        21   0.0590174   0.0922505
+data is not still done!!!!!
+   30       2       655       653   21.7633        26   0.0781793   0.0917361
+Total time run:         30.0389
+Total writes made:      655
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     21.805
+Stddev Bandwidth:       4.74657
+Max bandwidth (MB/sec): 28
+Min bandwidth (MB/sec): 11
+Average IOPS:           21
+Stddev IOPS:            4.74657
+Max IOPS:               28
+Min IOPS:               11
+Average Latency(s):     0.0916591
+Stddev Latency(s):      0.167719
+Max latency(s):         3.63557
+Min latency(s):         0.0475595
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 30 write -b 2M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_166043
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2        16        14   27.9982        28    0.112211    0.127938
+data is not still done!!!!!
+    2       1        32        31   30.9964        34    0.147602    0.125412
+data is not still done!!!!!
+    3       2        49        47   31.3291        32    0.102482    0.125358
+data is not still done!!!!!
+    4       2        66        64   31.9956        34   0.0934962    0.122389
+data is not still done!!!!!
+    5       2        83        81   32.3956        34    0.109255    0.121664
+data is not still done!!!!!
+    6       2        99        97   32.3288        32   0.0898735    0.121672
+data is not still done!!!!!
+    7       2       116       114   32.5666        34    0.132471    0.122072
+data is not still done!!!!!
+    8       2       129       127   31.7452        26    0.088684    0.124652
+data is not still done!!!!!
+    9       2       144       142   31.5506        30    0.118721    0.125419
+data is not still done!!!!!
+   10       2       156       154   30.7951        24    0.110637     0.12836
+data is not still done!!!!!
+   11       2       170       168   30.5407        28    0.154915    0.130258
+data is not still done!!!!!
+   12       2       187       185   30.8286        34   0.0933923    0.128927
+data is not still done!!!!!
+   13       2       197       195   29.9954        20    0.108536    0.128889
+data is not still done!!!!!
+   14       2       197       195   27.8529         0           -    0.128889
+data is not still done!!!!!
+   15       2       206       204   27.1958         9    0.198911    0.146441
+data is not still done!!!!!
+   16       2       216       214   26.7458        20    0.113432    0.145141
+data is not still done!!!!!
+   17       2       224       222   26.1135        16    0.109372    0.144007
+data is not still done!!!!!
+   18       2       238       236   26.2181        28    0.126578    0.151847
+data is not still done!!!!!
+   19       2       252       250   26.3116        28   0.0991945    0.151017
+data is not still done!!!!!
+2021-09-09T18:30:02.875741-0300 min lat: 0.085136 max lat: 1.99888 avg lat: 0.150308
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       2       267       265   26.4957        30    0.129468    0.150308
+data is not still done!!!!!
+   21       2       283       281   26.7575        32    0.125793     0.14882
+data is not still done!!!!!
+   22       2       299       297   26.9955        32    0.118535    0.147186
+data is not still done!!!!!
+   23       1       315       314   27.2999        34    0.105755    0.146138
+data is not still done!!!!!
+   24       1       330       329   27.4121        30    0.188219    0.145837
+data is not still done!!!!!
+   25       2       346       344   27.5154        30    0.111772    0.144954
+data is not still done!!!!!
+   26       2       362       360   27.6877        32    0.112897     0.14384
+data is not still done!!!!!
+   27       2       374       372    27.551        24    0.136333     0.14467
+data is not still done!!!!!
+   28       2       388       386   27.5669        28    0.109685    0.144581
+data is not still done!!!!!
+   29       1       403       402   27.7196        32   0.0986246    0.144087
+data is not still done!!!!!
+   30       2       416       414   27.5954        24    0.116447    0.144633
+Total time run:         30.1315
+Total writes made:      416
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     27.6123
+Stddev Bandwidth:       7.83955
+Max bandwidth (MB/sec): 34
+Min bandwidth (MB/sec): 0
+Average IOPS:           13
+Stddev IOPS:            3.96087
+Max IOPS:               17
+Min IOPS:               0
+Average Latency(s):     0.144647
+Stddev Latency(s):      0.156507
+Max latency(s):         1.99888
+Min latency(s):         0.0850519
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 30 write -b 3M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_166680
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2        11         9   26.9965        27    0.175028    0.183329
+data is not still done!!!!!
+    2       2        21        19    28.496        30    0.162849    0.194035
+data is not still done!!!!!
+    3       2        31        29   28.9956        30    0.187865    0.197721
+data is not still done!!!!!
+    4       2        41        39   29.2456        30    0.176634    0.193866
+data is not still done!!!!!
+    5       2        51        49   29.3956        30    0.347702    0.201043
+data is not still done!!!!!
+    6       2        61        59   29.4956        30    0.186406    0.198064
+data is not still done!!!!!
+    7       1        71        70   29.9955        33    0.169692    0.198072
+data is not still done!!!!!
+    8       2        84        82   30.7453        36    0.142065    0.193501
+data is not still done!!!!!
+    9       2        93        91   30.3286        27    0.190969    0.196365
+data is not still done!!!!!
+   10       2       104       102   30.5952        33    0.125445    0.193587
+data is not still done!!!!!
+   11       2       114       112   30.5408        30    0.170242    0.194882
+data is not still done!!!!!
+   12       2       121       119   29.7454        21    0.134622    0.196267
+data is not still done!!!!!
+   13       1       131       130   29.9954        33    0.132059    0.199077
+data is not still done!!!!!
+   14       2       140       138   29.5668        24    0.245326    0.200997
+data is not still done!!!!!
+   15       2       150       148   29.5953        30    0.229662    0.200317
+data is not still done!!!!!
+   16       2       159       157   29.4328        27     0.18093    0.202292
+data is not still done!!!!!
+   17       2       169       167    29.466        30    0.206205    0.201085
+data is not still done!!!!!
+   18       2       180       178    29.662        33    0.183042    0.201089
+data is not still done!!!!!
+   19       1       190       189   29.8373        33    0.129309    0.200727
+data is not still done!!!!!
+2021-09-09T18:30:34.116384-0300 min lat: 0.113837 max lat: 0.53232 avg lat: 0.200804
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       2       200       198   29.6952        27    0.179629    0.200804
+data is not still done!!!!!
+   21       2       209       207   29.5666        27    0.257999    0.201082
+data is not still done!!!!!
+   22       2       220       218   29.7224        33    0.197738    0.200651
+data is not still done!!!!!
+   23       1       232       231   30.1255        39    0.158304    0.198468
+data is not still done!!!!!
+   24       2       245       243   30.3701        36    0.183532    0.196627
+data is not still done!!!!!
+   25       2       258       256    30.715        39    0.132749    0.194669
+data is not still done!!!!!
+   26       2       267       265   30.5719        27    0.183234    0.195125
+data is not still done!!!!!
+   27       2       278       276   30.6617        33     0.20569     0.19492
+data is not still done!!!!!
+   28       1       289       288   30.8521        36    0.126415    0.193832
+data is not still done!!!!!
+   29       2       301       299    30.926        33    0.173503    0.193284
+data is not still done!!!!!
+   30       2       312       310    30.995        33    0.276796      0.1927
+Total time run:         30.072
+Total writes made:      312
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     31.1253
+Stddev Bandwidth:       4.11892
+Max bandwidth (MB/sec): 39
+Min bandwidth (MB/sec): 21
+Average IOPS:           10
+Stddev IOPS:            1.37297
+Max IOPS:               13
+Min IOPS:               7
+Average Latency(s):     0.192531
+Stddev Latency(s):      0.0631095
+Max latency(s):         0.53232
+Min latency(s):         0.113837
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 30 write -b 4M -t 2 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 2 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_167493
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       1         9         8    31.997        32    0.271374    0.230841
+data is not still done!!!!!
+    2       1        18        17   33.9956        36     0.19896    0.220889
+data is not still done!!!!!
+    3       2        28        26   34.6617        36    0.184993    0.222438
+data is not still done!!!!!
+    4       2        38        36   35.9945        40    0.184531    0.215003
+data is not still done!!!!!
+    5       2        48        46   36.7944        40    0.238801    0.211694
+data is not still done!!!!!
+    6       2        57        55   36.6608        36    0.218921    0.209567
+data is not still done!!!!!
+    7       2        67        65   37.1368        40    0.251519    0.211892
+data is not still done!!!!!
+    8       2        76        74    36.994        36    0.226128    0.212594
+data is not still done!!!!!
+    9       2        86        84   37.3274        40    0.165328     0.21234
+data is not still done!!!!!
+   10       2        94        92    36.794        32    0.225048    0.212985
+data is not still done!!!!!
+   11       2       104       102   37.0847        40    0.159584    0.213354
+data is not still done!!!!!
+   12       2       113       111   36.9937        36    0.204981     0.21446
+data is not still done!!!!!
+   13       2       122       120   36.9168        36    0.182705    0.214984
+data is not still done!!!!!
+   14       2       131       129   36.8509        36    0.161562    0.214394
+data is not still done!!!!!
+   15       2       138       136   36.2605        28    0.345512    0.216682
+data is not still done!!!!!
+   16       2       147       145   36.2438        36    0.157661    0.218066
+data is not still done!!!!!
+   17       2       155       153   35.9938        32    0.187132    0.220388
+data is not still done!!!!!
+   18       2       164       162   35.9938        36    0.182147    0.219939
+data is not still done!!!!!
+   19       2       172       170   35.7834        32    0.198478    0.221639
+data is not still done!!!!!
+2021-09-09T18:31:05.411002-0300 min lat: 0.147228 max lat: 0.604144 avg lat: 0.221414
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       1       181       180   35.9939        40    0.256588    0.221414
+data is not still done!!!!!
+   21       1       189       188   35.8033        32    0.217892    0.222439
+data is not still done!!!!!
+   22       2       199       197   35.8119        36    0.280031    0.222324
+data is not still done!!!!!
+   23       2       208       206   35.8198        36    0.217604    0.222115
+data is not still done!!!!!
+   24       2       218       216   35.9936        40    0.209838    0.221077
+data is not still done!!!!!
+   25       2       227       225   35.9937        36    0.266928    0.221409
+data is not still done!!!!!
+   26       2       237       235   36.1476        40    0.223435    0.220719
+data is not still done!!!!!
+   27       2       246       244   36.1418        36    0.175804    0.220171
+data is not still done!!!!!
+   28       2       257       255   36.4222        44    0.149761    0.218912
+data is not still done!!!!!
+   29       2       266       264   36.4074        36     0.23589    0.218587
+data is not still done!!!!!
+   30       2       276       274   36.5269        40    0.220469    0.218126
+Total time run:         30.2689
+Total writes made:      276
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     36.473
+Stddev Bandwidth:       3.44146
+Max bandwidth (MB/sec): 44
+Min bandwidth (MB/sec): 28
+Average IOPS:           9
+Stddev IOPS:            0.860366
+Max IOPS:               11
+Min IOPS:               7
+Average Latency(s):     0.218649
+Stddev Latency(s):      0.0535244
+Max latency(s):         0.604144
+Min latency(s):         0.146978
+------------------------- Thread 4 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 30 write -b 1M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_168253
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        39        35    34.997        35   0.0793916   0.0891466
+data is not still done!!!!!
+    2       3        75        72   35.9955        37   0.0851077    0.083939
+data is not still done!!!!!
+    3       4        91        87   28.9959        15    0.073487   0.0844205
+data is not still done!!!!!
+    4       4       130       126   31.4953        39   0.0613025    0.125927
+data is not still done!!!!!
+    5       4       175       171    34.195        45    0.102258    0.115487
+data is not still done!!!!!
+    6       3       215       212   35.3281        41   0.0714748    0.111908
+data is not still done!!!!!
+    7       4       262       258   36.8516        46   0.0803053    0.107941
+data is not still done!!!!!
+    8       4       309       305   38.1192        47    0.101278    0.104564
+data is not still done!!!!!
+    9       4       350       346   38.4386        41    0.107617    0.103156
+data is not still done!!!!!
+   10       4       394       390   38.9942        44   0.0730232    0.102083
+data is not still done!!!!!
+   11       4       428       424   38.5396        34   0.0860906    0.101008
+data is not still done!!!!!
+   12       4       461       457   38.0775        33   0.0612608     0.10434
+data is not still done!!!!!
+   13       4       493       489   37.6095        32   0.0530298     0.10367
+data is not still done!!!!!
+   14       3       520       517   36.9228        28   0.0944314    0.107111
+data is not still done!!!!!
+   15       4       559       555   36.9942        38    0.131965    0.107322
+data is not still done!!!!!
+   16       4       591       587   36.6817        32    0.220162     0.10889
+data is not still done!!!!!
+   17       4       625       621   36.5236        34    0.200541    0.108719
+data is not still done!!!!!
+   18       4       656       652   36.2165        31   0.0776026    0.109238
+data is not still done!!!!!
+   19       4       689       685   36.0469        33   0.0777941    0.110374
+data is not still done!!!!!
+2021-09-09T18:31:36.640165-0300 min lat: 0.0478303 max lat: 3.02221 avg lat: 0.110471
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       4       724       720   35.9943        35   0.0844009    0.110471
+data is not still done!!!!!
+   21       4       749       745   35.4704        25    0.326526    0.111519
+data is not still done!!!!!
+   22       4       784       780   35.4487        35    0.101891    0.112528
+data is not still done!!!!!
+   23       4       817       813   35.3419        33   0.0570769    0.112712
+data is not still done!!!!!
+   24       4       836       832    34.661        19    0.432703     0.11317
+data is not still done!!!!!
+   25       4       860       856   34.2344        24    0.343908    0.115725
+data is not still done!!!!!
+   26       4       892       888   34.1482        32    0.101032    0.116768
+data is not still done!!!!!
+   27       4       920       916   33.9203        28   0.0653279    0.116805
+data is not still done!!!!!
+   28       4       954       950   33.9229        34    0.101036    0.117537
+data is not still done!!!!!
+   29       4       990       986   33.9944        36   0.0893736    0.117461
+data is not still done!!!!!
+   30       3      1019      1016    33.861        30   0.0530344    0.117895
+Total time run:         30.1882
+Total writes made:      1019
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     33.7549
+Stddev Bandwidth:       7.35191
+Max bandwidth (MB/sec): 47
+Min bandwidth (MB/sec): 15
+Average IOPS:           33
+Stddev IOPS:            7.35191
+Max IOPS:               47
+Min IOPS:               15
+Average Latency(s):     0.118026
+Stddev Latency(s):      0.159262
+Max latency(s):         3.02221
+Min latency(s):         0.0478303
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 30 write -b 2M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_168946
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        23        19   37.9965        38    0.145642    0.192694
+data is not still done!!!!!
+    2       4        43        39   38.9954        40    0.103169    0.191675
+data is not still done!!!!!
+    3       4        63        59   39.3282        40     0.27885    0.195068
+data is not still done!!!!!
+    4       4        83        79   39.4946        40    0.137834    0.196678
+data is not still done!!!!!
+    5       4       104       100    39.994        42    0.289823    0.197464
+data is not still done!!!!!
+    6       4       124       120   39.9934        40    0.203981    0.195885
+data is not still done!!!!!
+    7       4       142       138   39.4222        36    0.169657    0.199931
+data is not still done!!!!!
+    8       4       160       156   38.9935        36    0.227485     0.20179
+data is not still done!!!!!
+    9       4       182       178    39.549        44    0.267416    0.199419
+data is not still done!!!!!
+   10       4       203       199   39.7934        42    0.150147    0.197702
+data is not still done!!!!!
+   11       4       225       221   40.1752        44    0.128827    0.198016
+data is not still done!!!!!
+   12       3       243       240   39.9934        38    0.142905     0.19775
+data is not still done!!!!!
+   13       4       263       259   39.8396        38    0.162349    0.198553
+data is not still done!!!!!
+   14       4       284       280   39.9935        42    0.125074    0.198417
+data is not still done!!!!!
+   15       4       306       302   40.2601        44    0.162323    0.196482
+data is not still done!!!!!
+   16       4       328       324   40.4932        44    0.119208    0.196257
+data is not still done!!!!!
+   17       4       349       345   40.5815        42    0.213765    0.195578
+data is not still done!!!!!
+   18       4       370       366   40.6599        42    0.167528    0.194495
+data is not still done!!!!!
+   19       4       391       387     40.73        42    0.144166    0.194123
+data is not still done!!!!!
+2021-09-09T18:32:07.900207-0300 min lat: 0.0869169 max lat: 0.757411 avg lat: 0.194324
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       4       412       408   40.7932        42    0.236957    0.194324
+data is not still done!!!!!
+   21       4       432       428   40.7548        40    0.171459    0.194865
+data is not still done!!!!!
+   22       4       453       449   40.8111        42    0.120455    0.194325
+data is not still done!!!!!
+   23       4       474       470   40.8625        42    0.134568    0.194593
+data is not still done!!!!!
+   24       4       494       490   40.8263        40    0.181888    0.194127
+data is not still done!!!!!
+   25       4       515       511   40.8729        42    0.166796    0.194191
+data is not still done!!!!!
+   26       4       538       534   41.0698        46    0.128961    0.193902
+data is not still done!!!!!
+   27       3       558       555    41.104        42    0.177409     0.19392
+data is not still done!!!!!
+   28       4       579       575   41.0643        40    0.241164    0.193942
+data is not still done!!!!!
+   29       4       603       599   41.3032        48    0.142211    0.192764
+data is not still done!!!!!
+   30       4       625       621   41.3929        44    0.131076    0.192685
+Total time run:         30.1567
+Total writes made:      625
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     41.4502
+Stddev Bandwidth:       2.68585
+Max bandwidth (MB/sec): 48
+Min bandwidth (MB/sec): 36
+Average IOPS:           20
+Stddev IOPS:            1.34293
+Max IOPS:               24
+Min IOPS:               18
+Average Latency(s):     0.192333
+Stddev Latency(s):      0.0735823
+Max latency(s):         0.757411
+Min latency(s):         0.0869169
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 30 write -b 3M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_169705
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       3        16        13   38.9969        39    0.337648    0.274736
+data is not still done!!!!!
+    2       4        31        27   40.4952        42    0.149289    0.242439
+data is not still done!!!!!
+    3       4        45        41   40.9935        42    0.131425    0.230647
+data is not still done!!!!!
+    4       4        61        57   42.7431        48    0.117913    0.268699
+data is not still done!!!!!
+    5       4        70        66    39.594        27    0.449024    0.264541
+data is not still done!!!!!
+    6       3        81        78   38.9939        36    0.249327    0.253068
+data is not still done!!!!!
+    7       4        90        86   36.8512        24    0.119462    0.247508
+data is not still done!!!!!
+    8       3       102        99   37.1189        39    0.194857    0.304786
+data is not still done!!!!!
+    9       4       117       113   37.6607        42    0.422269    0.310801
+data is not still done!!!!!
+   10       4       135       131   39.2939        54    0.137886    0.298166
+data is not still done!!!!!
+   11       4       152       148   40.3574        51    0.244091    0.293739
+data is not still done!!!!!
+   12       4       171       167   41.7435        57    0.200583     0.28368
+data is not still done!!!!!
+   13       3       189       186   42.9164        57     0.33145    0.277296
+data is not still done!!!!!
+   14       4       207       203   43.4931        51    0.249663    0.273246
+data is not still done!!!!!
+   15       4       223       219   43.7932        48    0.158827    0.272038
+data is not still done!!!!!
+   16       4       240       236    44.243        51    0.249673    0.267959
+data is not still done!!!!!
+   17       4       256       252   44.4636        48    0.149798    0.266458
+data is not still done!!!!!
+   18       4       269       265   44.1597        39    0.317684    0.264139
+data is not still done!!!!!
+   19       3       285       282   44.5193        51    0.191458    0.268189
+data is not still done!!!!!
+2021-09-09T18:32:39.170299-0300 min lat: 0.117913 max lat: 3.40471 avg lat: 0.267529
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       4       301       297    44.543        45    0.151808    0.267529
+data is not still done!!!!!
+   21       4       317       313    44.707        48    0.144993    0.266643
+data is not still done!!!!!
+   22       4       335       331    45.129        54    0.226591    0.264487
+data is not still done!!!!!
+   23       4       352       348    45.384        51    0.203294    0.262612
+data is not still done!!!!!
+   24       4       368       364   45.4927        48    0.433459    0.262084
+data is not still done!!!!!
+   25       4       385       381   45.7126        51    0.243987    0.260442
+data is not still done!!!!!
+   26       4       401       397   45.8004        48    0.162134     0.26031
+data is not still done!!!!!
+   27       4       419       415   46.1037        54     0.23546    0.258797
+data is not still done!!!!!
+   28       4       436       432   46.2783        51    0.324017    0.257941
+data is not still done!!!!!
+   29       3       449       446   46.1306        42    0.220261    0.258831
+data is not still done!!!!!
+   30       4       465       461   46.0927        45    0.226065    0.259129
+Total time run:         30.1619
+Total writes made:      465
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     46.2503
+Stddev Bandwidth:       7.85801
+Max bandwidth (MB/sec): 57
+Min bandwidth (MB/sec): 24
+Average IOPS:           15
+Stddev IOPS:            2.61934
+Max IOPS:               19
+Min IOPS:               8
+Average Latency(s):     0.258965
+Stddev Latency(s):      0.260093
+Max latency(s):         3.40471
+Min latency(s):         0.117913
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 30 write -b 4M -t 4 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 4 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_170520
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        10         6   23.9974        24    0.458658    0.372138
+data is not still done!!!!!
+    2       3        22        19   37.9949        52    0.215855    0.391415
+data is not still done!!!!!
+    3       4        36        32   42.6605        52    0.209846    0.355373
+data is not still done!!!!!
+    4       4        48        44   43.9938        48    0.370867    0.348318
+data is not still done!!!!!
+    5       4        60        56   44.7932        48    0.577936    0.345561
+data is not still done!!!!!
+    6       3        73        70   46.6594        56    0.321099    0.336649
+data is not still done!!!!!
+    7       3        86        83   47.4213        52    0.266667    0.330812
+data is not still done!!!!!
+    8       4       100        96   47.9922        52    0.218351    0.326803
+data is not still done!!!!!
+    9       4       112       108   47.9923        48    0.304749    0.323841
+data is not still done!!!!!
+   10       3       125       122   48.7922        56    0.274833     0.32103
+data is not still done!!!!!
+   11       3       138       135    49.083        52    0.296618    0.322606
+data is not still done!!!!!
+   12       4       152       148   49.3255        52    0.193684    0.318736
+data is not still done!!!!!
+   13       3       163       160   49.2229        48    0.252632    0.315093
+data is not still done!!!!!
+   14       4       176       172   49.1349        48    0.165667    0.320897
+data is not still done!!!!!
+   15       4       189       185   49.3254        52    0.287456    0.321555
+data is not still done!!!!!
+   16       4       202       198    49.492        52    0.379491    0.320443
+data is not still done!!!!!
+   17       3       216       213   50.1095        60    0.526262    0.318107
+data is not still done!!!!!
+   18       4       229       225   49.9919        48     0.30514    0.315953
+data is not still done!!!!!
+   19       4       239       235   49.4657        40    0.264457    0.320103
+data is not still done!!!!!
+2021-09-09T18:33:10.443559-0300 min lat: 0.162578 max lat: 1.83698 avg lat: 0.31883
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       4       252       248   49.5919        52    0.341625     0.31883
+data is not still done!!!!!
+   21       4       264       260   49.5154        48    0.378746    0.320523
+data is not still done!!!!!
+   22       4       278       274   49.8097        56    0.222375    0.317944
+data is not still done!!!!!
+   23       4       292       288   50.0784        56    0.279306    0.316745
+data is not still done!!!!!
+   24       3       306       303   50.4913        60     0.21081    0.314147
+data is not still done!!!!!
+   25       4       319       315   50.3913        48    0.227079    0.315409
+data is not still done!!!!!
+   26       3       332       329   50.6066        56    0.282003     0.31504
+data is not still done!!!!!
+   27       4       344       340   50.3616        44    0.452356    0.314298
+data is not still done!!!!!
+   28       4       356       352    50.277        48    0.428126    0.315586
+data is not still done!!!!!
+   29       4       370       366    50.474        56    0.189223    0.315186
+data is not still done!!!!!
+   30       4       382       378   50.3913        48    0.209007      0.3155
+Total time run:         30.2578
+Total writes made:      382
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     50.4994
+Stddev Bandwidth:       6.69328
+Max bandwidth (MB/sec): 60
+Min bandwidth (MB/sec): 24
+Average IOPS:           12
+Stddev IOPS:            1.67332
+Max IOPS:               15
+Min IOPS:               6
+Average Latency(s):     0.315547
+Stddev Latency(s):      0.13962
+Max latency(s):         1.83698
+Min latency(s):         0.153763
+------------------------- Thread 8 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 30 write -b 1M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_171211
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        52        44   43.9962        44   0.0926026    0.154313
+data is not still done!!!!!
+    2       8       112       104   51.9944        60   0.0885677    0.143733
+data is not still done!!!!!
+    3       8       159       151   50.3277        47    0.212211    0.153481
+data is not still done!!!!!
+    4       8       218       210   52.4935        59    0.332564    0.147885
+data is not still done!!!!!
+    5       8       274       266   53.1927        56    0.118295    0.146447
+data is not still done!!!!!
+    6       8       332       324   53.9919        58    0.317849     0.14551
+data is not still done!!!!!
+    7       8       394       386   55.1347        62   0.0899357    0.142989
+data is not still done!!!!!
+    8       8       454       446   55.7416        60    0.146706     0.14163
+data is not still done!!!!!
+    9       8       498       490   54.4361        44   0.0939759    0.145348
+data is not still done!!!!!
+   10       8       556       548   54.7916        58    0.108877      0.1446
+data is not still done!!!!!
+   11       8       614       606   55.0822        58    0.112124    0.143183
+data is not still done!!!!!
+   12       8       675       667   55.5744        61     0.11235    0.142252
+data is not still done!!!!!
+   13       8       736       728   55.9909        61   0.0910703    0.141799
+data is not still done!!!!!
+   14       8       791       783   55.9194        55    0.111831    0.142207
+data is not still done!!!!!
+   15       8       848       840   55.9908        57    0.112774    0.141845
+data is not still done!!!!!
+   16       8       913       905   56.5531        65    0.162487    0.140501
+data is not still done!!!!!
+   17       8       977       969   56.9905        64    0.193893    0.139252
+data is not still done!!!!!
+   18       8      1031      1023    56.824        54    0.292758    0.140262
+data is not still done!!!!!
+   19       7      1090      1083   56.9907        60    0.153556     0.13968
+data is not still done!!!!!
+2021-09-09T18:33:41.972009-0300 min lat: 0.0462418 max lat: 1.10659 avg lat: 0.139275
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       8      1150      1142   57.0908        59   0.0721591    0.139275
+data is not still done!!!!!
+   21       7      1207      1200   57.1336        58    0.100841    0.139521
+data is not still done!!!!!
+   22       8      1259      1251   56.8545        51    0.104938     0.14011
+data is not still done!!!!!
+   23       8      1319      1311   56.9908        60   0.0892939    0.139515
+data is not still done!!!!!
+   24       8      1364      1356   56.4908        45    0.176549     0.13983
+data is not still done!!!!!
+   25       8      1428      1420   56.7907        64   0.0788419    0.140351
+data is not still done!!!!!
+   26       8      1473      1465   56.3369        45     0.12945    0.140775
+data is not still done!!!!!
+   27       7      1526      1519   56.2501        54    0.129436    0.140487
+data is not still done!!!!!
+   28       8      1585      1577   56.3122        58    0.079408    0.139734
+data is not still done!!!!!
+   29       8      1638      1630   56.1976        53    0.168829    0.141785
+data is not still done!!!!!
+   30       8      1690      1682   56.0574        52    0.115951    0.142153
+Total time run:         30.2478
+Total writes made:      1690
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     55.8718
+Stddev Bandwidth:       6.06819
+Max bandwidth (MB/sec): 65
+Min bandwidth (MB/sec): 44
+Average IOPS:           55
+Stddev IOPS:            6.06819
+Max IOPS:               65
+Min IOPS:               44
+Average Latency(s):     0.142499
+Stddev Latency(s):      0.135004
+Max latency(s):         3.78678
+Min latency(s):         0.0462418
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 30 write -b 2M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_171970
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        30        22   43.9944        44    0.253337    0.286975
+data is not still done!!!!!
+    2       8        60        52   51.9925        60    0.145799    0.271664
+data is not still done!!!!!
+    3       8        92        84   55.9917        64    0.188605    0.269587
+data is not still done!!!!!
+    4       7       119       112   55.9908        56    0.423471    0.272108
+data is not still done!!!!!
+    5       8       151       143   57.1905        62    0.281936    0.268888
+data is not still done!!!!!
+    6       8       184       176   58.6572        66    0.245742    0.265878
+data is not still done!!!!!
+    7       8       209       201   57.4185        50    0.224385      0.2671
+data is not still done!!!!!
+    8       8       243       235   58.7394        68    0.187331    0.265399
+data is not still done!!!!!
+    9       7       276       269   59.7671        68     0.34185    0.264726
+data is not still done!!!!!
+   10       8       306       298   59.5895        58    0.620812     0.26369
+data is not still done!!!!!
+   11       8       334       326   59.2623        56    0.270824    0.265697
+data is not still done!!!!!
+   12       8       364       356   59.3229        60    0.244616    0.266401
+data is not still done!!!!!
+   13       7       394       387    59.528        62    0.190863    0.266523
+data is not still done!!!!!
+   14       8       423       415   59.2754        56    0.208316    0.266171
+data is not still done!!!!!
+   15       8       454       446   59.4563        62    0.139881    0.266253
+data is not still done!!!!!
+   16       8       483       475   59.3648        58    0.272603    0.266887
+data is not still done!!!!!
+   17       7       513       506   59.5191        62    0.262506    0.266506
+data is not still done!!!!!
+   18       8       544       536   59.5453        60    0.170408    0.266608
+data is not still done!!!!!
+   19       8       573       565   59.4635        58    0.215762    0.265882
+data is not still done!!!!!
+2021-09-09T18:34:13.255382-0300 min lat: 0.0997601 max lat: 0.848808 avg lat: 0.26628
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       8       604       596   59.5898        62    0.276147     0.26628
+data is not still done!!!!!
+   21       8       638       630   59.9893        68    0.205174    0.265312
+data is not still done!!!!!
+   22       8       666       658   59.8077        56    0.196114    0.266275
+data is not still done!!!!!
+   23       8       696       688   59.8156        60    0.255487     0.26618
+data is not still done!!!!!
+   24       8       727       719   59.9062        62    0.287866    0.265542
+data is not still done!!!!!
+   25       7       757       750   59.9897        62    0.160758    0.265494
+data is not still done!!!!!
+   26       8       780       772   59.3744        44    0.131586    0.266488
+data is not still done!!!!!
+   27       7       811       804   59.5454        64    0.163318    0.266666
+data is not still done!!!!!
+   28       7       840       833   59.4898        58    0.405799    0.267098
+data is not still done!!!!!
+   29       7       868       861   59.3691        56    0.252105    0.267862
+data is not still done!!!!!
+   30       8       899       891   59.3897        60    0.190843    0.268327
+Total time run:         30.2055
+Total writes made:      899
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     59.5257
+Stddev Bandwidth:       5.82859
+Max bandwidth (MB/sec): 68
+Min bandwidth (MB/sec): 44
+Average IOPS:           29
+Stddev IOPS:            2.91429
+Max IOPS:               34
+Min IOPS:               22
+Average Latency(s):     0.267894
+Stddev Latency(s):      0.101145
+Max latency(s):         0.848808
+Min latency(s):         0.0997601
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 30 write -b 3M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_172786
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        26        18    53.992        54    0.267728    0.348552
+data is not still done!!!!!
+    2       8        48        40   59.9895        66     0.25229    0.359866
+data is not still done!!!!!
+    3       7        69        62   61.9893        66    0.272576    0.358411
+data is not still done!!!!!
+    4       8        88        80   59.9895        54    0.443544    0.368942
+data is not still done!!!!!
+    5       8       110       102   61.1891        66    0.415998    0.377152
+data is not still done!!!!!
+    6       8       130       122    60.989        60    0.495313    0.377875
+data is not still done!!!!!
+    7       8       150       142   60.8461        60    0.552652    0.381991
+data is not still done!!!!!
+    8       8       171       163   61.1137        63    0.509285    0.380049
+data is not still done!!!!!
+    9       8       191       183    60.989        60    0.399196    0.379226
+data is not still done!!!!!
+   10       8       212       204   61.1892        63    0.394722    0.381222
+data is not still done!!!!!
+   11       8       232       224   61.0802        60    0.483028    0.382332
+data is not still done!!!!!
+   12       8       253       245   61.2393        63    0.506169    0.385641
+data is not still done!!!!!
+   13       8       271       263   60.6817        54    0.498612    0.387434
+data is not still done!!!!!
+   14       8       291       283   60.6324        60    0.315816    0.389466
+data is not still done!!!!!
+   15       8       312       304   60.7895        63    0.389594    0.386113
+data is not still done!!!!!
+   16       7       332       325    60.927        63    0.237086    0.387241
+data is not still done!!!!!
+   17       8       354       346   61.0483        63    0.262508    0.385804
+data is not still done!!!!!
+   18       8       378       370    61.656        72    0.366616    0.384032
+data is not still done!!!!!
+   19       8       399       391   61.7262        63    0.331164    0.383648
+data is not still done!!!!!
+2021-09-09T18:34:44.541651-0300 min lat: 0.156181 max lat: 0.808242 avg lat: 0.384508
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       8       420       412   61.7893        63    0.572701    0.384508
+data is not still done!!!!!
+   21       8       442       434    61.989        66    0.226115    0.382184
+data is not still done!!!!!
+   22       7       462       455   62.0344        63    0.320763    0.384332
+data is not still done!!!!!
+   23       8       481       473   61.6847        54    0.465669    0.384713
+data is not still done!!!!!
+   24       8       500       492   61.4891        57    0.349202    0.384564
+data is not still done!!!!!
+   25       7       524       517   62.0291        75    0.242982    0.385162
+data is not still done!!!!!
+   26       7       543       536   61.8353        57    0.483474    0.384946
+data is not still done!!!!!
+   27       8       562       554   61.5448        54     0.37284    0.386834
+data is not still done!!!!!
+   28       8       583       575   61.5964        63    0.532052     0.38668
+data is not still done!!!!!
+   29       7       603       596   61.6443        63    0.269165    0.386269
+data is not still done!!!!!
+   30       7       623       616   61.5891        60    0.440637    0.386303
+Total time run:         30.4127
+Total writes made:      623
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     61.4546
+Stddev Bandwidth:       5.0282
+Max bandwidth (MB/sec): 75
+Min bandwidth (MB/sec): 54
+Average IOPS:           20
+Stddev IOPS:            1.67607
+Max IOPS:               25
+Min IOPS:               18
+Average Latency(s):     0.386974
+Stddev Latency(s):      0.127919
+Max latency(s):         0.931539
+Min latency(s):         0.156181
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 30 write -b 4M -t 8 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 8 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_173424
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        20        12    47.994        48    0.426454    0.468355
+data is not still done!!!!!
+    2       8        35        27   53.9916        60    0.321839    0.491726
+data is not still done!!!!!
+    3       7        53        46   61.3243        76    0.414697    0.482668
+data is not still done!!!!!
+    4       8        71        63   62.9906        68    0.480339    0.470787
+data is not still done!!!!!
+    5       8        87        79   63.1898        64    0.563072    0.471761
+data is not still done!!!!!
+    6       7       105        98   65.3231        76    0.287143    0.472073
+data is not still done!!!!!
+    7       7       119       112   63.9902        56    0.496015    0.475256
+data is not still done!!!!!
+    8       8       137       129   64.4901        68    0.517672    0.473099
+data is not still done!!!!!
+    9       8       153       145   64.4347        64    0.644559    0.480028
+data is not still done!!!!!
+   10       8       170       162   64.7901        68    0.490631    0.480747
+data is not still done!!!!!
+   11       8       188       180   65.4445        72    0.302668    0.472218
+data is not still done!!!!!
+   12       8       207       199   66.3231        76     0.36144    0.468207
+data is not still done!!!!!
+   13       8       226       218   67.0665        76    0.398015    0.463865
+data is not still done!!!!!
+   14       8       241       233    66.561        60    0.368956    0.467357
+data is not still done!!!!!
+   15       7       258       251   66.9228        72    0.763844    0.468256
+data is not still done!!!!!
+   16       8       276       268   66.9895        68    0.623427    0.468791
+data is not still done!!!!!
+   17       8       292       284    66.813        64    0.283209    0.470271
+data is not still done!!!!!
+   18       8       306       298   66.2119        56    0.332497    0.470022
+data is not still done!!!!!
+   19       7       325       318   66.9369        80    0.304858    0.473488
+data is not still done!!!!!
+2021-09-09T18:35:15.855890-0300 min lat: 0.185265 max lat: 2.28068 avg lat: 0.472237
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       7       341       334   66.7896        64    0.462692    0.472237
+data is not still done!!!!!
+   21       8       357       349   66.4656        60    0.493247    0.470303
+data is not still done!!!!!
+   22       7       375       368   66.8985        76    0.395209    0.468091
+data is not still done!!!!!
+   23       7       388       381   66.2504        52     0.44013    0.474132
+data is not still done!!!!!
+   24       8       407       399   66.4894        72      2.3898    0.476075
+data is not still done!!!!!
+   25       8       424       416   66.5493        68    0.307436    0.474385
+data is not still done!!!!!
+   26       8       441       433   66.6048        68    0.453608    0.474282
+data is not still done!!!!!
+   27       7       459       452   66.9524        76    0.418998     0.47357
+data is not still done!!!!!
+   28       8       477       469   66.9894        68    0.553073    0.472617
+data is not still done!!!!!
+   29       8       495       487   67.1617        72    0.529268    0.471879
+data is not still done!!!!!
+   30       8       512       504   67.1893        68    0.257959    0.471427
+Total time run:         30.3072
+Total writes made:      512
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     67.5748
+Stddev Bandwidth:       7.81863
+Max bandwidth (MB/sec): 80
+Min bandwidth (MB/sec): 48
+Average IOPS:           16
+Stddev IOPS:            1.95466
+Max IOPS:               20
+Min IOPS:               12
+Average Latency(s):     0.471555
+Stddev Latency(s):      0.211004
+Max latency(s):         3.04267
+Min latency(s):         0.175983
+------------------------- Thread 16 -------------------------------------
+------------------------- Message_size 1M -------------------------------------
+CephArmor bench 30 write -b 1M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 1048576 bytes to objects of size 1048576 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_174184
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        76        60   59.9924        60    0.173703    0.216955
+data is not still done!!!!!
+    2      15       141       126   62.9905        66    0.776912    0.231015
+data is not still done!!!!!
+    3      15       212       197   65.6573        71     0.12093    0.232499
+data is not still done!!!!!
+    4      16       281       265   66.2402        68   0.0959927    0.227519
+data is not still done!!!!!
+    5      16       340       324   64.7903        59    0.129331    0.232949
+data is not still done!!!!!
+    6      15       415       400   66.6561        76    0.417328    0.233695
+data is not still done!!!!!
+    7      16       489       473   67.5609        73    0.183202    0.231505
+data is not still done!!!!!
+    8      16       561       545   68.1145        72    0.204826    0.230504
+data is not still done!!!!!
+    9      15       631       616   68.4338        71     0.16785    0.229858
+data is not still done!!!!!
+   10      16       704       688   68.7892        72    0.221178    0.228058
+data is not still done!!!!!
+   11      16       774       758   68.8982        70   0.0978888    0.227585
+data is not still done!!!!!
+   12      16       850       834   69.4888        76    0.238478    0.227718
+data is not still done!!!!!
+   13      16       922       906    69.681        72      0.4446    0.227507
+data is not still done!!!!!
+   14      16       980       964    68.846        58    0.220187    0.227106
+data is not still done!!!!!
+   15      16      1045      1029    68.589        65    0.123889    0.230714
+data is not still done!!!!!
+   16      16      1116      1100   68.7389        71    0.144203    0.230167
+data is not still done!!!!!
+   17      16      1181      1165   68.5183        65    0.159142    0.230216
+data is not still done!!!!!
+   18      15      1249      1234   68.5444        69     0.31398    0.231439
+data is not still done!!!!!
+   19      16      1326      1310   68.9361        76    0.149764    0.230009
+data is not still done!!!!!
+2021-09-09T18:35:47.195254-0300 min lat: 0.0580927 max lat: 1.25746 avg lat: 0.229511
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20      16      1394      1378   68.8888        68    0.340595    0.229511
+data is not still done!!!!!
+   21      16      1454      1438   68.4646        60    0.236954    0.231694
+data is not still done!!!!!
+   22      16      1530      1514   68.8066        76    0.096362    0.230604
+data is not still done!!!!!
+   23      15      1600      1585   68.9015        71    0.159574    0.230027
+data is not still done!!!!!
+   24      16      1683      1667   69.4466        82    0.216311    0.229177
+data is not still done!!!!!
+   25      16      1755      1739   69.5483        72    0.134023    0.228747
+data is not still done!!!!!
+   26      16      1822      1806   69.4498        67    0.165555    0.228363
+data is not still done!!!!!
+   27      16      1895      1879   69.5809        73    0.278733    0.228243
+data is not still done!!!!!
+   28      15      1972      1957   69.8811        78    0.176855    0.227915
+data is not still done!!!!!
+   29      16      2042      2026   69.8503        69    0.140278    0.227576
+data is not still done!!!!!
+   30      12      2114      2102   70.0549        76    0.213039    0.227171
+Total time run:         30.4036
+Total writes made:      2114
+Write size:             1048576
+Object size:            1048576
+Bandwidth (MB/sec):     69.5312
+Stddev Bandwidth:       5.80091
+Max bandwidth (MB/sec): 82
+Min bandwidth (MB/sec): 58
+Average IOPS:           69
+Stddev IOPS:            5.80091
+Max IOPS:               82
+Min IOPS:               58
+Average Latency(s):     0.227609
+Stddev Latency(s):      0.136445
+Max latency(s):         1.25746
+Min latency(s):         0.0569823
+------------------------- Message_size 2M -------------------------------------
+CephArmor bench 30 write -b 2M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 2097152 bytes to objects of size 2097152 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_177086
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        41        25   49.9959        50    0.468153    0.406493
+data is not still done!!!!!
+    2      16        77        61    60.993        72    0.758754    0.447334
+data is not still done!!!!!
+    3      16       115        99   65.9918        76    0.376649    0.438332
+data is not still done!!!!!
+    4      16       150       134   66.9913        70    0.472434    0.446185
+data is not still done!!!!!
+    5      16       186       170   67.9913        72    0.215547    0.438187
+data is not still done!!!!!
+    6      16       223       207   68.9908        74    0.518996    0.439091
+data is not still done!!!!!
+    7      15       262       247   70.5618        80    0.189262     0.43325
+data is not still done!!!!!
+    8      16       301       285   71.2402        76     0.22378    0.431571
+data is not still done!!!!!
+    9      16       339       323   71.7677        76     0.39714    0.427616
+data is not still done!!!!!
+   10      16       377       361   72.1896        76    0.564204    0.432071
+data is not still done!!!!!
+   11      16       414       398   72.3533        74    0.252177    0.431331
+data is not still done!!!!!
+   12      15       451       436   72.6564        76    0.320763    0.429907
+data is not still done!!!!!
+   13      15       486       471   72.4514        70    0.740235     0.42977
+data is not still done!!!!!
+   14      15       525       510    72.847        78    0.361974    0.428548
+data is not still done!!!!!
+   15      16       557       541   72.1233        62     0.28574    0.429309
+data is not still done!!!!!
+   16      15       598       583     70.32        84    0.383995    0.432351
+data is not still done!!!!!
+   17      16       645       629   71.5525        92    0.237598    0.440269
+data is not still done!!!!!
+   18      16       685       669   72.0066        80    0.193993    0.437733
+data is not still done!!!!!
+   19      16       722       706    72.108        74    0.495678    0.436697
+data is not still done!!!!!
+2021-09-09T18:36:19.460502-0300 min lat: 0.133574 max lat: 1.31409 avg lat: 0.435765
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20      15       757       742   72.1022        72    0.548851    0.435765
+data is not still done!!!!!
+   21      16       794       778   72.0968        72    0.248699    0.436967
+data is not still done!!!!!
+   22      16       832       816    72.269        76    0.435577    0.435973
+data is not still done!!!!!
+   23      16       868       852   72.2571        72     1.16536    0.437746
+data is not still done!!!!!
+   24      16       904       888   72.2461        72    0.293866    0.436575
+data is not still done!!!!!
+   25      15       941       926   72.3925        76    0.486459    0.437274
+data is not still done!!!!!
+   26      16       981       965   72.6031        78    0.376193    0.435717
+data is not still done!!!!!
+   27      16      1017      1001   72.5808        72    0.278232    0.434638
+data is not still done!!!!!
+   28      16      1056      1040   72.7699        78    0.197563    0.434937
+data is not still done!!!!!
+   29      16      1092      1076   72.7434        72    0.569184    0.434726
+Total time run:         30.353
+Total writes made:      1111
+Write size:             2097152
+Object size:            2097152
+Bandwidth (MB/sec):     73.2052
+Stddev Bandwidth:       6.95588
+Max bandwidth (MB/sec): 92
+Min bandwidth (MB/sec): 50
+Average IOPS:           36
+Stddev IOPS:            3.47794
+Max IOPS:               46
+Min IOPS:               25
+Average Latency(s):     0.434312
+Stddev Latency(s):      0.193741
+Max latency(s):         1.31409
+Min latency(s):         0.13013
+------------------------- Message_size 3M -------------------------------------
+CephArmor bench 30 write -b 3M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 3145728 bytes to objects of size 3145728 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_177722
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      15        32        17   50.9889        51    0.475201    0.532978
+data is not still done!!!!!
+    2      16        58        42   62.9877        75    0.685674    0.544846
+data is not still done!!!!!
+    3      16        82        66   65.9876        72    0.733955     0.61011
+data is not still done!!!!!
+    4      16       108        92    68.988        78    0.666964     0.62476
+data is not still done!!!!!
+    5      16       133       117   70.1875        75    0.526791    0.615488
+data is not still done!!!!!
+    6      16       160       144   71.9872        81     1.34664    0.619461
+data is not still done!!!!!
+    7      16       184       168   71.9871        72    0.515861    0.623362
+data is not still done!!!!!
+    8      15       209       194   72.7372        78    0.892675    0.616392
+data is not still done!!!!!
+    9      15       234       219   72.9874        75    0.941087     0.62763
+data is not still done!!!!!
+   10      16       260       244   73.1876        75    0.825873    0.620764
+data is not still done!!!!!
+   11      15       284       269   73.3512        75    0.780441    0.620033
+data is not still done!!!!!
+   12      16       310       294   73.4875        75      1.2331    0.623827
+data is not still done!!!!!
+   13      15       336       321   74.0646        81     0.84646    0.625878
+data is not still done!!!!!
+   14      16       360       344    73.702        69    0.917963    0.628753
+data is not still done!!!!!
+   15      16       384       368   73.5877        72    0.577573    0.629222
+data is not still done!!!!!
+   16      15       411       396   74.2377        84    0.547024    0.630151
+data is not still done!!!!!
+   17      15       434       419    73.929        69    0.526335      0.6345
+data is not still done!!!!!
+   18      16       460       444   73.9878        75    0.514169    0.632667
+data is not still done!!!!!
+   19      15       488       473   74.6719        87     0.59704    0.633282
+data is not still done!!!!!
+2021-09-09T18:36:49.800306-0300 min lat: 0.177703 max lat: 1.86973 avg lat: 0.631015
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20      16       513       497   74.5377        72    0.565898    0.631015
+data is not still done!!!!!
+   21      16       535       519   74.1304        66    0.438089    0.633952
+data is not still done!!!!!
+   22      16       558       542   73.8966        69    0.357173    0.633278
+data is not still done!!!!!
+   23      15       581       566   73.8137        72    0.658741     0.63856
+data is not still done!!!!!
+   24      16       607       591   73.8626        75    0.979333    0.639171
+data is not still done!!!!!
+   25      16       632       616   73.9076        75     1.00307     0.63896
+data is not still done!!!!!
+   26      16       655       639   73.7184        69    0.538308    0.638861
+data is not still done!!!!!
+   27      16       679       663   73.6543        72    0.472728    0.636216
+data is not still done!!!!!
+   28      16       704       688   73.7019        75     0.69764    0.633099
+data is not still done!!!!!
+   29      16       727       711   73.5392        69    0.450709    0.639445
+data is not still done!!!!!
+   30      16       749       733   73.2876        66    0.674665    0.643383
+Total time run:         30.8319
+Total writes made:      749
+Write size:             3145728
+Object size:            3145728
+Bandwidth (MB/sec):     72.879
+Stddev Bandwidth:       6.43348
+Max bandwidth (MB/sec): 87
+Min bandwidth (MB/sec): 51
+Average IOPS:           24
+Stddev IOPS:            2.14449
+Max IOPS:               29
+Min IOPS:               17
+Average Latency(s):     0.645143
+Stddev Latency(s):      0.327313
+Max latency(s):         4.09923
+Min latency(s):         0.177703
+------------------------- Message_size 4M -------------------------------------
+CephArmor bench 30 write -b 4M -t 16 -p benchpool --no-cleanup --enc-bench
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+Maintaining 16 concurrent writes of 4194304 bytes to objects of size 4194304 for up to 30 seconds or 0 objects
+Object prefix: benchmark_data_15drivesnode2_178536
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        25         9   35.9955        36    0.805477    0.614784
+data is not still done!!!!!
+    2      15        46        31   61.9909        88    0.541279    0.764008
+data is not still done!!!!!
+    3      16        67        51   67.9881        80     0.74461    0.778889
+data is not still done!!!!!
+    4      16        80        64   63.9895        52     1.14669    0.789594
+data is not still done!!!!!
+    5      16       104        88   70.3887        96     0.86536    0.804763
+data is not still done!!!!!
+    6      16       124       108   71.9886        80     1.08525    0.803306
+data is not still done!!!!!
+    7      16       142       126   71.9883        72    0.699823    0.804122
+data is not still done!!!!!
+    8      16       158       142   70.9886        64    0.598526    0.795594
+data is not still done!!!!!
+    9      16       181       165   73.3215        92    0.387085    0.814164
+data is not still done!!!!!
+   10      16       199       183   73.1878        72    0.418453    0.828013
+data is not still done!!!!!
+   11      16       217       201   73.0789        72    0.780477     0.83563
+data is not still done!!!!!
+   12      16       237       221   73.6547        80    0.309603     0.82676
+data is not still done!!!!!
+   13      16       254       238    73.219        68     2.36461    0.830488
+data is not still done!!!!!
+   14      15       271       256   73.1311        72     1.01483    0.834537
+data is not still done!!!!!
+   15      16       292       276   73.5882        80    0.515675    0.832398
+data is not still done!!!!!
+   16      15       310       295   73.7383        76     1.91819    0.830231
+data is not still done!!!!!
+   17      16       328       312   73.3999        68     1.03231    0.835572
+data is not still done!!!!!
+   18      16       342       326   72.4328        56     1.53349    0.842793
+data is not still done!!!!!
+   19      16       363       347   73.0411        84     2.09841    0.850226
+data is not still done!!!!!
+2021-09-09T18:37:21.167643-0300 min lat: 0.225145 max lat: 3.06198 avg lat: 0.840431
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20      15       387       372   74.3881       100     0.58691    0.840431
+data is not still done!!!!!
+   21      16       409       393   74.8446        84    0.554721    0.834453
+data is not still done!!!!!
+   22      15       424       409   74.3513        64    0.567452    0.833636
+data is not still done!!!!!
+   23      16       443       427   74.2485        72     1.52362     0.83795
+data is not still done!!!!!
+   24      15       462       447   74.4877        80    0.802326    0.838685
+data is not still done!!!!!
+   25      16       482       466   74.5476        76    0.501803    0.839004
+data is not still done!!!!!
+   26      16       500       484   74.4493        72    0.591395    0.837581
+data is not still done!!!!!
+   27      16       515       499   73.9136        60    0.484069    0.838994
+data is not still done!!!!!
+   28      16       538       522   74.5589        92    0.849607    0.838386
+data is not still done!!!!!
+   29      15       556       541   74.6081        76    0.799057    0.836968
+data is not still done!!!!!
+   30      16       576       560    74.654        76    0.687895    0.841049
+Total time run:         30.5925
+Total writes made:      576
+Write size:             4194304
+Object size:            4194304
+Bandwidth (MB/sec):     75.3126
+Stddev Bandwidth:       13.3011
+Max bandwidth (MB/sec): 100
+Min bandwidth (MB/sec): 36
+Average IOPS:           18
+Stddev IOPS:            3.32528
+Max IOPS:               25
+Min IOPS:               9
+Average Latency(s):     0.840576
+Stddev Latency(s):      0.39802
+Max latency(s):         3.06198
+Min latency(s):         0.225145
