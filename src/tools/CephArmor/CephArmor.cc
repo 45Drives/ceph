@@ -7,6 +7,7 @@
 #include "Crypto.h"
 #include "../rados/rados.h"
 #include "common/obj_bencher.h"
+#include <bits/stdc++.h>
 
 //
 #ifdef WITH_LIBRADOSSTRIPER
@@ -90,12 +91,17 @@ static void sanitize_object_contents(bench_data *data, size_t length)
 }
 
 bufferlist write_bench_enc(bench_data data){ 
+
+    // std::cout << "---------------- write_bench_enc ------------------------" << std::endl;
+
      /*
      * This function initialize data structure and encrypt it.
      * Application of the function is in read benchmark
      * 
      * FKH
      */
+
+   std::ofstream executionTimeFile("aes-encryption-execution-time.txt", std::ios::out | std::ios::app);
 
      Crypto cryptObj;
      unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
@@ -105,9 +111,20 @@ bufferlist write_bench_enc(bench_data data){
      // encrypt plaintext
      unsigned char *plaintext = (unsigned char *)data.object_contents;
      unsigned char *encMsgOut;
+
+    auto ss = std::chrono::system_clock::now();
+    std::chrono::duration<double> t_ss = ss.time_since_epoch();
+     
+
      int encLen = cryptObj.aesEncrypt(plaintext, data.op_size, &encMsgOut, key, iv);
+     
+    auto ee = std::chrono::system_clock::now();
+    std::chrono::duration<double> t_ee = ee.time_since_epoch();
 
 
+    // printf("\n\n<<<<%.5f>>>>>\n\n", t_ee.count() - t_ss.count() );
+
+    executionTimeFile<< setprecision(10) << (t_ee.count() - t_ss.count())*1000 <<"," <<" ms, "<< data.op_size<< "\n";
 
 
      std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen);           // (unsigned char* --> string)
@@ -1027,6 +1044,9 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
 
 int main(int argc, const char **argv)
 {
+
+
+    
     std::cout << "---------------- [ CephArmor API ] ---------------- " << std::endl;
 
     // parse input arguments

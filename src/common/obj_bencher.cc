@@ -338,13 +338,13 @@ int ObjBencher::aio_bench(
     }
     else if (OP_SEQ_READ == operation)
     {
-        r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+        r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
         if (r != 0)
             goto out;
     }
     else if (OP_RAND_READ == operation)
     {
-        r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+        r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
         if (r != 0)
             goto out;
     }
@@ -516,12 +516,12 @@ int ObjBencher::aio_bench_enc(
         if (read_flag)
         {
             encMsgOut = read_bench_enc(data);
-            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
         }
         else
         {
 
-            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+            r = seq_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
         }
 
         if (r != 0)
@@ -532,11 +532,11 @@ int ObjBencher::aio_bench_enc(
         if (read_flag){
 
             encMsgOut = read_bench_enc(data);
-            r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+            r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
 
         }else{
 
-             r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, encMsgOut, no_verify);
+             r = rand_read_bench(secondsToRun, num_ops, num_objects, concurrentios, prev_pid, max_objects, encMsgOut, no_verify);
 
         }
         if (r != 0)
@@ -947,7 +947,7 @@ ERR:
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 int ObjBencher::seq_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
-    int concurrentios, int pid, unsigned char *encMsgOut, bool no_verify)
+    int concurrentios, int pid,  unsigned max_objects, unsigned char *encMsgOut, bool no_verify)
 {
     // this file stream records the result of benchmark
     std::ofstream bench_result("seq_read_bench.txt", std::ios::out | std::ios::app);
@@ -1024,7 +1024,7 @@ int ObjBencher::seq_read_bench(
     bufferlist *cur_contents;
 
     slot = 0;
-    while (data.finished < data.started)
+    while (data.finished < data.started && data.finished < max_objects)
     {
         locker.lock();
         int old_slot = slot;
@@ -1070,9 +1070,15 @@ int ObjBencher::seq_read_bench(
         //         ++errors;
         //     }
         // }
+        
+        // bool start_new_read = (seconds_to_run && mono_clock::now() < finish_time) &&
+                            //   num_ops > data.started;
 
+        /**
+         * I changed the num_ops to max_objects for more than 1K per thread read bench (FKH)
+        */
         bool start_new_read = (seconds_to_run && mono_clock::now() < finish_time) &&
-                              num_ops > data.started;
+                              max_objects > data.started;
         if (start_new_read)
         {
             newName = generate_object_name_fast(data.started / reads_per_object, pid);
@@ -1216,7 +1222,7 @@ ERR:
 
 int ObjBencher::rand_read_bench(
     int seconds_to_run, int num_ops, int num_objects,
-    int concurrentios, int pid, unsigned char *encMsgOut, bool no_verify)
+    int concurrentios, int pid, unsigned max_objects, unsigned char *encMsgOut, bool no_verify)
 {
 
 
@@ -1303,7 +1309,7 @@ int ObjBencher::rand_read_bench(
     int rand_id;
 
     slot = 0;
-    while (data.finished < data.started)
+    while (data.finished < data.started && data.finished < max_objects)
     {
         locker.lock();
         int old_slot = slot;

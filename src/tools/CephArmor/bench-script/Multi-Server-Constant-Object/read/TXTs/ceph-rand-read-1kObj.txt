@@ -1,0 +1,439 @@
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       1         1         0         0         0           -           0
+data is not still done!!!!!
+    2       1         5         4   7.99807         8     0.06905    0.342086
+data is not still done!!!!!
+    3       1         7         6   7.99822         8    0.071558    0.435927
+data is not still done!!!!!
+    4       1         8         7   6.99852         4     1.04663    0.523171
+data is not still done!!!!!
+    5       1         9         8   6.39871         4     1.18288    0.605634
+data is not still done!!!!!
+    6       1        11        10   6.66539         8   0.0883717    0.595514
+data is not still done!!!!!
+    7       1        12        11   6.28452         4    0.982126    0.630661
+data is not still done!!!!!
+    8       1        15        14   6.99871        12    0.123033    0.517106
+data is not still done!!!!!
+    9       1        16        15   6.66543         4     1.04929    0.552585
+data is not still done!!!!!
+   10       1        18        17   6.79877         8   0.0306724    0.543943
+data is not still done!!!!!
+   11       1        28        27   9.81638        40    0.034364    0.406485
+data is not still done!!!!!
+   12       1        28        27   8.99837         0           -    0.406485
+data is not still done!!!!!
+   13       1        32        31   9.53675         8   0.0518912    0.392279
+data is not still done!!!!!
+   14       1        38        37   10.5696        24    0.046201    0.366724
+data is not still done!!!!!
+   15       1        42        41   10.9314        16   0.0373613    0.358473
+data is not still done!!!!!
+   16       1        46        45    11.248        16   0.0355741    0.354402
+data is not still done!!!!!
+   17       1        46        45   10.5864         0           -    0.354402
+data is not still done!!!!!
+   18       1        58        57   12.6644        24     0.11499    0.313827
+data is not still done!!!!!
+   19       1        76        75   15.7867        72   0.0695755    0.252492
+data is not still done!!!!!
+2021-10-03T22:19:30.693589-0300 min lat: 0.0151449 max lat: 1.18288 avg lat: 0.223617
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       1        90        89   17.7969        56   0.0997842    0.223617
+data is not still done!!!!!
+   21       1       108       107   20.3774        72   0.0675143    0.195031
+data is not still done!!!!!
+   22       1       119       118   21.4508        44   0.0425577    0.182468
+data is not still done!!!!!
+   23       1       123       122   21.2137        16   0.0789503    0.187034
+data is not still done!!!!!
+   24       1       137       136   22.6627        56   0.0879718    0.175329
+data is not still done!!!!!
+   25       1       151       150   23.9958        56   0.0789041    0.165505
+data is not still done!!!!!
+   26       1       166       165   25.3802        60   0.0717613    0.156747
+data is not still done!!!!!
+   27       1       183       182   26.9583        68   0.0378589    0.147477
+data is not still done!!!!!
+   28       1       199       198   28.2809        64    0.105169    0.140441
+data is not still done!!!!!
+   29       1       215       214   29.5122        64   0.0194872    0.134407
+data is not still done!!!!!
+   30       1       232       231   30.7947        68   0.0650306    0.129045
+data is not still done!!!!!
+   31       1       248       247   31.8655        64   0.0301898    0.124665
+data is not still done!!!!!
+   32       1       261       260   32.4945        52    0.112961    0.122152
+data is not still done!!!!!
+   33       1       277       276   33.4489        64   0.0518191    0.118731
+data is not still done!!!!!
+   34       1       296       295      34.7        76   0.0736756    0.114303
+data is not still done!!!!!
+   35       1       313       312   35.6511        68   0.0364243    0.111398
+data is not still done!!!!!
+   36       1       332       331   36.7715        76   0.0448048    0.108036
+data is not still done!!!!!
+   37       1       346       345    37.291        56   0.0324931    0.106433
+data is not still done!!!!!
+   38       1       361       360   37.8884        60   0.0367952    0.104755
+data is not still done!!!!!
+   39       1       378       377   38.6602        68   0.0707904    0.102577
+data is not still done!!!!!
+2021-10-03T22:19:50.696821-0300 min lat: 0.00603161 max lat: 1.18288 avg lat: 0.100542
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   40       1       396       395   39.4934        72   0.0632793    0.100542
+data is not still done!!!!!
+   41       1       414       413   40.2859        72   0.0277526   0.0984423
+data is not still done!!!!!
+   42       1       429       428    40.755        60   0.0677269   0.0973191
+data is not still done!!!!!
+   43       1       447       446   41.4813        72   0.0683946   0.0956624
+data is not still done!!!!!
+   44       1       466       465   42.2656        76   0.0614401   0.0938897
+data is not still done!!!!!
+   45       1       479       478   42.4817        52   0.0998862   0.0933453
+data is not still done!!!!!
+   46       1       498       497   43.2101        76    0.034636   0.0917244
+data is not still done!!!!!
+   47       1       515       514   43.7372        68   0.0799784   0.0906748
+data is not still done!!!!!
+   48       1       536       535   44.5757        84   0.0380237   0.0889926
+data is not still done!!!!!
+   49       1       553       552   45.0536        68   0.0721251   0.0879877
+data is not still done!!!!!
+   50       1       570       569   45.5123        68   0.0832653    0.087126
+data is not still done!!!!!
+   51       1       588       587   46.0314        72   0.0875218   0.0861443
+data is not still done!!!!!
+   52       1       603       602   46.2998        60   0.0389084   0.0855562
+data is not still done!!!!!
+   53       1       621       620   46.7845        72   0.0374215    0.084683
+data is not still done!!!!!
+   54       1       637       636   47.1031        64   0.0482894   0.0841816
+data is not still done!!!!!
+   55       1       652       651   47.3374        60   0.0628708   0.0837194
+data is not still done!!!!!
+   56       1       668       667   47.6348        64   0.0678777   0.0831468
+data is not still done!!!!!
+   57       1       683       682   47.8515        60   0.0635294   0.0828311
+data is not still done!!!!!
+   58       1       698       697   48.0608        60    0.045039   0.0824227
+data is not still done!!!!!
+   59       1       716       715   48.4663        72   0.0363652   0.0817783
+data is not still done!!!!!
+2021-10-03T22:20:10.700271-0300 min lat: 0.00305344 max lat: 1.18288 avg lat: 0.0814287
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   60       1       731       730   48.6584        60     0.11676   0.0814287
+data is not still done!!!!!
+   61       1       749       748   49.0409        72   0.0303682     0.08073
+data is not still done!!!!!
+   62       1       765       764    49.282        64   0.0829283   0.0804128
+data is not still done!!!!!
+   63       1       782       781   49.5789        68   0.0430693   0.0798411
+data is not still done!!!!!
+   64       0       801       801   50.0537        80   0.0334824    0.079184
+data is not still done!!!!!
+   65       1       822       821   50.5142        80    0.112772   0.0784226
+data is not still done!!!!!
+   66       1       836       835   50.5972        56   0.0731892   0.0783024
+data is not still done!!!!!
+   67       1       853       852   50.8567        68   0.0678841   0.0778895
+data is not still done!!!!!
+   68       1       869       868   51.0498        64   0.0715053   0.0775951
+data is not still done!!!!!
+   69       1       886       885   51.2953        68    0.066332   0.0772067
+data is not still done!!!!!
+   70       1       904       903    51.591        72   0.0334213   0.0767673
+data is not still done!!!!!
+   71       1       920       919   51.7656        64   0.0373162   0.0764951
+data is not still done!!!!!
+   72       1       935       934   51.8798        60   0.0926782   0.0762906
+data is not still done!!!!!
+   73       1       953       952   52.1553        72    0.111923   0.0759509
+data is not still done!!!!!
+   74       1       971       970   52.4233        72   0.0351123   0.0755549
+data is not still done!!!!!
+   75       1       989       988   52.6841        72   0.0330037   0.0751235
+Total time run:       75.7715
+Total reads made:     1000
+Read size:            4194304
+Object size:          4194304
+Bandwidth (MB/sec):   52.7903
+Average IOPS:         13
+Stddev IOPS:          6.42512
+Max IOPS:             21
+Min IOPS:             0
+Average Latency(s):   0.0750376
+Max latency(s):       1.18288
+Min latency(s):       0.00305344
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       2        24        22   87.9756        88    0.368649   0.0895237
+data is not still done!!!!!
+    2       2        51        49   97.9793       108   0.0717272   0.0778247
+data is not still done!!!!!
+    3       1        79        78   103.966       116   0.0510887   0.0737428
+data is not still done!!!!!
+    4       2       104       102    101.97        96   0.0849394   0.0772671
+data is not still done!!!!!
+    5       2       128       126   100.774        96    0.109471   0.0745033
+data is not still done!!!!!
+    6       2       159       157   104.641       124   0.0948298   0.0753345
+data is not still done!!!!!
+    7       2       188       186    106.26       116   0.0411369   0.0739352
+data is not still done!!!!!
+    8       2       215       213   106.475       108   0.0460546   0.0742198
+data is not still done!!!!!
+    9       2       252       250   111.086       148   0.0375511   0.0711703
+data is not still done!!!!!
+   10       2       284       282   112.775       128   0.0687277   0.0700409
+data is not still done!!!!!
+   11       2       311       309   112.339       108   0.0790198   0.0699656
+data is not still done!!!!!
+   12       2       344       342   113.976       132    0.075261   0.0689942
+data is not still done!!!!!
+   13       2       373       371    114.13       116    0.104948   0.0692276
+data is not still done!!!!!
+   14       2       402       400   114.262       116   0.0368651    0.069121
+data is not still done!!!!!
+   15       2       434       432   115.176       128   0.0714358   0.0685704
+data is not still done!!!!!
+   16       2       465       463   115.727       124   0.0739201   0.0679142
+data is not still done!!!!!
+   17       2       499       497   116.918       136    0.080917   0.0671607
+data is not still done!!!!!
+   18       2       535       533   118.421       144    0.076662   0.0666213
+data is not still done!!!!!
+   19       2       563       561   118.082       112   0.0707964   0.0668717
+data is not still done!!!!!
+2021-10-03T22:20:46.851567-0300 min lat: 0.0051328 max lat: 0.368649 avg lat: 0.0670029
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       2       591       589   117.777       112   0.0051328   0.0670029
+data is not still done!!!!!
+   21       2       619       617   117.501       112   0.0998783   0.0672369
+data is not still done!!!!!
+   22       2       650       648   117.795       124   0.0667337   0.0669742
+data is not still done!!!!!
+   23       2       677       675   117.369       108   0.0987319   0.0672882
+data is not still done!!!!!
+   24       2       710       708   117.977       132   0.0653911   0.0668361
+data is not still done!!!!!
+   25       2       740       738   118.057       120   0.0344719   0.0669505
+data is not still done!!!!!
+   26       2       769       767   117.977       116   0.0295747   0.0669368
+data is not still done!!!!!
+   27       2       800       798   118.199       124   0.0741365   0.0668147
+data is not still done!!!!!
+   28       2       831       829   118.406       124   0.0403121   0.0667216
+data is not still done!!!!!
+   29       2       861       859    118.46       120   0.0964159   0.0667298
+data is not still done!!!!!
+   30       2       889       887   118.244       112    0.103006   0.0667817
+data is not still done!!!!!
+   31       2       915       913   117.784       104   0.0737881    0.067007
+data is not still done!!!!!
+   32       2       949       947   118.353       136   0.0751384   0.0667489
+data is not still done!!!!!
+   33       2       985       983   119.129       144   0.0810066   0.0663314
+Total time run:       33.5016
+Total reads made:     1000
+Read size:            4194304
+Object size:          4194304
+Bandwidth (MB/sec):   119.397
+Average IOPS:         29
+Stddev IOPS:          3.49783
+Max IOPS:             37
+Min IOPS:             22
+Average Latency(s):   0.0661502
+Max latency(s):       0.368649
+Min latency(s):       0.0051328
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       4        55        51   203.928       204   0.0161269   0.0725376
+data is not still done!!!!!
+    2       4        95        91   181.951       160    0.134238   0.0825588
+data is not still done!!!!!
+    3       4       141       137   182.623       184   0.0312101   0.0846713
+data is not still done!!!!!
+    4       4       184       180    179.96       172    0.140174   0.0871586
+data is not still done!!!!!
+    5       4       226       222   177.561       168    0.038339   0.0884211
+data is not still done!!!!!
+    6       4       260       256   170.632       136    0.101552   0.0912638
+data is not still done!!!!!
+    7       4       308       304    173.68       192   0.0259549    0.090805
+data is not still done!!!!!
+    8       4       355       351   175.466       188   0.0382241    0.089352
+data is not still done!!!!!
+    9       4       394       390     173.3       156    0.105105   0.0903848
+data is not still done!!!!!
+   10       4       431       427   170.769       148   0.0342404   0.0921688
+data is not still done!!!!!
+   11       4       477       473   171.969       184   0.0953707   0.0918211
+data is not still done!!!!!
+   12       4       535       531   176.968       232   0.0188775   0.0892697
+data is not still done!!!!!
+   13       4       578       574   176.584       172   0.0377564   0.0891597
+data is not still done!!!!!
+   14       3       620       617   176.249       172   0.0357495   0.0895003
+data is not still done!!!!!
+   15       4       662       658   175.431       164   0.0866235   0.0900385
+data is not still done!!!!!
+   16       4       710       706   176.464       192   0.0404634   0.0896834
+data is not still done!!!!!
+   17       4       765       761   179.023       220     0.10341   0.0882625
+data is not still done!!!!!
+   18       3       806       803   178.407       168   0.0447324   0.0882841
+data is not still done!!!!!
+   19       4       851       847   178.279       176    0.170841   0.0886681
+data is not still done!!!!!
+2021-10-03T22:21:20.993061-0300 min lat: 0.00331175 max lat: 0.400128 avg lat: 0.0887158
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       4       896       892   178.364       180   0.0822753   0.0887158
+data is not still done!!!!!
+   21       3       939       936   178.244       176   0.0425896   0.0888198
+data is not still done!!!!!
+   22       4       993       989   179.777       212    0.032106   0.0879604
+Total time run:       22.258
+Total reads made:     1000
+Read size:            4194304
+Object size:          4194304
+Bandwidth (MB/sec):   179.711
+Average IOPS:         44
+Stddev IOPS:          5.71945
+Max IOPS:             58
+Min IOPS:             34
+Average Latency(s):   0.0879228
+Max latency(s):       0.400128
+Min latency(s):       0.00331175
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1       8        57        49    195.95       196    0.241759    0.142097
+data is not still done!!!!!
+    2       8       109       101    201.96       208    0.222912    0.148734
+data is not still done!!!!!
+    3       8       168       160   213.293       236    0.331844    0.141951
+data is not still done!!!!!
+    4       8       217       209   208.962       196    0.174661    0.147401
+data is not still done!!!!!
+    5       8       273       265   211.963       224   0.0396672    0.146156
+data is not still done!!!!!
+    6       8       325       317   211.297       208   0.0172068    0.146303
+data is not still done!!!!!
+    7       8       368       360   205.679       172    0.018736    0.151388
+data is not still done!!!!!
+    8       8       418       410   204.966       200   0.0428511    0.153217
+data is not still done!!!!!
+    9       7       460       453   201.296       172    0.244412    0.154487
+data is not still done!!!!!
+   10       8       512       504   201.563       204    0.226523    0.155972
+data is not still done!!!!!
+   11       8       551       543   197.419       156    0.181798    0.158305
+data is not still done!!!!!
+   12       8       596       588   195.966       180    0.374677    0.161127
+data is not still done!!!!!
+   13       8       643       635    195.35       188   0.0464717    0.160547
+data is not still done!!!!!
+   14       8       680       672   191.966       148    0.419294    0.164012
+data is not still done!!!!!
+   15       8       738       730   194.633       232   0.0348064    0.162129
+data is not still done!!!!!
+   16       8       795       787   196.716       228    0.253561    0.160004
+data is not still done!!!!!
+   17       8       852       844   198.554       228   0.0304915     0.15919
+data is not still done!!!!!
+   18       8       908       900   199.966       224   0.0307581    0.158115
+data is not still done!!!!!
+   19       8       957       949   199.755       196     0.23855    0.158532
+data is not still done!!!!!
+2021-10-03T22:21:44.134106-0300 min lat: 0.00351264 max lat: 0.68202 avg lat: 0.158917
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20       8      1002       994   198.766       180    0.205545    0.158917
+Total time run:       20.1359
+Total reads made:     1000
+Read size:            4194304
+Object size:          4194304
+Bandwidth (MB/sec):   198.65
+Average IOPS:         49
+Stddev IOPS:          6.37512
+Max IOPS:             59
+Min IOPS:             37
+Average Latency(s):   0.159061
+Max latency(s):       0.68202
+Min latency(s):       0.00351264
+---------------- [ CephArmor API ] ---------------- 
+hints = 1
+data is not still done!!!!!
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+    0       0         0         0         0         0           -           0
+data is not still done!!!!!
+    1      16        59        43   171.958       172    0.036148    0.244422
+data is not still done!!!!!
+    2      16       113        97   193.965       216    0.865255    0.270356
+data is not still done!!!!!
+    3      16       161       145   193.301       192    0.544106    0.291758
+data is not still done!!!!!
+    4      16       206       190    189.97       180    0.185016    0.299909
+data is not still done!!!!!
+    5      16       250       234   187.171       176     0.27124    0.310762
+data is not still done!!!!!
+    6      16       306       290   193.303       224   0.0325444    0.314365
+data is not still done!!!!!
+    7      16       354       338   193.113       192   0.0723919     0.30266
+data is not still done!!!!!
+    8      16       400       384   191.971       184     1.56986    0.310855
+data is not still done!!!!!
+    9      16       441       425    188.86       164    0.413405    0.323096
+data is not still done!!!!!
+   10      16       491       475    189.97       200     0.27437    0.322547
+data is not still done!!!!!
+   11      16       534       518   188.335       172   0.0357814    0.321794
+data is not still done!!!!!
+   12      16       580       564   187.972       184    0.208481    0.320003
+data is not still done!!!!!
+   13      16       632       616    189.51       208    0.470989    0.324931
+data is not still done!!!!!
+   14      16       682       666   190.257       200    0.507277    0.321221
+data is not still done!!!!!
+   15      16       738       722   192.505       224   0.0347783    0.319806
+data is not still done!!!!!
+   16      16       786       770   192.472       192    0.273277    0.319379
+data is not still done!!!!!
+   17      16       835       819   192.677       196     1.18227    0.323895
+data is not still done!!!!!
+   18      16       886       870   193.304       204    0.261797    0.322885
+data is not still done!!!!!
+   19      16       936       920   193.655       200    0.140117    0.320537
+data is not still done!!!!!
+2021-10-03T22:22:05.275430-0300 min lat: 0.00330406 max lat: 2.19968 avg lat: 0.32157
+  sec Cur ops   started  finished  avg MB/s  cur MB/s last lat(s)  avg lat(s)
+   20      16       987       971   194.171       204   0.0395301     0.32157
+Total time run:       20.4661
+Total reads made:     1000
+Read size:            4194304
+Object size:          4194304
+Bandwidth (MB/sec):   195.445
+Average IOPS:         48
+Stddev IOPS:          4.2112
+Max IOPS:             56
+Min IOPS:             41
+Average Latency(s):   0.319944
+Max latency(s):       2.19968
+Min latency(s):       0.00330406
