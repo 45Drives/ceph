@@ -1,0 +1,3 @@
+[console_scripts]
+manhole-cli = manhole.cli:main
+

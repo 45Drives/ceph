@@ -1258,7 +1258,7 @@ int librados::IoCtx::create(const std::string& oid, bool exclusive,
 
 int librados::IoCtx::write(const std::string& oid, bufferlist& bl, size_t len, uint64_t off)
 {
-    std::cout << "----------------------------------> write operation in librados_cxx <-------------------------------------" <<std::endl; 
+    std::cout << "----------------------------------> write()  in librados_cxx <-------------------------------------" <<std::endl; 
   object_t obj(oid);
   return io_ctx_impl->write(obj, bl, len, off);
 }
@@ -1271,6 +1271,8 @@ int librados::IoCtx::append(const std::string& oid, bufferlist& bl, size_t len)
 
 int librados::IoCtx::write_full(const std::string& oid, bufferlist& bl)
 {
+    std::cout << "----------------------------------> write_full()  in librados_cxx <-------------------------------------" <<std::endl; 
+
   object_t obj(oid);
   return io_ctx_impl->write_full(obj, bl);
 }
@@ -1285,6 +1287,8 @@ int librados::IoCtx::writesame(const std::string& oid, bufferlist& bl,
 
 int librados::IoCtx::read(const std::string& oid, bufferlist& bl, size_t len, uint64_t off)
 {
+    std::cout << "----------------------------------> read()  in librados_cxx <-------------------------------------" <<std::endl; 
+
   object_t obj(oid);
   return io_ctx_impl->read(obj, bl, len, off);
 }

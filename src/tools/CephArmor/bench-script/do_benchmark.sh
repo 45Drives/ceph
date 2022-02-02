@@ -497,29 +497,29 @@
 
 #  for thread in 1  2  4  8  16 
 #     do
-#             for iteration in 1 2 3 4 5 6 7 8 9 10
+#             for iteration in 1 2 3 4 5 6 7 8 9 10 
 #             do
-#                         CephArmor bench 500 write -b 4M --max-objects 1000 -t  $thread -p replica2 --no-cleanup 
+#                         CephArmor bench 500 write -b 4M --max-objects 1000 -t  $thread -p ecp21  --no-cleanup 
 #             done
 #     done
 
 
+#  ceph osd map rep4 benchmark_data_15drivesnode2_1525718_object554
+#  ceph osd map rep4
+
+# REPLICATED POOLS: rep2=> size=2, min_size=1, rep3=> size=3, min_size=2, rep4=> size=4, min_size=3
+
 #  the script for benchmarking the EC and replica pool WRITE with encryption
 
- for thread in 1  2  4  8  16 
-    do
-        for iteration in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-            do
-                rados bench 60 write -p Ec21 --no-cleanup 
-            done
-    done
+ 
 
-rados bench 10 write -p Ec21 --no-cleanup 
+# CephArmor bench 10 write -p ECP21 --no-cleanup --max-objects 10
+
 #    CephArmor bench 300 write -p EC21 --no-cleanup --enc-bench
-#    CephArmor bench 10 rand -p Ec21 --enc-bench
+#    CephArmor bench 10 rand -p ECP21 --enc-bench --max-objects 10
 
 
-#    ceph osd pool delete ecpool21 ecpool21  --yes-i-really-really-mean-it 
+#    ceph osd pool delete ec42 ec42  --yes-i-really-really-mean-it 
 
 #    CephArmor bench 60 write -p ECK2M1 --no-cleanup --enc-bench
 #    rados bench 60 rand -p ECK2M1
@@ -533,18 +533,20 @@ rados bench 10 write -p Ec21 --no-cleanup
 #     do
 #             for iteration in 1 2 3 4 5 6 7 8 9 10
 #             do
-#                         CephArmor bench 500 rand --max-objects 1000 -t $thread -p replica2 --enc-bench
+#                         # CephArmor bench 500 rand --max-objects 1000 -t $thread -p rep4 
+#                         CephArmor bench 500 rand --max-objects 1000 -t $thread -p rep4 --enc-bench
 #             done
 #     done
 
 
 
-#     for thread in 1  2  4  8  16 
-#     do
-#             for iteration in 1 2 3 4 5 6 7 8 9 10
-#             do
-#                         CephArmor bench 500 seq --max-objects 1000 -t $thread -p ECK2M1 --enc-bench
-#             done
-#     done
+    # for thread in 1  2  4  8  16 
+    # do
+    #         for iteration in 1 2 3 4 5 6 7 8 9 10
+    #         do
+                        # CephArmor bench 500 seq --max-objects 1000 -t $thread -p rep4 
+    #                     CephArmor bench 500 seq --max-objects 1000 -t $thread -p rep4 --enc-bench
+    #         done
+    # done
 #   -------------------------------------------------------------------------------------------------
 
