@@ -67,44 +67,7 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     memset(data->object_contents, 'z', length);
 }
 
-//  void read_bench_enc(bench_data data){ 
-//      /*
-//      * This function initialize data structure and encrypt it.
-//      * Application of the function is in read benchmark
-//      * 
-//      * FKH
-//      */
 
-//      Crypto cryptObj;
-//      unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-//      unsigned char *iv = (unsigned char *)"0123456789012345";
-
-//     //  struct bench_data *data = new bench_data;
-//     //  data->op_size = op_size_val;
-//      char *contentsChars = new char[data.op_size];
-//      data.object_contents = contentsChars;
-
-//     //  sanitize_object_contents(data, data.op_size);
-
-//       memset(data.object_contents, 'z', data.op_size);
-//      // encrypt plaintext
-//     unsigned char *plaintext5 = (unsigned char *)data.object_contents;
-//     unsigned char *encMsgOut5;
-//     int encLen5 = cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
-//     // std::cout << "encLen5 :  " << encLen5 << std::endl;
-//     // std::cout << "----------------------------------------" << std::endl;
-//     // std::cout << "plaintext5 :  " << plaintext5 << std::endl;
-//     // std::cout << "----------------------------------------" << std::endl;
-//     // std::cout << "encMsgOut5 :  " << encMsgOut5 << std::endl;
-//     std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
-
-//     // derypt
-//     char *decMsg5;
-//     cryptObj.aesDecrypt(encMsgOut5, encLen5, &decMsg5, key, iv);
-//     std::cout << "---------------- decrypt ------------------------" << std::endl;
-//     // std::cout << "decMsg5 :  " << decMsg5 << std::endl;
-   
-// }
 
  void read_bench_dec( unsigned char *encMsgOut){ 
      /*
@@ -115,8 +78,8 @@ static void sanitize_object_contents(bench_data *data, size_t length)
      */
 
      Crypto cryptObj;
-     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-     unsigned char *iv = (unsigned char *)"0123456789012345";
+     unsigned char *key = cryptOb.getKey();
+     unsigned char *iv = cryptOb.getIv();
 
    
     // derypt
@@ -136,8 +99,8 @@ bufferlist write_bench_enc(bench_data data){
      */
 
      Crypto cryptObj;
-     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-     unsigned char *iv = (unsigned char *)"0123456789012345";
+     unsigned char *key = cryptOb.getKey();
+     unsigned char *iv = cryptOb.getIv();
 
      sanitize_object_contents(&data, data.op_size);
      // encrypt plaintext
@@ -223,20 +186,7 @@ protected:
      * decryption performance on the ceph read operation
     */
 
-     // derypt
-    //   Crypto cryptObj;
-    //  unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    //  unsigned char *iv = (unsigned char *)"0123456789012345";
-
-    //  std::string encMsg = pbl->to_str();
-    //  unsigned char *encMsgCh = (unsigned char *)encMsg.c_str();
-    //  char *decMsg;
-
-    //  cryptObj.aesDecrypt(encMsgCh, encMsg.size(), &decMsg, key, iv);
-    //  std::cout << ">>> decrypted data:       " << decMsg << std::endl;        
-
-
-
+    
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
 
@@ -453,21 +403,6 @@ static int rados_sistrtoll(I &i, T *val)
 }
 
 
-std::map<std::string, unsigned char *> setupEnc(void)
-{
-
-    std::map<std::string, unsigned char *> setup;
-    /* A 256 bit key */
-    setup["key"] = (unsigned char *)"01234567890123456789012345678901";
-
-    /* A 128 bit IV */
-    setup["iv"] = (unsigned char *)"0123456789012345";
-
-    return setup;
-}
-
-
-
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
                          uint64_t obj_offset, bool create_object,
@@ -477,8 +412,8 @@ static int put_encrypted(IoCtx &io_ctx,
 
     Crypto cryptObj;
 
-    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    unsigned char *iv = (unsigned char *)"0123456789012345";
+    unsigned char *key = cryptOb.getKey();
+    unsigned char *iv = cryptOb.getKey();
 
     /*Read infile*/
     std::ifstream in(infile);
@@ -592,8 +527,8 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     // FKH START of Decryption Process
     Crypto cryptoObj;
 
-    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    unsigned char *iv = (unsigned char *)"0123456789012345";
+    unsigned char *key = cryptOb.getKey();
+    unsigned char *iv = cryptOb.getKey();
 
     // std::ifstream in2("enc.txt");
     // std::string encFile((std::istreambuf_iterator<char>(in2)),
