@@ -3,8 +3,8 @@
 #include <iostream>
 #include <stdint.h>
 
-#include "encrypt.h"
-#include "Crypto.h"
+#include "Crypt.h"
+#include "KMS.h"
 #include "../rados/rados.h"
 #include "common/obj_bencher.h"
 #include <bits/stdc++.h>
@@ -22,9 +22,9 @@ static const unsigned MAX_OMAP_BYTES_PER_REQUEST = 1 << 10;
 void usage(ostream &out)
 {
     out << "OBJECT COMMANDS\n"
-           "   get <obj-name> <outfile>  <pool-name> \n"
+           "   get <obj-name> <outfile>  <pool-name> [--pass] \n"
            "                                 fetch object\n"
-           "   put <obj-name> <infile>  <pool-name>\n"
+           "   put <obj-name> <infile>  <pool-name> [--pass]\n"
            "                                    write encrypted object with start offset (default:0)\n";
            "   bench <seconds> write|seq|rand [-t concurrent_operations] [--no-cleanup] [--run-name run_name] [--no-hints] [--reuse-bench]\n"
            "                                    default is 16 concurrent IOs and 4 MB ops\n"
@@ -60,7 +60,6 @@ static std::string prettify(const std::string &s)
     }
 }
 
-// FKH START of  RadosBencher / benchmarking
 
 static void sanitize_object_contents(bench_data *data, size_t length)
 {
@@ -71,41 +70,33 @@ static void sanitize_object_contents(bench_data *data, size_t length)
 
 
  void read_bench_dec( unsigned char *encMsgOut){ 
-     /*
-     * This function initialize data structure and encrypt it.
-     * Application of the function is in read benchmark
-     * 
-     * FKH
-     */
+   
 
-     Crypto cryptObj;
-     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-     unsigned char *iv = (unsigned char *)"0123456789012345";
+     Crypt cryptObj;
+     //  get key and iv
+    KeyHandler KeyHandler;
+    unsigned char *key = new unsigned char();
+    unsigned char *iv =new unsigned char();
+    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
    
     // derypt
     char *decMsg;
     cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, key, iv);
-    // std::cout << "---------------- decrypt ------------------------" << std::endl;
    
 }
 
 bufferlist write_bench_enc(bench_data data){ 
 
-    // std::cout << "---------------- write_bench_enc ------------------------" << std::endl;
-
-     /*
-     * This function initialize data structure and encrypt it.
-     * Application of the function is in read benchmark
-     * 
-     * FKH
-     */
-
-   std::ofstream executionTimeFile("aes-encryption-execution-time.txt", std::ios::out | std::ios::app);
-
-     Crypto cryptObj;
-     unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-     unsigned char *iv = (unsigned char *)"0123456789012345";
+   
+     Crypt cryptObj;
+     //  get key and iv
+    KeyHandler KeyHandler;
+    unsigned char *key = new unsigned char();
+    unsigned char *iv = new unsigned char();
+    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
      sanitize_object_contents(&data, data.op_size);
      // encrypt plaintext
@@ -122,21 +113,13 @@ bufferlist write_bench_enc(bench_data data){
     std::chrono::duration<double> t_ee = ee.time_since_epoch();
 
 
-    // printf("\n\n<<<<%.5f>>>>>\n\n", t_ee.count() - t_ss.count() );
-
     executionTimeFile<< setprecision(10) << (t_ee.count() - t_ss.count())*1000 <<"," <<" ms, "<< data.op_size<< "\n";
 
 
      std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen);           // (unsigned char* --> string)
      bufferlist encryptedBufferlist = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
 
-     // derypt
-    //  char *decMsg;
-    //  cryptObj.aesDecrypt(encMsgOut, encLen, &decMsg, key, iv);
-    //  std::cout << ">>> decrypted data:       " << decMsg << std::endl;
-    //  std::cout << "--------------------------------------------------------------------\n"
-    //            << std::endl;
-
+     
     return encryptedBufferlist;
    
 }
@@ -192,30 +175,10 @@ protected:
     int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len,
                  size_t offset,  unsigned char *encMsgOut) override
     {
-        /**
-         * do a decryption for bench before read!
-        */
+       
         read_bench_dec(encMsgOut); 
-    /**
-     * the following part of code work properly on the encrypted objects resulted from write bench operation. 
-     * if we don't write encrypted object on the storage, we keep the above line that reflect the 
-     * decryption performance on the ceph read operation
-    */
-
-     // derypt
-    //   Crypto cryptObj;
-    //  unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    //  unsigned char *iv = (unsigned char *)"0123456789012345";
-
-    //  std::string encMsg = pbl->to_str();
-    //  unsigned char *encMsgCh = (unsigned char *)encMsg.c_str();
-    //  char *decMsg;
-
-    //  cryptObj.aesDecrypt(encMsgCh, encMsg.size(), &decMsg, key, iv);
-    //  std::cout << ">>> decrypted data:       " << decMsg << std::endl;        
-
-
-
+  
+    
         return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
     }
 
@@ -360,9 +323,7 @@ public:
     }
 };
 
-// FKH End of  RadosBencher
-
-namespace fkhdetail
+namespace cepharmor
 {
 
 #ifdef WITH_LIBRADOSSTRIPER
@@ -413,7 +374,7 @@ namespace fkhdetail
         return io_ctx.trunc(oid, offset);
     }
 
-} // END of name space fkhdetail
+} 
 
 template <typename I, typename T>
 static int rados_sistrtoll(I &i, T *val)
@@ -432,32 +393,21 @@ static int rados_sistrtoll(I &i, T *val)
 }
 
 
-std::map<std::string, unsigned char *> setupEnc(void)
-{
-
-    std::map<std::string, unsigned char *> setup;
-    /* A 256 bit key */
-    setup["key"] = (unsigned char *)"01234567890123456789012345678901";
-
-    /* A 128 bit IV */
-    setup["iv"] = (unsigned char *)"0123456789012345";
-
-    return setup;
-}
-
-
 
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
                          uint64_t obj_offset, bool create_object,
-                         const bool use_striper)
+                         const bool use_striper, unsigned char* pass)
 {
-    // FKH ENC START
+   //  get key and iv
+    KeyHandler KeyHandler;
+    unsigned char *key = new unsigned char();
+    unsigned char *iv =new unsigned char();
+    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
-    Crypto cryptObj;
 
-    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    unsigned char *iv = (unsigned char *)"0123456789012345";
+   
 
     /*Read infile*/
     std::ifstream in(infile);
@@ -469,25 +419,20 @@ static int put_encrypted(IoCtx &io_ctx,
     // encrypt plaintext
     size_t messageSize = strFile.size();
     unsigned char *encMsgOut;
+
+    Crypt cryptObj;
     int encLen = cryptObj.aesEncrypt(message, messageSize, &encMsgOut, key, iv);
     encMsgOut[encLen] = '\0';
 
-    // printf("Ciphertext is:\n");
-    // BIO_dump_fp(stdout, (const char *)encMsgOut, encLen);
-
-    // write encrypted message into a file (enc.txt)
-    // std::ofstream myEncFile("enc.txt", std::ios::out | std::ios::binary);
-    // myEncFile.write((char *)&encMsgOut[0], encLen);
-    // myEncFile.close();
+    
 
     //
     std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen); // (unsigned char* --> string)
     bufferlist indata = buffer::list::static_from_string(enc_str);    // (string --> bufferlist)
 
-    std::cout << "###################### END OF ENCRYPTION #############################" << std::endl;
 
-    // FKH ENC END
-    // infile = "enc.txt";
+    
+    
     //  bool stdio = (strcmp(infile, "-") == 0);
     int ret = 0;
     int fd = STDIN_FILENO;
@@ -522,7 +467,7 @@ static int put_encrypted(IoCtx &io_ctx,
     // {
     // if (offset == obj_offset)
     // {                                                               // in case we have to create an empty object & if obj_offset > 0 do a hole
-    //     ret = fkhdetail::write_full(io_ctx, oid_enc, indata, use_striper); // indata is empty
+    //     ret = cepharmor::write_full(io_ctx, oid_enc, indata, use_striper); // indata is empty
 
     //     if (ret < 0)
     //     {
@@ -531,7 +476,7 @@ static int put_encrypted(IoCtx &io_ctx,
 
     //     if (offset)
     //     {
-    //         ret = fkhdetail::trunc(io_ctx, oid_enc, offset, use_striper); // before truncate, object must be existed.
+    //         ret = cepharmor::trunc(io_ctx, oid_enc, offset, use_striper); // before truncate, object must be existed.
 
     //         if (ret < 0)
     //         {
@@ -543,9 +488,9 @@ static int put_encrypted(IoCtx &io_ctx,
     // }
 
     if (0 == offset && create_object)
-        ret = fkhdetail::write_full(io_ctx, oid_enc, indata, use_striper);
+        ret = cepharmor::write_full(io_ctx, oid_enc, indata, use_striper);
     else
-        ret = fkhdetail::write(io_ctx, oid_enc, indata, count, offset, use_striper);
+        ret = cepharmor::write(io_ctx, oid_enc, indata, count, offset, use_striper);
 
     // if (ret < 0)
     // {
@@ -560,32 +505,22 @@ static int put_encrypted(IoCtx &io_ctx,
     return ret;
 }
 
-// FKH END OF put_encrypted()
 
-// FKH get_decrypted()
 
 static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile,
-                         unsigned op_size, [[maybe_unused]] const bool use_striper)
+                         unsigned op_size, [[maybe_unused]] const bool use_striper, unsigned char* pass)
 {
-    std::cout << "--------------[ FKH get_decrypted function started ]--------------  " << std::endl;
-    // FKH START of Decryption Process
-    Crypto cryptoObj;
+    
+    Crypt cryptObj;
 
-    unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
-    unsigned char *iv = (unsigned char *)"0123456789012345";
+    //  get key and iv
+    KeyHandler KeyHandler;
+    unsigned char *key = new unsigned char();
+    unsigned char *iv =new unsigned char();
+    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
-    // std::ifstream in2("enc.txt");
-    // std::string encFile((std::istreambuf_iterator<char>(in2)),
-    //                     std::istreambuf_iterator<char>());
-
-    // unsigned char *ciphertext = (unsigned char *)encFile.c_str(); // string --> unsigned char*
-    // char *decMsg2;
-    //  cryptoObj.aesDecrypt(ciphertext, encFile.size(), &decMsg2, key, iv);
-
-    // std::ofstream myDecFile2("dec2.txt", std::ios::out | std::ios::binary);
-    // myDecFile2 << decMsg2;
-    // myDecFile2.close();
-
+    
     int fd;
     if (strcmp(outfile, "-") == 0)
     {
@@ -610,7 +545,7 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     while (true)
     {
         bufferlist outdata;
-        ret = fkhdetail::read(io_ctx, oid_enc, outdata, op_size, offset, use_striper);
+        ret = cepharmor::read(io_ctx, oid_enc, outdata, op_size, offset, use_striper);
 
         // convert bufferlist to string
         std::string bf_to_str = outdata.to_str();
@@ -619,22 +554,18 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
         char *plaintext;
         unsigned char *ciphertext = (unsigned char *)bf_to_str.c_str();
 
-        int decryptedtext_len = cryptoObj.aesDecrypt(ciphertext, ciphertext_len, &plaintext, key, iv);
+        int decryptedtext_len = cryptObj.aesDecrypt(ciphertext, ciphertext_len, &plaintext, key, iv);
 
-        // convert plaintext to bufferlist so that pass it to the
-        // std::string plain_str(reinterpret_cast<char *>(plaintext), decryptedtext_len);
+        // convert plaintext to bufferlist 
         std::string plain_str(reinterpret_cast<char *>(plaintext)); // [WARNING!]
         bufferlist str_to_bf = buffer::list::static_from_string(plain_str);
 
-        std::cout << " --------------[ plain_str conversion to bufferlist outdata   ]--------------  " << std::endl;
-
-        // FKH END of Decryption Process
+        // END of Decryption Process
 
         if (ret <= 0)
         {
             goto out;
         }
-        // ret = outdata.write_fd(fd);
         ret = str_to_bf.write_fd(fd);
         if (ret < 0)
         {
@@ -653,7 +584,7 @@ out:
     return ret;
 }
 
-// FKH END of get_decrypted()
+
 
 static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
                               std::vector<const char *> &nargs)
@@ -692,6 +623,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     bool show_time = false;
     bool wildcard = false;
     const char *output = NULL;
+    unsigned char* pass = NULL;
 
 
 
@@ -770,6 +702,15 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     {
         reuse_bench = true;
     }
+    i = opts.find("pass");
+    if (i != opts.end())
+    {
+        if (rados_sistrtoll(i, &pass))
+        {
+            return -EINVAL;
+        }
+    }   
+
 
     // open rados
     ret = rados.init_with_context(g_ceph_context);
@@ -858,7 +799,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
             in_filename = nargs[2];
         }
         bool create_object = !obj_offset_specified;
-        ret = put_encrypted(io_ctx, *obj_name, in_filename, op_size, obj_offset, create_object, use_striper);
+        ret = put_encrypted(io_ctx, *obj_name, in_filename, op_size, obj_offset, create_object, use_striper, pass);
         if (ret < 0)
         {
             cerr << "error putting " << pool_name << "/" << prettify(*obj_name) << ": " << cpp_strerror(ret) << std::endl;
@@ -882,7 +823,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
             obj_name = nargs[1];
             out_filename = nargs[2];
         }
-        ret = get_decrypted(io_ctx, *obj_name, out_filename, op_size, use_striper);
+        ret = get_decrypted(io_ctx, *obj_name, out_filename, op_size, use_striper, pass);
         if (ret < 0)
         {
             cerr << "error getting " << pool_name << "/" << prettify(*obj_name) << ": " << cpp_strerror(ret) << std::endl;
@@ -1149,6 +1090,10 @@ int main(int argc, const char **argv)
         else if (ceph_argparse_flag(args, i, "--enc-bench", (char *)NULL))
         {
             opts["enc-bench"] = "true";
+        }
+        else if (ceph_argparse_flag(args, i, "--pass", (char *)NULL))
+        {
+            opts["pass"] = "true";
         }
         else
         {

@@ -8,8 +8,7 @@ set(rados_srcs
   ${PROJECT_SOURCE_DIR}/src/common/util.cc
   ${PROJECT_SOURCE_DIR}/src/common/obj_bencher.cc
   ${PROJECT_SOURCE_DIR}/src/osd/ECUtil.cc
-  ${PROJECT_SOURCE_DIR}/src/tools/CephArmor/encrypt.cc
-  ${PROJECT_SOURCE_DIR}/src/tools/CephArmor/Crypto.cc
+  ${PROJECT_SOURCE_DIR}/src/tools/CephArmor/Crypt.cc
   )
 
 

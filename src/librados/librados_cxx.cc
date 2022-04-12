@@ -45,7 +45,7 @@
 #include <system_error>
 
 
-#include "../tools/CephArmor/Crypto.h"
+#include "../tools/CephArmor/Crypt.h"
 
 
 #ifdef WITH_LTTNG

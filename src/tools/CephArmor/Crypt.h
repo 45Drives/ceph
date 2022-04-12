@@ -16,7 +16,6 @@
 
 #define AES_KEYLEN 256
 
-//#define PSUEDO_CLIENT
 
 #define SUCCESS 0
 #define FAILURE -1
@@ -26,17 +25,8 @@ int benchEncrypt(const char *infile, unsigned char &ciphertext );
 class Crypto {
 
 public:
-    Crypto(){
-        // std::cout<< " Crypto started! " <<std::endl;
-    }
+    Crypto(){ }
 
-    // ~Crypto(){
-    //     std::cout<< " Crypto finished! " <<std::endl;
-
-               
-    // }
-
-    // int aesEncrypt(const unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
     int aesEncrypt(unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
 
     int aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv);
