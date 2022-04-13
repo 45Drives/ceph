@@ -61,9 +61,7 @@
 // #include "osd/ECUtil.h"
 
 // // FKH
-#include "../CephArmor/encrypt.h"
-#include "../CephArmor/Crypto.h"
-// #include <fstream>
+#include "../CephArmor/Crypt.h"
 // //FKH
 
 // using namespace librados;
