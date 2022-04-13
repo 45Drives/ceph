@@ -53,7 +53,9 @@
 #include "cls/lock/cls_lock_client.h"
 #include "include/compat.h"
 #include "include/util.h"
-#include "common/hobject.h"
+#include "common/hobject.h" 
+#include "../CephArmor/Crypt.h"
+
 
 #include "PoolDump.h"
 #include "RadosImport.h"
