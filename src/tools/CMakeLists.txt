@@ -1,6 +1,7 @@
 
 add_subdirectory(cepharmor)
 
+set(rados_srcs
   rados/rados.cc
   RadosDump.cc
   rados/RadosImport.cc
