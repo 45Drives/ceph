@@ -55,6 +55,7 @@
 #include "include/util.h"
 #include "common/hobject.h" 
 #include "../CephArmor/Crypt.h"
+#include "rados.h"
 
 
 #include "PoolDump.h"
