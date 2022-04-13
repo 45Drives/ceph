@@ -1,4 +1,4 @@
-add_subdirectory(CephArmor) #FKH
+add_subdirectory(CephArmor) 
 
 set(rados_srcs
   rados/rados.cc
