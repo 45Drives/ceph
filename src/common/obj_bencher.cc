@@ -20,7 +20,7 @@
 #include "common/ceph_mutex.h"
 #include "common/Clock.h"
 #include "obj_bencher.h"
-#include "../tools/CephArmor/Crypto.h"
+#include "../tools/CephArmor/Crypt.h"
 
 
 const std::string BENCH_LASTRUN_METADATA = "benchmark_last_metadata";
