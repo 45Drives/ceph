@@ -9,13 +9,18 @@ using namespace std;
 class KeyHandler{
   
 public:
+
+
     int getAESSecret(char* pass, unsigned char* aeskey, unsigned char* aesiv){
+
+
         EVP_MD_CTX *mdctx;
         const EVP_MD *md;
 
         unsigned char key[32];
         unsigned char iv[16];
         unsigned int md_len, i;
+        
 
         md = EVP_get_digestbyname("md5");
 
