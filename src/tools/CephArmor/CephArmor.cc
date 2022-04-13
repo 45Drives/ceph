@@ -77,7 +77,7 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    auto pass = reinterpret_cast<char *>(const_cast<char *>("12345"));
     int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
    
@@ -95,7 +95,7 @@ bufferlist write_bench_enc(bench_data data){
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv = new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    auto pass = reinterpret_cast<char *>(const_cast<char *>("12345"));
     int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
      sanitize_object_contents(&data, data.op_size);
