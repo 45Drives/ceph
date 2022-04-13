@@ -62,6 +62,7 @@
 
 // // FKH
 #include "../CephArmor/Crypt.h"
+#include "rados.h"
 // //FKH
 
 // using namespace librados;
@@ -69,7 +70,7 @@
 
 // two steps seem to be necessary to do this right
 
-#include "rados.h"
+
 
 #define STR(x) _STR(x)
 #define _STR(x) #x
