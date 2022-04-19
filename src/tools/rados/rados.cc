@@ -12,7 +12,7 @@
  *
  */
 
-#include "../CephArmor/Crypt.h"
+#include "../cepharmor/Crypt.h"
 #include "rados.h"
 
 #include "acconfig.h"

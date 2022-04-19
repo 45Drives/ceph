@@ -22,10 +22,10 @@
 
 int benchEncrypt(const char *infile, unsigned char &ciphertext );
 
-class Crypto {
+class Crypt {
 
 public:
-    Crypto(){ }
+    Crypt(){ }
 
     int aesEncrypt(unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
 

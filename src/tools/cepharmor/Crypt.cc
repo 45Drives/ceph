@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-int Crypto::aesEncrypt( unsigned char *msg, size_t msgLen, unsigned char **encMsg,  unsigned char *key, unsigned char *iv)
+int Crypt::aesEncrypt( unsigned char *msg, size_t msgLen, unsigned char **encMsg,  unsigned char *key, unsigned char *iv)
 {
     // std::cout << "aesEncrypt() in Crypt.cc" <<std::endl;
 
@@ -41,7 +41,7 @@ int Crypto::aesEncrypt( unsigned char *msg, size_t msgLen, unsigned char **encMs
     return encMsgLen + blockLen;
 }
 
-int Crypto::aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv)
+int Crypt::aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv)
 {
         // std::cout << "aesDecrypt() in Crypt.cc" <<std::endl;
 
