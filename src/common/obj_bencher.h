@@ -100,7 +100,7 @@ protected:
     virtual int completion_ret(int slot) = 0;
 
     virtual int aio_read(const std::string &oid, int slot, bufferlist *pbl, size_t len, size_t offset) = 0;
-    virtual int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len, size_t offset, unsigned char *encMsgOut) = 0; // FKH added unsigned chanr chipertext for read benchmark
+    virtual int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len, size_t offset, unsigned char *encMsgOut) = 0; 
 
     virtual int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len, size_t offset, bool encryptionFlag) = 0;
 
