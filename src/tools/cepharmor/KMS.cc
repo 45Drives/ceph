@@ -6,12 +6,8 @@ using namespace std;
 
 
 
-class KeyHandler{
-  
-public:
 
-
-    int getAESSecret(char* pass, unsigned char* aeskey, unsigned char* aesiv){
+    int KeyHandler::getAESSecret(char* pass, unsigned char* aeskey, unsigned char* aesiv){
 
 
         EVP_MD_CTX *mdctx;
@@ -38,6 +34,3 @@ public:
    
     return md_len;
     }
-
-    
-};

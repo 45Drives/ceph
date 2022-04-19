@@ -113,9 +113,6 @@ bufferlist write_bench_enc(bench_data data){
     std::chrono::duration<double> t_ee = ee.time_since_epoch();
 
 
-    executionTimeFile<< setprecision(10) << (t_ee.count() - t_ss.count())*1000 <<"," <<" ms, "<< data.op_size<< "\n";
-
-
      std::string enc_str(reinterpret_cast<char *>(encMsgOut), encLen);           // (unsigned char* --> string)
      bufferlist encryptedBufferlist = buffer::list::static_from_string(enc_str); // (string --> bufferlist)
 
@@ -173,7 +170,7 @@ protected:
 
 
     int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len,
-                 size_t offset,  unsigned char *encMsgOut) override
+                 size_t offset,  unsigned char *encMsgOut) 
     {
        
         read_bench_dec(encMsgOut); 
@@ -192,7 +189,7 @@ protected:
 
 
     int aio_write(const std::string &oid, int slot, bufferlist &bl, size_t len,
-                  size_t offset, bool encryptionFlag) override
+                  size_t offset, bool encryptionFlag) 
     { 
         librados::ObjectWriteOperation op;
 
@@ -397,13 +394,13 @@ static int rados_sistrtoll(I &i, T *val)
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
                          uint64_t obj_offset, bool create_object,
-                         const bool use_striper, unsigned char* pass)
+                         const bool use_striper, unsigned char* inpass)
 {
    //  get key and iv
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    auto pass = reinterpret_cast<char *>(const_cast<unsigned char *>(inpass));
     int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
 
@@ -508,7 +505,7 @@ static int put_encrypted(IoCtx &io_ctx,
 
 
 static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile,
-                         unsigned op_size, [[maybe_unused]] const bool use_striper, unsigned char* pass)
+                         unsigned op_size, [[maybe_unused]] const bool use_striper, unsigned char* inpass)
 {
     
     Crypt cryptObj;
@@ -517,7 +514,7 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>(pass));
+    auto pass = reinterpret_cast<char *>(const_cast<unsigned char *>(inpass));
     int md_len = KeyHandler.getAESSecret(pass, key, iv);
 
     

@@ -46,7 +46,7 @@ using namespace libradosstriper;
 #include "RadosImport.h"
 
 #include "osd/ECUtil.h"
-#include "../CephArmor/Crypt.h"
+#include "../cepharmor/Crypt.h"
 
 using namespace librados;
 using ceph::util::generate_random_number;
