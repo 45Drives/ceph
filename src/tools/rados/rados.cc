@@ -15,16 +15,6 @@
 #include "../cepharmor/Crypt.h"
 #include "rados.h"
 
-#include "acconfig.h"
-#ifdef WITH_LIBRADOSSTRIPER
- #include "include/radosstriper/libradosstriper.hpp"
- using namespace libradosstriper;
-#endif
-
-
-
-using namespace librados;
-using ceph::util::generate_random_number;
 
 // two steps seem to be necessary to do this right
 #define STR(x) _STR(x)
@@ -1040,8 +1030,15 @@ protected:
     return io_ctx.aio_read(oid, completions[slot], pbl, len, offset);
   }
 
+
+  int aio_read_enc(const std::string &oid, int slot, bufferlist *pbl, size_t len,
+                 size_t offset,  unsigned char *encMsgOut) override
+    {
+       std::cout << " aio_read_enc in rados " << std::endl; 
+    }
+    
   int aio_write(const std::string& oid, int slot, bufferlist& bl, size_t len,
-		size_t offset) override {
+		size_t offset, bool encryptionFlag) override {
     librados::ObjectWriteOperation op;
 
     if (write_destination & OP_WRITE_DEST_OBJ) {
