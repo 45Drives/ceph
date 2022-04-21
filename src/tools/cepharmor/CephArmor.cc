@@ -77,8 +77,7 @@ static void sanitize_object_contents(bench_data *data, size_t length)
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>("12345"));
-    int md_len = KeyHandler.getAESSecret(pass, key, iv);
+    int md_len = KeyHandler.getAESSecret("12345", key, iv);
 
    
     // derypt
@@ -95,8 +94,7 @@ bufferlist write_bench_enc(bench_data data){
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv = new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<char *>("12345"));
-    int md_len = KeyHandler.getAESSecret(pass, key, iv);
+    int md_len = KeyHandler.getAESSecret("12345", key, iv);
 
      sanitize_object_contents(&data, data.op_size);
      // encrypt plaintext
@@ -394,14 +392,14 @@ static int rados_sistrtoll(I &i, T *val)
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
                          uint64_t obj_offset, bool create_object,
-                         const bool use_striper, unsigned char* inpass)
+                         const bool use_striper, char* inpass)
 {
    //  get key and iv
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<unsigned char *>(inpass));
-    int md_len = KeyHandler.getAESSecret(pass, key, iv);
+
+    int md_len = KeyHandler.getAESSecret(inpass, key, iv);
 
 
    
@@ -505,7 +503,7 @@ static int put_encrypted(IoCtx &io_ctx,
 
 
 static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile,
-                         unsigned op_size, [[maybe_unused]] const bool use_striper, unsigned char* inpass)
+                         unsigned op_size, [[maybe_unused]] const bool use_striper, char* inpass)
 {
     
     Crypt cryptObj;
@@ -514,8 +512,9 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     KeyHandler KeyHandler;
     unsigned char *key = new unsigned char();
     unsigned char *iv =new unsigned char();
-    auto pass = reinterpret_cast<char *>(const_cast<unsigned char *>(inpass));
-    int md_len = KeyHandler.getAESSecret(pass, key, iv);
+    // auto pass = reinterpret_cast<char *>(const_cast<char *>(inpass));
+
+    int md_len = KeyHandler.getAESSecret(inpass, key, iv);
 
     
     int fd;
@@ -620,7 +619,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     bool show_time = false;
     bool wildcard = false;
     const char *output = NULL;
-    unsigned char* pass = NULL;
+    char* pass = NULL;
 
 
 
@@ -702,10 +701,9 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     i = opts.find("pass");
     if (i != opts.end())
     {
-        if (rados_sistrtoll(i, &pass))
-        {
-            return -EINVAL;
-        }
+         
+       pass = const_cast<char*>(i->second.c_str());
+         
     }   
 
 

@@ -20,7 +20,7 @@
 #include "common/ceph_mutex.h"
 #include "common/Clock.h"
 #include "obj_bencher.h"
-#include "../tools/CephArmor/Crypt.h"
+
 
 
 const std::string BENCH_LASTRUN_METADATA = "benchmark_last_metadata";
@@ -399,14 +399,8 @@ out:
 
 
  unsigned char * read_bench_enc(bench_data data){ 
-     /*
-     * This function initialize data structure and encrypt it.
-     * Application of the function is in read benchmark
-     * 
-     * FKH
-     */
-
-     Crypto cryptObj;
+     
+     Crypt cryptObj;
      unsigned char *key = (unsigned char *)"01234567890123456789012345678901";
      unsigned char *iv = (unsigned char *)"0123456789012345";
 
@@ -423,8 +417,6 @@ out:
     unsigned char *encMsgOut5;
     cryptObj.aesEncrypt(plaintext5, data.op_size, &encMsgOut5, key, iv);
     
-    // std::cout << "------------------encrypt----------------------"<< data.op_size << std::endl;
-
     return encMsgOut5;
    
 }

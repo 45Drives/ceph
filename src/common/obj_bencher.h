@@ -17,6 +17,8 @@
 
 #include "common/ceph_context.h"
 #include "common/Formatter.h"
+#include "../tools/cepharmor/Crypt.h"
+#include "../tools/cepharmor/KMS.h"
 #include "ceph_time.h"
 #include <cfloat>
 
