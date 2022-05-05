@@ -27,9 +27,9 @@ class Crypt {
 public:
     Crypt(){ }
 
-    int aesEncrypt(unsigned char *msg, size_t msgLen, unsigned char **encMsg, unsigned char *key, unsigned char *iv);
+    int aesEncrypt(unsigned char *msg, size_t msgLen, unsigned char **encMsg, const unsigned char *key, const unsigned char *iv);
 
-    int aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, unsigned char *key, unsigned char *iv);
+    int aesDecrypt(unsigned char *encMsg, size_t encMsgLen, char **decMsg, const unsigned char *key, const unsigned char *iv);
 
    
 };
