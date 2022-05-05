@@ -75,14 +75,14 @@ static void sanitize_object_contents(bench_data *data, size_t length)
      Crypt cryptObj;
      //  get key and iv
     KeyHandler KeyHandler;
-    unsigned char *key = new unsigned char();
-    unsigned char *iv =new unsigned char();
-    int md_len = KeyHandler.getAESSecret("12345", key, iv);
+    unsigned char inpass[] = "12345";
+    data_t* aes_secret = KeyHandler.getAESSecret(inpass);
+    
 
    
     // derypt
     char *decMsg;
-    cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, key, iv);
+    cryptObj.aesDecrypt(encMsgOut, strlen((char*)encMsgOut), &decMsg, aes_secret->getKey(), aes_secret->getIv());
    
 }
 
@@ -92,9 +92,8 @@ bufferlist write_bench_enc(bench_data data){
      Crypt cryptObj;
      //  get key and iv
     KeyHandler KeyHandler;
-    unsigned char *key = new unsigned char();
-    unsigned char *iv = new unsigned char();
-    int md_len = KeyHandler.getAESSecret("12345", key, iv);
+    unsigned char inpass[] = "12345";
+    data_t* aes_secret = KeyHandler.getAESSecret(inpass);
 
      sanitize_object_contents(&data, data.op_size);
      // encrypt plaintext
@@ -105,7 +104,7 @@ bufferlist write_bench_enc(bench_data data){
     std::chrono::duration<double> t_ss = ss.time_since_epoch();
      
 
-     int encLen = cryptObj.aesEncrypt(plaintext, data.op_size, &encMsgOut, key, iv);
+     int encLen = cryptObj.aesEncrypt(plaintext, data.op_size, &encMsgOut, aes_secret->getKey(), aes_secret->getIv());
      
     auto ee = std::chrono::system_clock::now();
     std::chrono::duration<double> t_ee = ee.time_since_epoch();
@@ -392,14 +391,15 @@ static int rados_sistrtoll(I &i, T *val)
 static int put_encrypted(IoCtx &io_ctx,
                          const std::string &oid, const char *infile, int op_size,
                          uint64_t obj_offset, bool create_object,
-                         const bool use_striper, char* inpass)
+                         const bool use_striper, unsigned char* inpass)
 {
    //  get key and iv
     KeyHandler KeyHandler;
-    unsigned char *key = new unsigned char();
-    unsigned char *iv =new unsigned char();
-
-    int md_len = KeyHandler.getAESSecret(inpass, key, iv);
+    data_t* aes_secret = KeyHandler.getAESSecret(inpass);
+    std::cout   << "PUT_ENCRYPTED:" << std::endl
+                << "\tdata_t->len:" << aes_secret->getLen() << std::endl
+                << "\tdata_t->key:" << aes_secret->getKey() << std::endl
+                << "\tdata_t->iv:" << aes_secret->getIv() << std::endl;
 
 
    
@@ -416,7 +416,7 @@ static int put_encrypted(IoCtx &io_ctx,
     unsigned char *encMsgOut;
 
     Crypt cryptObj;
-    int encLen = cryptObj.aesEncrypt(message, messageSize, &encMsgOut, key, iv);
+    int encLen = cryptObj.aesEncrypt(message, messageSize, &encMsgOut, aes_secret->getKey(), aes_secret->getIv());
     encMsgOut[encLen] = '\0';
 
     
@@ -503,18 +503,20 @@ static int put_encrypted(IoCtx &io_ctx,
 
 
 static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outfile,
-                         unsigned op_size, [[maybe_unused]] const bool use_striper, char* inpass)
+                         unsigned op_size, [[maybe_unused]] const bool use_striper, unsigned char* inpass)
 {
     
-    Crypt cryptObj;
+
+
+  
 
     //  get key and iv
-    KeyHandler KeyHandler;
-    unsigned char *key = new unsigned char();
-    unsigned char *iv =new unsigned char();
-    // auto pass = reinterpret_cast<char *>(const_cast<char *>(inpass));
-
-    int md_len = KeyHandler.getAESSecret(inpass, key, iv);
+    KeyHandler KeyHandler ;
+    data_t* aes_secret = KeyHandler.getAESSecret(inpass);
+    std::cout   << "PUT_ENCRYPTED:" << std::endl
+                << "\tdata_t->len:" << aes_secret->getLen() << std::endl
+                << "\tdata_t->key:" << aes_secret->getKey() << std::endl
+                << "\tdata_t->iv:" << aes_secret->getIv() << std::endl;
 
     
     int fd;
@@ -537,7 +539,6 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
     int ret;
     const std::string oid_enc = oid + ".enc";
 
-    // oid = oid+".enc";
     while (true)
     {
         bufferlist outdata;
@@ -547,10 +548,11 @@ static int get_decrypted(IoCtx &io_ctx, const std::string &oid, const char *outf
         std::string bf_to_str = outdata.to_str();
         int ciphertext_len = bf_to_str.size();
 
+        Crypt cryptObj;
         char *plaintext;
         unsigned char *ciphertext = (unsigned char *)bf_to_str.c_str();
 
-        int decryptedtext_len = cryptObj.aesDecrypt(ciphertext, ciphertext_len, &plaintext, key, iv);
+        int decryptedtext_len = cryptObj.aesDecrypt(ciphertext, ciphertext_len, &plaintext, aes_secret->getKey(), aes_secret->getIv());
 
         // convert plaintext to bufferlist 
         std::string plain_str(reinterpret_cast<char *>(plaintext)); // [WARNING!]
@@ -619,7 +621,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     bool show_time = false;
     bool wildcard = false;
     const char *output = NULL;
-    char* pass = NULL;
+    unsigned char* pass = NULL;
 
 
 
@@ -701,9 +703,9 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
     i = opts.find("pass");
     if (i != opts.end())
     {
-         
-       pass = const_cast<char*>(i->second.c_str());
-         
+        pass = new unsigned char[i->second.length()]();
+        std::copy(i->second.begin(), i->second.end(), pass);
+        pass[i->second.length()] = '\0';
     }   
 
 
@@ -919,7 +921,7 @@ static int CephArmor_tool_common(const std::map<std::string, std::string> &opts,
         bencher.set_write_destination(static_cast<OpWriteDest>(bench_write_dest));
 
         if (enc_bench){
-        bencher.set_enc_flag();// FKH enc benchmarking
+        bencher.set_enc_flag();
         }
         ostream *outstream = NULL;
         if (formatter)
@@ -1029,12 +1031,10 @@ int main(int argc, const char **argv)
         }
     }
 
-    // FKH initializing Ceph required environment values
     auto cct = global_init(NULL, args, CEPH_ENTITY_TYPE_CLIENT,
                            CODE_ENVIRONMENT_UTILITY, 0);
     common_init_finish(g_ceph_context);
 
-    // FKH adds input parameters such as poolname into the vector i
     std::vector<const char *>::iterator i;
     for (i = args.begin(); i != args.end();)
     {
@@ -1086,9 +1086,9 @@ int main(int argc, const char **argv)
         {
             opts["enc-bench"] = "true";
         }
-        else if (ceph_argparse_flag(args, i, "--pass", (char *)NULL))
+        else if (ceph_argparse_witharg(args, i,  &val, "--pass", (char *)NULL))
         {
-            opts["pass"] = "true";
+            opts["pass"] = val;
         }
         else
         {
