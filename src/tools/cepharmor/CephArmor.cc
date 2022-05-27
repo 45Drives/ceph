@@ -402,6 +402,11 @@ static int put_encrypted(IoCtx &io_ctx,
                 << "\tdata_t->iv:" << aes_secret->getIv() << std::endl;
 
 
+    std::cout   << "PUT_ENCRYPTED (2) :" << std::endl
+                << "\tdata_t->key:" << ((char*)aes_secret->getKey()) << std::endl
+                << "\tdata_t->iv:" << ((char*)aes_secret->getIv()) << std::endl;
+
+
    
 
     /*Read infile*/

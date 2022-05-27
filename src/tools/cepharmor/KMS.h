@@ -39,12 +39,14 @@ struct data_t {
         this->setKey(key);
         this->setIv (new unsigned char[len/2]());
         memcpy(this->_iv, key, (len/2));
+        // this->setIv((unsigned char*)"1234567890123456");
+
     }
     // DESTRUCTOR
-    ~data_t() {
-        std::free(this->_iv);
-        std::free(this->_key);
-    }
+    // ~data_t() {
+    //     std::free(this->_iv);
+    //     std::free(this->_key);
+    // }
 
     // GETTERS
     const unsigned int getLen() {

@@ -12,13 +12,13 @@ using namespace std;
         SHA256_CTX context;
         
         SHA256_Init(&context);
-        unsigned long len =  strlen((char*)pass);
-        unsigned char* key = new unsigned char[len]();
-        SHA256_Update(&context, pass, len);
+        unsigned long seed_len =  strlen((char*)pass);
+        unsigned char* key = new unsigned char[32]();
+        SHA256_Update(&context, pass, seed_len);
         SHA256_Final(key, &context);
         
         std::cout   << "[INSIDE getAESSecret()]:" << std::endl
-                    << "\tlen:" << len << std::endl
+                    << "\tseed_len:" << seed_len << std::endl
                     << "\tkey:" << key << std::endl;
 
         return (new data_t(32, key)); 
